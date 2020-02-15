@@ -1,0 +1,28 @@
+{
+  "cards": [
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "images": ["/assets/images/visual/cards/card_0.jpg"],
+      "link": "/ajax/json/visual_search_detail.json"
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "images": ["/assets/images/visual/cards/card_1.jpg", "/assets/images/visual/cards/card_0.jpg", "/assets/images/visual/cards/card_2.jpg"],
+      "link": "/ajax/json/visual_search_detail.json"
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "images": ["/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_5.jpg"],
+      "link": "/ajax/json/visual_search_detail.json"
+    },
+    {
+      "id": "as12713",
+      "deal_type": "продажа",
+      "images": ["/assets/images/visual/cards/card_3.jpg", "/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_7.jpg", "/assets/images/visual/cards/card_5.jpg"],
+      "link": "/ajax/json/visual_search_detail.json"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ return array(
 	'cards' => array(
 		'.landing-block-node-list-item' => array(
 			'name' => Loc::getMessage('LANDING_BLOCK_55_1-LINK'),
-			'label' => ['.landing-block-node-link'],
+			'label' => ['.landing-block-node-link-text'],
 		),
 	),
 	'nodes' => array(

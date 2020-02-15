@@ -103,6 +103,16 @@ class CCloudStorageUpload
 				$fileSize,
 				$ContentType
 			);
+			if (!$bStarted && $obBucket->RenewToken())
+			{
+				$bStarted = $obBucket->GetService()->InitiateMultipartUpload(
+					$obBucket->GetBucketArray(),
+					$arUploadInfo,
+					$this->_filePath,
+					$fileSize,
+					$ContentType
+				);
+			}
 
 			if($bStarted)
 			{

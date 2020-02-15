@@ -202,6 +202,18 @@ class LandingEditComponent extends LandingBaseFormComponent
 	}
 
 	/**
+	 * Returns true, if this site without external domain.
+	 * @return bool
+	 */
+	protected function isIntranet()
+	{
+		return
+			isset($this->arResult['SITES'][$this->arParams['SITE_ID']]) &&
+			isset($this->arResult['SITES'][$this->arParams['SITE_ID']]['DOMAIN_ID']) &&
+			$this->arResult['SITES'][$this->arParams['SITE_ID']]['DOMAIN_ID'] == '0';
+	}
+
+	/**
 	 * Base executable method.
 	 * @return void
 	 */
@@ -213,9 +225,14 @@ class LandingEditComponent extends LandingBaseFormComponent
 		{
 			$this->checkParam('SITE_ID', 0);
 			$this->checkParam('LANDING_ID', 0);
+			$this->checkParam('TYPE', '');
 			$this->checkParam('PAGE_URL_LANDINGS', '');
 			$this->checkParam('PAGE_URL_LANDING_VIEW', '');
 			$this->checkParam('PAGE_URL_SITE_EDIT', '');
+
+			\Bitrix\Landing\Site\Type::setScope(
+				$this->arParams['TYPE']
+			);
 
 			$this->id = $this->arParams['LANDING_ID'];
 			$this->successSavePage = $this->arParams['PAGE_URL_LANDINGS'];
@@ -273,11 +290,17 @@ class LandingEditComponent extends LandingBaseFormComponent
 
 			if ($this->id)
 			{
+				$this->arResult['SITES'] = $this->getSites();
+				$this->arResult['IS_INTRANET'] = $this->isIntranet();
+				\Bitrix\Landing\Hook::setEditMode();
+				if ($this->arResult['IS_INTRANET'])
+				{
+					\Bitrix\Landing\Hook::setIntranetMode();
+				}
 				$this->arResult['HOOKS'] = $this->getHooks();
 				$this->arResult['HOOKS_SITE'] = $this->getHooks('Site', $this->arParams['SITE_ID']);
 				$this->arResult['TEMPLATES_REF'] = TemplateRef::getForLanding($this->id);
 				$this->arResult['META'] = $this->getMeta();
-				$this->arResult['SITES'] = $this->getSites();
 				$this->arResult['DOMAINS'] = $this->getDomains();
 			}
 

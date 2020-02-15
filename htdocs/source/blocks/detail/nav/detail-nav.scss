@@ -1,0 +1,112 @@
+$parent: 'detail-nav';
+
+@include block($parent) {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  bottom: rem(16);
+
+  @include modifier($parent, 'fixed') {
+    @media (min-width: $d1280) {
+      position: fixed;
+      transform: translateY(rem(55));
+      z-index: 999;
+    }
+  }
+
+  @media (min-width: $tMin) {
+    bottom: rem(20);
+  }
+
+  @media (min-width: $d1280) {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    background-color: $w;
+    box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.15);
+  }
+
+  @include element($parent, 'main') {
+    display: flex;
+    align-items: center;
+    height: rem(78);
+
+    @media (max-width: $d1279) {
+      height: auto;
+    }
+  }
+
+  @include element($parent, 'info-wrp') {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $d1279) {
+      width: 100%;
+    }
+  }
+
+  @include element($parent, 'info') {
+    min-width: rem(175);
+    margin-right: rem(40);
+
+    @media (max-width: $d1279) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-size: rem(14);
+    line-height: rem(26);
+    color: $gray4;
+  }
+
+  @include element($parent, 'price') {
+    font-size: rem(20);
+    line-height: rem(24);
+    font-weight: 600;
+  }
+
+  @include element($parent, 'button') {
+    margin-right: rem(50);
+    font-size: rem(14);
+    height: rem(50);
+
+    @media (max-width: $d1279) {
+      background-color: $w;
+      width: 100%;
+      min-width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @include element($parent, 'links') {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $d1279) {
+      display: none;
+    }
+
+    @include modifier($parent, 'big') {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @include element($parent, 'link') {
+    font-size: rem(14);
+    line-height: rem(26);
+    transition: color $ease;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: rem(45);
+    }
+
+    @include modifier($parent, 'active') {
+      color: $red2;
+    }
+  }
+}

@@ -56,7 +56,7 @@ function deleteAccessRow(link)
 
 			this.input.IsWidthSet = true;
 
-			BX.bind(document, 'click', this.hideInput);
+			BX.bind(document, 'mousedown', this.hideInput);
 		},
 		hideInput : function (event)
 		{
@@ -77,7 +77,7 @@ function deleteAccessRow(link)
 			this.input.IsWidthSet = false;
 			this.input.setAttribute("data-height", this.label.offsetHeight);
 
-			BX.unbind(document, 'click', this.hideInput);
+			BX.unbind(document, 'mousedown', this.hideInput);
 		}
 	};
 
@@ -90,6 +90,7 @@ function deleteAccessRow(link)
 		this.toggleBtn = node.querySelector('.landing-form-collapse-block-js');
 		this.formInner = node.querySelector('.landing-form-inner-js');
 		this.tableWparp = node.querySelector('.landing-form-table-wrap-js');
+		this.sectionWrap = node.querySelector('.landing-additional-alt-promo-wrap');
 		this.startHeight = 0;
 		this.endHeight = 0;
 		this.isHidden = true;
@@ -98,7 +99,29 @@ function deleteAccessRow(link)
 		this.setHeightAuto = this.setHeightAuto.bind(this);
 		this.removeClassName = this.removeClassName.bind(this);
 
+
+		this.attributeOption = 'data-landing-additional-option';
+		this.attributeDetail = 'data-landing-additional-detail';
+
+		var sectionList = this.sectionWrap.children;
+		sectionList = BX.convert.nodeListToArray(sectionList);
+		sectionList.forEach(this.initSection, this);
+
 		BX.bind(this.toggleBtn, 'click', this.clickHandler);
+
+		if(window.location.hash)
+		{
+			var anchor = window.location.hash.substr(1);
+
+			sectionList.forEach(function (section) {
+				var id = section.getAttribute(this.attributeOption);
+
+				if (id === anchor)
+				{
+					BX.fireEvent(section, 'click');
+				}
+			}, this);
+		}
 	};
 	BX.Landing.ToggleFormFields.prototype =
 	{
@@ -114,7 +137,8 @@ function deleteAccessRow(link)
 
 			this.isHidden = false;
 		},
-		closeRows  : function ()
+
+		closeRows : function ()
 		{
 			this.formInner.style.height = this.endHeight + 'px';
 
@@ -126,6 +150,7 @@ function deleteAccessRow(link)
 
 			this.isHidden = true;
 		},
+
 		clickHandler : function ()
 		{
 			if(this.isHidden)
@@ -133,16 +158,49 @@ function deleteAccessRow(link)
 			else
 				this.closeRows();
 		},
+
 		setHeightAuto : function ()
 		{
 			this.formInner.style.height = 'auto';
 			BX.unbind(this.formInner, 'transitionend', this.setHeightAuto);
 		},
+
 		removeClassName : function ()
 		{
 			this.form.classList.remove('landing-form-collapsed-open');
 			BX.unbind(this.formInner, 'transitionend', this.removeClassName);
+		},
+
+		initSection : function (section)
+		{
+			BX.bind(section, "click", BX.delegate(function(e){
+				e.stopPropagation();
+				this.showSection(section);
+			}, this))
+		},
+
+		showSection : function(section)
+		{
+			this.showRows();
+			var id = section.getAttribute(this.attributeOption);
+			var detailNode = this.formInner.querySelector('[' + this.attributeDetail + '="' + id + '"]');
+
+			BX.addClass(detailNode, "landing-form-hidden-row-highlight");
+
+			setTimeout(function(){
+				var position = BX.pos(detailNode);
+
+				window.scrollTo({
+					top: position.top,
+					behavior: "smooth"
+				});
+			}, 300);
+
+			setTimeout(function(){
+				BX.removeClass(detailNode, "landing-form-hidden-row-highlight");
+			}, 1500);
 		}
+
 	};
 
 	/**
@@ -322,6 +380,10 @@ function deleteAccessRow(link)
 	BX.Landing.Custom503 = function()
 	{
 		var select = BX('landing-form-503-select');
+		if (!select)
+		{
+			return;
+		}
 		BX.bind(select, 'change', function ()
 		{
 			if(this.value === '')
@@ -480,6 +542,17 @@ function deleteAccessRow(link)
 			var saveRefs = BX('layout-tplrefs').value.split(',');
 			area = [];
 			layoutBlockContainer.innerHTML = '';
+			var rebuildHiddenField = function()
+			{
+				var refs = '';
+				for (var i= 0, c = area.length; i < c; i++)
+				{
+					refs += (i+1) + ':' +
+						(area[i].getValue() ? area[i].getValue().substr(8) : 0) +
+						',';
+				}
+				BX('layout-tplrefs').value = refs;
+			};
 			for (var i = 0; i < blocks; i++)
 			{
 				var block = BX.create('div', {
@@ -525,17 +598,8 @@ function deleteAccessRow(link)
 							'=TYPE': params.type
 						}
 					},
-					onInput: function()
-					{
-						var refs = '';
-						for (var i= 0, c = area.length; i < c; i++)
-						{
-							refs += (i+1) + ':' +
-									(area[i].getValue() ? area[i].getValue().substr(8) : 0) +
-									',';
-						}
-						BX('layout-tplrefs').value = refs;
-					}
+					onInit: BX.delegate(rebuildHiddenField),
+					onInput: BX.delegate(rebuildHiddenField)
 				});
 
 				area[i] = layoutField;
@@ -566,19 +630,17 @@ function deleteAccessRow(link)
 
 		var arrowContainer = document.querySelector('.landing-form-select-buttons');
 		var layoutContainer = document.querySelector('.landing-form-list-inner');
-		var layoutWithoutRight = BX('layout-radio-6');
-		arrowContainer.addEventListener('click', handleArrowClick.bind(this));
+		arrowContainer.addEventListener('click', handlerOnArrowClick.bind(this));
 
-		function handleArrowClick(event) {
-			if(event.target.classList.contains('landing-form-select-next')) {
+		function handlerOnArrowClick(event) {
+			if (event.target.classList.contains('landing-form-select-next'))
+			{
 				layoutContainer.classList.add('landing-form-list-inner-prev');
-			} else {
+			}
+			else
+			{
 				layoutContainer.classList.remove('landing-form-list-inner-prev');
 			}
-		}
-
-		if(layoutWithoutRight.checked) {
-			layoutContainer.classList.add('landing-form-list-inner-prev');
 		}
 	};
 
@@ -588,11 +650,17 @@ function deleteAccessRow(link)
 
 	BX.Landing.Metrika = function()
 	{
+		if (!BX('field-gacounter_counter-use'))
+		{
+			return;
+		}
+
 		var inputGa = BX('field-gacounter_counter-use');
 		var inputGaClick = BX('field-gacounter_send_click-use');
 		var inputGaShow = BX('field-gacounter_send_show-use');
 
-		if(inputGa.value === '') {
+		if (inputGa.value === '')
+		{
 			inputGaClick.disabled = true;
 			inputGaShow.disabled = true;
 		}
@@ -600,13 +668,16 @@ function deleteAccessRow(link)
 		inputGa.addEventListener('input', onInput.bind(this));
 
 		function onInput() {
-			if(inputGa.value === '') {
+			if (inputGa.value === '')
+			{
 				inputGaClick.disabled = true;
 				inputGaClick.checked = false;
 
 				inputGaShow.disabled = true;
 				inputGaShow.checked = false;
-			} else {
+			}
+			else
+			{
 				inputGaClick.disabled = false;
 				inputGaShow.disabled = false;
 			}
@@ -641,9 +712,12 @@ function deleteAccessRow(link)
 	BX.Landing.IblockSelect.prototype = {
 
 		init: function(section) {
-			if(!BX("settings_iblock_id").value) {
+			if (!BX("settings_iblock_id").value)
+			{
 				section.classList.add("landing-form-field-section-hidden");
-			} else {
+			}
+			else
+			{
 				section.classList.remove("landing-form-field-section-hidden");
 			}
 		}

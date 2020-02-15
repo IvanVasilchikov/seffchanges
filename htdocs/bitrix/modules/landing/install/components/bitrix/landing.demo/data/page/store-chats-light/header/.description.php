@@ -38,6 +38,7 @@ return array(
 					0 => array(
 						'alt' => 'Logo',
 						'src' => 'https://cdn.bitrix24.site/bitrix/images/landing/logos/chats-store-light-small.png',
+						'src2x' => 'https://cdn.bitrix24.site/bitrix/images/landing/logos/chats-store-light-small.png@2x',
 						'url' => '{"text":"","href":"#system_mainpage","target":"_self","enabled":true}',
 					),
 				),

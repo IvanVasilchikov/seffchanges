@@ -1,0 +1,35 @@
+{
+  "header": {
+    "phone": "+7 (945) 560-20-10"
+  },
+  "content": [
+    {
+      "type": "plan",
+      "heading": "Планировка",
+      "items": ["/assets/images/plan.jpg"]
+    }, {
+      "type": "gallery",
+      "heading": "Все фотографии",
+      "gallery": [
+        {
+          "mainImage": "./assets/images/detail/detail-img-1.jpg",
+          "images": [
+            "./assets/images/detail/detail-img-2.jpg",
+            "./assets/images/detail/detail-img-3.jpg"
+          ]
+        }, {
+          "mainImage": "./assets/images/detail/detail-img-4.jpg",
+          "revers": true,
+          "images": [
+            "./assets/images/detail/detail-img-1.jpg",
+            "./assets/images/detail/detail-img-2.jpg"
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "phone": "+7 (945) 560-20-10",
+    "address": "119034, Москва, Пресненская Набережная, 12"
+  }
+}

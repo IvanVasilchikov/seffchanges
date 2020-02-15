@@ -1,0 +1,20 @@
+include ./../fonts/title/second/title-second.pug
+include ./../core/btn/btn.pug
+include ./../core/picture/picture.pug
+
+mixin presentation(info, className)
+  .presentation(class= className)
+      if (info.picture)
+        +picture(info.picture, 'presentation__background', 'lazyload')
+      else
+        | <!---->
+
+      .presentation__content
+        if (info.title)
+          +title-second(info.title, 'presentation__title')
+        else
+          | <!---->
+        if (info.btn)
+          +btn('button', info.btn.text, 'btn--transparent btn--white presentation__btn')(@click= 'popupOpen()')
+        else
+          | <!---->

@@ -72,6 +72,7 @@ class Role
 	 */
 	public static function getRights($id)
 	{
+		$id = (int)$id;
 		$result = new PublicActionResult();
 		$result->setResult(
 			RoleCore::getRights($id)
@@ -90,6 +91,7 @@ class Role
 	{
 		static $mixedParams = ['additional'];
 
+		$id = (int)$id;
 		$result = new PublicActionResult();
 		$result->setResult(true);
 		RoleCore::setRights(
@@ -111,7 +113,7 @@ class Role
 	{
 		$result = new PublicActionResult();
 		$result->setResult(true);
-		RoleCore::setAccessCodes($id, $codes);
+		RoleCore::setAccessCodes((int)$id, $codes);
 		return $result;
 	}
 

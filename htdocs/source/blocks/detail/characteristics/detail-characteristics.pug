@@ -1,0 +1,37 @@
+include ../../fonts/title/title.pug
+include ../../fonts/text/text.pug
+include ../../share/share.pug
+
+mixin detail-characteristics(info, className)
+  .detail-characteristics(class= className, id='characteristics', data-screen='characteristics')
+    .main.detail-characteristics__main
+      +title(info.title, 'detail-characteristics__title')
+      div.detail-characteristics__container
+        if info.info
+          .detail-characteristics__info
+            each item in info.info
+              .detail-characteristics__info-row
+                img.lazyload.detail-characteristics__info-icon(data-src=item.icon, alt='')
+                .detail-characteristics__info-title!= item.title
+                if (item.url)
+                  a.detail-characteristics__info-text(href=item.url)!= item.text
+                else
+                  .detail-characteristics__info-text!= item.text
+        else
+          | <!---->
+        if info.description
+          +text(info.description, 'detail-characteristics__text')
+        else
+          | <!---->
+      .detail-characteristics__buttons
+        if (info.presentation)
+          a.detail-characteristics__button(href=info.presentation, target='_blank', class=(showButton ? '' : 'detail-characteristics__button--hide'))
+            svg(style='width: 16px; height: 15px;')
+              use(xlink:href=loadAssets('./svg/download.svg'))
+            span Скачать презентацию объекта
+        else
+          button.detail-characteristics__button(type= 'button', @click= 'popupOpen(\'form\', \'presentation_complex\')', class=(showButton ? '' : 'detail-characteristics__button--hide'))
+            svg(style='width: 16px; height: 15px;')
+              use(xlink:href=loadAssets('./svg/download.svg'))
+            span Скачать презентацию объекта
+        +share(info.share, 'detail-characteristics__share')(ref='share', @visibilityToggle='toggleVisibility')

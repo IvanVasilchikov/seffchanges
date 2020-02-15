@@ -13,7 +13,8 @@ Loc::loadMessages(__FILE__);
 	'.default',
 	array(
 		'ROLE_EDIT' => $arResult['VARS']['role_edit'],
-		'PAGE_URL_ROLES' => $arParams['PAGE_URL_ROLES']
+		'PAGE_URL_ROLES' => $arParams['PAGE_URL_ROLES'],
+		'TYPE' => $arParams['TYPE']
 	),
 	$component
 );?>
@@ -24,9 +25,22 @@ Loc::loadMessages(__FILE__);
 		{
 			var disableFunc = function(e)
 			{
-				BX.Landing.PaymentAlertShow({
-					message: "<?= \CUtil::jsEscape(Loc::getMessage('LANDING_ROLES_UNAVAILABLE'));?>"
-				});
+				var errorText = "<?= \CUtil::jsEscape(Loc::getMessage('LANDING_ROLES_UNAVAILABLE'));?>";
+				if (typeof BX.Landing.PaymentAlertShow !== "undefined")
+				{
+					BX.Landing.PaymentAlertShow({
+						message: errorText
+					});
+				}
+				else
+				{
+					var msg = BX.Landing.UI.Tool.ActionDialog.getInstance();
+					msg.show({
+						content: errorText,
+						confirm: 'OK',
+						contentColor: 'grey'
+					});
+				}
 				if (e)
 				{
 					e.preventDefault();

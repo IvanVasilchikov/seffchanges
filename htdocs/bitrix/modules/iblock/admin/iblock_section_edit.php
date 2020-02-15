@@ -362,16 +362,26 @@ if(
 		$strWarning .= $bs->LAST_ERROR;
 		$bVarsFromForm = true;
 		$DB->Rollback();
+		$message = null;
 		if($e = $APPLICATION->GetException())
 			$message = new CAdminMessage(GetMessage("admin_lib_error"), $e);
 
-		if (is_object($message))
-		{
-			$errorMessage = implode("; ", $message->GetMessages());
-		}
-		else
+		if ($strWarning !== '')
 		{
 			$errorMessage = $strWarning;
+		}
+		elseif ($message instanceof \CAdminMessage)
+		{
+			$messageList = array();
+			foreach ($message->GetMessages() as $item)
+			{
+				if (is_array($item))
+					$messageList[] = $item["text"];
+				else
+					$messageList[] = $item;
+			}
+			$errorMessage = implode("; ", $messageList);
+			unset($messageList);
 		}
 		$adminSidePanelHelper->sendJsonErrorResponse($errorMessage);
 	}
@@ -586,7 +596,7 @@ if (!$bAutocomplete)
 			$deleteUrlParams['skip_public'] = true;
 		$urlDelete = $selfFolderUrl.CIBlock::GetAdminSectionListLink($IBLOCK_ID, $deleteUrlParams);
 		$urlDelete.= '&'.bitrix_sessid_get();
-		$urlDelete.= '&ID[]='.(preg_match('/^iblock_list_admin\.php/', $urlDelete) ? "S" : "").$ID;
+		$urlDelete.= '&ID[]='.(preg_match('/iblock_list_admin\.php/', $urlDelete) ? "S" : "").$ID;
 		$buttonAction = $adminSidePanelHelper->isPublicFrame() ? "ONCLICK" : "LINK";
 		$aMenu[] = array(
 			"TEXT" => htmlspecialcharsbx($arIBlock["SECTION_DELETE"]),
@@ -1377,6 +1387,14 @@ if($arIBlock["SECTION_PROPERTY"] === "Y")
 				}
 			}
 
+			\Bitrix\Main\Type\Collection::sortByColumn(
+				$arParents,
+				'LEFT_MARGIN',
+				'',
+				null,
+				true
+			);
+
 			$maxMargin = 0;
 			foreach ($arParents as $parent)
 			{
@@ -2026,7 +2044,7 @@ if(CIBlockRights::UserHasRightTo($IBLOCK_ID, $IBLOCK_ID, "iblock_edit") && (!def
 	echo
 		BeginNote(),
 		GetMessage("IBSEC_E_IBLOCK_MANAGE_HINT"),
-		' <a href="iblock_edit.php?type='.htmlspecialcharsbx($type).'&amp;lang='.LANGUAGE_ID.'&amp;ID='.$IBLOCK_ID.'&amp;admin=Y&amp;return_url='.urlencode(CIBlock::GetAdminSectionEditLink($IBLOCK_ID, $ID, array("find_section_section" => intval($find_section_section), "return_url" => strlen($return_url) > 0? $return_url: null))).'">',
+		' <a href="iblock_edit.php?type='.htmlspecialcharsbx($type).'&amp;lang='.LANGUAGE_ID.'&amp;ID='.$IBLOCK_ID.'&amp;admin=Y&amp;return_url='.urlencode(CIBlock::GetAdminSectionEditLink($IBLOCK_ID, $ID, array("find_section_section" => intval($find_section_section), "IBLOCK_SECTION_ID" => intval($find_section_section), "return_url" => strlen($return_url) > 0? $return_url: null))).'">',
 		GetMessage("IBSEC_E_IBLOCK_MANAGE_HINT_HREF"),
 		'</a>',
 		EndNote()

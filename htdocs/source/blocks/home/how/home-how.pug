@@ -1,0 +1,54 @@
+include ./../../fonts/title/second/title-second.pug
+include ./../../fonts/text/text.pug
+include ./../../core/picture/picture.pug
+
+mixin home-how(obj)
+  .home-how.main
+    if obj.picture
+      +picture(obj.picture, 'home-how__img', 'lazyload')
+    else
+      | <!---->
+    form.home-how__content(action=obj.url)
+      if (obj.success && !obj.success.show)
+        div
+          .home-how__items
+            each item, i in obj.tabs
+              div
+                if (i === obj.active)
+                  .home-how__item
+                    if item.title
+                      +title-second(item.title, 'home-how__title')
+                    else
+                      | <!---->
+                    if item.text
+                      +text(item.text, 'home-how__text')
+                    else
+                      | <!---->
+                    .home-how__answers
+                      each el in item.answers
+                        label.home-how__answer
+                          input(type='radio', value=el.value, name=el.name, @change='changeQuestion(i)', v-model='formData[el.name]')
+                          .home-how__answer-content
+                            span!= el.text
+                else
+                  | <!---->
+
+          .home-how__pag Вопрос
+            | &nbsp;
+            span!= obj.active + 1
+            | &nbsp;из #{ obj.tabs.length }
+      else
+        | <!---->
+
+      if (obj.success && obj.success.show)
+        .home-how__success
+          if obj.success.title
+            +title-second(obj.success.title, 'home-how__title')
+          else
+            | <!---->
+          if obj.success.text
+            +text(obj.success.text, 'home-how__text')
+          else
+            | <!---->
+      else
+        | <!---->

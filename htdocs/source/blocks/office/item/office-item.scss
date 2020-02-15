@@ -1,0 +1,130 @@
+$parent: office-item;
+
+@include block ($parent) {
+  width: 100%;
+  border: rem(1) solid $gray3;
+
+  @media (min-width: $tMin) {
+    display: flex;
+    border: none;
+    min-height: rem(292);
+  }
+
+  @media (min-width: $d1280) {
+    min-height: rem(291);
+
+    &:hover {
+      cursor: pointer;
+
+      @include element ($parent, 'btn') {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include element ($parent, 'photo') {
+    background-color: $w;
+    height: rem(190);
+    position: relative;
+
+    @media (min-width: $tMin) {
+      background-color: rgba($gray3, 0.2);
+      height: auto;
+      width: 100%;
+      max-width: rem(285);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: $d1280) {
+      max-width: rem(282);
+    }
+  }
+
+  @include element ($parent, 'avatar') {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: rem(245);
+    height: rem(223);
+
+    img {
+      object-fit: cover;
+      object-position: top;
+      font-family: 'object-fit: cover; object-position: top;';
+    }
+
+    @media (min-width: $tMin) {
+      width: rem(257);
+      height: rem(328);
+    }
+  }
+
+  @include element ($parent, 'person') {
+    background-color: rgba($gray3, 0.2);
+    padding: rem(34) rem(10) rem(40);
+    text-align: center;
+    min-height: rem(239);
+
+    @media (min-width: $tMin) {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      padding: rem(62) rem(34) rem(65) rem(15);
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(29) rem(15) 0 rem(25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  @include element ($parent, 'person-name') {
+    word-wrap: break-word;
+    margin-bottom: rem(15);
+    font-size: rem(22);
+    font-family: $BaronNeue;
+    font-weight: 600;
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  @include element ($parent, 'person-post') {
+    margin-bottom: rem(15);
+    word-wrap: break-word;
+    color: $gray-bd;
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(13);
+    }
+  }
+
+  @include element ($parent, 'person-mail') {
+    margin-bottom: rem(25);
+    word-wrap: break-word;
+    color: $red2;
+    font-weight: 600;
+    display: inline-block;
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(22);
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    height: rem(49);
+    width: 100%;
+    max-width: rem(229);
+    transition: border 0.4s ease, background 0.4s ease, color 0.4s ease, opacity 0.4s ease;
+
+    @media (min-width: $d1280) {
+      opacity: 0;
+    }
+  }
+}

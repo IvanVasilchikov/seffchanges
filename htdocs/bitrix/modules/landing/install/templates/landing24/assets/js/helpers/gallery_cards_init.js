@@ -40,6 +40,7 @@
 		dataFancyboxInitied: 'data-fancybox-initied',
 		dataFancyboxTitle: 'data-caption',
 		dataLinkClasses: 'data-link-classes',
+		carouselClonedClasses: 'slick-cloned',
 
 		// create A around the image, need to fancybox popup
 		addOuterLink: function (image)
@@ -90,6 +91,12 @@
 			var images = BX.findChild(this.gallery, {attribute: this.dataFancybox}, true, true);
 			images.forEach(BX.delegate(function (image)
 			{
+				// fix double images trouble in slick carousel cloned sliders
+				if(BX.findParent(image, {class: this.carouselClonedClasses}))
+				{
+					return;
+				}
+
 				if(!this.isImageInitied(image))
 				{
 					this.addOuterLink(image);

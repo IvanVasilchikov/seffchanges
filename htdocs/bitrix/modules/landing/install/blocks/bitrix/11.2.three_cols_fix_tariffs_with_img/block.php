@@ -31,10 +31,10 @@
 						</div>
 					</header>
 
-					<div class="landing-block-node-card-price g-font-weight-700 d-block g-color-white g-font-size-26 g-letter-spacing-5 g-mb-20">
+					<div class="landing-block-node-card-price g-font-weight-700 d-block g-color-white g-font-size-26 g-letter-spacing-5">
 						$100.00
 					</div>
-					<ul class="landing-block-node-card-price-list list-unstyled g-letter-spacing-0_5 g-font-size-12 mb-0">
+					<ul class="landing-block-node-card-price-list list-unstyled g-letter-spacing-0_5 g-font-size-12 mb-0 g-pt-20">
 						<li class="g-theme-photography-bg-gray-dark-v3 g-py-10 g-px-30"><b>10%</b> In hac habitasse
 							platea
 						</li>
@@ -78,10 +78,10 @@
 						</div>
 					</header>
 
-					<div class="landing-block-node-card-price g-font-weight-700 d-block g-color-white g-font-size-26 g-letter-spacing-5 g-mb-20">
+					<div class="landing-block-node-card-price g-font-weight-700 d-block g-color-white g-font-size-26 g-letter-spacing-5">
 						$150.00
 					</div>
-					<ul class="landing-block-node-card-price-list list-unstyled g-letter-spacing-0_5 g-font-size-12 mb-0">
+					<ul class="landing-block-node-card-price-list list-unstyled g-letter-spacing-0_5 g-font-size-12 mb-0 g-pt-20">
 						<li class="g-theme-photography-bg-gray-dark-v3 g-py-10 g-px-30"><b>10%</b> In hac habitasse
 							platea
 						</li>
@@ -126,10 +126,10 @@
 						</div>
 					</header>
 
-					<div class="landing-block-node-card-price g-font-weight-700 d-block g-color-white g-font-size-26 g-letter-spacing-5 g-mb-20">
+					<div class="landing-block-node-card-price g-font-weight-700 d-block g-color-white g-font-size-26 g-letter-spacing-5">
 						$200.00
 					</div>
-					<ul class="landing-block-node-card-price-list list-unstyled g-letter-spacing-0_5 g-font-size-12 mb-0">
+					<ul class="landing-block-node-card-price-list list-unstyled g-letter-spacing-0_5 g-font-size-12 mb-0 g-pt-20">
 						<li class="g-theme-photography-bg-gray-dark-v3 g-py-10 g-px-30"><b>10%</b> In hac habitasse
 							platea
 						</li>

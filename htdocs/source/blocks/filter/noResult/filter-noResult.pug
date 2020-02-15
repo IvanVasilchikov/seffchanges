@@ -1,0 +1,7 @@
+mixin filter-noResult(info, className, resetBtn)
+  .filter-noResult(class=className)
+    .filter-noResult__text!= info
+    if (resetBtn)
+      .filter-noResult__button(@click='resetFilter') Сбросить фильтр
+    else
+      | <!---->

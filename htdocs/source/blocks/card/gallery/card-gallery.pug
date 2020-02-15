@@ -1,0 +1,17 @@
+mixin card-gallery(slides, className, paginationClass, isPrev)
+  .card-gallery.swiper-container(class=className)
+    .card-gallery__pagination(class=paginationClass)
+    if (isPrev === true && slides.length > 1)
+      div
+        .card-gallery__btn.swiper-button-prev(@click.stop = 'prev')
+          svg
+            use(xlink:href='/assets/sprite.svg#arrow-left')
+        .card-gallery__btn.swiper-button-next(@click.stop = 'next')
+          svg
+            use(xlink:href='/assets/sprite.svg#arrow-right2')
+    else
+      | <!---->
+    .swiper-wrapper
+      each slide in slides
+        .swiper-slide.card-gallery__slide
+          img.card-gallery__image.lazyload(data-src=slide, alt='')

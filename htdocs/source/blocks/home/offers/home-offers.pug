@@ -1,0 +1,24 @@
+include ./../../fonts/title/title.pug
+include ./../../fonts/title/third/title-third.pug
+include ./../../fonts/title/fifth/title-fifth.pug
+include ./../../fonts/text/little/text-little.pug
+include ./../../card/small/card-small.pug
+include ../../tabs/tabs.pug
+
+mixin home-offers(obj)
+  .home-offers.main
+    .home-offers__head
+      if obj.title
+        +title(obj.title, 'home-offers__title')
+      if obj.sTitle
+        +title-fifth(obj.sTitle, 'title-fifth--up home-offers__s-title')
+    if obj.tabs
+      .home-offers__tabs-wrap
+        +tabs(obj.tabs, 'home-offers__tabs')(@changeTab='changeTab')
+    .home-offers__items-wrap
+      each item, i in obj.itemsWrap
+        .home-offers__items(v-if='activeTab === item.name')
+          .home-offers__items-cards
+            if item.cards
+              each el in item.cards
+                +card-small(el, 'home-offers__item')(:key='el.id')

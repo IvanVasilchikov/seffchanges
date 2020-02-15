@@ -6,12 +6,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)
 
 use \Bitrix\Crm\WebForm\Preset;
 use \Bitrix\Landing\Rights;
+use \Bitrix\Landing\Role;
+use \Bitrix\Landing\Block;
 use \Bitrix\Landing\Manager;
 use \Bitrix\Main\Localization\Loc;
 use \Bitrix\Main\Application;
 use \Bitrix\Main\Web\Uri;
 use \Bitrix\Main\Loader;
 use \Bitrix\Main\SiteTemplateTable;
+use \Bitrix\Main\UserConsent\Consent;
 use \Bitrix\Main\UserConsent\Agreement;
 use \Bitrix\Main\UserConsent\Internals\AgreementTable;
 use \Bitrix\Main\UserConsent\Internals\ConsentTable;
@@ -42,11 +45,23 @@ if (Loader::includeModule('crm'))
 }
 
 // refresh block repo
-\Bitrix\Landing\Manager::getRestPath();
-\Bitrix\Landing\Block::getRepository();
+Manager::checkRepositoryVersion();
+Block::getRepository();
+$arParams['TYPE'] = isset($arParams['TYPE']) ? $arParams['TYPE'] : '';
+$arParams['STRICT_TYPE'] = isset($arParams['STRICT_TYPE']) ? $arParams['STRICT_TYPE'] : 'N';
 
 Manager::setPageTitle(
 	Loc::getMessage('LANDING_CMP_TITLE')
+);
+
+if (!\Bitrix\Landing\Site\Type::isEnabled($arParams['TYPE']))
+{
+	Showerror(Loc::getMessage('LANDING_CMP_TYPE_IS_NOT_ENABLED'));
+	return;
+}
+
+\Bitrix\Landing\Site\Type::setScope(
+	$arParams['TYPE']
 );
 
 // check rights
@@ -63,11 +78,7 @@ if (Loader::includeModule('bitrix24'))
 		return;
 	}
 }
-if (
-!\Bitrix\Landing\Rights::hasAdditionalRight(
-	\Bitrix\Landing\Rights::ADDITIONAL_RIGHTS['menu24']
-)
-)
+if (!Rights::hasAdditionalRight(Rights::ADDITIONAL_RIGHTS['menu24']))
 {
 	Manager::getApplication()->showAuthForm(
 		Loc::getMessage('LANDING_CMP_ACCESS_DENIED2')
@@ -136,6 +147,13 @@ $arParams['SEF_MODE'] = isset($arParams['SEF_MODE']) ? $arParams['SEF_MODE'] : '
 $arParams['SEF_FOLDER'] = isset($arParams['SEF_FOLDER']) ? $arParams['SEF_FOLDER'] : '/';
 $arParams['SEF_URL_TEMPLATES'] = isset($arParams['SEF_URL_TEMPLATES']) ? $arParams['SEF_URL_TEMPLATES'] : array();
 $arParams['VARIABLE_ALIASES'] = isset($arParams['VARIABLE_ALIASES']) ? $arParams['VARIABLE_ALIASES'] : array();
+$arParams['TILE_LANDING_MODE'] = isset($arParams['TILE_LANDING_MODE']) ? $arParams['TILE_LANDING_MODE'] : 'edit';
+$arParams['TILE_SITE_MODE'] = isset($arParams['TILE_SITE_MODE']) ? $arParams['TILE_SITE_MODE'] : 'list';
+$arParams['EDIT_FULL_PUBLICATION'] = isset($arParams['EDIT_FULL_PUBLICATION']) ? $arParams['EDIT_FULL_PUBLICATION'] : 'N';
+$arParams['EDIT_PANEL_LIGHT_MODE'] = isset($arParams['EDIT_PANEL_LIGHT_MODE']) ? $arParams['EDIT_PANEL_LIGHT_MODE'] : 'N';
+$arParams['EDIT_DONT_LEAVE_FRAME'] = isset($arParams['EDIT_DONT_LEAVE_FRAME']) ? $arParams['EDIT_DONT_LEAVE_FRAME'] : 'N';
+$arParams['REOPEN_LOCATION_IN_SLIDER'] = isset($arParams['REOPEN_LOCATION_IN_SLIDER']) ? $arParams['REOPEN_LOCATION_IN_SLIDER'] : 'N';
+$arParams['DRAFT_MODE'] = isset($arParams['DRAFT_MODE']) ? $arParams['DRAFT_MODE'] : 'N';
 foreach ($defaultUrlTemplates404 as $pageCode => $pagePath)
 {
 	if (!isset($arParams['SEF_URL_TEMPLATES'][$pageCode]))
@@ -143,10 +161,7 @@ foreach ($defaultUrlTemplates404 as $pageCode => $pagePath)
 		$arParams['SEF_URL_TEMPLATES'][$pageCode] = $pagePath;
 	}
 }
-if (
-	!isset($arParams['TYPE']) ||
-	!isset($landingTypes[$arParams['TYPE']])
-)
+if (!$arParams['TYPE'] ||  !isset($landingTypes[$arParams['TYPE']]))
 {
 	$arParams['TYPE'] = \Bitrix\Landing\Site::getDefaultType();
 }
@@ -316,6 +331,7 @@ if (
 // rights
 $arResult['ACCESS_PAGE_NEW'] = 'N';
 $arResult['ACCESS_SITE_NEW'] = 'N';
+$arResult['ACCESS_SITE_SETTINGS'] = 'N';
 $rights = Rights::getOperationsForSite(0);
 if (
 	isset($arResult['VARS']['site_show']) &&
@@ -323,19 +339,20 @@ if (
 )
 {
 	$arResult['ACCESS_PAGE_NEW'] = Rights::hasAccessForSite(
-		$arResult['VARS']['site_show'],
-		Rights::ACCESS_TYPES['edit']
-	) ? 'Y' : 'N';
+			$arResult['VARS']['site_show'],
+			Rights::ACCESS_TYPES['edit']
+		)
+		? 'Y' : 'N';
+	$arResult['ACCESS_SITE_SETTINGS'] = in_array(Rights::ACCESS_TYPES['sett'], $rights)
+		? 'Y' : 'N';
 }
 else
 {
 	$arResult['ACCESS_SITE_NEW'] = (
-		Rights::hasAdditionalRight(
-			Rights::ADDITIONAL_RIGHTS['create']
-		)
-		&&
+		Rights::hasAdditionalRight(Rights::ADDITIONAL_RIGHTS['create']) &&
 		in_array(Rights::ACCESS_TYPES['edit'], $rights)
-	) ? 'Y' : 'N';
+	)
+		? 'Y' : 'N';
 }
 
 // disable domain's pages in the cloud
@@ -348,7 +365,7 @@ if ($componentPage == 'domains' || $componentPage == 'domain_edit')
 
 if (
 	$request->get('landing_mode') ||
-	!\Bitrix\Landing\Manager::isB24()
+	!Manager::isB24()
 )
 {
 	$this->IncludeComponentTemplate($componentPage);
@@ -382,12 +399,23 @@ foreach ($agreements as $lng => $item)
 			'NAME' => isset($MESS['LANDING_CMP_AGREEMENT_NAME'])
 						? $MESS['LANDING_CMP_AGREEMENT_NAME']
 						: '',
-			'TEXT' => isset($MESS['LANDING_CMP_AGREEMENT_TEXT'])
-						? $MESS['LANDING_CMP_AGREEMENT_TEXT']
+			'TEXT' => isset($MESS['LANDING_CMP_AGREEMENT_TEXT2'])
+						? $MESS['LANDING_CMP_AGREEMENT_TEXT2']
 						: '',
-			'LANGUAGE_ID' => $lng,
+			'LANGUAGE_ID' => $lng
 		);
 	}
+}
+
+// check actual agreements
+$needToUpdate = Manager::getOption('user_agreement_version') <
+				Manager::USER_AGREEMENT_VERSION;
+if ($needToUpdate)
+{
+	Manager::setOption(
+		'user_agreement_version',
+		Manager::USER_AGREEMENT_VERSION
+	);
 }
 
 // current from database (actualize in db)
@@ -396,7 +424,8 @@ $res = AgreementTable::getList(array(
 		'ID',
 		'NAME',
 		'TEXT' => 'AGREEMENT_TEXT',
-		'LANGUAGE_ID'
+		'LANGUAGE_ID',
+		'LABEL_TEXT'
 	),
 	'filter' => array(
 		'=ACTIVE' => 'Y',
@@ -406,6 +435,12 @@ $res = AgreementTable::getList(array(
 ));
 while ($row = $res->fetch())
 {
+	if ($needToUpdate)
+	{
+		AgreementTable::delete($row['ID']);
+		continue;
+	}
+
 	$agreementsId[] = $row['ID'];
 	$actual = $agreements[$row['LANGUAGE_ID']];
 	if (
@@ -413,10 +448,17 @@ while ($row = $res->fetch())
 		$row['TEXT'] != $actual['TEXT']
 	)
 	{
-		AgreementTable::update($row['ID'], array(
+		AgreementTable::update($row['ID'], [
 			'NAME' => $actual['NAME'],
-			'AGREEMENT_TEXT' => $actual['TEXT']
-		));
+			'AGREEMENT_TEXT' => $actual['TEXT'],
+			'LABEL_TEXT' => Loc::getMessage('LANDING_CMP_AGREEMENT_LABEL')
+		]);
+	}
+	else if (!$row['LABEL_TEXT'])
+	{
+		AgreementTable::update($row['ID'], [
+			'LABEL_TEXT' => Loc::getMessage('LANDING_CMP_AGREEMENT_LABEL')
+		]);
 	}
 	$agreements[$row['LANGUAGE_ID']]['ID'] = $row['ID'];
 }
@@ -431,7 +473,8 @@ foreach ($agreements as $lng => $agreement)
 			'LANGUAGE_ID' => $lng,
 			'TYPE' => Agreement::TYPE_CUSTOM,
 			'NAME' => $agreement['NAME'],
-			'AGREEMENT_TEXT' => $agreement['TEXT']
+			'AGREEMENT_TEXT' => $agreement['TEXT'],
+			'LABEL_TEXT' => Loc::getMessage('LANDING_CMP_AGREEMENT_LABEL')
 		));
 		if ($res->isSuccess())
 		{
@@ -487,7 +530,7 @@ if (
 	check_bitrix_sessid()
 )
 {
-	\Bitrix\Main\UserConsent\Consent::addByContext(
+	Consent::addByContext(
 		$arResult['AGREEMENT']['ID']
 	);
 	LocalRedirect($uriString);

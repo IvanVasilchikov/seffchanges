@@ -32,14 +32,6 @@ return array(
 	'layout' => array(),
 	'items' => array(
 		'0' => array(
-			'code' => '17.copyright',
-			'nodes' => array(
-				'.landing-block-node-text' => array(
-					0 => '2019 &copy; All rights reserved',
-				),
-			),
-		),
-		'1' => array(
 			'code' => '55.1.list_of_links',
 			'access' => 'X',
 			'cards' => array(
@@ -108,6 +100,14 @@ return array(
 				),
 				'#wrapper' => array(
 					0 => 'landing-block g-pt-10 g-pb-10 g-pl-15 g-pr-15 u-block-border u-block-border-margin-md g-rounded-6 g-bg-white',
+				),
+			),
+		),
+		'1' => array(
+			'code' => '17.copyright',
+			'nodes' => array(
+				'.landing-block-node-text' => array(
+					0 => '2019 &copy; All rights reserved',
 				),
 			),
 		),

@@ -1,0 +1,6 @@
+mixin filter-radio(buttons, name, className, parentName)
+  .filter-radio(class=[className, (buttons.length >= 3 ? 'filter-radio--big' : '')])
+    each radio in buttons
+      .filter-radio__item
+        input(type='radio', name=name, value=radio.value, checked=radio.checked, v-model='checked')
+        label.filter-radio__label(@click='checked = radio.value, $emit(\'change\', checked, name)')!= radio.text

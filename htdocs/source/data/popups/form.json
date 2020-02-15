@@ -1,0 +1,680 @@
+{
+  "brokerSelection": {
+    "title": "заказать подбор брокеру",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "select",
+        "title": "Жилая в городе",
+        "info": {
+          "name": "typeEstate",
+          "values": [
+            {
+              "text": "Жилая в городе",
+              "value": "Городская",
+              "selected": true
+            },
+            {
+              "text": "Жилая за городом",
+              "value": "Загородная"
+            }
+          ]
+        }
+      },
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      },
+      {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true,
+          "lengthString": {
+            "min": 5,
+            "max": 250
+          }
+        }
+      },
+      {
+        "type": "textarea",
+        "name": "message",
+        "placeholder": "Сообщение*",
+        "value": "",
+        "checked": {
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 160
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "callback": {
+    "title": "заказать обратный звонок",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      },
+      {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      },
+      {
+        "type": "textarea",
+        "name": "comment",
+        "placeholder": "Комментарий",
+        "value": "",
+        "checked": {
+          "required": false,
+          "lengthString": {
+            "min": 5,
+            "max": 250
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "presentation": {
+    "className": "popup-form--wide",
+    "picture": {
+      "sources": {
+        "mobile": [ "assets/images/background-book.jpg" ],
+        "tablet": [ "assets/images/background-book.jpg" ],
+        "desktop": [ "assets/images/background-book.jpg" ]
+      },
+      "alt": "alt",
+      "title": "Title text"
+    },
+    "title": "получить презентацию",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      }
+    ],
+    "btnPhrase": "Получить презентацию",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "presentation_complex": {
+    "className": "popup-form--wide",
+    "picture": {
+      "sources": {
+        "mobile": [ "assets/images/background-book.jpg" ],
+        "tablet": [ "assets/images/background-book.jpg" ],
+        "desktop": [ "assets/images/background-book.jpg" ]
+      },
+      "alt": "alt",
+      "title": "Title text"
+    },
+    "title": "получить презентацию",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      }
+    ],
+    "btnPhrase": "Получить презентацию",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "writeUs" : {
+    "title": "Написать нам",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "textarea",
+        "name": "message",
+        "placeholder": "Сообщение*",
+        "value": "",
+        "checked": {
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 160
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "writeUs_common" : {
+    "title": "Написать нам",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "textarea",
+        "name": "message",
+        "placeholder": "Сообщение*",
+        "value": "",
+        "checked": {
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 160
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "yourPrice": {
+    "title": "Предложить цену",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      },
+      {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      },
+      {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      },
+      {
+        "type": "input",
+        "name": "offer",
+        "placeholder": "Готов предложить*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "consultation" : {
+    "title": "Получить консультацию",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      }, {
+        "type": "textarea",
+        "name": "message",
+        "placeholder": "Сообщение*",
+        "value": "",
+        "checked": {
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 160
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "request_price" : {
+    "title": "Запросить цену",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true
+        }
+      }, {
+        "type": "textarea",
+        "name": "message",
+        "placeholder": "Сообщение*",
+        "value": "",
+        "checked": {
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 160
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Отправить заявку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  },
+  "compilation": {
+    "className": "popup-form--wide",
+    "picture": {
+      "sources": {
+        "mobile": [ "assets/images/background-book.jpg" ],
+        "tablet": [ "assets/images/background-book.jpg" ],
+        "desktop": [ "assets/images/background-book.jpg" ]
+      },
+      "alt": "alt",
+      "title": "Title text"
+    },
+    "title": "получить подборку",
+    "action": "api/status.json",
+    "hidden": {
+      "param": "PARAM_1"
+    },
+    "inputs": [
+      {
+        "type": "input",
+        "name": "name",
+        "placeholder": "Имя*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 1,
+            "max": 50
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "phone",
+        "placeholder": "+7 (___) ___-__-__*",
+        "value": "",
+        "maskInfo": {
+          "complete": false
+        },
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "lengthString": {
+            "min": 17,
+            "max": 17
+          }
+        }
+      }, {
+        "type": "input",
+        "name": "email",
+        "placeholder": "E-mail*",
+        "value": "",
+        "checked": {
+          "value": "waiting",
+          "required": true,
+          "email": true,
+          "lengthString": {
+            "min": 5,
+            "max": 250
+          }
+        }
+      }
+    ],
+    "btnPhrase": "Получить подборку",
+    "checkbox": {
+      "checked": false,
+      "name": "checkbox",
+      "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+      "value": ""
+    }
+  }
+}

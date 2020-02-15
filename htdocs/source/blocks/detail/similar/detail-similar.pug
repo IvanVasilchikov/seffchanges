@@ -1,0 +1,24 @@
+include ../../fonts/title/title.pug
+include ../../tabs/tabs.pug
+include ../../card/small/card-small.pug
+include ../../core/label/label.pug
+
+mixin detail-similar(info)
+  .detail-similar(id='detail-similar')
+    .main
+      +title(info.title, 'detail-similar__title')
+      if info.tabs
+        .detail-similar__tabs-wrp
+          +tabs(info.tabs, 'detail-similar__tabs')(@changeTab='setTab')
+      else
+        | <!---->
+      .detail-similar__cards
+        each card in info.cards
+          +card-small(card, 'detail-similar__card')(:key='card.id')
+      if info.tags
+        .detail-similar__tags-wrp
+          .detail-similar__tags
+            each item in info.tags
+              +label(item, 'detail-similar__tag')(@change='updateLabels')
+      else
+        | <!---->

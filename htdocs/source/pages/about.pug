@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/about/about.pug
+
+block vars
+  - homepage = false;
+  - var about = require('../data/about.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      about: !{JSON.stringify(about)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +about(about)

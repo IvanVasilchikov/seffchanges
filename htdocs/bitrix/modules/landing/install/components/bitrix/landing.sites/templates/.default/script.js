@@ -109,7 +109,7 @@
 			};
 		},
 
-		action: function(action, data, successClb)
+		action: function(action, data, successClb, componentName)
 		{
 			var loaderContainer = BX.create('div',{
 				attrs:{className:'landing-filter-loading-container'}
@@ -120,11 +120,18 @@
 			loader.show(loaderContainer);
 
 			BX.ajax({
-				url: '/bitrix/tools/landing/ajax.php?action=' + action,
+				url: BX.util.add_url_param(
+					window.location.href,
+					{action: action}
+					),
 				method: 'POST',
 				data: {
 					data: data,
-					sessid: BX.message('bitrix_sessid')
+					sessid: BX.message('bitrix_sessid'),
+					actionType: 'rest',
+					componentName: typeof componentName !== 'undefined'
+									? componentName
+									: null
 				},
 				dataType: 'json',
 				onsuccess: function(data)
@@ -139,14 +146,10 @@
 					{
 						if (data.type === 'error')
 						{
-							var errorCode = data.result[0].error;
 							var msg = BX.Landing.UI.Tool.ActionDialog.getInstance();
 							if (
-								(
-									errorCode == 'PUBLIC_SITE_REACHED' ||
-									errorCode == 'PUBLIC_PAGE_REACHED'
-								) &&
-								typeof BX.Landing.PaymentAlertShow !== 'undefined'
+								typeof BX.Landing.PaymentAlertShow !== 'undefined' &&
+								data.error_type === 'payment'
 							)
 							{
 								BX.Landing.PaymentAlertShow({
@@ -170,11 +173,19 @@
 							}
 							else
 							{
-								BX.onCustomEvent('BX.Main.Filter:apply');
+								if (top.window !== window)
+								{
+									// we are in slider
+									window.location.reload();
+								}
+								else
+								{
+									BX.onCustomEvent('BX.Landing.Filter:apply');
+								}
 							}
 						}
 					}
-				}
+				}.bind(this)
 			});
 		},
 
@@ -222,7 +233,7 @@
 										function()
 										{
 											this.transferPopup.close();
-											BX.onCustomEvent('BX.Main.Filter:apply');
+											BX.onCustomEvent('BX.Landing.Filter:apply');
 										}.bind(this)
 									);
 								}.bind(this)

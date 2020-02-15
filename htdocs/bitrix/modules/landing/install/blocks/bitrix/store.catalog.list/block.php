@@ -53,8 +53,8 @@ if ($detailUrl)
 			'PATH_TO_ORDER' => '#system_order',
 			'SHOW_EMPTY_VALUES' => 'N',
 			'PATH_TO_AUTHORIZE' => '#system_personal?SECTION=private',
-			'POSITION_HORIZONTAL' => 'left',
-			'POSITION_VERTICAL' => 'bottom',
+			'POSITION_HORIZONTAL' => $classBlock->get('CART_POSITION_HORIZONTAL'),
+			'POSITION_VERTICAL' => $classBlock->get('CART_POSITION_VERTICAL'),
 			'HIDE_ON_BASKET_PAGES' => 'Y',
 			'CONTEXT_SITE_ID' => $classBlock->get('SITE_ID')
 		),
@@ -157,6 +157,7 @@ if ($detailUrl)
 						'BROWSER_TITLE' => '-',
 						'ADD_SECTIONS_CHAIN' => 'Y',
 						'SET_TITLE' => $classBlock->get('SET_TITLE'),
+						'ALLOW_SEO_DATA' => 'Y',
 						'SET_STATUS_404' => 'N',
 						'CACHE_FILTER' => 'N',
 						'CONVERT_CURRENCY' => 'Y',

@@ -77,7 +77,15 @@ class LandingSiteEditComponent extends LandingBaseFormComponent
 	 */
 	protected function getLangCodes()
 	{
-		$file = \Bitrix\Landing\Manager::getDocRoot();
+		if (
+			!Manager::isB24() ||
+			!defined('SITE_TEMPLATE_PATH')
+		)
+		{
+			return [];
+		}
+
+		$file = Manager::getDocRoot();
 		$file .= SITE_TEMPLATE_PATH;
 		$file .= '/languages.php';
 
@@ -108,6 +116,17 @@ class LandingSiteEditComponent extends LandingBaseFormComponent
 	}
 
 	/**
+	 * Returns true, if this site without external domain.
+	 * @return bool
+	 */
+	protected function isIntranet()
+	{
+		return
+			isset($this->arResult['SITE']['DOMAIN_ID']['CURRENT']) &&
+			$this->arResult['SITE']['DOMAIN_ID']['CURRENT'] == '0';
+	}
+
+	/**
 	 * Base executable method.
 	 * @return void
 	 */
@@ -123,16 +142,45 @@ class LandingSiteEditComponent extends LandingBaseFormComponent
 			$this->checkParam('PAGE_URL_LANDING_VIEW', '');
 			$this->checkParam('TEMPLATE', '');
 
+			\Bitrix\Landing\Site\Type::setScope(
+				$this->arParams['TYPE']
+			);
+
 			$this->id = $this->arParams['SITE_ID'];
 			$this->successSavePage = $this->arParams['PAGE_URL_SITES'];
 			$this->template = $this->arParams['TEMPLATE'];
 
 			$this->arResult['SITE'] = $this->getRow();
 			$this->arResult['LANG_CODES'] = $this->getLangCodes();
-			$this->arResult['IP_FOR_DNS'] = $this->getIpForDNS();
 			$this->arResult['TEMPLATES'] = $this->getTemplates();
+			$this->arResult['IS_INTRANET'] = $this->isIntranet();
 			$this->arResult['SHOW_RIGHTS'] = Rights::isExtendedMode() && Rights::isAdmin();
 			$this->arResult['SETTINGS'] = [];
+
+			if (
+				!defined('LANDING_DISABLE_B24_MODE') &&
+				$this->arResult['SITE']['TYPE']['CURRENT'] == 'SMN'
+			)
+			{
+				Manager::forceB24disable(true);
+			}
+
+			if (Manager::isB24())
+			{
+				$this->arResult['IP_FOR_DNS'] = $this->getIpForDNS();
+			}
+
+			// set predefined for getting props from component
+			\Bitrix\Landing\Node\Component::setPredefineForDynamicProps([
+				'USE_ENHANCED_ECOMMERCE' => 'Y',
+				'SHOW_DISCOUNT_PERCENT' => 'Y',
+				'LABEL_PROP' => [
+					'NEWPRODUCT',
+					'SALELEADER',
+					'SPECIALOFFER'
+				],
+				'CONVERT_CURRENCY' => 'Y'
+			]);
 
 			// if access denied, or not found
 			if (
@@ -195,6 +243,11 @@ class LandingSiteEditComponent extends LandingBaseFormComponent
 
 			if ($this->id)
 			{
+				\Bitrix\Landing\Hook::setEditMode();
+				if ($this->arResult['IS_INTRANET'])
+				{
+					\Bitrix\Landing\Hook::setIntranetMode();
+				}
 				$this->arResult['HOOKS'] = $this->getHooks();
 				$this->arResult['TEMPLATES_REF'] = TemplateRef::getForSite($this->id);
 			}
@@ -264,5 +317,6 @@ class LandingSiteEditComponent extends LandingBaseFormComponent
 
 
 		parent::executeComponent();
+		Manager::forceB24disable(false);
 	}
 }

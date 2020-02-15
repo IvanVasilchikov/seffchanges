@@ -146,7 +146,7 @@ Loc::loadMessages(__FILE__);
 	<?else:?>
 		<select name="fields[DOMAIN_ID]" class="ui-select">
 			<?foreach ($arResult['DOMAINS'] as $item):?>
-				<option value="<?= $item['ID']?>"<?if ($item['ID'] == $row['DOMAIN_ID']['CURRENT']){?> selected="selected"<?}?>>
+				<option value="<?= $item['ID']?>"<?if ($item['ID'] == $arParams['DOMAIN_ID']){?> selected="selected"<?}?>>
 					<?= \htmlspecialcharsbx($item['DOMAIN']);?>
 				</option>
 			<?endforeach;?>

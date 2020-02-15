@@ -9,6 +9,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 /** @var array $arResult */
 /** @var array $arParams */
 /** @var \CMain $APPLICATION */
+/** @var LandingSiteEditComponent $component */
 
 use \Bitrix\Main\Page\Asset;
 use \Bitrix\Landing\Manager;
@@ -35,17 +36,19 @@ if ($arResult['FATAL'])
 $row = $arResult['SITE'];
 $hooks = $arResult['HOOKS'];
 $tplRefs = $arResult['TEMPLATES_REF'];
+$isIntranet = $arResult['IS_INTRANET'];
 $context = \Bitrix\Main\Application::getInstance()->getContext();
 $request = $context->getRequest();
+$isSMN = $row['TYPE']['CURRENT'] == 'SMN';
 
 // title
 if ($arParams['SITE_ID'])
 {
-	Manager::setPageTitle(Loc::getMessage('LANDING_TPL_TITLE_EDIT'));
+	Manager::setPageTitle($component->getMessageType('LANDING_TPL_TITLE_EDIT'));
 }
 else
 {
-	Manager::setPageTitle(Loc::getMessage('LANDING_TPL_TITLE_ADD'));
+	Manager::setPageTitle($component->getMessageType('LANDING_TPL_TITLE_ADD'));
 }
 
 // assets
@@ -88,9 +91,13 @@ if ($arResult['SHOW_RIGHTS'])
 		top.window['landingSettingsSaved'] = false;
 		<?if ($arParams['SUCCESS_SAVE']):?>
 		top.window['landingSettingsSaved'] = true;
-		top.BX.onCustomEvent('BX.Main.Filter:apply');
+		top.BX.onCustomEvent('BX.Landing.Filter:apply');
 		editComponent.actionClose();
+		top.BX.Landing.UI.Tool.ActionDialog.getInstance().close();
 		<?endif;?>
+		BX.Landing.Env.createInstance({
+			params: {type: '<?= $arParams['TYPE'];?>'}
+		});
 	});
 </script>
 
@@ -109,14 +116,14 @@ if ($arParams['SUCCESS_SAVE'])
 
 <form action="<?= \htmlspecialcharsbx($uriSave->getUri());?>" method="post" class="ui-form ui-form-gray-padding landing-form-collapsed landing-form-settings" id="landing-site-set-form">
 	<input type="hidden" name="fields[SAVE_FORM]" value="Y" />
-	<input type="hidden" name="fields[TYPE]" value="<?= $arParams['TYPE'];?>" />
+	<input type="hidden" name="fields[TYPE]" value="<?= $row['TYPE']['CURRENT'];?>" />
 	<input type="hidden" name="fields[CODE]" value="<?= $row['CODE']['CURRENT'];?>" />
 	<?= bitrix_sessid_post();?>
 
 	<div class="ui-form-title-block">
 		<span class="ui-editable-field" id="ui-editable-title">
-			<label class="ui-editable-field-label ui-editable-field-label-js"><?= $row['TITLE']['CURRENT']?></label>
-			<input type="text" name="fields[TITLE]" class="ui-input ui-editable-field-input ui-editable-field-input-js" value="<?= $row['TITLE']['CURRENT']?>" placeholder="<?= $row['TITLE']['TITLE']?>" />
+			<label class="ui-editable-field-label ui-editable-field-label-js"><?= $row['TITLE']['CURRENT'];?></label>
+			<input type="text" name="fields[TITLE]" class="ui-input ui-editable-field-input ui-editable-field-input-js" value="<?= $row['TITLE']['CURRENT'];?>" placeholder="<?= $row['TITLE']['TITLE'];?>" />
 			<span class="ui-title-input-btn ui-title-input-btn-js ui-editing-pen"></span>
 		</span>
 	</div>
@@ -124,6 +131,20 @@ if ($arParams['SUCCESS_SAVE'])
 	<div class="landing-form-inner-js landing-form-inner">
 		<div class="landing-form-table-wrap landing-form-table-wrap-js ui-form-inner">
 			<table class="ui-form-table landing-form-table">
+				<?if ($isIntranet):?>
+				<tr class="landing-form-site-name-fieldset">
+					<td class="ui-form-label ui-form-label-align-top">
+						<?= $component->getMessageType('LANDING_TPL_TITLE_ADDRESS_SITE');?>
+					</td>
+					<td class="ui-form-right-cell">
+						<span class="landing-form-site-name-label">
+							<?= \Bitrix\Landing\Domain::getHostUrl();?><?= Manager::getPublicationPath();?>
+						</span>
+						<input type="text" name="fields[CODE]" class="ui-input" value="<?= trim($row['CODE']['CURRENT'], '/');?>" placeholder="<?= $row['TITLE']['TITLE'];?>" />
+						<span class="landing-form-site-name-label">/</span>
+					</td>
+				</tr>
+				<?else:?>
 				<tr class="landing-form-site-name-fieldset">
 					<td class="ui-form-label ui-form-label-align-top"><?= $row['CODE']['TITLE']?></td>
 					<td class="ui-form-right-cell">
@@ -140,6 +161,7 @@ if ($arParams['SUCCESS_SAVE'])
 						);?>
 					</td>
 				</tr>
+				<?endif;?>
 			<?if (isset($hooks['B24BUTTON'])):
 				$pageFields = $hooks['B24BUTTON']->getPageFields();
 				if (isset($pageFields['B24BUTTON_CODE'])):
@@ -267,24 +289,55 @@ if ($arParams['SUCCESS_SAVE'])
 					<td class="ui-form-right-cell ui-form-collapse" colspan="2">
 						<div class="ui-form-collapse-block landing-form-collapse-block-js">
 							<span class="ui-form-collapse-label"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL');?></span>
-							<span class="landing-additional-alt-promo-wrap">
-								<span class="landing-additional-alt-promo-text">Favicon</span>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_BG');?></span>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_METRIKA');?></span>
-								<?/*<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_MAPS');?></span>*/?>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_VIEW');?></span>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_LAYOUT');?></span>
-								<?if (!empty($arResult['LANG_CODES']) && Manager::isB24() && $row['LANG']):?>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_LANG');?></span>
+							<span class="landing-additional-alt-promo-wrap" id="landing-additional">
+								<?if (isset($hooks['FAVICON'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="favicon">Favicon</span>
 								<?endif;?>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_404');?></span>
-								<?if (isset($hooks['ROBOTS'])):?>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_ROBOTS');?></span>
+								<?if (isset($hooks['BACKGROUND'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="background"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_BG');?></span>
 								<?endif;?>
-								<span class="landing-additional-alt-promo-text">HTML/CSS</span>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_OFF');?></span>
+								<?if (isset($hooks['METAGOOGLEVERIFICATION']) || isset($hooks['METAYANDEXVERIFICATION'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="verification"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_VERIFICATION');?></span>
+								<?endif;?>
+								<?if (isset($hooks['YACOUNTER']) || isset($hooks['GACOUNTER']) || isset($hooks['GTM'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="metrika"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_METRIKA');?></span>
+								<?endif;?>
+								<?if (isset($hooks['PIXELFB']) || isset($hooks['PIXELVK'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="pixel"><?= Loc::getMessage('LANDING_TPL_HOOK_PIXEL');?></span>
+								<?endif;?>
+								<?if (isset($hooks['GMAP'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="map_required_key"><?= Loc::getMessage('LANDING_TPL_HOOK_GMAP');?></span>
+								<?endif;?>
+								<?if (isset($hooks['VIEW'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="view"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_VIEW');?></span>
+								<?endif;?>
+								<?if ($arResult['TEMPLATES']):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="layout"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_LAYOUT');?></span>
+								<?endif;?>
+								<?if (!$isIntranet && !empty($arResult['LANG_CODES']) && $row['LANG']):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="lang"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_LANG');?></span>
+								<?endif;?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="404"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_404');?></span>
+								<?if (isset($hooks['ROBOTS']) && !$isSMN):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="robots"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_ROBOTS');?></span>
+								<?endif;?>
+								<?if (isset($hooks['SPEED'])):?>
+								<span class="landing-additional-alt-promo-text" data-landing-additional-option="speed"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_SPEED');?></span>
+								<?endif;?>
+								<?if (isset($hooks['HEADBLOCK'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="public_html_disallowed">HTML</span>
+								<?endif;?>
+								<?if (isset($hooks['CSSBLOCK'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="css">CSS</span>
+								<?endif;?>
+								<?if (!$isIntranet):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="off"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_OFF');?></span>
+								<?endif;?>
+								<?if (isset($hooks['COPYRIGHT'])):?>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="sign"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_SIGN');?></span>
+								<?endif;?>
 								<?if ($arResult['SHOW_RIGHTS']):?>
-								<span class="landing-additional-alt-promo-text"><?= Loc::getMessage('LANDING_TPL_HOOK_RIGHTS_LABEL');?></span>
+									<span class="landing-additional-alt-promo-text" data-landing-additional-option="access"><?= Loc::getMessage('LANDING_TPL_HOOK_RIGHTS_LABEL');?></span>
 								<?endif;?>
 							</span>
 						</div>
@@ -293,7 +346,7 @@ if ($arParams['SUCCESS_SAVE'])
 				<?if (isset($hooks['FAVICON'])):
 					$pageFields = $hooks['FAVICON']->getPageFields();
 					?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="favicon">
 					<td class="ui-form-label ui-form-label-align-top"><?= $hooks['FAVICON']->getTitle();?></td>
 					<td class="ui-form-right-cell ui-form-right-cell-favicon">
 						<div class="landing-form-favicon-wrap">
@@ -309,10 +362,11 @@ if ($arParams['SUCCESS_SAVE'])
 					</td>
 				</tr>
 				<?endif;?>
+				
 				<?if (isset($hooks['BACKGROUND'])):
 					$pageFields = $hooks['BACKGROUND']->getPageFields();
 					?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="background">
 					<td class="ui-form-label ui-form-label-align-top"><?= $hooks['BACKGROUND']->getTitle();?></td>
 					<td class="ui-form-right-cell">
 						<div class="ui-checkbox-hidden-input landing-form-page-background">
@@ -402,8 +456,22 @@ if ($arParams['SUCCESS_SAVE'])
 					</td>
 				</tr>
 				<?endif;?>
+				<?if (isset($hooks['METAGOOGLEVERIFICATION']) || isset($hooks['METAYANDEXVERIFICATION'])):?>
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="verification">
+					<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_ADDITIONAL_VERIFICATION');?></td>
+					<td class="ui-form-right-cell ui-form-right-cell-verification">
+						<?$template->showSimple('METAGOOGLEVERIFICATION');?>
+						<?
+						if (Manager::availableOnlyForZone('ru'))
+						{
+							$template->showSimple('METAYANDEXVERIFICATION');
+						}
+						?>
+					</td>
+				</tr>
+				<?endif;?>
 				<?if (isset($hooks['YACOUNTER']) || isset($hooks['GACOUNTER']) || isset($hooks['GTM'])):?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="metrika">
 					<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_HOOK_METRIKA');?></td>
 					<td class="ui-form-right-cell ui-form-right-cell-metrika">
 						<?$template->showSimple('GACOUNTER');?>
@@ -418,7 +486,7 @@ if ($arParams['SUCCESS_SAVE'])
 				</tr>
 				<?endif;?>
 				<?if (isset($hooks['PIXELFB']) || isset($hooks['PIXELVK'])):?>
-					<tr class="landing-form-hidden-row">
+					<tr class="landing-form-hidden-row" data-landing-additional-detail="pixel">
 						<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_HOOK_PIXEL');?></td>
 						<td class="ui-form-right-cell ui-form-right-cell-pixel">
 							<?$template->showSimple('PIXELFB');?>
@@ -432,7 +500,7 @@ if ($arParams['SUCCESS_SAVE'])
 					</tr>
 				<?endif;?>
 				<?if (isset($hooks['GMAP'])):?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="map_required_key">
 					<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_HOOK_GMAP');?></td>
 					<td class="ui-form-right-cell ui-form-right-cell-map">
 						<?$template->showSimple('GMAP');?>
@@ -442,7 +510,7 @@ if ($arParams['SUCCESS_SAVE'])
 				<?if (isset($hooks['VIEW'])):
 					$pageFields = $hooks['VIEW']->getPageFields();
 					?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="view">
 					<td class="ui-form-label ui-form-label-align-top"><?= $hooks['VIEW']->getTitle();?></td>
 					<td class="ui-form-right-cell">
 						<div class="ui-checkbox-hidden-input landing-form-type-page-block">
@@ -493,7 +561,7 @@ if ($arParams['SUCCESS_SAVE'])
 				</tr>
 				<?endif;?>
 				<?if ($arResult['TEMPLATES']):?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="layout">
 					<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_LAYOUT');?></td>
 					<td class="ui-form-right-cell">
 						<div class="ui-checkbox-hidden-input ui-checkbox-hidden-input-layout">
@@ -521,7 +589,6 @@ if ($arParams['SUCCESS_SAVE'])
 											?>id="layout-radio-<?= $i + 1;?>"<?
 											?><?if ($tpl['ID'] == $row['TPL_ID']['CURRENT']){?> checked="checked"<?}?>>
 										<?endforeach;?>
-										<input class="layout-switcher" data-layout="without_right" name="fields[TPL_ID]" id="layout-radio-6" type="radio">
 										<div class="landing-form-list">
 											<div class="landing-form-list-container">
 												<div class="landing-form-list-inner">
@@ -557,8 +624,8 @@ if ($arParams['SUCCESS_SAVE'])
 					</td>
 				</tr>
 				<?endif;?>
-				<?if (!empty($arResult['LANG_CODES']) && Manager::isB24() && $row['LANG']):?>
-					<tr class="landing-form-hidden-row">
+				<?if (!$isIntranet && !empty($arResult['LANG_CODES']) && $row['LANG']):?>
+					<tr class="landing-form-hidden-row" data-landing-additional-detail="lang">
 						<td class="ui-form-label"><?= $row['LANG']['TITLE'];?></td>
 						<td class="ui-form-right-cell">
 							<div class="landing-form-flex-box">
@@ -588,7 +655,7 @@ if ($arParams['SUCCESS_SAVE'])
 						</td>
 					</tr>
 				<?endif;?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="404">
 					<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_PAGE_404')?></td>
 					<td class="ui-form-right-cell">
 						<div class="ui-checkbox-hidden-input">
@@ -615,10 +682,10 @@ if ($arParams['SUCCESS_SAVE'])
 						</div>
 					</td>
 				</tr>
-				<?if (isset($hooks['ROBOTS'])):
+				<?if (isset($hooks['ROBOTS']) && !$isSMN):
 					$pageFields = $hooks['ROBOTS']->getPageFields();
 					?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="robots">
 					<td class="ui-form-label ui-form-label-align-top"><?= $hooks['ROBOTS']->getTitle();?></td>
 					<td class="ui-form-right-cell">
 						<div class="ui-checkbox-hidden-input landing-form-textarea-block">
@@ -653,13 +720,53 @@ if ($arParams['SUCCESS_SAVE'])
 					</td>
 				</tr>
 				<?endif;?>
+				<?if (isset($hooks['SPEED'])):
+					$pageFields = $hooks['SPEED']->getPageFields();
+					?>
+					<tr class="landing-form-hidden-row" data-landing-additional-detail="speed">
+						<td class="ui-form-label ui-form-label-align-top"><?= $hooks['SPEED']->getTitle();?></td>
+						<td class="ui-form-right-cell">
+							<!--							SPEED-->
+							<div class="ui-checkbox-block">
+								<?foreach(['USE_WEBPACK'] as $speedHook):?>
+									<?
+									if (isset($pageFields['SPEED_'.$speedHook]))
+									{
+										echo '<div class="ui-checkbox-hidden-input">';
+										if (!$pageFields['SPEED_'.$speedHook]->getValue())
+										{
+											$pageFields['SPEED_'.$speedHook]->setValue('N');
+										}
+										echo $pageFields['SPEED_'.$speedHook]->viewForm(array(
+											'class' => 'ui-checkbox',
+											'id' => 'checkbox-speed-'.strtolower($speedHook),
+											'name_format' => 'fields[ADDITIONAL_FIELDS][#field_code#]'
+										));
+										?>
+										<div class="ui-checkbox-label-wrapper">
+											<label for="checkbox-speed-<?=strtolower($speedHook)?>" class="ui-checkbox-label">
+												<?= $pageFields['SPEED_'.$speedHook]->getLabel();?>
+											</label>
+										</div>
+										<?
+										echo '</div>';
+									}
+									?>
+								<? endforeach; ?>
+							</div>
+							<div class="landing-form-help-link">
+								<?= $pageFields['SPEED_USE_WEBPACK']->getHelpValue();?>
+							</div>
+						</td>
+					</tr>
+				<?endif;?>
 				<?if (isset($hooks['HEADBLOCK'])):
 					$pageFields = $hooks['HEADBLOCK']->getPageFields();
 					?>
-					<tr class="landing-form-hidden-row">
+					<tr class="landing-form-hidden-row" data-landing-additional-detail="public_html_disallowed">
 						<td class="ui-form-label ui-form-label-align-top"><?= $hooks['HEADBLOCK']->getTitle();?></td>
 						<td class="ui-form-right-cell">
-							<div class="ui-checkbox-hidden-input landing-form-custom-fields">
+							<div class="ui-checkbox-hidden-input landing-form-custom-html">
 								<?
 								if (isset($pageFields['HEADBLOCK_USE']))
 								{
@@ -675,6 +782,26 @@ if ($arParams['SUCCESS_SAVE'])
 										<label class="ui-checkbox-label" for="checkbox-headblock-use">
 											<?= $pageFields['HEADBLOCK_USE']->getLabel();?>
 										</label>
+										<?if ($hooks['HEADBLOCK']->isLocked()):?>
+										<span class="landing-icon-lock"></span>
+										<script type="text/javascript">
+											BX.ready(function()
+											{
+												if (typeof BX.Landing.PaymentAlert !== 'undefined')
+												{
+													BX.Landing.PaymentAlert({
+														<?if ($pageFields['HEADBLOCK_USE']->isEmptyValue()):?>
+														nodes: [BX('checkbox-headblock-use'), BX('textarea-headblock-code')],
+														<?else:?>
+														nodes: [BX('textarea-headblock-code')],
+														<?endif;?>
+														title: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_HTML_DISABLED_TITLE'));?>',
+														message: '<?= \CUtil::jsEscape($hooks['HEADBLOCK']->getLockedMessage());?>'
+													});
+												}
+											});
+										</script>
+										<?endif;?>
 									<?endif;?>
 									<?if (isset($pageFields['HEADBLOCK_CODE'])):?>
 										<div class="ui-control-wrap">
@@ -684,20 +811,7 @@ if ($arParams['SUCCESS_SAVE'])
 											</div>
 											<?
 											$pageFields['HEADBLOCK_CODE']->viewForm(array(
-												'class' => 'ui-textarea',
-												'name_format' => 'fields[ADDITIONAL_FIELDS][#field_code#]'
-											));
-											?>
-										</div>
-									<?endif;?>
-									<?if (isset($pageFields['HEADBLOCK_CSS_CODE'])):?>
-										<div class="ui-control-wrap">
-											<div class="ui-form-control-label">
-												<div class="ui-form-control-label-title"><?= $pageFields['HEADBLOCK_CSS_CODE']->getLabel();?></div>
-												<div><?= $pageFields['HEADBLOCK_CSS_CODE']->getHelpValue();?></div>
-											</div>
-											<?
-											$pageFields['HEADBLOCK_CSS_CODE']->viewForm(array(
+												'id' => 'textarea-headblock-code',
 												'class' => 'ui-textarea',
 												'name_format' => 'fields[ADDITIONAL_FIELDS][#field_code#]'
 											));
@@ -709,7 +823,50 @@ if ($arParams['SUCCESS_SAVE'])
 						</td>
 					</tr>
 				<?endif;?>
-					<tr class="landing-form-hidden-row">
+				<?if (isset($hooks['CSSBLOCK'])):
+					$pageFields = $hooks['CSSBLOCK']->getPageFields();
+					?>
+					<tr class="landing-form-hidden-row" data-landing-additional-detail="css">
+						<td class="ui-form-label ui-form-label-align-top"><?= $hooks['CSSBLOCK']->getTitle();?></td>
+						<td class="ui-form-right-cell">
+							<div class="ui-checkbox-hidden-input landing-form-custom-css">
+								<?
+								if (isset($pageFields['CSSBLOCK_USE']))
+								{
+									$pageFields['CSSBLOCK_USE']->viewForm(array(
+										'class' => 'ui-checkbox',
+										'id' => 'checkbox-headblock-css',
+										'name_format' => 'fields[ADDITIONAL_FIELDS][#field_code#]'
+									));
+								}
+								?>
+								<div class="ui-checkbox-hidden-input-inner">
+									<?if (isset($pageFields['CSSBLOCK_USE'])):?>
+										<label class="ui-checkbox-label" for="checkbox-headblock-css">
+											<?= $pageFields['CSSBLOCK_USE']->getLabel();?>
+										</label>
+									<?endif;?>
+									<?if (isset($pageFields['CSSBLOCK_CODE'])):?>
+										<div class="ui-control-wrap">
+											<div class="ui-form-control-label">
+												<div class="ui-form-control-label-title"><?= $pageFields['CSSBLOCK_CODE']->getLabel();?></div>
+												<div><?= $pageFields['CSSBLOCK_CODE']->getHelpValue();?></div>
+											</div>
+											<?
+											$pageFields['CSSBLOCK_CODE']->viewForm(array(
+												'class' => 'ui-textarea',
+												'name_format' => 'fields[ADDITIONAL_FIELDS][#field_code#]'
+											));
+											?>
+										</div>
+									<?endif;?>
+								</div>
+							</div>
+						</td>
+					</tr>
+				<?endif;?>
+				<?if (!$isIntranet):?>
+					<tr class="landing-form-hidden-row" data-landing-additional-detail="off">
 						<td class="ui-form-label ui-form-label-align-top"><?= Loc::getMessage('LANDING_TPL_PAGE_503')?></td>
 						<td class="ui-form-right-cell">
 							<div class="ui-checkbox-hidden-input">
@@ -736,16 +893,20 @@ if ($arParams['SUCCESS_SAVE'])
 							</div>
 						</td>
 					</tr>
+				<?endif;?>
 				<?if (isset($hooks['COPYRIGHT'])):
 				$pageFields = $hooks['COPYRIGHT']->getPageFields();
 				if (isset($pageFields['COPYRIGHT_SHOW'])):
 				?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="sign">
 					<td class="ui-form-label"><?= $pageFields['COPYRIGHT_SHOW']->getLabel();?></td>
 					<td class="ui-form-right-cell ui-form-field-wrap-align-m">
-						<span class="ui-checkbox-block">
+						<span class="ui-checkbox-block ui-checkbox-block-copyright">
 							<?
-							if (!$pageFields['COPYRIGHT_SHOW']->getValue())
+							if (
+								!$pageFields['COPYRIGHT_SHOW']->getValue() ||
+								$hooks['COPYRIGHT']->isLocked()
+							)
 							{
 								$pageFields['COPYRIGHT_SHOW']->setValue('Y');
 							}
@@ -756,21 +917,20 @@ if ($arParams['SUCCESS_SAVE'])
 							));
 							?>
 							<label for="checkbox-copyright" class="ui-checkbox-label"><?= Loc::getMessage('LANDING_TPL_ACTION_SHOW');?></label>
+							<?if ($hooks['COPYRIGHT']->isLocked()):?>
+							<span class="landing-icon-lock"></span>
+							<?endif;?>
 						</span>
-						<?if (!Manager::checkFeature(Manager::FEATURE_ENABLE_ALL_HOOKS)):?>
+						<?if ($hooks['COPYRIGHT']->isLocked()):?>
 						<script type="text/javascript">
 							BX.ready(function()
 							{
-								BX.bind(BX('checkbox-copyright'), 'click', function(e)
-								{
-									BX.PreventDefault(e);
-								});
 								if (typeof BX.Landing.PaymentAlert !== 'undefined')
 								{
 									BX.Landing.PaymentAlert({
 										nodes: [BX('checkbox-copyright')],
-										title: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_COPY_DISABLED_TITLE'));?>',
-										message: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_COPY_DISABLED_TEXT'));?>'
+										title: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_HTML_DISABLED_TITLE'));?>',
+										message: '<?= \CUtil::jsEscape($hooks['COPYRIGHT']->getLockedMessage());?>'
 									});
 								}
 							});
@@ -780,7 +940,7 @@ if ($arParams['SUCCESS_SAVE'])
 				</tr>
 				<?endif;?>
 				<?if ($arResult['SHOW_RIGHTS']):?>
-				<tr class="landing-form-hidden-row">
+				<tr class="landing-form-hidden-row" data-landing-additional-detail="access">
 					<td class="ui-form-label"><?= Loc::getMessage('LANDING_TPL_HOOK_RIGHTS_LABEL');?></td>
 					<td class="ui-form-right-cell ui-form-field-wrap-align-m">
 						<?if (Manager::checkFeature(Manager::FEATURE_PERMISSIONS_AVAILABLE)):?>

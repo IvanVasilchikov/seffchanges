@@ -10,6 +10,7 @@ return array(
 	'block' => array(
 		'name' => Loc::getMessage('LANDING_BLOCK_0.MENU_1_NAME'),
 		'section' => 'menu',
+		'dynamic' => false,
 		'subtype' => 'menu',
 		'subtype_params' => array(
 			'selector' => '.landing-block-node-menu-list-item-link',

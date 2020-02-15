@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/detail/district/detail-district.pug
+
+block vars
+  - homepage = false;
+  - var detail = require('../data/detail-district.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      detailDistrict: !{JSON.stringify(detail)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)}
+      }
+    };
+
+block content
+  +detail-district(detail)

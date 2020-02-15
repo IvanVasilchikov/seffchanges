@@ -1,0 +1,108 @@
+$parent: btn;
+
+@include block($parent) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: rem(200);
+  height: rem(54);
+  border: 1px solid $red2;
+  padding: 0 rem(14);
+  font-size: rem(16);
+  background-color: $red2;
+  color: $w;
+  transition: border 0.4s ease, background 0.4s ease, color 0.4s ease;
+
+  &:disabled {
+    background-color: $purple;
+    border-color: $purple;
+  }
+
+  @include modifier($parent, 'transparent') {
+    background-color: transparent;
+    color: $black;
+  }
+
+  @include modifier($parent, 'border') {
+    background-color: transparent;
+    color: $red2;
+
+    &:hover,
+    &:active {
+      @media (min-width: $d1280) {
+        background-color: $purple;
+        color: $w;
+      }
+    }
+  }
+
+  @include modifier($parent, 'border-white') {
+    background-color: transparent;
+    color: $w;
+    border-color: $w;
+
+    &:hover,
+    &:active {
+      @media (min-width: $d1280) {
+        background-color: $w;
+        color: $black;
+        border-color: $w;
+      }
+    }
+  }
+
+  @include modifier($parent, 'gray') {
+    border-color: $gray8;
+    background-color: $gray8;
+    color: $black;
+
+    &:hover,
+    &:active {
+      @media (min-width: $d1280) {
+        background-color: $purple;
+        color: $w;
+      }
+    }
+  }
+
+  @include modifier($parent, 'white') {
+    border-color: $w;
+    background-color: $w;
+    color: $black;
+
+    &.btn--transparent {
+      background-color: rgba($w, 0);
+      color: $w;
+    }
+
+    &:hover,
+    &:active {
+      @media (min-width: $d1280) {
+        background-color: $purple;
+        border-color: $purple;
+        color: $w;
+      }
+    }
+  }
+
+  @include modifier($parent, 'rounded') {
+    min-width: initial;
+    width: auto;
+    height: rem(40);    
+    padding: 0 rem(30);
+    border-radius: rem(20);
+
+    &.#{$parent}--border {
+      color: $black;
+    }
+  }
+
+  &:hover,
+  &:active {
+    @media (min-width: $d1280) {
+      background-color: $purple;
+      border-color: $purple;
+    }
+  }
+}

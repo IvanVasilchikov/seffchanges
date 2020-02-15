@@ -1,0 +1,34 @@
+include ../../fonts/title/title.pug
+include ../../filter/filter.pug
+include ../../filter/detail/filter-detail.pug
+include ../table/detail-table.pug
+include ../../card/small/card-small.pug
+include ../../catalog/list/catalog-list.pug
+include ../../core/pagination/pagination.pug
+include ../../core/select/select.pug
+
+mixin detail-choose(info)
+  .detail-choose(id='detail-choose')
+    .main
+      +title(info.title, 'detail-choose__title')
+      if (info.view && info.view === 'cards')
+        .detail-choose__wrp
+          if (info.filterCards)
+            +filter(info.filterCards)(@filterSubmit='setFilter')
+          else
+            | <!---->
+          .detail-choose__cards
+            each card in info.cards
+              +card-small(card, 'detail-choose__card')(:key='card.id')
+          if (info.pagination && info.pagination.count >= 2)
+            +pagination(info.pagination, 'detail-choose__pagination')(@setPage='setPage')
+          else
+            | <!---->
+      else
+        .detail-choose__wrp
+          +filter-detail(info.filterTable)(@filterSubmit='setFilter')
+          if (info.sort)
+            +select(info.sort, 'select--sort detail-choose__sort', 0.3, 'Сортировать по:')(@input='setSelectOrder')
+          else
+            | <!---->
+          +detail-table(info.table, info.cards, 'detail-choose__table')(@setOrder='setOrder')

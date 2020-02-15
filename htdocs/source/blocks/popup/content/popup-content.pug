@@ -1,0 +1,13 @@
+include ../../fonts/title/fourth/title-fourth.pug
+include ../../wysiwyg/wysiwyg.pug
+include ../../core/btn/btn.pug
+
+mixin popup-content(info, className)
+  .popup-content
+    if (info.ico)
+      img.popup-content__img(src=info.ico, alt=info.title)
+    else
+      | <!---->
+    +title-fourth(info.title, 'title-fourth--up popup-content__title')
+    +wysiwyg(info.html, 'popup-content__content')
+    +btn('button', info.btnPhrase, 'popup-content__btn')(@click= 'popupOpen(\'form\', info.name)')

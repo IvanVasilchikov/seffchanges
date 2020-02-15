@@ -1,0 +1,33 @@
+-
+  loadAssets = function(file, isView = false) {
+    const req = require.context(
+      "../assets/",
+      true, // Load files recursively. Pass false to skip recursion.
+      /^\.\/.*\.(svg|jpg|png)$/ // Match files ending with .md.
+    );
+    if (file.indexOf('.svg') !== -1) {
+      if (!isView) {
+        return req(file).symbol
+      } else {
+        return req(file).view
+      }
+    }
+    return req(file);
+  }
+
+block vars
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='./favicon.ico', rel='shortcut icon', type='image/x-icon')
+    title Saffari Estate
+    each css in htmlWebpackPlugin.files.css
+      link(rel='stylesheet' href=css)
+  body(style='position: relative;')
+    block content
+    each js in htmlWebpackPlugin.files.js
+      script(type='text/javascript' src=js async defer)

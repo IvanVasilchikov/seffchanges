@@ -1,0 +1,6 @@
+include ./seo-links__item.pug
+
+mixin seo-links(obj, className)
+  .seo-links.main(class=className)
+    each item in obj.items
+      +seo-links-item(item)

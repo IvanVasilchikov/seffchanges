@@ -1,0 +1,48 @@
+include ./../../fonts/title/title.pug
+include ./../../fonts/title/fifth/title-fifth.pug
+include ./../../fonts/text/text.pug
+
+mixin home-features(obj)
+  .home-features.main
+    .home-features__head
+      .home-features__head-left
+        if obj.title
+          +title(obj.title, 'home-features__title')
+        else
+          | <!---->
+        if obj.sTitle
+          +title-fifth(obj.sTitle, 'title-fifth--up home-features__text')
+        else
+          | <!---->
+      .home-features__arrows
+        a.home-features__arrow.home-features__arrow--prev
+          svg
+            use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+        a.home-features__arrow.home-features__arrow--next
+          svg
+            use(xlink:href=loadAssets('./svg/arrow-right2.svg'))
+    .home-features__slider.swiper-container
+      .swiper-wrapper
+        each item in obj.slider
+          .home-features__slide.swiper-slide
+            if item.number
+              .home-features__slide-number
+                span= item.number
+            else
+              | <!---->
+            if item.title
+              +title-fifth(item.title, 'title-fifth--up home-features__slide-title')
+            else
+              | <!---->
+            if item.text
+              +text(item.text, 'home-features__slide-text')
+            else
+              | <!---->
+            if item.link
+              a.home-features__slide-link(href=item.link.url)= item.link.text
+            else
+              | <!---->
+            if item.popup
+              button.home-features__slide-link(type= 'button', @click= 'popupOpen(item.popup.type, item.popup.name)')= item.popup.text
+            else
+              | <!---->

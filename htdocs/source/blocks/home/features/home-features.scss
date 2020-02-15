@@ -1,0 +1,156 @@
+$parent: home-features;
+
+@include block($parent) {
+  padding: rem(50) 0 rem(20);
+  margin-bottom: rem(33);
+
+  @media screen and (min-width: $tMin) and (max-width: $d1279) {
+    margin-bottom: rem(43);
+    padding-top: rem(50);
+  }
+
+  @media screen and (min-width: $d1280) {
+    margin-bottom: rem(124);
+    padding-top: rem(103);
+  }
+
+  @include element ($parent, 'head') {
+    margin-bottom: rem(58);
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      margin-bottom: rem(40);
+    }
+
+    @media screen and (min-width: $dMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: rem(54);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    margin-bottom: rem(3);
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(1);
+    }
+  }
+
+  @include element ($parent, 'arrows') {
+    display: none;
+
+    @media screen and (min-width: $tMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      width: rem(72);
+      margin-left: auto;
+      padding-bottom: rem(6);
+      margin-right: rem(-7);
+      margin-bottom: rem(36);
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(62);
+      margin-bottom: 0;
+      padding-top: rem(6);
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    display: block;
+    width: rem(22);
+    height: rem(22);
+    padding: rem(2);
+
+    svg {
+      fill: $red;
+      stroke: $red;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.5;
+
+      svg {
+        fill: $purple;
+        stroke: $purple;
+      }
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    width: rem(310);
+    margin: 0;
+    overflow: visible;
+
+    @media screen and (min-width: $tMin) {
+      width: 100%;
+    }
+  }
+
+  @include element ($parent, 'slide') {
+    width: rem(310);
+    padding-right: rem(14);
+    margin-right: rem(20);
+
+    @media screen and (min-width: $tMin) {
+      width: rem(312);
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(386);
+      padding-right: rem(72);
+    }
+  }
+
+  @include element ($parent, 'slide-number') {
+    height: rem(75);
+    margin-bottom: rem(23);
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+    font-size: rem(100);
+    line-height: 1;
+    color: $red;
+    opacity: 0.1;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(21);
+    }
+
+    span {
+      margin-left: rem(-7);
+    }
+  }
+
+  @include element ($parent, 'slide-title') {
+    margin-bottom: rem(17);
+    min-height: rem(48);
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(13);
+      min-height: rem(60);
+    }
+  }
+
+  @include element ($parent, 'slide-text') {
+    height: rem(72);
+    margin-bottom: rem(24);
+    overflow: hidden;
+  }
+
+  @include element ($parent, 'slide-link') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $red;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

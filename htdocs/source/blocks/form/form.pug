@@ -1,0 +1,3 @@
+mixin form(info, className)
+  form.form(class= className, action=info.action, @submit.prevent='$emit("submit")')&attributes(attributes)
+    block

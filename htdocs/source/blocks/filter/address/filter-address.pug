@@ -1,0 +1,3 @@
+mixin filter-address(info, className)
+  .filter-address(class=className)
+    input.filter-address__input(type='text', placeholder=info.input.placeholder, name=info.input.name, value=info.input.value, v-model='address')

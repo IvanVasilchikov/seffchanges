@@ -82,6 +82,8 @@ if($request->get('type') == 'PREVIEW' && defined('LANDING_IS_REPO') && LANDING_I
 	}
 }
 
+$rights = [];
+
 $res = Site::getList([
 	 'select' => [
 		'ID', 'SMN_SITE_ID'
@@ -92,11 +94,8 @@ if ($row = $res->fetch())
 {
 	$siteId = $row['ID'];
 	$site = $row['SMN_SITE_ID'];
-	$hasAccess = Rights::hasAccessForSite(
-		$siteId,
-		Rights::ACCESS_TYPES['read']
-	);
-	if (!$hasAccess)
+	$rights = Rights::getOperationsForSite($siteId);
+	if (!in_array(Rights::ACCESS_TYPES['read'], $rights))
 	{
 		require_once($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_admin_after.php');
 		\showError(Loc::getMessage('LANDING_ADMIN_SITE_ACCESS_DENIED'));
@@ -115,14 +114,13 @@ else
 			'TITLE' => $siteRow['NAME'],
 			'SMN_SITE_ID' => $site,
 			'TYPE' => $type,
-			'DOMAIN_ID' => !Manager::isB24()
-			? Domain::getCurrentId()
-			: ' ',
+			'DOMAIN_ID' => !Manager::isB24() ? Domain::getCurrentId() : ' ',
 			'CODE' => strtolower(\randString(10))
 		));
 		if ($res->isSuccess())
 		{
 			$siteId = $res->getId();
+			$rights = Rights::getOperationsForSite($siteId);
 		}
 		else
 		{
@@ -188,11 +186,14 @@ echo '<div class="landing-content-title-admin">';
 
 if (!$cmp && !$isFrame)
 {
+	$storeEnabled = !Manager::isB24() && Manager::isStoreEnabled();
+
+	// create buttons
 	if (!Rights::hasAccessForSite($siteId, Rights::ACCESS_TYPES['edit']))
 	{
 		$buttons = [];
 	}
-	else if (!Manager::isB24() && Manager::isStoreEnabled())
+	else if ($storeEnabled)
 	{
 		$buttons = array(
 			array(
@@ -218,6 +219,27 @@ if (!$cmp && !$isFrame)
 			)
 		);
 	}
+
+	// settings menu
+	$settingsLink = [];
+	if (in_array(Rights::ACCESS_TYPES['sett'], $rights))
+	{
+		$settingsLink[] = [
+			'TITLE' => Loc::getMessage('LANDING_ADMIN_ACTION_SETTINGS'),
+			'LINK' => $editSite
+		];
+		if ($storeEnabled)
+		{
+			$uriSettCatalog = new \Bitrix\Main\Web\Uri($editSite);
+			$uriSettCatalog->addParams(['tpl' => 'catalog']);
+			$settingsLink[] = [
+				'TITLE' => Loc::getMessage('LANDING_ADMIN_ACTION_CATALOG'),
+				'LINK' => $uriSettCatalog->getUri()
+			];
+			unset($uriSettCatalog);
+		}
+	}
+
 	$folderId = $request->get($actionFolder);
 	$APPLICATION->IncludeComponent(
 		'bitrix:landing.filter',
@@ -225,7 +247,7 @@ if (!$cmp && !$isFrame)
 		array(
 			'FILTER_TYPE' => 'LANDING',
 			'TYPE' => $type,
-			'SETTING_LINK' => $editSite,
+			'SETTING_LINK' => $settingsLink,
 			'BUTTONS' => $buttons,
 			'FOLDER_SITE_ID' => !$folderId ? $siteId : 0
 		),
@@ -252,6 +274,7 @@ if ($cmp == 'landing_edit')
 			'bitrix:landing.landing_edit',
 			'.default',
 			array(
+				'TYPE' => $type,
 				'SITE_ID' => $siteId,
 				'LANDING_ID' => $landing,
 				'PAGE_URL_LANDINGS' => $landingsPage,

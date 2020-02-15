@@ -12,9 +12,10 @@
 			}
 			else
 			{
-				BX.addCustomEvent("BX.Landing.Provider.Map:apiLoaded", function () {
+				window.onGoogleMapApiLoaded = function ()
+				{
 					initGmapBlock(event);
-				});
+				}
 			}
 		}
 	});

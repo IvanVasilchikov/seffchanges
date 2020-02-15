@@ -1,0 +1,494 @@
+$parent: 'filter-catalog';
+$select: 'select';
+$radio: 'filter-radio';
+
+@include block($parent) {
+  position: relative;
+
+  @include element($parent, 'main') {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @include element($parent, 'group') {
+    display: flex;
+    margin-bottom: rem(16);
+    width: 100%;
+    order: 1;
+
+    @include modifier ($parent, 'hidden') {
+      display: none;
+    }
+
+    @media (min-width: $tMin) {
+      margin-right: rem(16);
+    }
+
+    @media (min-width: $d1280) {
+      width: auto;
+    }
+
+    @include modifier($parent, 'radio') {
+      max-width: 45%;
+      flex-basis: 45%;
+
+      @media (min-width: $tMin) {
+        margin-right: 0;
+        flex-basis: 26.8%;
+        max-width: 26.8%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(165);
+        flex-basis: rem(165)
+      }
+    }
+
+    @include modifier($parent, 'select') {
+      @media (min-width: $tMin) {
+        max-width: 26.8%;
+        flex-basis: 26.8%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(160);
+        flex-basis: rem(160);
+      }
+    }
+
+    @include modifier($parent, 'object_type') {
+      max-width: 55%;
+      flex-basis: 55%;
+
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        flex-basis: 22%;
+        max-width: 22%;
+      }
+    }
+
+    @include modifier($parent, 'range') {
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        max-width: 26.8%;
+        flex-basis: 26.8%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(190);
+        flex-basis: rem(190);
+      }
+    }
+
+    @include modifier($parent, 'price') {
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        max-width: 48.8%;
+        flex-basis: 48.8%;
+        margin-right: 0;
+      }
+
+      @media (min-width: $d1280) {
+        flex-basis: auto;
+        max-width: none;
+      }
+    }
+
+    @include modifier($parent, 'input') {
+      margin-right: 0;
+
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        flex-basis: 70.8%;
+        max-width: 70.8%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(322);
+        flex-basis: rem(322);
+      }
+    }
+
+    @include modifier($parent, 'rooms') {
+      @media (min-width: $d1280) {
+        flex-basis: rem(149);
+        max-width: rem(149);
+      }
+    }
+
+    @include modifier($parent, 'premises') {
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        flex-basis: 70.8%;
+        max-width: 70.8%;
+        margin-right: 0;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(197);
+        flex-basis: rem(197);
+      }
+    }
+
+    @include modifier($parent, 'building') {
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        flex-basis: 45.2%;
+        max-width: 45.2%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(270);
+        flex-basis: rem(270);
+      }
+    }
+
+    @include modifier($parent, 'district') {
+      max-width: 31%;
+      flex-basis: 31%;
+
+      @include block($select) {
+        @include element($select, 'head') {
+          border-right: none;
+        }
+      }
+
+      @media (min-width: $tMin) {
+        margin-right: 0;
+        max-width: 14.1%;
+        flex-basis: 14.1%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(100);
+        flex-basis: rem(100);
+      }
+    }
+
+    @include modifier($parent, 'location') {
+      flex-basis: 69%;
+      max-width: 69%;
+
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        margin-right: 0;
+        max-width: 38.3%;
+        flex-basis: 38.3%;
+      }
+
+      @media (min-width: $d1280) {
+        max-width: rem(270);
+        flex-basis: rem(270);
+      }
+    }
+
+    @include modifier($parent, 'deal_type-tripple') {
+      flex-basis: 100%;
+      max-width: 100%;
+
+      @include block($radio) {
+        border-right: 1px solid $gray;
+
+        @include element($radio, 'item') {
+          @media (min-width: $d1280) {
+            flex-basis: 25%;
+            max-width: 25%;
+
+            &:last-of-type {
+              flex-basis: 50%;
+              max-width: 50%;
+            }
+          }
+        }
+      }
+
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        flex-basis: 48.8%;
+        max-width: 48.8%;
+        margin-right: rem(16);
+
+        @include block($radio) {
+          justify-content: space-between;
+        }
+      }
+
+      @media (min-width: $d1280) {
+        flex-basis: rem(326);
+        max-width: rem(326);
+        margin-right: rem(16);
+      }
+    }
+
+    @include modifier($parent, 'hide') {
+      display: none;
+
+      +.#{$parent}__group--district {
+        +.#{$parent}__group--location {
+          @media (min-width: $tMin) {
+            margin-right: rem(16);
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'group-wrp') {
+    width: 100%;
+  }
+
+  @include element($parent, 'radio') {
+    border-right: none;
+    width: 100%;
+  }
+
+  @include element($parent, 'select') {
+    width: 100%;
+  }
+
+  @include element($parent, 'range') {
+    &:not(.#{$parent}__range--price) {
+      @media (max-width: $mMax) {
+        input {
+          &:nth-child(2) {
+            text-align: right;
+            padding-right: rem(30);
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'more') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+
+    @media (max-width: $m374) {
+      font-size: rem(14);
+    }
+
+    &::before {
+      content: '+';
+      display: inline;
+      font-size: rem(22);
+      margin-right: rem(10);
+    }
+
+    @include modifier($parent, 'open') {
+      &::before {
+        content: '-';
+      }
+    }
+  }
+
+  @include element($parent, 'address') {
+    width: 100%;
+  }
+
+  @include element($parent, 'buttons') {
+    padding-top: rem(10);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @media (min-width: $tMin) {
+      padding-top: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include element($parent, 'popup-btns') {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      justify-content: flex-start;
+      margin-bottom: 0;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin-bottom: rem(20);
+    }
+
+    @media (min-width: $dMin) {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  @include element($parent, 'popup-btns-wrp') {
+    display: flex;
+    align-items: center;
+    margin-right: rem(20);
+  }
+
+  @include element($parent, 'popup-btn') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    cursor: pointer;
+    transition: color $ease;
+    position: relative;
+    display: inline-flex;
+
+    &:not(:last-of-type) {
+      margin-right: rem(25);
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element($parent, 'popup-btn-count') {
+    display: inline-block;
+    height: rem(14);
+    min-width: rem(14);
+    padding: 0 3px;
+    background-color: $red2;
+    color: $w;
+    font-size: rem(9);
+    text-align: center;
+    line-height: rem(15);
+    border-radius: 50%;
+    margin-left: 2px;
+  }
+
+  @include element($parent, 'form-buttons') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: $tMin) {
+      justify-content: flex-start;
+      margin-right: rem(30);
+    }
+  }
+
+  @include element($parent, 'form-reset') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $gray-c7;
+    margin-right: rem(25);
+    transition: color $ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $red2;
+    }
+  }
+
+  @include element($parent, 'submit') {
+    height: rem(45);
+    margin-top: rem(25);
+    width: 100%;
+    order: 10;
+
+    @media (min-width: $tMin) {
+      margin-top: 0;
+      width: rem(160);
+      min-width: rem(160);
+    }
+  }
+
+  @include element($parent, 'tags') {
+    margin-top: rem(20);
+    position: relative;
+
+    @media (min-width: $tMin) {
+      margin-top: rem(20);
+    }
+
+    @media (min-width: $d1280) {
+      margin-top: rem(20);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: rem(50);
+
+      @media (min-width: $d1280) {
+        display: none;
+      }
+    }
+
+    &::before {
+      left: rem(-14);
+      background: linear-gradient(to right,
+        rgba($w, 1) 0%,
+        rgba($w, 0.7) 30%,
+        rgba($w, 0.3) 70%,
+        rgba($w, 0) 100%);
+    }
+
+    &::after {
+      right: rem(-14);
+      background: linear-gradient(to left,
+        rgba($w, 1) 0%,
+        rgba($w, 0.7) 30%,
+        rgba($w, 0.3) 70%,
+        rgba($w, 0) 100%);
+    }
+
+    @include modifier($parent, 'filter') {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: $tMin) {
+        width: auto;
+        margin-top: 0;
+      }
+
+      &:after,
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  @include element($parent, 'tags-wrp') {
+    display: flex;
+    overflow-x: auto;
+
+    @media (min-width: $d1280) {
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+  }
+
+  @include element($parent, 'tag') {
+    flex-shrink: 0;
+
+    &:not(:last-of-type) {
+      margin-right: rem(10);
+      margin-bottom: rem(10);
+    }
+
+    @include modifier($parent, 'rect') {
+      @media (min-width: $tMin) {
+        margin-bottom: 0;
+      }
+
+      span {
+        border-radius: 0;
+      }
+    }
+  }
+
+  @include modifier($parent, 'office') {
+    @include element($parent, 'group--search') {
+      @media (min-width: $d1280) {
+        flex-basis: rem(283);
+        max-width: rem(283);
+      }
+    }
+  }
+}

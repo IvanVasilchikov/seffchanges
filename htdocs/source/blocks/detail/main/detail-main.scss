@@ -1,0 +1,813 @@
+$parent: 'detail-main';
+
+@include block($parent) {
+  position: relative;
+  // z-index: 2;
+  background-color: $w;
+
+  @media (min-width: $d1280) {
+    display: flex;
+  }
+
+  @include element($parent, 'nav') {
+    padding: rem(25) 0 rem(20);
+
+    @media (min-width: $tMin) {
+      padding: rem(30) 0;
+    }
+
+    @media (min-width: $d1280) {
+      padding: 0;
+      z-index: 3;
+      position: absolute;
+      top: rem(40);
+      left: calc(55% + 3.75rem);
+      right: rem(60);
+      margin: 0;
+      width: auto;
+      max-width: rem(508);
+    }
+  }
+
+  @include element($parent, 'nav-wrp') {
+    @media (min-width: $tMin) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  @include element($parent, 'breadcrumbs') {
+    margin-bottom: rem(15);
+  }
+
+  @include element($parent, 'back') {
+    display: inline-flex;
+    align-items: center;
+
+    span {
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $gray-c7;
+      transition: color $ease;
+    }
+
+    &:hover {
+      span {
+        color: $red2;
+      }
+
+      @include element($parent, 'back-ico') {
+        border-color: $red2;
+
+        svg {
+          fill: $red2;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'back-ico') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $gray-c7;
+    height: rem(32);
+    width: rem(32);
+    margin-right: rem(12);
+    transition: border-color $ease;
+
+    svg {
+      height: rem(10);
+      width: rem(7);
+      fill: $gray-c7;
+    }
+  }
+
+  @include element($parent, 'nav-buttons') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: rem(25);
+
+    @media (min-width: $tMin) {
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
+
+  @include element($parent, 'nav-btn') {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $red2;
+      transition: color $ease;
+    }
+
+    @include modifier($parent, 'similar') {
+      @include element($parent, 'nav-btn-ico') {
+        height: rem(15);
+        width: rem(15);
+        position: relative;
+        border: 1.4px solid $red2;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color $ease;
+
+        &::after {
+          content: '';
+          height: rem(5);
+          width: rem(5);
+          border-radius: 50%;
+          background-color: $red2;
+          transition: background-color $ease;
+        }
+      }
+
+      &:hover {
+        @include element($parent, 'nav-btn-ico') {
+          border-color: $purple;
+
+          &::after {
+            background-color: $purple;
+          }
+        }
+      }
+    }
+
+    &:not(:last-of-type) {
+      @media (min-width: $tMin) {
+        margin-right: rem(43);
+      }
+    }
+
+    &:hover {
+      span {
+        color: $purple;
+      }
+
+      svg {
+        stroke: $purple;
+      }
+    }
+  }
+
+  @include element($parent, 'nav-btn-ico') {
+    margin-right: rem(10);
+
+    svg {
+      height: rem(13);
+      width: rem(16);
+      fill: none;
+      stroke: $red2;
+    }
+  }
+
+  @include element($parent, 'fav') {
+    @include modifier($parent, 'added') {
+      svg {
+        fill: $red2;
+      }
+    }
+  }
+
+  @include element($parent, 'slider-wrp') {
+    height: rem(366);
+    position: relative;
+
+    @media (min-width: $tMin) {
+      height: rem(380);
+    }
+
+    @media (min-width: $d1280) {
+      height: rem(665);
+      max-width: 55%;
+      flex-basis: 55%;
+      margin: 0;
+    }
+
+    @include modifier($parent, 'full') {
+      position: fixed;
+      background: rgba(0, 0, 0, 0.9);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100000;
+      max-width: 100%;
+
+      img {
+        object-fit: contain;
+        font-family: 'object-fit: contain;';
+      }
+
+      @include element($parent, 'slider-nav') {
+        height: 100%;
+        padding: 0;
+      }
+
+      @include element($parent, 'slider-btn') {
+        padding: 20px;
+        height: 100%;
+        background-color: rgba(48, 48, 48, 0);
+
+        &:hover {
+          background-color: rgba(48, 48, 48, 0.4);
+        }
+
+        transition: background-color .3s ease-in-out;
+        position: relative;
+
+        svg {
+          position: absolute;
+          left: 50%;
+          width: 10px;
+          transform: translate(-50%);
+        }
+
+        &:last-of-type {
+          svg {
+            transform: translate(-50%) rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'slider') {
+    height: 100%;
+  }
+
+  @include element($parent, 'slide-image') {
+    height: 100%;
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      font-family: 'object-fit: contain; object-position: center;';
+    }
+  }
+
+  @include element($parent, 'slider-nav') {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    padding: 0 rem(15);
+
+    @media (min-width: $tMin) {
+      padding: 0 rem(30);
+    }
+
+    @media (min-width: $d1280) {
+      padding: 0 rem(20);
+    }
+  }
+
+  @include element($parent, 'slider-cross') {
+    svg {
+      fill: #BDBDBD;
+    }
+
+    width: rem(26);
+    height: rem(26);
+    position: absolute;
+    top: rem(10);
+    right: rem(6);
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: #7A1B1B;
+      }
+    }
+  }
+
+  @include element($parent, 'slider-btn') {
+    height: rem(15);
+    width: rem(9);
+    cursor: pointer;
+    pointer-events: auto;
+
+    svg {
+      height: 100%;
+      width: 100%;
+      fill: $w;
+      stroke-width: 1px;
+      stroke: $w;
+    }
+
+    @include modifier($parent, 'next') {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element($parent, 'thumb-slider') {
+    pointer-events: none;
+    position: absolute;
+    bottom: rem(14);
+    left: rem(10);
+    right: rem(10);
+    visibility: hidden;
+
+    @media (min-width: $tMin) {
+      display: block;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  @include element($parent, 'thumb-slide') {
+    height: rem(49);
+    width: rem(69);
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid $w;
+      opacity: 0;
+      transition: opacity $ease;
+    }
+
+    &.swiper-slide-thumb-active {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include element($parent, 'thumb-slide-image') {
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'content') {
+    @media (min-width: $d1280) {
+      flex-basis: 45%;
+      max-width: 45%;
+      padding-bottom: rem(153);
+      position: relative;
+    }
+  }
+
+  @include element($parent, 'content-main') {
+    padding: rem(20) 0 rem(40);
+
+    @media (min-width: $tMin) {
+      padding: rem(40) 0;
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(165) 0 rem(45) rem(60);
+      margin: 0;
+      max-width: rem(570);
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-size: rem(20);
+    line-height: rem(24);
+    font-weight: 600;
+    margin-bottom: rem(20);
+
+    h1 {
+      margin-left: rem(20);
+      display: inline;
+    }
+
+    @media (min-width: $tMin) {
+      font-size: rem(24);
+      margin-bottom: rem(25);
+    }
+  }
+
+  @include element($parent, 'text') {
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $gray4;
+    font-weight: 400;
+
+    @include modifier($parent, 'id') {
+      color: $gray-c7;
+      margin-bottom: rem(7);
+    }
+
+    @include modifier($parent, 'name') {
+      margin-bottom: rem(9);
+    }
+  }
+
+  @include element($parent, 'map') {
+    display: inline-flex;
+    align-items: center;
+    color: $red2;
+    font-size: rem(14);
+    line-height: rem(26);
+    transition: color $ease;
+    cursor: pointer;
+
+    svg {
+      height: rem(12);
+      width: rem(9);
+      margin-right: rem(6);
+      fill: $red2;
+    }
+
+    &:hover {
+      color: $purple;
+
+      svg {
+        fill: $purple;
+      }
+    }
+  }
+
+  @include element($parent, 'metro') {
+    margin-top: rem(10);
+  }
+
+  @include element($parent, 'metro-station') {
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+
+  @include element($parent, 'metro-text') {
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $gray4;
+  }
+
+  @include element($parent, 'info') {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: rem(40) 0 rem(35);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(30);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  @include element($parent, 'info-item') {
+    margin-bottom: rem(5);
+    display: inline-flex;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      margin-right: rem(20);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  @include element($parent, 'info-item-icon') {
+    display: inline-block;
+    max-height: rem(20);
+    max-width: rem(20);
+    margin-right: rem(8);
+  }
+
+  @include element($parent, 'info-item-text') {
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $black;
+  }
+
+  @include element($parent, 'price-wrap') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @include element($parent, 'price-meters') {
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $gray4;
+    margin-bottom: rem(10);
+  }
+
+  @include element($parent, 'price') {
+    min-width: rem(190);
+    margin-right: rem(25);
+    margin-bottom: rem(15);
+
+    @media (max-width: $m374) {
+      margin-right: rem(15);
+    }
+
+    @media (min-width: $tMin) {
+      margin-right: rem(35);
+      min-width: rem(203);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $d1280) {
+      margin-right: rem(57);
+    }
+  }
+
+  @include element($parent, 'price-total') {
+    font-size: rem(28);
+    line-height: rem(28);
+    font-weight: 600;
+
+    @media (min-width: $tMin) {
+      font-size: rem(30);
+      line-height: rem(30);
+    }
+
+    @include modifier($parent, 'request') {
+      cursor: pointer;
+      transition: color $ease;
+
+      &:hover {
+        color: $red2;
+      }
+    }
+  }
+
+  @include element($parent, 'price-offer') {
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $red2;
+    transition: color $ease;
+    margin-top: rem(10);
+    cursor: pointer;
+
+    &:hover {
+      color: $purple;
+    }
+
+    @media (min-width: $tMin) {
+      margin-top: rem(15);
+    }
+  }
+
+  @include element($parent, 'price-changer') {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(15);
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element($parent, 'price-button') {
+    height: rem(38);
+    width: rem(38);
+
+    input {
+      display: none;
+
+      &:checked {
+        +label {
+          z-index: 2;
+          color: $red2;
+
+          &::after {
+            border-color: $red2;
+          }
+        }
+      }
+    }
+
+    label {
+      cursor: pointer;
+      display: block;
+      font-size: rem(16);
+      position: relative;
+      text-align: center;
+      line-height: rem(38);
+      color: $gray4;
+      transition: color $ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        right: 0;
+        left: -1px;
+        border: 1px solid $gray-c7;
+        transition: border-color $ease;
+      }
+
+      &:hover {
+        color: $red2;
+
+        &::after {
+          border-color: $red2;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'content-buttons') {
+    display: flex;
+    height: rem(180);
+
+    @media (min-width: $tMin) {
+      height: rem(153);
+    }
+
+    @media (min-width: $d1280) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
+  @include element($parent, 'phone') {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background-color: $gray8;
+    transition: background-color $ease;
+
+    &:hover {
+      background-color: $red2;
+
+      @include element($parent, 'phone-icon') {
+        background-color: $w;
+        border-color: $w;
+
+        svg {
+          fill: $red2;
+        }
+      }
+
+      @include element($parent, 'phone-text') {
+        span {
+          color: $w;
+        }
+      }
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    @media (min-width: $tMin) {
+      flex-direction: row;
+    }
+  }
+
+  @include element($parent, 'phone-icon') {
+    border: 1px solid $gray-c7;
+    height: rem(46);
+    width: rem(46);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(15);
+    transition: background-color $ease, border-color $ease;
+
+    svg {
+      height: rem(22);
+      width: rem(22);
+      fill: $gray-c7;
+    }
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+      margin-right: rem(21);
+    }
+  }
+
+  @include element($parent, 'phone-text') {
+    text-align: center;
+
+    span {
+      display: block;
+      transition: color $ease;
+
+      &:first-of-type {
+        font-size: rem(14);
+        line-height: rem(26);
+        color: $gray2;
+      }
+
+      &:last-of-type {
+        font-size: rem(16);
+        line-height: rem(24);
+        font-weight: 600;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      text-align: left;
+    }
+  }
+
+  @include element($parent, 'order') {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background-color: $purple;
+    cursor: pointer;
+    transition: background-color $ease;
+
+    &:hover {
+      background-color: $red2;
+
+      @include element($parent, 'order-ico') {
+        background-color: $w;
+        border-color: $w;
+
+        svg {
+          fill: $red2;
+        }
+      }
+    }
+
+    @media (min-width: $tMin) {
+      flex-direction: row;
+    }
+  }
+
+  @include element($parent, 'order-text') {
+    color: $w;
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-bottom: rem(20);
+    font-weight: 600;
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+      margin-right: rem(28);
+      text-align: left;
+    }
+  }
+
+  @include element($parent, 'order-ico') {
+    border: 1px solid $w;
+    height: rem(46);
+    width: rem(46);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $ease, border-color $ease;
+
+    svg {
+      height: rem(12);
+      width: rem(7);
+      fill: $w;
+      stroke-width: 1px;
+    }
+  }
+}

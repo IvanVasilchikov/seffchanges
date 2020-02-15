@@ -10,11 +10,12 @@ return array(
 	'block' => array(
 		'name' => Loc::getMessage('LANDING_BLOCK_45.2.GALLERY_APP_WO_SLIDER_NAME_NEW'),
 		'section' => array('image'),
+		'dynamic' => false,
 	),
 	'cards' => array(
 		'.landing-block-node-card' => array(
 			'name' => Loc::getMessage('LANDING_BLOCK_45.2.GALLERY_APP_WO_SLIDER_CARDS_LANDINGBLOCKNODECARDIMG'),
-			'label' => array('.landing-block-node-card-img'),
+			'label' => array('.landing-block-node-card-img', '.landing-block-node-card-title'),
 		),
 	),
 	'nodes' => array(
@@ -52,6 +53,6 @@ return array(
 		),
 	),
 	'assets' => array(
-		'ext' => array('landing_gallery_cards', 'landing_carousel'),
+		'ext' => array('landing_carousel', 'landing_gallery_cards'),
 	),
 );

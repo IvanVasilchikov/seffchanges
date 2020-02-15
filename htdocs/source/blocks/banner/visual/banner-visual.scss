@@ -1,0 +1,51 @@
+$parent: banner-visual;
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  height: rem(398);
+  background-color: $gray;
+
+  @media (min-width: $tMin) and (max-width: $d1279) {
+    height: rem(360);
+  }
+
+  @media (min-width: $d1280) {
+    height: rem(400);
+  }
+
+  @include element ($parent, 'background') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element ($parent, 'content') {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: rem(32) 0 rem(32);
+    z-index: 1;
+  }
+
+  @include element ($parent, 'title') {
+    max-width: 100%;
+    letter-spacing: 1px;
+    text-align: center;
+    color: $w;
+  }
+}

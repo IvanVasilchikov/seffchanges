@@ -1,0 +1,14 @@
+include ./map-tooltip.pug
+-
+  loadAssets = function(file) {
+    fileInfo = file.split('/').pop().split('.');
+    result = '';
+    if (fileInfo[1] === 'svg') {
+      result = '/assets/sprite.svg#'+fileInfo[0];
+    } else {
+      result = '/assets/images/'+fileInfo[0]+'.'+fileInfo[1];
+    }
+    return result;
+  };
+
++map-tooltip(info)

@@ -1,0 +1,188 @@
+$parent: 'detail-infrastructure';
+
+@include block($parent) {
+  position: relative;
+  margin-bottom: rem(40);
+
+  @media (min-width: $tMin) {
+    margin-bottom: rem(60);
+  }
+
+  @media (min-width: $d1280) {
+    margin-bottom: rem(130);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(35);
+  }
+
+  @include element($parent, 'buttons') {
+    margin: 0 rem(-14);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 15%;
+      background: linear-gradient(to left, rgba($w, 0.8) 0%, rgba($w, 0.8) 70%, rgba($w, 0.2) 100%);
+
+      @media (min-width: $d1280) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      margin: 0 rem(-40);
+    }
+
+    @media (min-width: $d1280) {
+      margin: 0;
+    }
+  }
+
+  @include element($parent, 'buttons-wrp') {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    &::after {
+      content: '';
+      width: rem(55);
+      flex-shrink: 0;
+
+      @media (min-width: $dMin) {
+        width: rem(90);
+      }
+
+      @media (min-width: $d1280) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $d1280) {
+      overflow: visible;
+    }
+  }
+
+  @include element($parent, 'button') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    padding: 0 rem(13) rem(17);
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    input {
+      display: none;
+
+      &:checked {
+        + .#{$parent}__button-text {
+          color: $purple;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $tMin) {
+      padding: 0 rem(55) rem(17);
+    }
+
+    @media (min-width: $d1280) {
+      padding: 0 rem(45) rem(17);
+    }
+  }
+
+  @include element($parent, 'button-text') {
+    transition: color $ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: $purple;
+      transition: opacity $ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @include element($parent, 'tabs') {
+    @media (max-width: $d1279) {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @include element($parent, 'tab') {
+    min-height: rem(446);
+    display: flex;
+    align-items: flex-end;
+    padding: rem(30) 0;
+    position: relative;
+
+    @media (min-width: $tMin) {
+      min-height: rem(470);
+      padding: 0 0 rem(40);
+    }
+
+    @media (min-width: $d1280) {
+      padding: 0 rem(60) rem(40);
+    }
+  }
+
+  @include element($parent, 'tab-main') {
+    @media (min-width: $d1280) {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  @include element($parent, 'tab-image') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(#000, 0) 0%, rgba(#000, 0.4) 100%);
+    }
+  }
+
+  @include element($parent, 'tab-text') {
+    position: relative;
+    z-index: 2;
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $w;
+
+    @media (min-width: $tMin) {
+      font-size: rem(20);
+    }
+  }
+}

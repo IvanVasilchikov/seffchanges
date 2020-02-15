@@ -1,0 +1,82 @@
+include ../core/breadcrumbs/breadcrumbs.pug
+include ../fonts/title/title.pug
+include ../office/office.pug
+include ../form/question/form-question.pug
+include ../map/map.pug
+
+mixin contacts(info)
+  .contacts
+    .contacts__map-wrp
+      .contacts__map-content
+        .main
+          +breadcrumbs(info.breadcrumbs, 'contacts__breadcrumbs')
+          +title('контакты', '')
+        +map(info.map, 'contacts__map')
+      .main
+        .contacts__map-info
+          each item in info.contacts
+            .contacts__info-item
+              .contacts__info-title!= item.title
+              if item.title === 'Адрес'
+                a.contacts__info-desc(href= item.url)
+                  svg.contacts__info-icon
+                    use(xlink:href=loadAssets('./svg/pin.svg'))
+                  span!= item.text
+              else
+                | <!---->
+              if item.title === 'Телефон'
+                a.contacts__info-desc.contacts__info-desc--bold(href= 'tel:' + item.url)
+                  svg.contacts__info-icon.contacts__info-icon--red
+                    use(xlink:href=loadAssets('./svg/phone.svg'))
+                  span!= item.text
+              else
+                | <!---->
+              if item.title === 'E-mail'
+                a.contacts__info-desc.contacts__info-desc--bold.contacts__info-desc--red(href= 'mailto:' + item.url)
+                  svg.contacts__info-icon
+                    use(xlink:href=loadAssets('./svg/mail-red.svg'))
+                  span!= item.text
+              else
+                | <!---->
+          .contacts__info-socials
+            .contacts__info-title.contacts__info-title--margin!= info.socials.title
+            .contacts__socials
+              each social in info.socials.links
+                a.contacts__social(href=social.url, target='_blank')
+                  if social.name === 'facebook'
+                    svg
+                      use(xlink:href=loadAssets('./svg/fb.svg'))
+                  else
+                    | <!---->
+                  if social.name === 'twitter'
+                    svg
+                      use(xlink:href=loadAssets('./svg/tw.svg'))
+                  else
+                    | <!---->
+                  if social.name === 'instagram'
+                    svg
+                      use(xlink:href=loadAssets('./svg/insta.svg'))
+                  else
+                    | <!---->
+    .main
+      .contacts__requisites
+        +title('реквизиты', 'contacts__requisites-mainText')
+        .contacts__requisites-text
+          .contacts__requisites-wrap
+            each item in info.requisites.slice(0, 4)
+              .contacts__requisites-item
+                .contacts__requisites-title!= item.title
+                .contacts__requisites-desc!= item.desc
+          .contacts__requisites-wrap
+            each item in info.requisites.slice(4)
+              .contacts__requisites-item
+                .contacts__requisites-title!= item.title
+                .contacts__requisites-desc!= item.desc
+      +office(info.avatar, 'contacts__office')
+      .contacts__question
+        .question__info
+          +title(info.question.title, 'contacts__question-mainText')
+          .contacts__question-desc!= info.question.desc
+          .contacts__question-numTitle!= info.question.numTitle
+          .contacts__question-num!= info.question.num
+        +form-question(info.question.form, 'contacts__question-form')

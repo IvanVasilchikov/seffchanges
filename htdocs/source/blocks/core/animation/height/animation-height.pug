@@ -1,0 +1,3 @@
+mixin animation-height(duration)
+  transition(:css='false', :duration=duration, @before-enter='beforeEnter', @enter='enter', @leave='leave', @after-leave='afterLeave')
+    block

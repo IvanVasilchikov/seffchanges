@@ -1,0 +1,179 @@
+$parent: visual;
+
+@include block($parent) {
+  padding-bottom: rem(62);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(70);
+  }
+
+  @media (min-width: $d1280) {
+    padding-bottom: rem(85);
+  }
+
+  @include element($parent, 'btn-catalog') {
+    position: fixed;
+    right: 0;
+    top: 70%;
+    width: rem(55);
+    height: rem(55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: background $ease;
+    z-index: 10;
+    background-color: $purple;
+
+    @media (min-width: $tMin) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      width: rem(65);
+      height: rem(65);
+    }
+
+    @media (min-width: $d1280) {
+      width: rem(110);
+      height: rem(110);
+    }
+
+    svg {
+      height: rem(19);
+      width: rem(19);
+      fill: $w;
+
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        height: rem(23);
+        width: rem(23);
+      }
+
+      @media (min-width: $d1280) {
+        height: rem(25);
+        width: rem(25);
+      }
+    }
+
+    span {
+      margin-top: rem(9);
+      font-size: rem(11);
+      line-height: rem(15);
+      font-weight: 600;
+      color: $w;
+      width: 100%;
+      text-transform: uppercase;
+      display: none;
+
+      @media (min-width: $d1280) {
+        display: block;
+      }
+    }
+
+    &:hover {
+      background-color: $red2;
+    }
+  }
+
+  @include element($parent, 'content') {
+    padding-top: rem(30);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      padding-top: rem(33);
+    }
+
+    @media (min-width: $d1280) {
+      padding-top: rem(58);
+    }
+  }
+
+  @include element($parent, 'title') {
+    display: none;
+
+    @media (min-width: $dMin) {
+      margin-bottom: rem(3);
+      display: block;
+    }
+  }
+
+  @include element ($parent, 'banner-request') {
+    .title-second {
+      @media (min-width: $d1280) {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+  }
+
+  @include element ($parent, 'text-wrap') {
+    margin-top: rem(40);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(64);
+    }
+
+    @media (min-width: $d1280) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(80);
+    }
+  }
+
+  @include element ($parent, 'text-title') {
+    font-size: rem(30);
+    line-height: rem(36);
+    font-family: $BaronNeue;
+    margin-bottom: rem(19);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      font-size: rem(36);
+      line-height: rem(44);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: 0;
+      max-width: rem(328);
+    }
+  }
+
+  @include element ($parent, 'text') {
+    color: $gray4;
+
+    @media (min-width: $d1280) {
+      max-width: rem(795);
+    }
+  }
+
+  @include element ($parent, 'cards-items') {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: rem(21);
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(33);
+    }
+  }
+
+  @include element ($parent, 'cards-btn-loader') {
+    margin-bottom: rem(40);
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(80);
+    }
+  }
+
+  @include element ($parent, 'error') {
+    margin-bottom: rem(80);
+  }
+
+  @include element($parent, 'seo') {
+    margin-top: rem(36);
+
+    @media (min-width: $d1280) {
+      margin-top: rem(90);
+    }
+  }
+}

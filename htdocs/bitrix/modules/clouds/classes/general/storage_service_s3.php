@@ -185,8 +185,8 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 	*/
 	function SignRequest($arSettings, $RequestMethod, $bucket, $RequestURI, $ContentType, $additional_headers, $params = "", $content = "")
 	{
-		static $search = array("+", "=");
-		static $replace = array("%20", "%3D");
+		static $search = array("+", "=", "%7E");
+		static $replace = array("%20", "%3D", "~");
 
 		if (is_resource($content))
 		{
@@ -359,6 +359,15 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 		$was_end_point = $this->new_end_point;
 		$this->new_end_point = '';
 
+		$this->status = 0;
+		$this->host = $host;
+		$this->verb = $verb;
+		$this->url =  $file_name.$params;
+		$this->headers = array();
+		$this->errno = 0;
+		$this->errstr = '';
+		$this->result = '';
+
 		$request_id = '';
 		if (defined("BX_CLOUDS_TRACE") && $verb !== "GET" && $verb !== "HEAD")
 		{
@@ -389,9 +398,6 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 		}
 
 		$this->status = $obRequest->status;
-		$this->host = $host;
-		$this->verb = $verb;
-		$this->url =  $file_name.$params;
 		$this->headers = $obRequest->headers;
 		$this->errno = $obRequest->errno;
 		$this->errstr = $obRequest->errstr;
@@ -709,7 +715,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			$URI = $pref."/".$URI;
 		}
 
-		return $proto."://$host/".CCloudUtil::URLEncode($URI, "UTF-8");
+		return $proto."://$host/".CCloudUtil::URLEncode($URI, "UTF-8", true);
 	}
 	/**
 	 * @param array[string]string $arBucket
@@ -725,7 +731,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$this->SetLocation($arBucket["LOCATION"]);
 		$this->SendRequest(
@@ -767,7 +773,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 		$additional_headers = array();
 		if($this->_public)
 			$additional_headers["x-amz-acl"] = "public-read";
-		$additional_headers["x-amz-copy-source"] = CCloudUtil::URLEncode("/".$arBucket["BUCKET"]."/".($arBucket["PREFIX"]? $arBucket["PREFIX"]."/": "").($arFile["SUBDIR"]? $arFile["SUBDIR"]."/": "").$arFile["FILE_NAME"], "UTF-8");
+		$additional_headers["x-amz-copy-source"] = CCloudUtil::URLEncode("/".$arBucket["BUCKET"]."/".($arBucket["PREFIX"]? $arBucket["PREFIX"]."/": "").($arFile["SUBDIR"]? $arFile["SUBDIR"]."/": "").$arFile["FILE_NAME"], "UTF-8", true);
 		$additional_headers["Content-Type"] = $arFile["CONTENT_TYPE"];
 
 		if (
@@ -783,7 +789,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			$arBucket["SETTINGS"],
 			'PUT',
 			$arBucket["BUCKET"],
-			CCloudUtil::URLEncode($filePath, "UTF-8"),
+			CCloudUtil::URLEncode($filePath, "UTF-8", true),
 			'',
 			'',
 			$additional_headers
@@ -822,7 +828,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 				$arBucket["SETTINGS"],
 				'HEAD',
 				$arBucket["BUCKET"],
-				CCloudUtil::URLEncode("/".($arBucket["PREFIX"]? $arBucket["PREFIX"]."/": "").($arFile["SUBDIR"]? $arFile["SUBDIR"]."/": "").$arFile["FILE_NAME"], "UTF-8")
+				CCloudUtil::URLEncode("/".($arBucket["PREFIX"]? $arBucket["PREFIX"]."/": "").($arFile["SUBDIR"]? $arFile["SUBDIR"]."/": "").$arFile["FILE_NAME"], "UTF-8", true)
 			);
 
 			$fileSize = false;
@@ -847,7 +853,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 				$arBucket["SETTINGS"],
 				'POST',
 				$arBucket["BUCKET"],
-				CCloudUtil::URLEncode($filePath, "UTF-8"),
+				CCloudUtil::URLEncode($filePath, "UTF-8", true),
 				'?uploads=',
 				'',
 				$additional_headers
@@ -882,14 +888,14 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			while ($pos < $fileSize)
 			{
 				$additional_headers = array();
-				$additional_headers["x-amz-copy-source"] = CCloudUtil::URLEncode("/".$arBucket["BUCKET"]."/".($arBucket["PREFIX"]? $arBucket["PREFIX"]."/": "").($arFile["SUBDIR"]? $arFile["SUBDIR"]."/": "").$arFile["FILE_NAME"], "UTF-8");
+				$additional_headers["x-amz-copy-source"] = CCloudUtil::URLEncode("/".$arBucket["BUCKET"]."/".($arBucket["PREFIX"]? $arBucket["PREFIX"]."/": "").($arFile["SUBDIR"]? $arFile["SUBDIR"]."/": "").$arFile["FILE_NAME"], "UTF-8", true);
 				$additional_headers["x-amz-copy-source-range"] = "bytes=".$pos."-".(min($fileSize, $pos + $sizeLimit) - 1);
 
 				$response = $this->SendRequest(
 					$arBucket["SETTINGS"],
 					'PUT',
 					$arBucket["BUCKET"],
-					CCloudUtil::URLEncode($filePath, "UTF-8"),
+					CCloudUtil::URLEncode($filePath, "UTF-8", true),
 					'?partNumber='.($part_no + 1).'&uploadId='.urlencode($uploadId),
 					'',
 					$additional_headers
@@ -932,7 +938,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 				$arBucket["SETTINGS"],
 				'POST',
 				$arBucket["BUCKET"],
-				CCloudUtil::URLEncode($filePath, "UTF-8"),
+				CCloudUtil::URLEncode($filePath, "UTF-8", true),
 				'?uploadId='.urlencode($uploadId),
 				"<CompleteMultipartUpload>".$data."</CompleteMultipartUpload>"
 			);
@@ -968,7 +974,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$this->SetLocation($arBucket["LOCATION"]);
 		$this->SendRequest(
@@ -977,6 +983,22 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			$arBucket["BUCKET"],
 			$filePath
 		);
+
+		$status = $this->status;
+		if(
+			$this->status == 204
+			&& strpos($filePath, '+') !== false
+			&& $this->FileExists($arBucket, str_replace('+', '%2B', $filePath))
+		)
+		{
+			$this->SendRequest(
+				$arBucket["SETTINGS"],
+				'DELETE',
+				$arBucket["BUCKET"],
+				str_replace('+', '%2B', $filePath)
+			);
+			$status = $this->status;
+		}
 
 		if (
 			defined("BX_CLOUDS_COUNTERS_DEBUG")
@@ -987,12 +1009,12 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			\CCloudsDebug::getInstance()->startAction($filePath);
 		}
 
-		if($this->status == 204)
+		if($status == 204)
 		{
 			$APPLICATION->ResetException();
 			return true;
 		}
-		else//if($this->status == 404)
+		else
 		{
 			$APPLICATION->ResetException();
 			return false;
@@ -1008,7 +1030,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$additional_headers = array();
 		if($this->_public)
@@ -1068,7 +1090,6 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 		}
 		else
 		{
-			AddMessage2Log($this);
 			$APPLICATION->ResetException();
 			return false;
 		}
@@ -1077,11 +1098,13 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 	function ListFiles($arBucket, $filePath, $bRecursive = false, $pageSize = 0, $pageMarker = '')
 	{
 		global $APPLICATION;
-
+		static $search = array("+", "%7E");
+		static $replace = array("%20", "~");
 		$result = array(
 			"dir" => array(),
 			"file" => array(),
 			"file_size" => array(),
+			"file_mtime" => array(),
 		);
 
 		$filePath = trim($filePath, '/');
@@ -1104,7 +1127,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 				'GET',
 				$arBucket["BUCKET"],
 				'/',
-				'?'.($bRecursive? '': 'delimiter=%2F&').'prefix='.urlencode($filePath)
+				'?'.($bRecursive? '': 'delimiter=%2F&').'prefix='.str_replace($search, $replace, urlencode($filePath))
 					.'&marker='.str_replace("+", "%20", urlencode($marker))
 			);
 
@@ -1142,6 +1165,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 						{
 							$result["file"][] = $APPLICATION->ConvertCharset($file_name, "UTF-8", LANG_CHARSET);
 							$result["file_size"][] = $a["#"]["Size"][0]["#"];
+							$result["file_mtime"][] = substr($a["#"]["LastModified"][0]["#"], 0, 19);
 							$lastKey = $a["#"]["Key"][0]["#"];
 							if ($pageSize > 0 && count($result["file"]) >= $pageSize)
 							{
@@ -1162,7 +1186,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 						$marker = $response["ListBucketResult"]["#"]["NextMarker"][0]["#"];
 						continue;
 					}
-					elseif ($lastKey !== null);
+					elseif ($lastKey !== null)
 					{
 						$marker = $lastKey;
 						continue;
@@ -1178,6 +1202,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			}
 			else
 			{
+				AddMessage2Log($this);
 				return false;
 			}
 		}
@@ -1193,7 +1218,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"].$filePath;
 		}
-		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$additional_headers = array();
 		if($this->_public)
@@ -1233,6 +1258,11 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			);
 			return true;
 		}
+		elseif ($this->checkForTokenExpiration($this->status, $this->result))
+		{
+			$this->tokenHasExpired = true;
+			return false;
+		}
 		else
 		{
 			return false;
@@ -1252,7 +1282,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"].$filePath;
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$this->SetLocation($arBucket["LOCATION"]);
 		$this->SendRequest(
@@ -1300,7 +1330,7 @@ class CCloudStorageService_AmazonS3 extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"].$filePath;
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		ksort($NS["Parts"]);
 		$data = "";

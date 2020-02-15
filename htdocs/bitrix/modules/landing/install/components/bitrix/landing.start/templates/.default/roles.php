@@ -12,7 +12,8 @@ Loc::loadMessages(__FILE__);
 	'bitrix:landing.roles',
 	'.default',
 	array(
-		'PAGE_URL_ROLE_EDIT' => $arParams['PAGE_URL_ROLE_EDIT']
+		'PAGE_URL_ROLE_EDIT' => $arParams['PAGE_URL_ROLE_EDIT'],
+		'TYPE' => $arParams['TYPE']
 	),
 	$component
 );?>
@@ -23,9 +24,22 @@ Loc::loadMessages(__FILE__);
 		{
 			var disableFunc = function(e)
 			{
-				BX.Landing.PaymentAlertShow({
-					message: "<?= \CUtil::jsEscape(Loc::getMessage('LANDING_ROLES_UNAVAILABLE'));?>"
-				});
+				var errorText = "<?= \CUtil::jsEscape(Loc::getMessage('LANDING_ROLES_UNAVAILABLE'));?>";
+				if (typeof BX.Landing.PaymentAlertShow !== "undefined")
+				{
+					BX.Landing.PaymentAlertShow({
+						message: errorText
+					});
+				}
+				else
+				{
+					var msg = BX.Landing.UI.Tool.ActionDialog.getInstance();
+					msg.show({
+						content: errorText,
+						confirm: 'OK',
+						contentColor: 'grey'
+					});
+				}
 				if (e)
 				{
 					e.preventDefault();

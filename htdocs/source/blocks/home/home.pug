@@ -1,0 +1,65 @@
+include ../banner/home/banner-home.pug
+include ../filter/home/filter-home.pug
+include ./types/home-types.pug
+include ./how/home-how.pug
+include ./experience/home-experience.pug
+include ./services/home-services.pug
+include ./agency/home-agency.pug
+include ./offers/home-offers.pug
+include ../banner/request/banner-request.pug
+include ./features/home-features.pug
+include ../clients/clients.pug
+include ../presentation/presentation.pug
+include ../seo/links/seo-links.pug
+
+mixin home(info)
+  .home
+    +banner-home(info.banner, '')
+    if info.filter
+      +filter-home(info.filter)
+    else
+      | <!---->
+    if info.types
+      +home-types(info.types)
+    else
+      | <!---->
+    if info.how
+      +home-how(info.how)
+    else
+      | <!---->
+    if info.experience
+      +home-experience(info.experience)
+    else
+      | <!---->
+    if info.services
+      +home-services(info.services)
+    else
+      | <!---->
+    if info.agency
+      +home-agency(info.agency)
+    else
+      | <!---->
+    if info.offers
+      +home-offers(info.offers)
+    else
+      | <!---->
+    if info.request
+      +banner-request(info.request, 'main', '')
+    else
+      | <!---->
+    if info.features
+      +home-features(info.features)
+    else
+      | <!---->
+    if info.clients
+      +clients(info.clients, 'home__clients', 'clients__item--main')
+    else
+      | <!---->
+    if info.presentation
+      +presentation(info.presentation, 'main')
+    else
+      | <!---->
+    if info.seoLinks
+      +seo-links(info.seoLinks, 'home__seo-links')
+    else
+      | <!---->

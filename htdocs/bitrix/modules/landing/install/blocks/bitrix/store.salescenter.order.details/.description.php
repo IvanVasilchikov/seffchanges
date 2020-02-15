@@ -32,9 +32,6 @@ $return = [
 		],
 		'nodes' => [],
 	],
-	'assets' => [
-	    'ext' => ['landing_theme_dark'],
-	],
 ];
 
 

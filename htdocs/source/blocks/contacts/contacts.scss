@@ -1,0 +1,357 @@
+$parent: contacts;
+
+@include  block ($parent) {
+  margin-bottom: rem(41);
+
+  @media (min-width: $tMin) {
+    margin-bottom: rem(70);
+  }
+
+  @media (min-width: $d1280) {
+    margin-bottom: rem(115);
+  }
+
+  @include element ($parent, 'map-wrp') {
+    margin-bottom: rem(38);
+    box-shadow: 0 rem(5) rem(40) rgba(0, 0, 0, 0.1);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(45);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(111);
+      box-shadow: none;
+    }
+
+    .main {
+      position: relative;
+    }
+  }
+
+  @include element ($parent, 'map-content') {
+    position: relative;
+    height: rem(446);
+    width: 100%;
+
+    @media (min-width: $tMin) {
+      height: rem(450);
+    }
+
+    @media (min-width: $d1280) {
+      height: rem(418);
+    }
+
+    .main {
+      padding-top: rem(25);
+      z-index: 1;
+      pointer-events: none;
+
+      span {
+        text-transform: uppercase;
+        line-height: 1;
+      }
+    }
+  }
+
+  @include element($parent, 'map') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include element ($parent, 'breadcrumbs') {
+    pointer-events: auto;
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(7);
+    }
+  }
+
+  @include element ($parent, 'map-info') {
+    background-color: $w;
+    padding: rem(35) 0 rem(42);
+
+    @media (min-width: $tMin) {
+      padding: rem(45) 0;
+    }
+
+    @media (min-width: $d1280) {
+      position: absolute;
+      z-index: 1;
+      right: rem(3);
+      bottom: rem(-51);
+      width: 100%;
+      max-width: rem(490);
+      padding: rem(42) 0 rem(44) rem(86);
+      box-shadow: 0 rem(5) rem(40) rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @include element ($parent, 'info-item') {
+    margin-bottom: rem(21);
+    padding-left: rem(29);
+
+    @media (min-width: $tMin) {
+      padding-left: rem(38);
+    }
+
+    @media (min-width: $d1280) {
+      padding-left: 0;
+    }
+  }
+
+  @include element ($parent, 'info-title') {
+    font-size: rem(14);
+    margin-bottom: rem(8);
+    color: $gray-bd;
+
+    @include modifier ($parent, 'margin') {
+      margin-bottom: rem(15);
+
+      @media (min-width: $d1280) {
+        margin-bottom: rem(19);
+      }
+    }
+  }
+
+  @include element ($parent, 'info-desc') {
+    position: relative;
+
+    @include modifier ($parent, 'bold') {
+      font-weight: 600;
+    }
+
+    @include modifier ($parent, 'red') {
+      color: $red2;
+    }
+
+    span {
+      font-size: rem(16);
+      line-height: rem(24);
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'info-icon') {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(-30);
+    max-width: rem(18);
+    max-height: rem(18);
+
+    @media (min-width: $tMin) {
+      left: rem(-36);
+    }
+
+    @include modifier ($parent, 'red') {
+      fill: $red2;
+    }
+  }
+
+  @include element ($parent, 'info-socials') {
+    padding-left: rem(29);
+
+    @media (min-width: $tMin) {
+      padding-left: rem(38);
+    }
+
+    @media (min-width: $d1280) {
+      padding-left: 0;
+    }
+  }
+
+  @include element ($parent, 'socials') {
+    display: flex;
+  }
+
+  @include element ($parent, 'social') {
+    max-width: rem(18);
+    max-height: rem(18);
+    margin-right: rem(25);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      fill: $red2;
+    }
+
+    &:hover {
+      svg {
+        fill: $purple;
+      }
+    }
+  }
+
+  @include element ($parent, 'requisites') {
+    margin-bottom: rem(39);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(43);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(77);
+    }
+  }
+
+  @include element ($parent, 'requisites-mainText') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(40);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(39);
+    }
+  }
+
+  @include element ($parent, 'requisites-text') {
+    @media (min-width: $d1280) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @include element ($parent, 'requisites-wrap') {
+    margin-bottom: rem(20);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(15);
+    }
+
+    &:first-child {
+      @media (min-width: $d1280) {
+        flex-basis: 58%;
+        max-width: 58%;
+      }
+
+      @include element ($parent, 'requisites-title') {
+        @media (min-width: $d1280) {
+          flex-basis: 37%;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media (min-width: $d1280) {
+        flex-basis: 40%;
+        max-width: 40%;
+      }
+
+      @include element ($parent, 'requisites-title') {
+        @media (min-width: $d1280) {
+          flex-basis: 25%;
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'requisites-item') {
+    margin-bottom: rem(20);
+
+    @media (min-width: $tMin) {
+      display: flex;
+      margin-bottom: rem(15);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element ($parent, 'requisites-title') {
+    color: $gray-bd;
+    margin-bottom: rem(10);
+
+    @media (min-width: $tMin) {
+      flex-basis: 40%;
+      margin-bottom: 0;
+    }
+  }
+
+  @include element ($parent, 'requisites-desc') {
+    @media (min-width: $tMin) {
+      flex-basis: 60%;
+    }
+
+    @media (min-width: $d1280) {
+      flex-basis: 50%;
+    }
+  }
+
+  @include element ($parent, 'office') {
+    margin-bottom: rem(27);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(48);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(70);
+    }
+  }
+
+  @include element ($parent, 'question') {
+    @media (min-width: $d1280) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @include element ($parent, 'question-mainText') {
+    margin-bottom: rem(17);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(28);
+    }
+  }
+
+  @include element ($parent, 'question-desc') {
+    margin-bottom: rem(43);
+    color: $gray-bd;
+
+    @media (min-width: $tMin) {
+      line-height: rem(22);
+      margin-bottom: rem(37);
+    }
+  }
+
+  @include element ($parent, 'question-numTitle') {
+    margin-bottom: rem(14);
+    letter-spacing: rem(1);
+    color: $gray-bd;
+  }
+
+  @include element ($parent, 'question-num') {
+    margin-bottom: rem(43);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(36);
+    }
+  }
+
+  @include element ($parent, 'question-num') {
+    font-size: rem(26);
+    font-weight: 600;
+  }
+
+  @include element ($parent, 'question-form') {
+    @media (min-width: $d1280) {
+      max-width: rem(693);
+      flex-basis: rem(693);
+    }
+  }
+}

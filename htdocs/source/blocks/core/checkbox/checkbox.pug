@@ -1,0 +1,6 @@
+mixin checkbox(obj, className)
+  label.checkbox(class=className)
+    //- TODO: Переделать использование чекбокса на странице form-question__wrap (v-model= 'checked')
+    input.checkbox__input(type='checkbox', name=obj.name, value=obj.value, checked=obj.checked, v-model= 'obj.checked', @change= '$emit(\'change\', obj.checked)')
+    .checkbox__icon
+    span.checkbox__text!= obj.text

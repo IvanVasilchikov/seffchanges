@@ -1,0 +1,649 @@
+{
+  "banner": {
+    "background": {
+      "sources": {
+        "mobile": [
+          "./assets/images/visual/banner/visual-banner_m.jpg"
+        ],
+        "tablet": [
+          "./assets/images/visual/banner/visual-banner_t.jpg"
+        ],
+        "desktop": [
+          "./assets/images/visual/banner/visual-banner.jpg"
+        ]
+      },
+      "alt": "background",
+      "title": "background"
+    },
+    "title": "дом будущего с вашим дизайном в нашей коллекции"
+  },
+  "btn_catalog": {
+    "url": "/city.html",
+    "text": "поиск<br> в каталоге"
+  },
+  "title": "Продажа квартир в городе",
+  "filter": {
+    "action": "/visual-search.html",
+    "name": "visual-search",
+    "params": {
+    },
+    "order": "Заказать подбор брокеру",
+    "popupButtons": [
+      {
+        "text": "Метро",
+        "popup": "popupAreaMetro"
+      },
+      {
+        "text": "Районы и округа",
+        "popup": "popupAreaDistrict"
+      }
+    ],
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "test",
+        "value": "test2"
+      },
+      {
+        "type": "input",
+        "name": "search",
+        "input": {
+          "name": "search",
+          "placeholder": "Адрес или ЖК",
+          "value": ""
+        }
+      }
+    ],
+    "tags": {
+      "name": "visualSearchTags",
+      "selected": [
+        {
+          "id": "tag1",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag2",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag3",
+          "text": "В шаге от Москвы",
+          "value": "stepFromMoscow"
+        },
+        {
+          "id": "tag4",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag5",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag6",
+          "text": "В шаге от Москвы",
+          "value": "stepFromMoscow"
+        },
+        {
+          "id": "tag7",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag8",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag9",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag10",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag11",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag12",
+          "text": "В шаге от Москвы",
+          "value": "stepFromMoscow"
+        },
+        {
+          "id": "tag13",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag14",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag15",
+          "text": "Модерн",
+          "value": "modern"
+        },
+        {
+          "id": "tag15",
+          "text": "В шаге от Москвы",
+          "value": "stepFromMoscow"
+        },
+        {
+          "id": "tag16",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag17",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag18",
+          "text": "В шаге от Москвы",
+          "value": "stepFromMoscow"
+        },
+        {
+          "id": "tag20",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag21",
+          "text": "Дисконт",
+          "value": "discount"
+        },
+        {
+          "id": "tag22",
+          "text": "Модерн",
+          "value": "modern"
+        },
+        {
+          "id": "tag23",
+          "text": "В шаге от Москвы",
+          "value": "stepFromMoscow"
+        },
+        {
+          "id": "tag24",
+          "text": "Деревянный дом",
+          "value": "woodenHouse"
+        },
+        {
+          "id": "tag25",
+          "text": "Дисконт",
+          "value": "discount"
+        }
+      ],
+      "list": [
+        {
+          "name": "apartment",
+          "list": [
+            {
+              "id": "tag1",
+              "text": "Дисконт",
+              "value": "discount"
+            },
+            {
+              "id": "tag2",
+              "text": "Деревянный дом",
+              "value": "woodenHouse"
+            },
+            {
+              "id": "tag3",
+              "text": "В шаге от Москвы",
+              "value": "stepFromMoscow"
+            },
+            {
+              "id": "tag4",
+              "text": "Дисконт",
+              "value": "discount"
+            },
+            {
+              "id": "tag5",
+              "text": "Деревянный дом",
+              "value": "woodenHouse"
+            },
+            {
+              "id": "tag6",
+              "text": "В шаге от Москвы",
+              "value": "stepFromMoscow"
+            }
+          ]
+        },
+        {
+          "name": "room",
+          "list": [{
+              "id": "tag3",
+              "text": "city_room tag",
+              "value": "stepFromMoscow"
+            },
+            {
+              "id": "tag1",
+              "text": "Дисконт",
+              "value": "discount"
+            },
+            {
+              "id": "tag2",
+              "text": "Деревянный дом",
+              "value": "woodenHouse"
+            },
+            {
+              "id": "tag4",
+              "text": "Дисконт",
+              "value": "discount"
+            },
+            {
+              "id": "tag5",
+              "text": "Деревянный дом",
+              "value": "woodenHouse"
+            },
+            {
+              "id": "tag6",
+              "text": "В шаге от Москвы",
+              "value": "stepFromMoscow"
+            }
+          ]
+        },
+        {
+          "name": "house",
+          "list": [{
+              "id": "tag2",
+              "text": "city_house tag",
+              "value": "woodenHouse"
+            },
+            {
+              "id": "tag1",
+              "text": "Дисконт",
+              "value": "discount"
+            },
+            {
+              "id": "tag3",
+              "text": "В шаге от Москвы",
+              "value": "stepFromMoscow"
+            },
+            {
+              "id": "tag4",
+              "text": "Дисконт",
+              "value": "discount"
+            },
+            {
+              "id": "tag5",
+              "text": "Деревянный дом",
+              "value": "woodenHouse"
+            },
+            {
+              "id": "tag6",
+              "text": "В шаге от Москвы",
+              "value": "stepFromMoscow"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pagination": {
+    "current": 1,
+    "count": 4,
+    "objects_count": "350 предложений",
+    "url": "",
+    "param": ""
+  },
+  "requiesData": {
+    "page": 1
+  },
+  "cards": [],
+  "cards_request": {
+    "picture": {
+      "sources": {
+        "mobile": [
+          "/assets/images/home/banner/banner_object.jpg"
+        ],
+        "tablet": [
+          "/assets/images/home/banner/banner_object.jpg"
+        ],
+        "desktop": [
+          "/assets/images/home/banner/banner_object.jpg"
+        ]
+      },
+      "alt": "apartment",
+      "title": "apartment"
+    },
+    "title": "нужна помощь в подборе лучших предложений?",
+    "form": {
+      "url": "/ajax/json/success.json",
+      "hidden": {
+        "user_id": "123"
+      },
+      "inputs": [
+        {
+          "placeholder": "Имя*",
+          "value": "",
+          "name": "name",
+          "type": "text",
+          "className": "",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 1,
+              "max": 50
+            }
+          }
+        },
+        {
+          "type": "input",
+          "name": "phone",
+          "placeholder": "+7 (___) ___-__-__",
+          "value": "",
+          "maskInfo": {
+            "options": {
+              "mask": "+{7}(000) 000-00-00"
+            },
+            "complete": false
+          },
+          "checked": {
+            "value": "waiting",
+            "required": false,
+            "lengthString": {
+              "min": 17,
+              "max": 17
+            }
+          }
+        },
+        {
+          "placeholder": "E-mail*",
+          "value": "",
+          "name": "email",
+          "type": "text",
+          "className": "input--email",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "email": true,
+            "lengthString": {
+              "min": 5,
+              "max": 250
+            }
+          }
+        }
+      ],
+      "btn": "Отправить заявку",
+      "checkbox": {
+        "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+        "name": "checkbox",
+        "value": "y",
+        "checked": false
+      }
+    }
+  },
+  "error_cards": "Нет предложений по вашему запросу",
+  "request": {
+    "picture": {
+      "sources": {
+        "mobile": [
+          "/assets/images/how-back.jpg",
+          "/assets/images/album.webp"
+        ],
+        "tablet": [
+          "/assets/images/album.jpg",
+          "/assets/images/album.webp"
+        ],
+        "desktop": [
+          "/assets/images/album.jpg",
+          "/assets/images/album.webp"
+        ]
+      },
+      "alt": "album",
+      "title": "album"
+    },
+    "title": "устали искать? <br>подберем для вас то, что нужно за 30 минут",
+    "form": {
+      "url": "/ajax/json/success.json",
+      "hidden": {
+        "user_id": "123"
+      },
+      "inputs": [{
+          "placeholder": "Имя*",
+          "value": "",
+          "name": "name",
+          "type": "text",
+          "className": "",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 1,
+              "max": 50
+            }
+          }
+        },
+        {
+          "type": "input",
+          "name": "phone",
+          "placeholder": "+7 (___) ___-__-__",
+          "value": "",
+          "maskInfo": {
+            "options": {
+              "mask": "+{7}(000) 000-00-00"
+            },
+            "complete": false
+          },
+          "checked": {
+            "value": "waiting",
+            "required": false,
+            "lengthString": {
+              "min": 17,
+              "max": 17
+            }
+          }
+        },
+        {
+          "placeholder": "E-mail*",
+          "value": "",
+          "name": "email",
+          "type": "text",
+          "className": "input--email",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "email": true,
+            "lengthString": {
+              "min": 5,
+              "max": 250
+            }
+          }
+        }
+      ],
+      "btn": "Отправить заявку",
+      "checkbox": {
+        "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+        "name": "checkbox",
+        "value": "y",
+        "checked": false
+      }
+    }
+  },
+  "desc": {
+    "title": "индивидуальный<br> дизайн для вас",
+    "describe": "В последние годы в Москве строится всё больше высотных офисных зданий, различных деловых и культурных центров. Создаются новые памятники и скульптуры. Этим сооружениям и объектам также необходимо уделить внимание, поскольку именно они формируют облик современной Москвы.<br> Вместе с тем, с начала 1990-х годов в Москве было разрушено, по некоторым оценкам, более 700 исторических зданий, среди которых Гостиница Москва, Тёплые торговые ряды, «Военторг» и ряд других выдающихся памятников архитектуры. В эти же годы возник так называемый «лужковский стиль», который несёт в себе признаки постмодернизма, историзма и эклектики. Однако «лужковский стиль» часто подвергается суровой критике. "
+  },
+  "seo": {
+    "items": [
+      {
+        "title": "Узнать о районах Москвы",
+        "items": [
+          {
+            "text": "Авиамоторная",
+            "url": "#"
+          },
+          {
+            "text": "Волжская",
+            "url": "#"
+          },
+          {
+            "text": "Академический",
+            "url": "#"
+          },
+          {
+            "text": "Автозаводская",
+            "url": "#"
+          },
+          {
+            "text": "Волоколамская",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевский",
+            "url": "#"
+          },
+          {
+            "text": "Академическая",
+            "url": "#"
+          },
+          {
+            "text": "Воробьевы горы",
+            "url": "#"
+          },
+          {
+            "text": "Алтуфьевский",
+            "url": "#"
+          },
+          {
+            "text": "Александровский сад",
+            "url": "#"
+          },
+          {
+            "text": "Выставочная",
+            "url": "#"
+          },
+          {
+            "text": "Арбат",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевская",
+            "url": "#"
+          },
+          {
+            "text": "Крылатское",
+            "url": "#"
+          },
+          {
+            "text": "Аэропорт",
+            "url": "#"
+          },
+          {
+            "text": "Академический",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевский",
+            "url": "#"
+          },
+          {
+            "text": "Алтуфьевский",
+            "url": "#"
+          },
+          {
+            "text": "Арбат",
+            "url": "#"
+          },
+          {
+            "text": "Аэропорт",
+            "url": "#"
+          },
+          {
+            "text": "Академический",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевский",
+            "url": "#"
+          },
+          {
+            "text": "Алтуфьевский",
+            "url": "#"
+          },
+          {
+            "text": "Арбат",
+            "url": "#"
+          },
+          {
+            "text": "Аэропорт",
+            "url": "#"
+          },
+          {
+            "text": "Академический",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевский",
+            "url": "#"
+          },
+          {
+            "text": "Алтуфьевский",
+            "url": "#"
+          },
+          {
+            "text": "Арбат",
+            "url": "#"
+          },
+          {
+            "text": "Аэропорт",
+            "url": "#"
+          },
+          {
+            "text": "Академический",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевский",
+            "url": "#"
+          },
+          {
+            "text": "Алтуфьевский",
+            "url": "#"
+          },
+          {
+            "text": "Арбат",
+            "url": "#"
+          },
+          {
+            "text": "Аэропорт",
+            "url": "#"
+          },
+          {
+            "text": "Академический",
+            "url": "#"
+          },
+          {
+            "text": "Алексеевский",
+            "url": "#"
+          },
+          {
+            "text": "Алтуфьевский",
+            "url": "#"
+          },
+          {
+            "text": "Арбат",
+            "url": "#"
+          },
+          {
+            "text": "Аэропорт",
+            "url": "#"
+          }
+        ],
+        "btnOpen": "Показать больше районов"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+$parent: 'detail';
+
+@include block($parent) {
+  position: relative;
+
+  @include element($parent, 'content') {
+    position: relative;
+  }
+}

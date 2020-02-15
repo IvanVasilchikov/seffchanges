@@ -1,6 +1,6 @@
 <section class="landing-block g-pt-30 g-pb-30">
 	<div class="container-fluid g-px-30">
-		<div class="js-carousel g-pos-rel g-mx-minus-15"
+		<div class="js-carousel g-pos-rel g-mx-minus-15 row"
 			 data-infinite="true"
 			 data-slides-show="2"
 			 data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-45 g-height-45 g-font-size-40 g-color-white g-bg-primary"
@@ -18,8 +18,15 @@
                    "slidesToShow": 1,
                    "slidesToScroll": 1
                  }
-               }]'>
-			<div class="landing-block-node-card js-slide g-px-15">
+               }]'
+			 data-init-classes-exclude='[{
+				 "selector": ".landing-block-node-card",
+				 "class": "col-12 col-sm-6 col-lg-6"
+			   }, {
+				 "selector": ".js-carousel",
+				 "class": "row"
+			   }]'>
+			<div class="landing-block-node-card js-slide g-px-15 col-12 col-sm-6 col-lg-6">
 				<!-- Article -->
 				<article class="g-parent g-pos-rel">
 					<figure class="u-bg-overlay g-pointer-events-before-after-none g-bg-black-opacity-0_5--after g-overflow-hidden">
@@ -47,7 +54,7 @@
 				<!-- End Article -->
 			</div>
 
-			<div class="landing-block-node-card js-slide g-px-15">
+			<div class="landing-block-node-card js-slide g-px-15 col-12 col-sm-6 col-lg-6">
 				<!-- Article -->
 				<article class="g-parent g-pos-rel">
 					<figure class="u-bg-overlay g-pointer-events-before-after-none g-bg-black-opacity-0_5--after g-overflow-hidden">
@@ -75,7 +82,7 @@
 				<!-- End Article -->
 			</div>
 
-			<div class="landing-block-node-card js-slide g-px-15">
+			<div class="landing-block-node-card js-slide g-px-15 col-12 col-sm-6 col-lg-6">
 				<!-- Article -->
 				<article class="g-parent g-pos-rel">
 					<figure class="u-bg-overlay g-pointer-events-before-after-none g-bg-black-opacity-0_5--after g-overflow-hidden">
@@ -102,7 +109,7 @@
 				<!-- End Article -->
 			</div>
 
-			<div class="landing-block-node-card js-slide g-px-15">
+			<div class="landing-block-node-card js-slide g-px-15 col-12 col-sm-6 col-lg-6">
 				<!-- Article -->
 				<article class="g-parent g-pos-rel">
 					<figure class="u-bg-overlay g-pointer-events-before-after-none g-bg-black-opacity-0_5--after g-overflow-hidden">

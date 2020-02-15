@@ -1,0 +1,9 @@
+mixin footer-static(info)
+  .footer-static(style='position:absolute;bottom:0;')
+    .footer-static__item
+      span.footer-static__phone!= info.phone
+      span.footer-static__address!= info.address
+    .footer-static__item
+      img.footer-static__maps-image(src= loadAssets('./images/maps-img.jpg'), alt= 'maps-image')
+      div(style="position:relative")
+        img.footer-static__logo-icon(src='/assets/svg/logo-with-name.svg')

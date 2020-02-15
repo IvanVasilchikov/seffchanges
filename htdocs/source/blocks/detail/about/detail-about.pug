@@ -1,0 +1,64 @@
+include ../../fonts/title/title.pug
+include ../../fonts/text/text.pug
+include ../../core/picture/picture.pug
+
+mixin detail-about(info)
+  .detail-about(id='about', data-screen='about')
+    .main
+      +title(info.title, 'detail-about__title')
+    .detail-about__container
+      .main.detail-about__main
+        .detail-about__content
+          if info.info
+            .detail-about__info
+              each item in info.info
+                .detail-about__item
+                  .detail-about__item-title!= item.title
+                  .detail-about__item-text!= item.text
+          else
+            | <!---->
+          if info.description
+            +text(info.description, 'detail-about__text')
+          else
+            | <!---->
+          if info.link
+            .detail-about__more
+              a.detail-about__link(href=info.link.url, target='_blank')!= info.link.text
+          else
+            | <!---->
+        .detail-about__wrap
+          if info.slider
+            .detail-about__slider.swiper-container
+              if info.slider.length > 1
+                .detail-about__slider-btns
+                  .detail-about__slider-btn(@click='slider.slidePrev()')
+                    svg
+                      use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+                  .detail-about__slider-btn.detail-about__slider-btn--next(@click='slider.slideNext()')
+                    svg
+                      use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+              else
+                | <!---->
+              .swiper-wrapper
+                each slide, index in info.slider
+                  .detail-about__slide.swiper-slide
+                    if (index === 0)
+                      +picture(slide, 'detail-about__slide-image', 'lazyload')
+                    else
+                      +picture(slide, 'detail-about__slide-image', 'swiper-lazy')
+          else
+            | <!---->
+          if info.buttons
+            .detail-about__buttons
+              each button in info.buttons
+                .detail-about__button(class='detail-about__button--' + button.type)
+                  if (button.type === 'presentation')
+                    .detail-about__button-link(@click= 'popupOpen(\'form\', \'presentation_complex\')')
+                  else if (button.type === 'plan')
+                    .detail-about__button-link(@click= 'popupOpen(\'form\', \'presentation\')')
+                  else
+                    | <!---->
+                  img.lazyload(data-src=button.image, alt=button.type)
+                  .detail-about__button-text!= button.text
+          else
+            | <!---->

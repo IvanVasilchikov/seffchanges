@@ -1,0 +1,16 @@
+include ../../core/input/input.pug
+include ../../core/textarea/textarea.pug
+include ../../core/btn/btn.pug
+include ../../core/checkbox/checkbox.pug
+include ../../form/form.pug
+
+mixin form-question(info, className)
+  +form(info, 'form-question ' + className)(ref='form', @submit='onSubmit')
+    .form-question__wrap
+      .form-question__inputs
+        each input in info.inputs
+          +input(input, 'form-question__input')(v-model= 'formData[input.name]')
+      +textarea(info.textarea, 'form-question__textarea')(v-model='formData.message')
+    .form-question__wrap.form-question__wrap--reverse
+      +btn('button', info.btn, 'form-question__btn', (!info.checkbox.checked))
+      +checkbox(info.checkbox, 'form-question__checkbox')(ref='agreement')

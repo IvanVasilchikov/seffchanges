@@ -74,12 +74,11 @@ abstract class DataManager
 	 */
 	public static function getEntity()
 	{
-		$class = get_called_class();
-		$class = Entity::normalizeEntityClass($class);
+		$class = static::getEntityClass()::normalizeEntityClass(get_called_class());
 
 		if (!isset(static::$entity[$class]))
 		{
-			static::$entity[$class] = Entity::getInstance($class);
+			static::$entity[$class] = static::getEntityClass()::getInstance($class);
 		}
 
 		return static::$entity[$class];
@@ -87,7 +86,7 @@ abstract class DataManager
 
 	public static function unsetEntity($class)
 	{
-		$class = Entity::normalizeEntityClass($class);
+		$class = static::getEntityClass()::normalizeEntityClass($class);
 
 		if (isset(static::$entity[$class]))
 		{
@@ -116,6 +115,14 @@ abstract class DataManager
 	}
 
 	/**
+	 * @return string
+	 */
+	public static function getTitle()
+	{
+		return null;
+	}
+
+	/**
 	 * Returns class of Object for current entity.
 	 *
 	 * @return string|EntityObject
@@ -124,31 +131,7 @@ abstract class DataManager
 	{
 		if (!isset(static::$objectClass[get_called_class()]))
 		{
-			$objectClass = Entity::normalizeName(get_called_class());
-
-			// make class name more unique
-			$namespace = substr($objectClass, 0, strrpos($objectClass, '\\')+1);
-			$className = substr($objectClass, strrpos($objectClass, '\\') + 1);
-
-			$className = Entity::getDefaultObjectClassName($className);
-
-
-
-			// with prefix EO_ it's not actual anymore
-			/*if (in_array(strtolower($className), static::$reservedWords))
-			{
-				// add postfix to reserved word
-				$className .= 'Object';
-			}*/
-
-			// the same reason
-			/*if (class_exists($objectClass) && !is_subclass_of($objectClass, EntityObject::class))
-			{
-				// add unique postfix to existing class
-				$className .= substr(md5($objectClass), 0, 6);
-			}*/
-
-			static::$objectClass[get_called_class()] = $namespace.$className;
+			static::$objectClass[get_called_class()] = static::getObjectClassByDataClass(get_called_class());
 		}
 
 		return static::$objectClass[get_called_class()];
@@ -165,6 +148,19 @@ abstract class DataManager
 		return substr($class, strrpos($class, '\\')+1);
 	}
 
+	protected static function getObjectClassByDataClass($dataClass)
+	{
+		$objectClass = static::getEntityClass()::normalizeName($dataClass);
+
+		// make class name more unique
+		$namespace = substr($objectClass, 0, strrpos($objectClass, '\\')+1);
+		$className = substr($objectClass, strrpos($objectClass, '\\') + 1);
+
+		$className = static::getEntityClass()::getDefaultObjectClassName($className);
+
+		return $namespace.$className;
+	}
+
 	/**
 	 * Returns class of Object collection for current entity.
 	 *
@@ -174,15 +170,7 @@ abstract class DataManager
 	{
 		if (!isset(static::$collectionClass[get_called_class()]))
 		{
-			$objectClass = Entity::normalizeName(get_called_class());
-
-			// make class name more unique
-			$namespace = substr($objectClass, 0, strrpos($objectClass, '\\')+1);
-			$className = substr($objectClass, strrpos($objectClass, '\\') + 1);
-
-			$className = Entity::getDefaultCollectionClassName($className);
-
-			static::$collectionClass[get_called_class()] = $namespace.$className;
+			static::$collectionClass[get_called_class()] = static::getCollectionClassByDataClass(get_called_class());
 		}
 
 		return static::$collectionClass[get_called_class()];
@@ -197,6 +185,51 @@ abstract class DataManager
 	{
 		$class = static::getCollectionClass();
 		return substr($class, strrpos($class, '\\')+1);
+	}
+
+	protected static function getCollectionClassByDataClass($dataClass)
+	{
+		$objectClass = static::getEntityClass()::normalizeName($dataClass);
+
+		// make class name more unique
+		$namespace = substr($objectClass, 0, strrpos($objectClass, '\\')+1);
+		$className = substr($objectClass, strrpos($objectClass, '\\') + 1);
+
+		$className = static::getEntityClass()::getDefaultCollectionClassName($className);
+
+		return $namespace.$className;
+	}
+
+	/**
+	 * @return EntityObject|string
+	 */
+	public static function getObjectParentClass()
+	{
+		return EntityObject::class;
+	}
+
+	/**
+	 * @return Collection|string
+	 */
+	public static function getCollectionParentClass()
+	{
+		return Collection::class;
+	}
+
+	/**
+	 * @return Query|string
+	 */
+	public static function getQueryClass()
+	{
+		return Query::class;
+	}
+
+	/**
+	 * @return Entity|string
+	 */
+	public static function getEntityClass()
+	{
+		return Entity::class;
 	}
 
 	/**
@@ -251,7 +284,7 @@ abstract class DataManager
 
 	/**
 	 * Returns entity map definition.
-	 * To get initialized fields @see \Bitrix\Main\ORM\Entity::getFields() and \Bitrix\Main\ORM\Base::getField()
+	 * To get initialized fields @see \Bitrix\Main\ORM\Entity::getFields() and \Bitrix\Main\ORM\Entity::getField()
 	 */
 	public static function getMap()
 	{
@@ -512,7 +545,8 @@ abstract class DataManager
 	 */
 	public static function query()
 	{
-		return new Query(static::getEntity());
+		$queryClass = static::getQueryClass();
+		return new $queryClass(static::getEntity());
 	}
 
 	/**
@@ -749,7 +783,14 @@ abstract class DataManager
 					{
 						if ($entity->getField($fieldName) instanceof ScalarField && $entity->getField($fieldName)->isPrimary())
 						{
-							// and ignore primary
+							// ignore old primary
+							if (array_key_exists($fieldName, $primary) && $primary[$fieldName] == $value)
+							{
+								unset($fields[$fieldName]);
+								continue;
+							}
+
+							// but prevent primary changing
 							trigger_error(sprintf(
 								'Primary of %s %s can not be changed. You can delete this row and add a new one',
 								static::getObjectClass(), Main\Web\Json::encode($object->primary)
@@ -947,210 +988,210 @@ abstract class DataManager
 	 * @throws Main\ArgumentException
 	 * @throws Main\SystemException
 	 */
-    public static function addMulti($rows, $ignoreEvents = false)
-    {
-        global $USER_FIELD_MANAGER;
-        
-        $rows = array_values($rows);
-        $forceSeparateQueries = false;
-        
-        if (!$ignoreEvents && count($rows) > 1 && strlen(static::getEntity()->getAutoIncrement()))
-        {
-            $forceSeparateQueries = true;
-            
-            // change to warning
-            trigger_error(
-                'Multi-insert doesn\'t work with events as far as we can not get last inserted IDs that we need for the events. '.
-                'Insert query was forced to multiple separate queries.',
-                E_USER_WARNING
-            );
-        }
-        
-        // prepare objects
-        $objects = [];
-        
-        foreach ($rows as $k => &$row)
-        {
-            $objects[$k] = static::convertArrayToObject($row, true);
-        }
-        
-        $entity = static::getEntity();
-        $result = new AddResult();
-        
-        try
-        {
-            // call onBeforeEvent
-            if (!$ignoreEvents)
-            {
-                foreach ($objects as $k => $object)
-                {
-                    static::callOnBeforeAddEvent($object, $rows[$k], $result);
-                }
-            }
-            
-            // collect array data
-            $allFields = [];
-            $allUfData = [];
-            
-            foreach ($objects as $k => $object)
-            {
-                // actualize old-style fields array from object
-                $allFields[$k] = $object->collectValues(Values::CURRENT, FieldTypeMask::SCALAR);
-                
-                // uf values
-                $allUfData[$k] = $object->collectValues(Values::CURRENT, FieldTypeMask::USERTYPE);
-            }
-            
-            // check data and uf
-            foreach ($objects as $k => $object)
-            {
-                $fields = $allFields[$k];
-                $ufdata = $allUfData[$k];
-                
-                // check data
-                static::checkFields($result, null, $fields);
-                
-                // check uf data
-                if (!empty($ufdata))
-                {
-                    static::checkUfFields($object, $ufdata, $result);
-                }
-                
-                // check if there is still some data
-                if (!count($fields + $ufdata))
-                {
-                    $result->addError(new EntityError("There is no data to add."));
-                }
-            }
-            
-            // return if any error in any row
-            if (!$result->isSuccess(true))
-            {
-                return $result;
-            }
-            
-            //event on adding
-            if (!$ignoreEvents)
-            {
-                foreach ($objects as $k => $object)
-                {
-                    $fields = $allFields[$k];
-                    $ufdata = $allUfData[$k];
-                    
-                    self::callOnAddEvent($object, $fields, $ufdata);
-                }
-            }
-            
-            // prepare sql
-            $allSqlData = [];
-            
-            foreach ($allFields as $k => $fields)
-            {
-                // use save modifiers
-                $fieldsToDb = $fields;
-                
-                foreach ($fieldsToDb as $fieldName => $value)
-                {
-                    $field = $entity->getField($fieldName);
-                    $fieldsToDb[$fieldName] = $field->modifyValueBeforeSave($value, $fields);
-                }
-                
-                $dataReplacedColumn = static::replaceFieldName($fieldsToDb);
-                
-                $allSqlData[$k] = $dataReplacedColumn;
-            }
-            
-            // save data
-            $connection = $entity->getConnection();
-            
-            $tableName = $entity->getDBTableName();
-            $identity = $entity->getAutoIncrement();
-            $ids = [];
-            
-            // multi insert on db level
-            if ($forceSeparateQueries)
-            {
-                foreach ($allSqlData as $k => $sqlData)
-                {
-                    // remember all ids
-                    $ids[$k] = $connection->add($tableName, $sqlData, $identity);
-                }
-            }
-            else
-            {
-                $id = $connection->addMulti($tableName, $allSqlData, $identity);
-            }
-            
-            if (count($allSqlData) > 1)
-            {
-                // id doesn't make sense when multiple inserts
-                $id = null;
-            }
-            else
-            {
-                $object = $objects[0];
-                $fields = $allFields[0];
-                
-                // build standard primary
-                $primary = null;
-                
-                if (!empty($id))
-                {
-                    if (strlen($entity->getAutoIncrement()))
-                    {
-                        $primary = array($entity->getAutoIncrement() => $id);
-                        static::normalizePrimary($primary);
-                    }
-                    else
-                    {
-                        // for those who did not set 'autocomplete' flag but want to get id from result
-                        $primary = array('ID' => $id);
-                    }
-                }
-                else
-                {
-                    static::normalizePrimary($primary, $fields);
-                }
-                
-                // fill result
-                $result->setPrimary($primary);
-                $result->setData($fields);
-                $result->setObject($object);
-            }
-            
-            // save uf data
-            foreach ($allUfData as $ufdata)
-            {
-                if (!empty($ufdata))
-                {
-                    $USER_FIELD_MANAGER->update($entity->getUfId(), end($primary), $ufdata);
-                }
-            }
-            
-            $entity->cleanCache();
-            
-            // after event
-            if (!$ignoreEvents)
-            {
-                foreach ($objects as $k => $object)
-                {
-                    $fields = $allFields[$k];
-                    $id = $forceSeparateQueries ? $ids[$k] : null;
-                    
-                    static::callOnAfterAddEvent($object, $fields, $id);
-                }
-            }
-        }
-        catch (\Exception $e)
-        {
-            // check result to avoid warning
-            $result->isSuccess();
-            
-            throw $e;
-        }
-        
-        return $result;
-    }
+	public static function addMulti($rows, $ignoreEvents = false)
+	{
+		global $USER_FIELD_MANAGER;
+
+		$rows = array_values($rows);
+		$forceSeparateQueries = false;
+
+		if (!$ignoreEvents && count($rows) > 1 && strlen(static::getEntity()->getAutoIncrement()))
+		{
+			$forceSeparateQueries = true;
+
+			// change to warning
+			trigger_error(
+				'Multi-insert doesn\'t work with events as far as we can not get last inserted IDs that we need for the events. '.
+				'Insert query was forced to multiple separate queries.',
+				E_USER_NOTICE
+			);
+		}
+
+		// prepare objects
+		$objects = [];
+
+		foreach ($rows as $k => &$row)
+		{
+			$objects[$k] = static::convertArrayToObject($row, true);
+		}
+
+		$entity = static::getEntity();
+		$result = new AddResult();
+
+		try
+		{
+			// call onBeforeEvent
+			if (!$ignoreEvents)
+			{
+				foreach ($objects as $k => $object)
+				{
+					static::callOnBeforeAddEvent($object, $rows[$k], $result);
+				}
+			}
+
+			// collect array data
+			$allFields = [];
+			$allUfData = [];
+
+			foreach ($objects as $k => $object)
+			{
+				// actualize old-style fields array from object
+				$allFields[$k] = $object->collectValues(Values::CURRENT, FieldTypeMask::SCALAR);
+
+				// uf values
+				$allUfData[$k] = $object->collectValues(Values::CURRENT, FieldTypeMask::USERTYPE);
+			}
+
+			// check data and uf
+			foreach ($objects as $k => $object)
+			{
+				$fields = $allFields[$k];
+				$ufdata = $allUfData[$k];
+
+				// check data
+				static::checkFields($result, null, $fields);
+
+				// check uf data
+				if (!empty($ufdata))
+				{
+					static::checkUfFields($object, $ufdata, $result);
+				}
+
+				// check if there is still some data
+				if (!count($fields + $ufdata))
+				{
+					$result->addError(new EntityError("There is no data to add."));
+				}
+			}
+
+			// return if any error in any row
+			if (!$result->isSuccess(true))
+			{
+				return $result;
+			}
+
+			//event on adding
+			if (!$ignoreEvents)
+			{
+				foreach ($objects as $k => $object)
+				{
+					$fields = $allFields[$k];
+					$ufdata = $allUfData[$k];
+
+					self::callOnAddEvent($object, $fields, $ufdata);
+				}
+			}
+
+			// prepare sql
+			$allSqlData = [];
+
+			foreach ($allFields as $k => $fields)
+			{
+				// use save modifiers
+				$fieldsToDb = $fields;
+
+				foreach ($fieldsToDb as $fieldName => $value)
+				{
+					$field = $entity->getField($fieldName);
+					$fieldsToDb[$fieldName] = $field->modifyValueBeforeSave($value, $fields);
+				}
+
+				$dataReplacedColumn = static::replaceFieldName($fieldsToDb);
+
+				$allSqlData[$k] = $dataReplacedColumn;
+			}
+
+			// save data
+			$connection = $entity->getConnection();
+
+			$tableName = $entity->getDBTableName();
+			$identity = $entity->getAutoIncrement();
+			$ids = [];
+
+			// multi insert on db level
+			if ($forceSeparateQueries)
+			{
+				foreach ($allSqlData as $k => $sqlData)
+				{
+					// remember all ids
+					$ids[$k] = $connection->add($tableName, $sqlData, $identity);
+				}
+			}
+			else
+			{
+				$id = $connection->addMulti($tableName, $allSqlData, $identity);
+			}
+
+			if (count($allSqlData) > 1)
+			{
+				// id doesn't make sense when multiple inserts
+				$id = null;
+			}
+			else
+			{
+				$object = $objects[0];
+				$fields = $allFields[0];
+
+				// build standard primary
+				$primary = null;
+
+				if (!empty($id))
+				{
+					if (strlen($entity->getAutoIncrement()))
+					{
+						$primary = array($entity->getAutoIncrement() => $id);
+						static::normalizePrimary($primary);
+					}
+					else
+					{
+						// for those who did not set 'autocomplete' flag but want to get id from result
+						$primary = array('ID' => $id);
+					}
+				}
+				else
+				{
+					static::normalizePrimary($primary, $fields);
+				}
+
+				// fill result
+				$result->setPrimary($primary);
+				$result->setData($fields);
+				$result->setObject($object);
+			}
+
+			// save uf data
+			foreach ($allUfData as $ufdata)
+			{
+				if (!empty($ufdata))
+				{
+					$USER_FIELD_MANAGER->update($entity->getUfId(), end($primary), $ufdata);
+				}
+			}
+
+			$entity->cleanCache();
+
+			// after event
+			if (!$ignoreEvents)
+			{
+				foreach ($objects as $k => $object)
+				{
+					$fields = $allFields[$k];
+					$id = $forceSeparateQueries ? $ids[$k] : null;
+
+					static::callOnAfterAddEvent($object, $fields, $id);
+				}
+			}
+		}
+		catch (\Exception $e)
+		{
+			// check result to avoid warning
+			$result->isSuccess();
+
+			throw $e;
+		}
+
+		return $result;
+	}
 
 	/**
 	 * Updates row in entity table by primary key
@@ -1211,7 +1252,7 @@ abstract class DataManager
 			// check if there is still some data
 			if (!count($fields + $ufdata))
 			{
-				$result->addError(new EntityError("There is no data to update."));
+				return $result;
 			}
 
 			// return if any error

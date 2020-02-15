@@ -188,7 +188,6 @@
 			return this.showLoader()
 				.then(this.createFrameIfNeeded())
 				.then(this.loadPreview(src))
-				.then(this.delay(200))
 				.then(this.hideLoader());
 		},
 
@@ -200,22 +199,44 @@
 		{
 			return function()
 			{
-				new Promise(function(resolve) {
+				return new Promise(function(resolve) {
+					var createFrame = function() {
+						if (!this.previewFrame)
+						{
+							this.previewFrame = BX.create('iframe', {
+								props: {
+									className: 'preview-desktop-body-preview-frame'
+								}
+							});
 
-					if (!this.previewFrame.style.width)
+							this.imageContainer.appendChild(this.previewFrame);
+							bind(this.previewFrame, "load", this.onFrameLoad);
+						}
+
+						if (!this.previewFrame.style.width)
+						{
+							var containerWidth = this.imageContainer.clientWidth;
+
+							void style(this.previewFrame, {
+								"width": "1000px",
+								"height": "calc((100vh - 140px) * (100 / "+((containerWidth/1000)*100)+"))",
+								"transform": "scale("+(containerWidth/1000)+") translateZ(0)",
+								"transform-origin": "top left",
+								"border": "none"
+							});
+						}
+
+						resolve(this.previewFrame);
+					}.bind(this);
+
+					if (document.readyState !== "complete")
 					{
-						var containerWidth = this.imageContainer.clientWidth;
-
-						void style(this.previewFrame, {
-							"width": "1000px",
-							"height": "calc((100vh - 140px) * (100 / "+((containerWidth/1000)*100)+"))",
-							"transform": "scale("+(containerWidth/1000)+") translateZ(0)",
-							"transform-origin": "top left",
-							"border": "none"
-						});
+						BX.bind(window, 'load', createFrame.bind(this));
 					}
-
-					resolve(this.previewFrame);
+					else
+					{
+						createFrame();
+					}
 				}.bind(this));
 			}.bind(this)
 		},
@@ -452,7 +473,7 @@
 			}
 			else
 			{
-				top.location = url;
+				window.location = url;
 			}
 		},
 

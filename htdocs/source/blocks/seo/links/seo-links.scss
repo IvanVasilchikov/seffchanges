@@ -1,0 +1,288 @@
+$parent: seo-links;
+
+@include block($parent) {
+  @include element ($parent, 'item') {
+    margin-bottom: rem(40);
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(45);
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element ($parent, 'head') {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: rem(17);
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+    font-size: rem(16);
+    line-height: 1.2;
+    color: $black;
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(26);
+      font-size: rem(18);
+    }
+
+    em {
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    @include modifier($parent, 'none-btn') {
+      font-size: rem(18);
+    }
+  }
+
+  @include element ($parent, 'head-btn') {
+    position: relative;
+    padding-right: rem(22);
+    margin-right: rem(6);
+    color: $red;
+    transition: color 0.4s ease;
+
+    @media screen and (min-width: $tMin) {
+      padding-right: rem(19);
+    }
+
+    @media (min-width: $d1280) {
+      &:hover {
+        color: $purple;
+
+        span {
+          border-color: $purple;
+        }
+
+        &::after {
+          border-color: $purple;
+        }
+      }
+    }
+
+    span {
+      border-bottom: 2px solid $red;
+      transition: border 0.4s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: rem(4);
+      top: rem(10);
+      width: rem(8);
+      height: rem(8);
+      border-top: 2px solid $red;
+      border-right: 2px solid $red;
+      transform: rotate(135deg) translate(-50%, 50%);
+      transition: top 0.4s ease, border 0.4s ease, transform 0.4s ease;
+    }
+
+    &:not(.seo-links__head-btn--open) {
+      &::after {
+        top: rem(2);
+        transform: rotate(-45deg) translate(-50%, 50%);
+      }
+    }
+  }
+
+  @include element ($parent, 'item-content-wrap') {
+    overflow: hidden;
+    // transition: max-height 0.4s ease;
+  }
+
+  @include element ($parent, 'content-wrap') {
+    max-height: rem(432);
+    margin-bottom: rem(11);
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      max-height: rem(318);
+    }
+
+    @media screen and (min-width: $d1280) {
+      max-height: rem(150);
+    }
+
+    @include modifier($parent, 'parts') {
+      max-height: rem(446);
+
+      @media screen and (min-width: $tMin) {
+        max-height: rem(340);
+      }
+
+      @media screen and (min-width: $d1280) {
+        max-height: rem(150);
+      }
+
+      @media screen and (min-width: $d1280) {
+        .seo-links__list--4-6 .seo-links__list-item {
+          width: 25%;
+
+          &:nth-of-type(20n),
+          &:nth-of-type(20n - 1),
+          &:nth-of-type(20n - 2),
+          &:nth-of-type(20n - 3) {
+            margin-bottom: rem(20);
+          }
+        }
+
+        .seo-links__list--2-6 .seo-links__list-item {
+          width: 48.3%;
+
+          &:nth-of-type(2n) {
+            width: 51.7%;
+          }
+
+          &:nth-of-type(10n),
+          &:nth-of-type(10n - 1) {
+            margin-bottom: rem(20);
+          }
+        }
+      }
+    }
+
+    &:not(.seo-links__content-wrap--parts) {
+      @media screen and (min-width: $d1280) {
+        .seo-links__list-item {
+          width: 16.9%;
+          margin-bottom: 0;
+
+          &:nth-of-type(2n) {
+            width: 16.9%;
+          }
+
+          &:nth-of-type(6n) {
+            width: 15.5%;
+          }
+
+          &:nth-of-type(30n),
+          &:nth-of-type(30n - 1),
+          &:nth-of-type(30n - 2),
+          &:nth-of-type(30n - 3) {
+            margin-bottom: rem(20);
+          }
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'content') {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: rem(14);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  @include element ($parent, 'list') {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @include modifier($parent, '4-6') {
+      border-bottom: 1px solid $gray3;
+      margin-bottom: rem(13);
+
+      @media screen and (min-width: $tMin) {
+        margin-bottom: rem(21);
+      }
+
+      @media screen and (min-width: $d1280) {
+        width: 67.7%;
+        margin-bottom: 0;
+        border-right: 1px solid $gray3;
+        border-bottom: 0;
+      }
+    }
+
+    @include modifier($parent, '2-6') {
+      @media screen and (min-width: $d1280) {
+        width: 32.3%;
+        padding-left: rem(30);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include element ($parent, 'list-item') {
+    width: 56.4%;
+    padding-right: rem(10);
+    margin-bottom: rem(1);
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      width: 26.9%;
+    }
+
+    &:nth-of-type(2n) {
+      width: 43.6%;
+
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        width: 26.9%;
+      }
+    }
+
+    &:nth-of-type(4n) {
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        width: 21.2%;
+      }
+    }
+
+    &:nth-of-type(4n + 2) {
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        width: 25%;
+      }
+    }
+
+    &:nth-of-type(10n),
+    &:nth-of-type(10n - 1) {
+      margin-bottom: rem(20);
+
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        margin-bottom: rem(1);
+      }
+
+      @media screen and (min-width: $d1280) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-of-type(20n),
+    &:nth-of-type(20n - 1),
+    &:nth-of-type(20n - 2),
+    &:nth-of-type(20n - 3) {
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        margin-bottom: rem(30);
+      }
+    }
+  }
+
+  @include element ($parent, 'list-link') {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $gray2;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  @include element ($parent, 'btn-open') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}

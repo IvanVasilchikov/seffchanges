@@ -1,0 +1,41 @@
+$parent: 'breadcrumbs';
+
+@include block($parent) {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include element($parent, 'link') {
+    font-size: rem(16);
+    line-height: rem(24);
+
+    &:not(:last-of-type) {
+      margin-right: rem(10);
+
+      &::after {
+        content: '';
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        height: rem(3);
+        width: rem(3);
+        background-color: $red2;
+        margin-left: rem(10);
+      }
+    }
+
+    &:last-of-type {
+      pointer-events: none;
+    }
+  }
+
+  @include modifier($parent, 'white') {
+    @include element($parent, 'link') {
+      color: $w;
+
+      &::after {
+        background-color: $w;
+      }
+    }
+  }
+}

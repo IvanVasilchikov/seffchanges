@@ -45,9 +45,9 @@ return array (
       array (
         'className' => '\\Bitrix\\Main\\DB\\MysqliConnection',
         'host' => 'localhost',
-        'database' => 'saffariestate',
-        'login' => 'saffariestate',
-        'password' => 'gfdfdfg#212!sas',
+        'database' => 'prod',
+        'login' => 'prod',
+        'password' => 'L2r2X9l!d3',
         'options' => 2,
       ),
     ),

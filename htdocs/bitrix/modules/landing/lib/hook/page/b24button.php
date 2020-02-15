@@ -10,15 +10,6 @@ Loc::loadMessages(__FILE__);
 class B24button extends \Bitrix\Landing\Hook\Page
 {
 	/**
-	 * Exec or not hook in edit mode.
-	 * @return true
-	 */
-	public function enabledInEditMode()
-	{
-		return false;
-	}
-	
-	/**
 	 * Get script url fromscript-code.
 	 * @param string $script Script code.
 	 * @return string
@@ -69,7 +60,10 @@ class B24button extends \Bitrix\Landing\Hook\Page
 			foreach ($buttonList as $button)
 			{
 				$key = self::getScriptUrl($button['SCRIPT']);
-				$items[$key] = $button['NAME'];
+				if ($key)
+				{
+					$items[$key] = $button['NAME'];
+				}
 			}
 		}
 		// site manager
@@ -148,6 +142,24 @@ class B24button extends \Bitrix\Landing\Hook\Page
 	}
 
 	/**
+	 * Exec or not hook in edit mode.
+	 * @return boolean
+	 */
+	public function enabledInEditMode()
+	{
+		return false;
+	}
+
+	/**
+	 * Exec or not hook in intranet mode.
+	 * @return boolean
+	 */
+	public function enabledInIntranetMode()
+	{
+		return false;
+	}
+
+	/**
 	 * Exec hook.
 	 * @return void
 	 */
@@ -161,7 +173,8 @@ class B24button extends \Bitrix\Landing\Hook\Page
 		$code = \htmlspecialcharsbx(trim($this->fields['CODE']));
 		if ($code != 'N')
 		{
-			\Bitrix\Main\Page\Asset::getInstance()->addString(
+			\Bitrix\Landing\Manager::setPageView(
+				'BeforeBodyClose',
 				'<script data-skip-moving="true">
 					(function(w,d,u,b){ \'use strict\';
 					var s=d.createElement(\'script\');var r=(Date.now()/1000|0);s.async=1;s.src=u+\'?\'+r;

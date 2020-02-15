@@ -1,0 +1,101 @@
+$parent: 'map-marker';
+
+@include block($parent) {
+  position: absolute;
+  z-index: 10;
+  background-color: rgba($red2, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(46);
+  width: rem(47);
+  border-radius: 50%;
+  cursor: pointer;
+
+  @include element($parent, 'ico') {
+    height: rem(36);
+    width: rem(36);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $purple;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    @include modifier($parent, 'svg') {
+      img {
+        max-height: rem(16);
+        max-width: rem(16);
+      }
+    }
+  }
+
+  @include element($parent, 'infowindow') {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    animation-name: fadeIn;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+    animation-duration: 0.4s;
+    box-shadow: inset 0 2px 5px rgba(#000, 0.25);
+    padding: rem(15) rem(15) rem(10);
+    font-size: rem(14);
+    line-height: rem(26);
+    color: #000;
+    background-color: #fff;
+    min-width: rem(221);
+
+    &::before {
+      content: '';
+      top: 0;
+      position: absolute;
+      left: 50%;
+      height: rem(8);
+      width: rem(9);
+      transform: rotate(45deg) translateX(-50%);
+      background-color: $w;
+      box-shadow: inset 3px 3px 3px rgba(#000, 0.15);
+      pointer-events: none;
+      z-index: 3;
+      display: block;
+    }
+  }
+
+  @include modifier($parent, 'main') {
+    background-color: transparent;
+    height: rem(51);
+    width: rem(41);
+    z-index: 11;
+
+    @include element($parent, 'ico') {
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+      background-color: transparent;
+    }
+  }
+
+  @include modifier($parent, 'open') {
+    z-index: 1000002;
+  }
+
+  @include modifier($parent, 'open-info') {
+    z-index: 12;
+
+    @include element($parent, 'ico') {
+      background-color: $red2;
+    }
+
+    @include element($parent, 'infowindow') {
+      display: block;
+      animation-play-state: running;
+    }
+  }
+}

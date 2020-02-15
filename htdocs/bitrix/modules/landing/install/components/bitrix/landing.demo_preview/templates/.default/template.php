@@ -44,7 +44,7 @@ $externalImport = !empty($arResult['EXTERNAL_IMPORT']);
 $createStore = !$externalImport &&
 			   !$arResult['DISABLE_IMPORT'] &&
 			   ($arParams['SITE_ID'] <= 0) &&
-			   ($template['TYPE'] == 'STORE');
+			   (in_array('STORE', (array) $template['TYPE']));
 
 if ($createStore)
 {
@@ -75,11 +75,7 @@ else
             <div class="preview-left">
                 <div class="preview-desktop">
                     <div class="preview-desktop-body">
-                        <div class="preview-desktop-body-image">
-							<?if ($template['URL_PREVIEW']):?>
-                            <iframe src="<?= \htmlspecialcharsbx($template['URL_PREVIEW']);?>" class="preview-desktop-body-preview-frame"></iframe>
-							<?endif;?>
-                        </div>
+                        <div class="preview-desktop-body-image"></div>
                         <div class="preview-desktop-body-loader-container"></div>
                     </div>
                 </div>

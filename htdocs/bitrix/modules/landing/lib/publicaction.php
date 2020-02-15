@@ -123,6 +123,11 @@ class PublicAction
 			$data = array();
 		}
 
+		if (isset($data['scope']))
+		{
+			\Bitrix\Landing\Site\Type::setScope($data['scope']);
+		}
+
 		if (!$isRest && (!defined('BX_UTF') || BX_UTF !== true))
 		{
 			$data = Manager::getApplication()->convertCharsetArray(
@@ -137,12 +142,12 @@ class PublicAction
 		{
 			$error->addError(
 				'ACCESS_DENIED',
-				Loc::getMessage('LANDING_ACCESS_DENIED')
+				Loc::getMessage('LANDING_ACCESS_DENIED2')
 			);
 		}
 		// tmp flag for compatibility
 		else if (
-			\Bitrix\Main\Loader::includeModule('bitrix24') &&
+			ModuleManager::isModuleInstalled('bitrix24') &&
 			Manager::getOption('temp_permission_admin_only') &&
 			!\CBitrix24::isPortalAdmin(Manager::getUserId())
 		)
@@ -267,6 +272,8 @@ class PublicAction
 		$request = $context->getRequest();
 		$files = $request->getFileList();
 		$postlist = $context->getRequest()->getPostList();
+
+		\Bitrix\Landing\Site\Type::setScope($request->get('type'));
 
 		// multiple commands
 		if (
@@ -403,8 +410,8 @@ class PublicAction
 
 	/**
 	 * Gateway between REST and publicaction.
-	 * @params array $fields Rest fields.
-	 * @params mixed $t Var.
+	 * @param array $fields Rest fields.
+	 * @param mixed $t Var.
 	 * @param \CRestServer $server Server instance.
 	 * @return mixed
 	 * @throws \ReflectionException
@@ -460,9 +467,50 @@ class PublicAction
 		{
 			if (($app = AppTable::getByClientId($app['APP_ID'])))
 			{
+				Rights::setOff();
 				Repo::deleteByAppCode($app['CODE']);
 				Placement::deleteByAppId($app['ID']);
 				Demos::deleteByAppCode($app['CODE']);
+				Rights::setOn();
+			}
+		}
+	}
+
+	/**
+	 * Before REST app delete.
+	 * @param \Bitrix\Main\Event $event Event data.
+	 * @return \Bitrix\Main\EventResult
+	 */
+	public static function beforeRestApplicationDelete(\Bitrix\Main\Event $event)
+	{
+		$parameters = $event->getParameters();
+
+		if ($app = AppTable::getByClientId($parameters['ID']))
+		{
+			$stat = self::getRestStat(true);
+			if (isset($stat['blocks'][$app['CODE']]))
+			{
+				$eventResult = new \Bitrix\Main\EventResult(
+					\Bitrix\Main\EventResult::ERROR,
+					new \Bitrix\Main\Error(
+						Loc::getMessage('LANDING_REST_DELETE_EXIST_BLOCKS'),
+						'LANDING_EXISTS_BLOCKS'
+					)
+				);
+
+				return $eventResult;
+			}
+			else if (isset($stat['pages'][$app['CODE']]))
+			{
+				$eventResult = new \Bitrix\Main\EventResult(
+					\Bitrix\Main\EventResult::ERROR,
+					new \Bitrix\Main\Error(
+						Loc::getMessage('LANDING_REST_DELETE_EXIST_PAGES'),
+						'LANDING_EXISTS_PAGES'
+					)
+				);
+
+				return $eventResult;
 			}
 		}
 	}
@@ -470,15 +518,19 @@ class PublicAction
 	/**
 	 * Gets stat data of using rest app.
 	 * @param bool $humanFormat Gets data in human format.
+	 * @param bool $onlyActive Gets data only in active states.
 	 * @return array
 	 */
-	public static function getRestStat($humanFormat = false)
+	public static function getRestStat($humanFormat = false, $onlyActive = true)
 	{
 		$blockCnt = [];
 		$fullStat = [
 			'blocks' => [],
 			'pages' => []
 		];
+		$activeValues = $onlyActive ? 'Y' : ['Y', 'N'];
+
+		Rights::setOff();
 
 		// gets all partners active block, placed on pages
 		$res = Internals\BlockTable::getList([
@@ -487,9 +539,10 @@ class PublicAction
 			],
 			'filter' => [
 				'CODE' => 'repo_%',
-				'=PUBLIC' => 'Y',
-				'=LANDING.ACTIVE' => 'Y',
-				'=LANDING.SITE.ACTIVE' => 'Y'
+				'=DELETED' => 'N',
+				'=PUBLIC' => $activeValues,
+				'=LANDING.ACTIVE' => $activeValues,
+				'=LANDING.SITE.ACTIVE' => $activeValues
 			],
 			'group' => [
 				'CODE'
@@ -539,12 +592,13 @@ class PublicAction
 		{
 			$res = Landing::getList([
 				'select' => [
-					'TPL_CODE', 'CNT'
+					'INITIATOR_APP_CODE', 'CNT'
 				],
 				'filter' => [
-					'=ACTIVE' => 'Y',
-					'=SITE.ACTIVE' => 'Y',
-					'=TPL_CODE' => array_keys($demos)
+					'=DELETED' => 'N',
+					'=ACTIVE' => $activeValues,
+					'=SITE.ACTIVE' => $activeValues,
+					'=INITIATOR_APP_CODE' => array_keys($demos)
 				],
 				'runtime' => [
 					new \Bitrix\Main\Entity\ExpressionField('CNT', 'COUNT(*)')
@@ -552,7 +606,7 @@ class PublicAction
 			]);
 			while ($row = $res->fetch())
 			{
-				$appCode = $demos[$row['TPL_CODE']]['APP_CODE'];
+				$appCode = $demos[$row['INITIATOR_APP_CODE']]['APP_CODE'];
 				if (!isset($fullStat['pages'][$appCode]))
 				{
 					$fullStat['pages'][$appCode] = 0;
@@ -597,6 +651,8 @@ class PublicAction
 			}
 		}
 		unset($demos, $res, $row);
+
+		Rights::setOn();
 
 		return $fullStat;
 	}

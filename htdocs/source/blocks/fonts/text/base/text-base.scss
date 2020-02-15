@@ -1,0 +1,7 @@
+$parent: text-base;
+
+@include block($parent) {
+  font-size: rem(15);
+  line-height: 1.6;
+  color: $black;
+}

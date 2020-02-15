@@ -1,0 +1,18 @@
+include ../../fonts/title/fourth/title-fourth.pug
+include ../../core/btn/btn.pug
+include ../../core/picture/picture.pug
+include ../../map/map.pug
+
+mixin about-location(info)
+  if info
+    .about-location
+      .main.about-location__container
+        .about-location__content
+          +picture(info.image, 'about-location__image', 'lazyload')
+          .about-location__content-wrp
+            .about-location__text
+              +title-fourth(info.preTitle, 'title-fourth--up about-location__pre-title')
+              .about-location__title!= info.title
+            +btn(info.link.url, info.link.text, 'btn--white about-location__button')
+        .about-location__map-wrp
+          +map(info.map, 'about-location__map')

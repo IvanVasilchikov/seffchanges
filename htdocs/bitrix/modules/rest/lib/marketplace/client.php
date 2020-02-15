@@ -182,7 +182,7 @@ class Client
 		);
 	}
 
-	public static function getByTag($tag, $page = false)
+	public static function getByTag($tag, $page = false, $pageSize = false)
 	{
 		$queryFields = Array(
 			"tag" => $tag
@@ -193,10 +193,30 @@ class Client
 			$queryFields["page"] = $page;
 		}
 
+		if($pageSize > 0)
+		{
+			$queryFields["onPageSize"] = $pageSize;
+		}
+
 		return Transport::instance()->call(
 			Transport::METHOD_GET_TAG,
 			$queryFields
 		);
+	}
+
+	public static function getLastByTag($tag, $pageSize = false)
+	{
+		$queryFields = Array(
+			"tag" => $tag,
+			"sort" => "date_public"
+		);
+
+		if($pageSize > 0)
+		{
+			$queryFields["onPageSize"] = $pageSize;
+		}
+
+		return Transport::instance()->call(Transport::METHOD_GET_TAG, $queryFields);
 	}
 
 	public static function getApp($code, $version = false, $checkHash = false, $installHash = false)
@@ -372,6 +392,29 @@ class Client
 		$tag[] = $placement;
 
 		return $tag;
+	}
+
+	public static function getTagByAppType($type)
+	{
+		$tag = [];
+		$tag[] = $type;
+		return $tag;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public static function isSubscriptionAvailable()
+	{
+		return \Bitrix\Main\Config\Option::get("bitrix24", "~mp24_paid", "N") === "Y";
+	}
+
+	/**
+	 * @return \Bitrix\Main\Type\Date
+	 */
+	public static function getSubscriptionFinalDate()
+	{
+		return new \Bitrix\Main\Type\Date(\Bitrix\Main\Config\Option::get("bitrix24", "~mp24_paid_date"));
 	}
 
 }

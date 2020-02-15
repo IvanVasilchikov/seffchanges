@@ -20,12 +20,12 @@ return array(
 	),
 	'style' => array(
 		'block' => array(
-			'type' => array('block-default', 'block-border'),
+			'type' => array('block-default', 'animation', 'block-border'),
 		),
 		'nodes' => array(
 			'.landing-block-node-text' => array(
 				'name' => Loc::getMessage('LANDING_BLOCK_27_4_ONE_COL_FIX_TEXT_NODES_LANDINGBLOCKNODE_TEXT'),
-				'type' => 'typo',
+				'type' => ['typo', 'container'],
 			),
 		),
 	),

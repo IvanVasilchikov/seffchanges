@@ -201,6 +201,13 @@ textarea.landing-options-input {
 .landing-additional-alt-promo-text {
 	margin-right: 5px;;
 	line-height: 18px;
+	cursor: pointer;
+	border-bottom: 1px solid #fff;
+	transition: border-bottom .3s ease;
+}
+
+.landing-additional-alt-promo-text:hover {
+	border-bottom: 1px solid rgba(94, 102, 117, 0.7);
 }
 
 .landing-additional-alt-promo-text:last-child {
@@ -465,6 +472,7 @@ textarea.landing-options-input {
 
 .landing-form-hidden-row {
 	display: none;
+	transition: background .2s linear;
 }
 
 .landing-form-collapsed-open .landing-form-hidden-row {
@@ -497,7 +505,7 @@ textarea.landing-options-input {
 
 .landing-form-type-page {
 	display: inline-block;
-	margin-left: 77px;
+	margin-left: 25px;
 	padding-left: 27px;
 	position: relative;
 	vertical-align: top;
@@ -568,16 +576,17 @@ textarea.landing-options-input {
 .ui-checkbox-hidden-input.landing-form-page-background .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
 	height: 504px;
 }
-.landing-page-set-form .ui-checkbox-hidden-input.landing-form-page-background .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
-	height: 485px;
-}
 
 .ui-checkbox-hidden-input.landing-form-meta-block .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
 	height: 530px;
 }
 
-.ui-checkbox-hidden-input.landing-form-custom-fields .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
-	height: 400px;
+.ui-checkbox-hidden-input.landing-form-custom-html .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
+	height: 180px;
+}
+
+.ui-checkbox-hidden-input.landing-form-custom-css .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
+	height: 180px;
 }
 
 .ui-checkbox-hidden-input.landing-form-header-footer-fields .ui-checkbox:checked  + .ui-checkbox-hidden-input-inner {
@@ -854,4 +863,26 @@ textarea.landing-options-input {
 
 .landing-form-rights-left {
 	display: flex;
+}
+
+.landing-icon-lock {
+	display: inline-block;
+	width: 11px;
+	height: 14px;
+	background: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%229%22%20height%3D%2213%22%3E%3Cpath%20fill%3D%22%2316B9EB%22%20fill-rule%3D%22evenodd%22%20d%3D%22M5.012%2010.18h-1.03V8.897a.809.809%200%200%201-.303-.631c0-.45.366-.813.819-.813.452%200%20.818.364.818.813a.809.809%200%200%201-.304.631v1.283zM2.256%203.447a2.233%202.233%200%200%201%202.242-2.225c1.238%200%202.241.996%202.241%202.225v1.61H2.256v-1.61zm5.668%201.61v-1.61C7.924%201.57%206.39.046%204.498.046%202.605.046%201.07%201.569%201.07%203.447v1.61H.031v6.952h8.933V5.057h-1.04z%22/%3E%3C/svg%3E)
+				no-repeat center;
+	margin: 0 0 2px 5px;
+}
+
+.ui-checkbox-block-copyright .landing-icon-lock {
+	margin-bottom: 0;
+}
+
+.ui-checkbox-block.ui-checkbox-block-copyright {
+	display: flex;
+	align-items: center;
+}
+
+.landing-form-hidden-row-highlight {
+	background: rgba(187,237,33, .2);
 }

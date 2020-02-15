@@ -1,0 +1,30 @@
+include ../../../core/checkbox/checkbox.pug
+include ../../../core/select/select.pug
+include ../../../core/btn/btn.pug
+
+mixin popup-area-countryCity(info)
+  -
+    var visibleCities = {
+      values: []
+    };
+  - var hideSticky = false;
+  - var buttonWidth = '100%';
+
+  .popup-area-countryCity
+    +btn('button', '', 'popup-area-countryCity__button popup-area-countryCity__button--mobile', (offersCount === 0))(@click='save()', ref='stickyBtn', :class='{"popup-area-countryCity__button--hide" : hideSticky}', :style='{width: buttonWidth + "px"}')
+      span(v-html='getOffersCount')
+    .popup-area-countryCity__search
+      input.popup-area-countryCity__search-input(type= 'input', placeholder= 'Поиск страны или города', v-model='search')
+    .popup-area-countryCity__wrapper
+      .popup-area-countryCity__checkboxes-shadow(class=(shadowView ? 'popup-area-countryCity__checkboxes-shadow--show' : ''))
+      .popup-area-countryCity__checkboxes-content(ref= 'scroll')
+        .popup-area-countryCity__checkboxes-wrapper
+          each checkboxes in info
+            .popup-area-countryCity__checkbox-list(:class='{"popup-area-countryCity__checkbox-list--hidden" : !hiddenList(checkboxes)}')
+              .popup-area-countryCity__checkbox-list-heading(v-if='hiddenList(checkboxes)')!= checkboxes.name
+              each checkbox in checkboxes.inner
+                +checkbox(checkbox, ('checkbox--bigger popup-area-countryCity__checkbox'))(@change= 'checkboxClick(checkbox, checkboxes)', v-if='hiddenCheckbox(checkbox, checkboxes)')
+    .popup-area-countryCity__buttons
+      +btn('button', '', 'popup-area-countryCity__button', (offersCount === 0))(@click='save()', ref='submitBtn', :class='{"popup-area-countryCity__button--hide" : !hideSticky}')
+        span(v-html='getOffersCount')
+      +btn('button', 'Сбросить', 'btn--border popup-area-countryCity__button')(@click='reset()')

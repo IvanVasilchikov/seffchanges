@@ -1,0 +1,23 @@
+extends ../layouts/main.pug
+
+include ../blocks/map/search/map-search.pug
+
+block vars
+  - homepage = false;
+  - var mapSearch = require('../data/mapSearch.json');
+  - noFooter = false;
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      mapSearch: !{JSON.stringify(mapSearch)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +map-search(mapSearch)

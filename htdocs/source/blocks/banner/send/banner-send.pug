@@ -1,0 +1,9 @@
+include ./../../core/btn/btn.pug
+include ./../../fonts/title/third/title-third.pug
+
+mixin banner-send(obj, className)
+  .banner-send(class= className)
+    svg
+      use(xlink:href=loadAssets('./svg/giraffe.svg'))
+    +title-third(obj.title, 'banner-send__title')
+    +btn('button', 'Отправить заявку' , 'banner-send__btn')(@click='popupOpen(\'form\', \'brokerSelection\')')

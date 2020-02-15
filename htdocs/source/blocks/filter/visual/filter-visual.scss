@@ -1,0 +1,181 @@
+$parent: filter-visual;
+
+@include block($parent) {
+  // position: relative;
+  margin-bottom: rem(35);
+  // z-index: 3;
+
+  @media screen and (min-width: $tMin) and (max-width: $d1279) {
+    margin-bottom: rem(28);
+  }
+
+  @media screen and (min-width: $d1280) {
+    margin-bottom: rem(37);
+  }
+
+  @include element($parent, 'top') {
+    margin-bottom: rem(29);
+
+    @media (min-width: $dMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @include element($parent, 'left') {
+    @media (min-width: $tMin) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      margin-bottom: rem(22);
+    }
+
+    @media (min-width: $dMin) {
+      margin-top: rem(10);
+    }
+  }
+
+  @include element($parent, 'offers') {
+    margin-bottom: rem(16);
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $gray4;
+
+    @media (min-width: $tMin) {
+      margin-right: rem(20);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $d1280) {
+      margin-right: rem(26);
+    }
+  }
+
+  @include element($parent, 'order') {
+    margin-bottom: rem(25);
+    font-size: rem(14);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $red2;
+    transition: color $ease;
+
+    @media (min-width: $tMin) {
+      margin-top: rem(0);
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element($parent, 'right') {
+    @media (min-width: $tMin) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include element($parent, 'address') {
+    width: 100%;
+    // padding-left: rem(19);
+    margin-bottom: rem(25);
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      width: rem(472);
+    }
+
+    @media (min-width: $dMin) {
+      width: rem(252);
+    }
+  }
+
+  @include element($parent, 'popup-btns') {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      margin-left: rem(22);
+      margin-bottom: 0;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+  }
+
+  @include element($parent, 'popup-btn') {
+    font-size: rem(16);
+    line-height: rem(24);
+    letter-spacing: -0.6px;
+    font-weight: 600;
+    color: $red2;
+    cursor: pointer;
+    transition: color $ease;
+
+    @media (min-width: $dMin) {
+      letter-spacing: -0.4px;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(22);
+
+      @media (min-width: $dMin) {
+        margin-right: rem(30);
+      }
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'tags') {
+    max-height: rem(80);
+    margin-bottom: rem(2);
+    transition: $ease;
+    overflow: hidden;
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      margin-bottom: rem(9);
+    }
+
+    @media (min-width: $dMin) {
+      margin-bottom: rem(14);
+    }
+  }
+
+  @include element ($parent, 'tags-items') {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(16);
+  }
+
+  @include element ($parent, 'tag') {
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+    flex-shrink: 0;
+  }
+
+  @include element ($parent, 'tags-more') {
+    display: inline-block;
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    cursor: pointer;
+    transition: color $ease;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}

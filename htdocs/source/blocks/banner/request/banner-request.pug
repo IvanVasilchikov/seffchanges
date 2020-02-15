@@ -1,0 +1,33 @@
+include ./../../fonts/title/second/title-second.pug
+include ./../../fonts/text/text.pug
+include ./../../core/input/input.pug
+include ./../../core/btn/btn.pug
+include ./../../core/checkbox/checkbox.pug
+include ./../../core/picture/picture.pug
+
+mixin banner-request(info, className, imgModif)
+  .banner-request(class= className)
+    if info.picture
+      +picture(info.picture, 'banner-request__background' + ' ' + imgModif, 'lazyload')
+    else
+      | <!---->
+
+    .banner-request__content
+      if info.title
+        +title-second(info.title, 'banner-request__title')
+      else
+        | <!---->
+      if info.form
+        form.banner-request__form(action=info.form.url, @submit.prevent='onSubmit')
+          each item in info.form.inputs
+            +input(item, 'banner-request__input')(v-model= 'formModel[item.name]')
+          if info.form.btn
+            +btn('button', info.form.btn, 'banner-request__btn', (!info.form.checkbox.checked))
+          else
+            | <!---->
+          if info.form.checkbox
+            +checkbox(info.form.checkbox, 'banner-request__checkbox')
+          else
+            | <!---->
+      else
+        | <!---->

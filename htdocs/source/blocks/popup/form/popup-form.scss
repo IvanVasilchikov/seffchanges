@@ -1,0 +1,100 @@
+$parent: popup-form;
+
+@include block($parent) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: rem(348);
+  padding: rem(50) 0;
+  background-color: $w;
+
+  @media screen and (min-width: $tMin) {
+    width: rem(560);
+    max-width: rem(560);
+    padding: rem(70) rem(0) rem(60);
+  }
+
+  @include modifier ($parent, 'wide') {
+    @media (min-width: $dMin) {
+      align-items: flex-end;
+      max-width: rem(986);
+      width: rem(986);
+
+      @include element ($parent, 'title') {
+        max-width: rem(560);
+      }
+  
+      @include element ($parent, 'form') {
+        max-width: rem(560);
+      }
+    }
+  }
+
+  @include element ($parent, 'background-img') {
+    display: none;
+
+    @media (min-width: $dMin) {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  }
+
+  @include element ($parent, 'title') {
+    color: $black2;
+    padding: 0  rem(50) rem(30);
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+  }
+
+  @include element ($parent, 'form') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 rem(46);
+    z-index: 0;
+
+    @media screen and (min-width: $tMin) {
+      padding: 0 rem(100);
+    }
+  }
+
+  @include element ($parent, 'input-wrapper') {
+    width: 100%;
+  }
+
+  @include element ($parent, 'input') {
+    margin-bottom: rem(16);
+    width: 100%;
+
+    @include modifier ($parent, 'textarea') {
+      height: rem(140);
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    width: 100%;
+    margin-bottom: rem(28);
+  }
+
+  @include element ($parent, 'checkbox') {
+    width: 100%;
+    max-width: rem(180);
+
+    @media (min-width: $tMin) {
+      max-width: initial;
+    }
+
+    span {
+      font-size: rem(14);
+      line-height: rem(26);
+    }
+  }
+}

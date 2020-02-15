@@ -26,32 +26,40 @@
 				<div class="landing-block-node-date-container col-md-8 col-lg-8">
 					<div class="landing-block-node-date mx-auto text-center">
 
-						<div class="landing-block-node-number landing-block-node-number-days u-countdown--days-hide d-inline-block g-line-height-1 align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
-							<div class="landing-block-node-number-number landing-block-node-number-number-days g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
-								<span class="js-cd-days">12</span>
+						<div class="d-inline-block g-line-height-1 u-countdown--days-hide">
+							<div class="landing-block-node-number align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
+								<div class="landing-block-node-number-number g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
+									<span class="js-cd-days">12</span>
+								</div>
+								<span class="landing-block-node-number-text g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Days</span>
 							</div>
-							<span class="landing-block-node-number-text landing-block-node-number-text-days g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Days</span>
 						</div>
 
-						<div class="landing-block-node-number landing-block-node-number-hours d-inline-block g-line-height-1 align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
-							<div class="landing-block-node-number-number landing-block-node-number-number-hours g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
-								<span class="js-cd-hours">01</span>
+						<div class="d-inline-block g-line-height-1">
+							<div class="landing-block-node-number align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
+								<div class="landing-block-node-number-number g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
+									<span class="js-cd-hours">01</span>
+								</div>
+								<span class="landing-block-node-number-text g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Hours</span>
 							</div>
-							<span class="landing-block-node-number-text landing-block-node-number-text-hours g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Hours</span>
 						</div>
 
-						<div class="landing-block-node-number landing-block-node-number-minutes d-inline-block g-line-height-1 align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
-							<div class="landing-block-node-number-number landing-block-node-number-number-minutes g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
-								<span class="js-cd-minutes">52</span>
+						<div class="d-inline-block g-line-height-1">
+							<div class="landing-block-node-number align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
+								<div class="landing-block-node-number-number g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
+									<span class="js-cd-minutes">52</span>
+								</div>
+								<span class="landing-block-node-number-text g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Minutes</span>
 							</div>
-							<span class="landing-block-node-number-text landing-block-node-number-text-minutes g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Minutes</span>
 						</div>
 
-						<div class="landing-block-node-number landing-block-node-number-seconds d-inline-block g-line-height-1 align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
-							<div class="landing-block-node-number-number landing-block-node-number-number-seconds g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
-								<span class="js-cd-seconds">52</span>
+						<div class="d-inline-block g-line-height-1">
+							<div class="landing-block-node-number align-top g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-px-10 g-pt-5 g-pb-8 g-px-20--sm g-pt-15--sm g-pb-10--sm g-mx-3 g-px-10--sm g-mx-15--lg">
+								<div class="landing-block-node-number-number g-color-white g-font-size-22 g-font-size-40--sm g-font-weight-700 g-mb-0 g-mb-2--sm">
+									<span class="js-cd-seconds">52</span>
+								</div>
+								<span class="landing-block-node-number-text g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Seconds</span>
 							</div>
-							<span class="landing-block-node-number-text landing-block-node-number-text-seconds g-color-white-opacity-0_7 text-uppercase g-font-size-10 g-font-size-12--sm">Seconds</span>
 						</div>
 
 					</div>

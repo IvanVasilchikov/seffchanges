@@ -1,0 +1,24 @@
+mixin detail-pdf-gallery(info)
+  .detail-pdf-gallery(class=(info.main == true ? 'detail-pdf-gallery--main': ''))
+    span.detail-pdf-gallery__heading!= info.heading
+    if (info.address)
+      span.detail-pdf-gallery__address!= info.address
+    else
+      | <!---->
+    .detail-pdf-gallery__gallery-wrapper
+      each gallery in info.gallery
+        .detail-pdf-gallery__gallery-item(class = gallery.revers ? 'detail-pdf-gallery__gallery-item--revers': '')
+          .detail-pdf-gallery__gallery-main-image
+            div.img(style='background-image:url('+gallery.mainImage+')')
+            if (gallery.amount && gallery.costMetter )
+              .detail-pdf-gallery__image-amount-container
+                span!= gallery.amount
+                span!= gallery.costMetter
+            else
+              | <!---->
+          if (gallery.images)
+            .detail-pdf-gallery__gallery-item-container
+              each image in gallery.images
+                div.img(style='background-image:url('+image+')')
+          else
+            | <!---->

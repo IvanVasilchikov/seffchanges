@@ -215,7 +215,7 @@ foreach ($arResult['DEMO'] as $item):
 		if (typeof BX.Landing.PaymentAlert !== 'undefined')
 		{
 			BX.Landing.PaymentAlert({
-				nodes: wrapper.querySelectorAll('.landing-item-payment'),
+				nodes: BX('grid-tile-wrap').querySelectorAll('.landing-item-payment'),
 				title: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_LIMIT_REACHED_TITLE'));?>',
 				message: '<?= ($arParams['SITE_ID'] > 0)
 					? \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_PAGE_LIMIT_REACHED_TEXT'))

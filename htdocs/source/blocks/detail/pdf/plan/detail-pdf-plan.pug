@@ -1,0 +1,12 @@
+include ../../../fonts/title/title.pug
+
+mixin detail-pdf-plan(info)
+  each gallery, key in info.gallery
+    .detail-pdf-plan.new-page
+      +title(((key == 0) ? info.heading : '&nbsp;'), 'detail-pdf-plan__heading')
+      if (info.gallery)
+          .detail-pdf-plan__content
+            each image in gallery.images
+              .detail-pdf-plan__plan(style="background-image:url('"+image+"');background-size:contain;background-repeat:no-repeat;background-position:center center")
+      else
+        | <!---->

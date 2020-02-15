@@ -1,0 +1,53 @@
+include ../../core/breadcrumbs/breadcrumbs.pug
+include ../../core/btn/btn.pug
+include ../../fonts/text/text.pug
+include ../../core/animation/fade/animation-fade.pug
+include ../nav/detail-nav.pug
+include ./main/detail-district-main.pug
+include ./about/detail-district-about.pug
+include ../infrastructure/detail-infrastructure.pug
+include ../map/detail-map.pug
+include ../offers/detail-offers.pug
+include ../../banner/request/banner-request.pug
+
+mixin detail-district(info)
+  .detail-district
+    if (info.main)
+      +detail-district-main(info.main)
+    else
+      | <!---->
+
+    .detail-district__content
+      if (info.nav)
+        +detail-nav(info.nav, '', (info.offers ? '#offers' : false))(ref='nav')
+      else
+        | <!---->
+      if (info.about)
+        +detail-district-about(info.about)
+      else
+        | <!---->
+
+      if (info.infrastructure)
+        +detail-infrastructure(info.infrastructure)
+      else
+        | <!---->
+
+      if (info.map)
+        +detail-map(info.map, 'detail-district__map')
+      else
+        | <!---->
+
+      if (info.offers)
+        +detail-offers(info.offers)
+      else
+        | <!---->
+
+      .main
+        if (info.request)
+          +banner-request(info.request)
+        else
+          | <!---->
+
+        .detail-district__desc
+          .detail-district__desc-title!= info.desc.title
+          +text(info.desc.describe, 'detail-district__desc-text')

@@ -1,0 +1,30 @@
+$parent: office;
+
+@include block ($parent) {
+  @include element ($parent, 'items') {
+    margin-top: rem(55);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(82);
+    }
+
+    @media (min-width: $d1280) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(65);
+    }
+  }
+
+  @include element ($parent, 'item') {
+    margin-bottom: rem(60);
+
+    @media (min-width: $d1280) {
+      margin-bottom: 0;
+      width: calc(50% - 0.5rem);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

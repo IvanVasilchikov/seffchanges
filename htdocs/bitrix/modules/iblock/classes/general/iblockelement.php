@@ -1146,7 +1146,7 @@ class CAllIBlockElement
 
 				if($cOperationType=="N")
 				{
-					if(array_key_exists(0, $arSections))
+					if (isset($arSections[0]))
 					{
 						$arSectionFilter["BE"][] = "BE.IN_SECTIONS<>'N'";
 						$arSectionFilter["LOGIC"] = "AND";
@@ -1163,10 +1163,18 @@ class CAllIBlockElement
 				}
 				else
 				{
-					if(array_key_exists(0, $arSections))
+					if (isset($arSections[0]))
 					{
-						$arSectionFilter["BE"][] = "BE.IN_SECTIONS='N'";
-						$arSectionFilter["LOGIC"] = "OR";
+						$allSections = (
+							isset($arFilter["INCLUDE_SUBSECTIONS"])
+							&& $arFilter["INCLUDE_SUBSECTIONS"] === "Y"
+							&& count($arSections) == 1
+						);
+						if (!$allSections)
+						{
+							$arSectionFilter["BE"][] = "BE.IN_SECTIONS='N'";
+							$arSectionFilter["LOGIC"] = "OR";
+						}
 						unset($arSections[0]);
 					}
 					if(!empty($arSections))
@@ -2673,6 +2681,11 @@ class CAllIBlockElement
 		$bWasGroup = false;
 
 		//********************************ORDER BY PART***********************************************
+		$orderAlias = array(
+			'EXTERNAL_ID' => 'XML_ID',
+			'DATE_ACTIVE_FROM' => 'ACTIVE_FROM',
+			'DATE_ACTIVE_TO' => 'ACTIVE_TO'
+		);
 		$arSqlOrder = Array();
 		$arAddOrderByFields = Array();
 		$iOrdNum = -1;
@@ -2683,11 +2696,10 @@ class CAllIBlockElement
 			$by_orig = $by;
 			$by = strtoupper($by);
 			//Remove aliases
-			if($by == "EXTERNAL_ID") $by = "XML_ID";
-			elseif($by == "DATE_ACTIVE_FROM") $by = "ACTIVE_FROM";
-			elseif($by == "DATE_ACTIVE_TO") $by = "ACTIVE_TO";
+			if (isset($orderAlias[$by]))
+				$by = $orderAlias[$by];
 
-			if(array_key_exists($by, $arSqlOrder))
+			if (isset($arSqlOrder[$by]))
 				continue;
 
 			if ($catalogIncluded && \CProductQueryBuilder::isValidField($by))
@@ -2699,7 +2711,7 @@ class CAllIBlockElement
 			}
 			else
 			{
-				if($by == "ID") $arSqlOrder[$by] = CIBlock::_Order("BE.ID", $order, "desc", false);
+				if($by == "ID") $arSqlOrder[$by] = $this->getIdOrder($order);
 				elseif($by == "NAME") $arSqlOrder[$by] = CIBlock::_Order("BE.NAME", $order, "desc", false);
 				elseif($by == "STATUS") $arSqlOrder[$by] = CIBlock::_Order("BE.WF_STATUS_ID", $order, "desc");
 				elseif($by == "XML_ID") $arSqlOrder[$by] = CIBlock::_Order("BE.XML_ID", $order, "desc");
@@ -2718,7 +2730,7 @@ class CAllIBlockElement
 				elseif($by == "IBLOCK_SECTION_ID") $arSqlOrder[$by] = CIBlock::_Order("BE.IBLOCK_SECTION_ID", $order, "desc");
 				elseif($by == "SHOW_COUNTER") $arSqlOrder[$by] = CIBlock::_Order("BE.SHOW_COUNTER", $order, "desc");
 				elseif($by == "SHOW_COUNTER_START") $arSqlOrder[$by] = CIBlock::_Order("BE.SHOW_COUNTER_START", $order, "desc");
-				elseif($by == "RAND") $arSqlOrder[$by] = CIBlockElement::GetRandFunction(true);
+				elseif($by == "RAND") $arSqlOrder[$by] = CIBlockElement::GetRandFunction();
 				elseif($by == "SHOWS") $arSqlOrder[$by] = CIBlock::_Order(CIBlockElement::GetShowedFunction(), $order, "desc", false);
 				elseif($by == "HAS_PREVIEW_PICTURE") $arSqlOrder[$by] = CIBlock::_Order(CIBlock::_NotEmpty("BE.PREVIEW_PICTURE"), $order, "desc", false);
 				elseif($by == "HAS_DETAIL_PICTURE") $arSqlOrder[$by] = CIBlock::_Order(CIBlock::_NotEmpty("BE.DETAIL_PICTURE"), $order, "desc", false);
@@ -2729,7 +2741,7 @@ class CAllIBlockElement
 				}
 				elseif($by == "CNT")
 				{
-					if(is_array($arGroupBy) && count($arGroupBy) > 0)
+					if(!empty($arGroupBy) && is_array($arGroupBy))
 						$arSqlOrder[$by] = " CNT ".$order." ";
 				}
 				elseif(substr($by, 0, 9) == "PROPERTY_")
@@ -2765,14 +2777,14 @@ class CAllIBlockElement
 				else
 				{
 					$by = "ID";
-					if(!array_key_exists($by, $arSqlOrder))
+					if(!isset($arSqlOrder[$by]))
 						$arSqlOrder[$by] = CIBlock::_Order("BE.ID", $order, "desc");
 				}
 
 				//Check if have to add select field in order to correctly sort
 				if(is_array($arSqlOrder[$by]))
 				{
-					if(is_array($arGroupBy) && count($arGroupBy)>0)
+					if (!empty($arGroupBy) && is_array($arGroupBy))
 						$arGroupBy[] = $arSqlOrder[$by][1];
 					else
 						$arSelectFields[] = $arSqlOrder[$by][1];
@@ -2785,7 +2797,7 @@ class CAllIBlockElement
 
 			//Add order by fields to the select list
 			//in order to avoid sql errors
-			if(is_array($arGroupBy) && count($arGroupBy)>0)
+			if (!empty($arGroupBy) && is_array($arGroupBy))
 			{
 				if ($by == "STATUS")
 				{
@@ -2829,7 +2841,7 @@ class CAllIBlockElement
 
 		//*************************GROUP BY PART****************************
 		$sGroupBy = "";
-		if(is_array($arGroupBy) && count($arGroupBy)>0)
+		if(!empty($arGroupBy) && is_array($arGroupBy))
 		{
 			$arSelectFields = $arGroupBy;
 			$bWasGroup = true;
@@ -6986,5 +6998,16 @@ class CAllIBlockElement
 		{
 			return "";
 		}
+	}
+
+	/**
+	 * @param mixed $order
+	 * @return string
+	 */
+	protected function getIdOrder($order)
+	{
+		if (!is_string($order))
+			$order = '';
+		return CIBlock::_Order("BE.ID", $order, "desc", false);
 	}
 }

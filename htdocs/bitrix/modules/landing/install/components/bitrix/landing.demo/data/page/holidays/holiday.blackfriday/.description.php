@@ -194,15 +194,15 @@ return array(
 			'code' => '27.3.one_col_fix_title',
 			'nodes' => array(
 				'.landing-block-node-title' => array(
-					0 => 'What we offer<br /><div st="" yle="position: absolute; border: 2px dashed rgb(254, 84, 30); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 9999; opacity: 0.4; pointer-events: none; transform: translateZ(0px);"></div>',
+					0 => 'What we offer<br /><div style="position: absolute; border: 2px dashed rgb(254, 84, 30); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 9999; opacity: 0.4; pointer-events: none; transform: translateZ(0px);"></div>',
 				),
 			),
 			'style' => array(
 				'.landing-block-node-title' => array(
-					0 => 'landing-block-node-title g-font-weight-400 g-my-0 g-color-white g-font-russo-one g-font-size-55',
+					0 => 'landing-block-node-title g-font-weight-400 g-my-0 g-color-white g-font-russo-one g-font-size-55 container g-pl-0 g-pr-0',
 				),
 				'#wrapper' => array(
-					0 => 'landing-block js-animation g-bg-primary-dark-v3 g-pb-0 g-pt-45 animation-none',
+					0 => 'landing-block js-animation g-bg-primary-dark-v3 g-pb-0 g-pt-45 animation-none text-center',
 				),
 			),
 		),

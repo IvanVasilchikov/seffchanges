@@ -1,0 +1,60 @@
+{
+  "list": [
+    {
+      "text": "Жилая",
+      "url": "./catalog.html"
+    },
+    {
+      "text": "Услуги",
+      "url": "#"
+    },
+    {
+      "text": "Загородная",
+      "url": "./catalog.html"
+    },
+    {
+      "text": "О компании",
+      "url": "./about.html"
+    },
+    {
+      "text": "Коммерческая",
+      "url": "./catalog.html"
+    },
+    {
+      "text": "Контакты",
+      "url": "./contacts.html"
+    },
+    {
+      "text": "Зарубежная",
+      "url": "./catalog.html"
+    },
+    {
+      "text": "Карта сайта",
+      "url": "./sitemap.html"
+    }
+  ],
+  "contacts": {
+    "phone": {
+      "text": "+7 (945) 000-00-00",
+      "url": "tel:+79450000000"
+    },
+    "address": "119034, Москва, Пресненская Набережная, 12",
+    "email": {
+      "text": "info@saffari.com",
+      "url": "mailto:info@saffari.com"
+    },
+    "write": true
+  },
+  "copyWrap": {
+    "copy": "© 2019 Saffari Estate. <a href=\"/privacy-policy.html\">Политика конфиденциальности</a>",
+    "socials": {
+      "fb": "https://www.facebook.com/",
+      "tw": "https://twitter.com/?lang=ru",
+      "insta": "https://www.instagram.com/"
+    }
+  },
+  "map": {
+    "icon": "./svg/logo_saffari_2.svg",
+    "image": "/assets/images/gmaps.jpg"
+  }
+}

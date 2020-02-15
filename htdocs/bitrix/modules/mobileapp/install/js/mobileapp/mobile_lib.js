@@ -1339,8 +1339,30 @@
 	{
 		window.WebSocket = function(server)
 		{
+			var handlerAliases = {
+				open: "onopen",
+				close: "onclose",
+				error: "onerror",
+				message: "onmessage",
+			};
+
 			this.open =  BX.proxy(websocketPlugin.open, websocketPlugin);
 			this.close =  BX.proxy(websocketPlugin.close, websocketPlugin);
+			this.addEventListener = function(event, handler)
+			{
+				if(typeof handlerAliases[event] != undefined)
+				{
+					this[handlerAliases[event]] = handler;
+				}
+			};
+
+			this.removeEventListener = function(event, handler)
+			{
+				if(typeof handlerAliases[event] != undefined)
+				{
+					this[handlerAliases[event]] = nil;
+				}
+			};
 
 			var onSocketClosed = BX.proxy(function (data)
 			{
@@ -1382,6 +1404,8 @@
 				onerror:onSocketError
 			});
 		};
+
+
 	}
 
 

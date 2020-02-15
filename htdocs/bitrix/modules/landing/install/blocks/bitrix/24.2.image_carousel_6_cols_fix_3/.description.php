@@ -10,6 +10,8 @@ return array(
 	'block' => array(
 		'name' => Loc::getMessage('LANDING_BLOCK_9_IMAGE_CAROUSEL_6_COLS_FIX_3_NAME'),
 		'section' => array('partners'),
+		'dynamic' => false,
+		'type' => ['page', 'store'],
 	),
 	'cards' => array(
 		'.landing-block-card-carousel-element' => array(

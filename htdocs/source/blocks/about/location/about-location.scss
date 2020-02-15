@@ -1,0 +1,114 @@
+$parent: 'about-location';
+
+@include block($parent) {
+  position: relative;
+
+  @media (min-width: $tMin) {
+    min-height: rem(446);
+  }
+
+  @media (min-width: $d1280) {
+    height: rem(720);
+    min-height: 0;
+  }
+
+  @include element($parent, 'container') {
+    position: static;
+
+    @media (min-width: $tMin) {
+      height: 100%;
+    }
+  }
+
+  @include element($parent, 'content') {
+    position: relative;
+    padding: rem(60) 0 rem(50);
+
+    @media (min-width: $tMin) {
+      max-width: 50%;
+      padding: rem(60) rem(23) rem(50) 0;
+      position: static;
+      height: 100%;
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(125) rem(36) rem(105) 0;
+    }
+  }
+
+  @include element($parent, 'image') {
+    position: absolute;
+    top: 0;
+    left: -1.75rem;
+    right: -1.75rem;
+    bottom: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+
+    @media (min-width: $tMin) {
+      left: 0;
+      width: 50%;
+      right: auto;
+    }
+  }
+
+  @include element($parent, 'content-wrp') {
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: $tMin) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
+  @include element($parent, 'pre-title') {
+    color: $w;
+  }
+
+  @include element($parent, 'title') {
+    font-size: rem(50);
+    line-height: rem(50);
+    font-weight: 600;
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+    color: $w;
+
+    @media (min-width: $tMin) {
+      font-size: rem(60);
+      line-height: rem(60);
+    }
+  }
+
+  @include element($parent, 'button') {
+    margin-top: rem(110);
+    max-width: rem(250);
+    flex-shrink: 0;
+  }
+
+  @include element($parent, 'map-wrp') {
+    height: rem(450);
+
+    @media (min-width: $tMin) {
+      height: auto;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      width: 50%;
+      z-index: 2;
+    }
+  }
+
+  @include element($parent, 'map') {
+    height: 100%;
+    width: 100%;
+  }
+}

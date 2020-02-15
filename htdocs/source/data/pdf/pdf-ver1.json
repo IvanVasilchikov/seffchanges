@@ -1,0 +1,124 @@
+{
+  "header": {
+    "phone": "+7 (945) 560-20-10"
+  },
+  "content": [
+    {
+      "type": "gallery",
+      "main": true,
+      "heading": "2 комн. кв, 90 м2 – Knightsbridge Private park",
+      "address": "Москва, ЦАО, р-н Пресненский, наб. Пресненская, 10с2",
+      "gallery": [{
+        "mainImage": "./assets/images/detail/detail-img-1.jpg",
+        "amount": "172 250 000 р.",
+        "costMetter": "135 000 р./м2",
+        "images": [
+          "./assets/images/detail/detail-img-2.jpg",
+          "./assets/images/detail/detail-img-3.jpg"
+        ]
+      }]
+    },
+    {
+      "type": "characteristics",
+      "title": "Характеристики",
+      "info": [
+        [
+          {
+            "icon": "./assets/svg/icons/house.svg",
+            "title": "Признак",
+            "text": "Вторичная"
+          },
+          {
+            "icon": "./assets/svg/icons/window.svg",
+            "title": "Тип квартиры",
+            "text": "Апартаменты"
+          },
+          {
+            "icon": "./assets/svg/icons/ruller.svg",
+            "title": "Площадь",
+            "text": "90 м²"
+          },
+          {
+            "icon": "./assets/svg/icons/room.svg",
+            "title": "Количество комнат",
+            "text": "2"
+          }
+        ],
+        [
+          {
+            "icon": "./assets/svg/icons/floor.svg",
+            "title": "Этаж/этажей в доме",
+            "text": "14/20"
+          },
+          {
+            "icon": "./assets/svg/icons/calendar.svg",
+            "title": "Готовность дома",
+            "text": "Заселен"
+          },
+          {
+            "icon": "./assets/svg/icons/facing.svg",
+            "title": "Отделка",
+            "text": "С ремонтом"
+          }
+        ]
+      ],
+      "description": "Предлагается квартира без отделки свободной планировки в элитном жилом комплексе \"Knightsbridge Private Park\". Возможно спланировать: прихожую, просторную кухню-столовую-гостиную, три спальни со своими ванными и гардеробными комнатами, кабинет, гостевой санузел. <br>Неоспоримыми преимуществами являются высокие потолки 3,6 м, панорамное остекление, наличие двух террас, а также возможность установки камина. За квартирой закреплено два машино-места в подземном паркинге. <br>Knightsbridge Private park  - новый элитный жилой комплекс, расположившийся на 3 га жилой квартал в английском стиле, состоящий из 4 зданий."
+    },
+    {
+      "type": "description",
+      "heading": "Knightsbridge Private park",
+      "items": [{
+        "heading": "180 - 2048 <span>м²</span>",
+        "phrase": "Площадь объектов"
+      }, {
+        "heading": "499",
+        "phrase": "Парковочных мест"
+      }, {
+        "heading": "10 <span>мин</span>",
+        "phrase": "До метро Фрунзенская"
+      }],
+      "description": "Жилой комплекс из четырех клубных домов класса де-люкс в английском стиле, расположенный в собственном парке площадью 3 га в районе Хамовники. Авторы интерьеров жилого копмлекса,и дизайна частного парка – дизайнеры мировой величины. Так, общественные зоны оформляет Дэвид Линли, племянник королевы Великобритании и глава компании LINLEY, а настоящий английский парк для жителей. Ключевой идеей проекта, выраженной в каждой деталистроительства, является экологичность. Благодаря этому Knightsbridge Private Park стал первым жилым комплексом в России, который проходит сертификацию на соответствие экостандартам английской системы BREEAM."
+    },
+    {
+      "type": "gallery",
+      "heading": "Все фотографии",
+      "gallery": [{
+        "mainImage": "./assets/images/detail/detail-img-1.jpg",
+        "images": [
+          "./assets/images/detail/detail-img-2.jpg",
+          "./assets/images/detail/detail-img-3.jpg"
+        ]
+      }, {
+        "mainImage": "./assets/images/detail/detail-img-4.jpg",
+        "revers": true,
+        "images": [
+          "./assets/images/detail/detail-img-1.jpg",
+          "./assets/images/detail/detail-img-2.jpg"
+        ]
+      }]
+    },
+    {
+      "type": "gallery",
+      "heading": "",
+      "newPage": true,
+      "gallery": [{
+        "mainImage": "./assets/images/detail/detail-img-1.jpg",
+        "images": [
+          "./assets/images/detail/detail-img-2.jpg",
+          "./assets/images/detail/detail-img-3.jpg"
+        ]
+      }, {
+        "mainImage": "./assets/images/detail/detail-img-4.jpg",
+        "revers": true,
+        "images": [
+          "./assets/images/detail/detail-img-1.jpg",
+          "./assets/images/detail/detail-img-2.jpg"
+        ]
+      }]
+    }
+  ],
+  "footer": {
+    "phone": "+7 (945) 560-20-10",
+    "address": "119034, Москва, Пресненская Набережная, 12"
+  }
+}

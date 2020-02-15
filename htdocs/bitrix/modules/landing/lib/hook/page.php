@@ -1,6 +1,8 @@
 <?php
 namespace Bitrix\Landing\Hook;
 
+use \Bitrix\Landing\Manager;
+
 abstract class Page
 {
 	/**
@@ -106,6 +108,42 @@ abstract class Page
 	}
 
 	/**
+	 * Locked or not current hook in free plan.
+	 * @return bool
+	 */
+	public function isLocked()
+	{
+		static $lockStates = [];
+		$class = get_class($this);
+
+		if (!array_key_exists($class, $lockStates))
+		{
+			$lockStates[$class] = Manager::checkFeature(
+				Manager::FEATURE_ENABLE_ALL_HOOKS,
+				[
+					'hook' => strtolower(array_pop(explode('\\', $class)))
+				]
+			);
+		}
+
+		if (!$this->isFree() && !$lockStates[$class])
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Gets message for locked state.
+	 * @return string
+	 */
+	public function getLockedMessage()
+	{
+		return '';
+	}
+
+	/**
 	 * Get code of hook.
 	 * @return string
 	 */
@@ -163,9 +201,18 @@ abstract class Page
 
 	/**
 	 * Exec or not hook in edit mode.
-	 * @return true
+	 * @return boolean
 	 */
 	public function enabledInEditMode()
+	{
+		return true;
+	}
+
+	/**
+	 * Exec or not hook in intranet mode.
+	 * @return boolean
+	 */
+	public function enabledInIntranetMode()
 	{
 		return true;
 	}
@@ -207,7 +254,7 @@ abstract class Page
 	 * @param callable $callback Callback function.
 	 * @return void
 	 */
-	public function setCustomExec($callback)
+	public function setCustomExec(callable $callback)
 	{
 		$this->customExec = $callback;
 	}
@@ -227,7 +274,7 @@ abstract class Page
 	 */
 	protected function execCustom()
 	{
-		if (is_callable($this->customExec))
+		if ($this->customExec)
 		{
 			return call_user_func_array($this->customExec, [$this]) === true;
 		}

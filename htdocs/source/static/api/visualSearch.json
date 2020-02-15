@@ -1,0 +1,574 @@
+{
+  "pagination": {
+    "current": 2,
+    "count": 4,
+    "objects_count": "12 предложений",
+    "url": "",
+    "param": ""
+  },
+  "cards": [
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_1.jpg", "/assets/images/visual/cards/card_0.jpg", "/assets/images/visual/cards/card_3.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/cards/card_1.jpg"],
+      "title": "3 комн. кв",
+      "labels": ["Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "120м²",
+        "rooms": "2",
+        "floor": "11/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "5 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 200 000 р.",
+        "meters": "100 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_6.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/cards/card_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "82 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_3.jpg", "/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_1.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив", "Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "3",
+        "floor": "19/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "13 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "66 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_4.jpg", "/assets/images/visual/cards/card_7.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "121м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "82 390 000 р.",
+        "meters": "91 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_5.jpg", "/assets/images/visual/cards/card_6.jpg", "/assets/images/visual/cards/card_4.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "73м²",
+        "rooms": "2",
+        "floor": "8/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_6.jpg", "/assets/images/visual/cards/card_7.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив", "Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "121м²",
+        "rooms": "2",
+        "floor": "11/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "242 555 000 р.",
+        "meters": "82 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_6.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/cards/card_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "82 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_3.jpg", "/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_1.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив", "Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "3",
+        "floor": "19/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "13 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "66 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_4.jpg", "/assets/images/visual/cards/card_7.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "121м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "82 390 000 р.",
+        "meters": "91 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_5.jpg", "/assets/images/visual/cards/card_6.jpg", "/assets/images/visual/cards/card_4.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "73м²",
+        "rooms": "2",
+        "floor": "8/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_6.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/cards/card_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "82 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_3.jpg", "/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_1.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив", "Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "3",
+        "floor": "19/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "13 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "66 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_4.jpg", "/assets/images/visual/cards/card_7.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "121м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "82 390 000 р.",
+        "meters": "91 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_5.jpg", "/assets/images/visual/cards/card_6.jpg", "/assets/images/visual/cards/card_4.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "73м²",
+        "rooms": "2",
+        "floor": "8/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_6.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/cards/card_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "82 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_3.jpg", "/assets/images/visual/cards/card_2.jpg", "/assets/images/visual/cards/card_1.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив", "Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "3",
+        "floor": "19/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "13 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "66 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_4.jpg", "/assets/images/visual/cards/card_7.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg", "/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "121м²",
+        "rooms": "4",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "82 390 000 р.",
+        "meters": "91 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "id": "as12713",
+      "deal_type": "аренда",
+      "imagesCard": ["/assets/images/visual/cards/card_5.jpg", "/assets/images/visual/cards/card_6.jpg", "/assets/images/visual/cards/card_4.jpg"],
+      "type": "default",
+      "images": ["/assets/images/visual/detail/flat_0.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "73м²",
+        "rooms": "2",
+        "floor": "8/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "9 минут пешком"
+        }
+      },
+      "price": {
+        "total": "102 390 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    }
+  ],
+  "seo": {
+    "title": "Продажа апартаментов3 в Москве",
+    "description": "Купить апартаменты3 в Москве, можно обратившись к профессионалам своего дела, лидеру рынка недвижимости – агентству Saffariestate.",
+    "keywords": "Продажа апартаментов3 в Москве"
+  }
+}

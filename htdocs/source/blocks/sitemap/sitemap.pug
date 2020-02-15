@@ -1,0 +1,23 @@
+include ../fonts/first-title/first-title.pug
+include ../core/breadcrumbs/breadcrumbs.pug
+
+mixin sitemap(info)
+  .sitemap
+    .main
+      +breadcrumbs(info.breadcrumbs)
+      +first-title(info.title, 'sitemap__title')
+      .sitemap__items
+        each item in info.items
+          .sitemap__item
+            a.sitemap__item-title(href= item.url)= item.title
+            if item.links
+              ul.sitemap__list
+                each li in item.links
+                  li.sitemap__li
+                    a(href= li.url)= li.text
+                      if li.innerLinks
+                        ul.sitemap__list.sitemap__list--inner
+                          each innerLi in li.innerLinks
+                            li.sitemap__li
+                              a(href= innerLi.url)= innerLi.text
+

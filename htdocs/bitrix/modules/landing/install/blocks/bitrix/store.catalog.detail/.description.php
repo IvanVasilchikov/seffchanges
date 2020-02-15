@@ -24,17 +24,6 @@ $return = array(
 		),
 		'namespace' => 'bitrix',
 	),
-	'assets' => array(
-		'css' => array(
-			'/bitrix/components/bitrix/catalog.element/templates/bootstrap_v4/style.css',
-		),
-		'js' => array(
-			'/bitrix/components/bitrix/catalog.element/templates/bootstrap_v4/script.js',
-		),
-		'ext' => array(
-			'currency',
-		),
-	),
 	'nodes' => array(
 		'bitrix:catalog.element' => array(
 			'type' => 'component',

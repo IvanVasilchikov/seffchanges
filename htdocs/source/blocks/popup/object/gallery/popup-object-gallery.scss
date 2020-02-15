@@ -1,0 +1,144 @@
+$parent: 'popup-object-gallery';
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  height: rem(210);
+  margin-bottom: rem(14);
+  background-color: $gray4;
+
+  @media (min-width: $tMin) and (max-width: $tMax) {
+    margin-bottom: rem(20);
+    height: rem(400);
+  }
+
+  @media (min-width: $dMin) and (max-width: $d1279) {
+    height: rem(500);
+  }
+
+  @media screen and (min-width: $d1280) {
+    height: rem(600);
+    margin-bottom: rem(15);
+  }
+
+  @include element($parent, 'pag') {
+    position: absolute;
+    left: 50%;
+    bottom: rem(14);
+    height: rem(8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%);
+    // transition: opacity $ease;
+    z-index: 2;
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      bottom: rem(21);
+    }
+
+    @media (min-width: $dMin) {
+      bottom: rem(31);
+    }
+  }
+
+  @include element($parent, 'pag-item') {
+    width: rem(6);
+    height: rem(6);
+    margin-right: rem(16);
+    background-color: $w;
+    transition: $ease;
+    outline: none;
+    cursor: pointer;
+
+    @include modifier($parent, 'active') {
+      width: rem(8);
+      height: rem(8);
+      margin-right: rem(14);
+      background-color: $red2;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $red2;
+    }
+  }
+
+  @include element($parent, 'slide') {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  @include element($parent, 'image') {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.swiper-container-initialized {
+    .popup-object-gallery {
+      &__pag {
+        display: flex;
+      }
+
+      &__arrows {
+        display: block;
+      }
+    }
+  }
+
+  @include element($parent, 'arrows') {
+    display: none;
+  }
+
+  @include element($parent, 'arrow') {
+    position: absolute;
+    top: 43.1%;
+    width: rem(15);
+    height: rem(20);
+    padding: rem(2);
+    z-index: 3;
+
+    @media (min-width: $tMin) {
+      top: 48.2%;
+    }
+
+    @include modifier($parent, 'prev') {
+      left: rem(12);
+
+      @media (min-width: $tMin) {
+        left: rem(17);
+      }
+    }
+
+    @include modifier($parent, 'next') {
+      right: rem(12);
+      transform: rotate(180deg);
+
+      @media (min-width: $tMin) {
+        right: rem(17);
+      }
+    }
+
+    svg {
+      fill: $w;
+      stroke: $w;
+    }
+
+    &:hover {
+      svg {
+        fill: $red2;
+        stroke: $red2;
+      }
+    }
+  }
+}

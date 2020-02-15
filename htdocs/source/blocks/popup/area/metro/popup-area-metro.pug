@@ -1,0 +1,27 @@
+include ../../../core/btn/btn.pug
+include ../../../core/checkbox/with-circle/core-checkbox-with-circle
+
+mixin popup-area-metro(info)
+  - var hideSticky = false;
+  - var buttonWidth = '100%';
+
+  .popup-area-metro
+    +btn('button', '', 'popup-area-metro__button popup-area-metro__button--mobile')(@click= 'save()', ref='stickyBtn', :class='{"popup-area-metro__button--hide" : hideSticky}', :style='{width: buttonWidth + "px"}')
+      span(v-html= 'getOffersCount')
+    .popup-area-metro__select-btns
+      +btn('button', 'Станции внутри кольца', 'btn--rounded popup-area-metro__select')(@click= 'selectStations("inside")', :class= 'selectStation.indexOf("inside") !== -1 ? \'\' : \'btn--border\'')
+      +btn('button', 'Станции на кольцевой', 'btn--rounded popup-area-metro__select')(@click= 'selectStations("ring")', :class= 'selectStation.indexOf("ring") !== -1 ? \'\' : \'btn--border\'')
+      +btn('button', 'Выбрать все', 'btn--rounded popup-area-metro__select')(@click= 'selectStations("all")', :class= 'selectStation.indexOf("all") !== -1 ? \'\' : \'btn--border\'')
+    .popup-area-metro__search-station
+      input(type='text', placeholder='Поиск станции', v-model='search')
+    .popup-area-metro__map-wrp
+      .popup-area-metro__content(ref= 'scroll')
+        .popup-area-metro__checkboxes
+          each station in info.metro
+            +core-checkbox-with-circle(station.dbId, info.checkboxName, station.dbName, 'popup-area-metro__checkbox', {value: station.sid}, station.color)(v-if='viewStation(station)', v-model='selectedStations[station.dbId]')
+        .popup-area-metro__map
+          include ./districts-map.svg
+    .popup-area-metro__buttons
+      +btn('button', '', 'popup-area-metro__button')(@click= 'save()', ref='submitBtn', :class='{"popup-area-metro__button--hide" : !hideSticky}')
+        span(v-html= 'getOffersCount')
+      +btn('button', 'Сбросить', 'btn--border popup-area-metro__button')(@click='reset()')

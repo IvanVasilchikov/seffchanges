@@ -1,0 +1,7 @@
+extends ../layouts/pdf.pug
+
+include ../blocks/detail/pdf/detail-pdf.pug
+
+block content
+  - var pdf = require('../data/pdf/pdf-ver1.json');
+  +detail-pdf(pdf)

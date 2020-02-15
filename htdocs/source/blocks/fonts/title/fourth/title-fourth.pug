@@ -1,0 +1,5 @@
+mixin title-fourth(text, className, isH1)
+  if isH1
+    h1.title-fourth(class=className)!= text
+  else
+    .title-fourth(class=className)!= text

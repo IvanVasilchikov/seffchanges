@@ -50,29 +50,32 @@
 			this.init();
 		}
 	};
-
 	BX.UI.Dropdown.prototype =
 		{
 			init: function ()
 			{
-				BX.bind(this.targetElement, "input", function()
-				{
-                    if (this.isDisabled)
-                    {
-                        return;
-                    }
-
-					if (this.targetElement.value.length === 0)
+				setTimeout(function() {
+					BX.bind(this.targetElement, "input", function()
 					{
-						this.enableTargetElement();
-						return;
-					}
+						if (this.isDisabled)
+						{
+							return;
+						}
 
-					this.getPopupWindow().show();
+						if (this.targetElement.value.length === 0)
+						{
+							this.enableTargetElement();
+							return;
+						}
 
-				}.bind(this));
+						this.getPopupWindow().show();
+
+					}.bind(this));
+				}.bind(this), 100);
 				this.targetElement.addEventListener("click", function(e)
 				{
+					this.destroyPopupWindow();
+
                     if (this.isDisabled)
                     {
                         return;
@@ -96,27 +99,28 @@
 					this.getPopupWindow().show();
 				}.bind(this), true);
 
-				this.targetElement.addEventListener("focus", function()
-				{
-                    if (this.isDisabled)
-                    {
-                        return;
-                    }
-
-					this.getPopupWindow().show();
-
-					if(!this.popupAlertContainer)
+				setTimeout(function() {
+					this.targetElement.addEventListener("focus", function()
 					{
-						return;
-					}
-				}.bind(this), true);
+						if (this.isDisabled)
+						{
+							return;
+						}
+
+						this.getPopupWindow().show();
+
+						if(!this.popupAlertContainer)
+						{
+							return;
+						}
+					}.bind(this), true);
+				}.bind(this), 100);
 
 				BX.bind(
 					this.targetElement,
 					"keyup",
 					BX.throttle(
 						function(e) {
-
                             if (this.isDisabled)
                             {
                                 return;
@@ -468,7 +472,6 @@
 			},
 			getPopupAlertContainer: function()
 			{
-
 				if(!this.popupAlertContainer)
 				{
 					this.popupAlertContainer = BX.create("div", {
@@ -503,7 +506,7 @@
 
 					this.targetElement.addEventListener("input", function()
 					{
-						this.alertContainerValue.innerHTML = this.targetElement.value;
+						this.alertContainerValue.textContent = this.targetElement.value;
 					}.bind(this));
 
 					if(!this.enableCreation)
@@ -810,7 +813,6 @@
 				}
 				return result;
 			},
-
 			getItemIndex: function(item)
 			{
 				var items = this.getItems();

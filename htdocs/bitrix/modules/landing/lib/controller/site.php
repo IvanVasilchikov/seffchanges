@@ -3,6 +3,7 @@ namespace Bitrix\Landing\Controller;
 
 use \Bitrix\Landing\Zip;
 use \Bitrix\Main\Engine\Controller;
+use \Bitrix\Main\Engine\Response\Zip\Archive;
 
 class Site extends Controller
 {
@@ -14,13 +15,13 @@ class Site extends Controller
 	/**
 	 * Zip export site.
 	 * @param int $id Site id.
-	 * @return void
+	 * @return Archive
 	 */
-	public function exportAction($id)
+	public function downloadAction($id)
 	{
 		if (Zip\Config::serviceEnabled())
 		{
-			Zip\Site::export($id);
+			return Zip\Site::export($id);
 		}
 	}
 }

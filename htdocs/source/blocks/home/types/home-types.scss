@@ -1,0 +1,232 @@
+$parent: home-types;
+
+@include block($parent) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: rem(40);
+
+  @media screen and (min-width: $tMin) and (max-width: $d1279) {
+    margin-bottom: rem(30);
+  }
+
+  @media screen and (min-width: $d1280) {
+    margin-bottom: rem(58);
+  }
+
+  @include element ($parent, 'item-content') {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: rem(44) rem(39) rem(26);
+  }
+
+  @include element ($parent, 'item') {
+    position: relative;
+    width: 100%;
+    height: rem(290);
+    margin-bottom: rem(14);
+    background-color: $blue;
+    background: radial-gradient(165.14px at 64.36% 85.52%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(303.79deg, rgba(255, 255, 255, 0.5) -10.17%, rgba(255, 255, 255, 0) 49.28%), linear-gradient(125.85deg, #719FC1 15.76%, #93B7D3 68.82%);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      width: 48.6%;
+      margin-right: 2.8%;
+    }
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(20);
+    }
+
+    @media screen and (min-width: $d1280) {
+      width: 49.3%;
+      margin-right: 1.4%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:nth-of-type(2n) {
+      @media screen and (min-width: $d1280) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(5) {
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media screen and (min-width: $tMin) {
+        margin-bottom: rem(20);
+      }
+
+      @media screen and (min-width: $d1280) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      @media screen and (min-width: $d1280) {
+        width: 24%;
+      }
+    }
+
+    &:nth-last-child(2) {
+      @media screen and (min-width: $d1280) {
+        margin-right: 1.3%;
+      }
+    }
+
+    &:not(.home-types__item--offer):hover {
+      &::after {
+        opacity: 0.4;
+      }
+    }
+
+    @include modifier($parent, 'offer') {
+      position: relative;
+      background: $purple;
+      cursor: pointer;
+
+      .home-types__item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: rem(43) rem(30) rem(32);
+
+        .home-types__title {
+          margin-bottom: rem(29);
+        }
+
+        .home-types__title,
+        .home-types__item-text {
+          text-align: center;
+        }
+      }
+
+      &:hover {
+        .home-types__item-icon {
+          background-color: $red2;
+
+          svg {
+            fill: $w;
+            stroke: $w;
+          }
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'item-giraffe') {
+    position: absolute;
+    right: rem(35);
+    bottom: 0;
+    width: rem(104);
+    height: rem(264);
+    fill: $gray3;
+    opacity: 0.2;
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      right: auto;
+      left: rem(-15);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    display: inline-block;
+    margin-bottom: rem(10);
+    font-size: rem(20);
+    line-height: rem(30);
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+    color: $w;
+
+    @media (min-width: $tMin) {
+      font-size: rem(22);
+    }
+
+    em {
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  a.home-types__title {
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'links') {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include element ($parent, 'link') {
+    margin-bottom: rem(9);
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $w;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'item-text') {
+    max-width: 88%;
+    margin-bottom: rem(29);
+    color: $w;
+
+    @media screen and (min-width: $d1280) {
+      max-width: 100%;
+    }
+  }
+
+  @include element ($parent, 'item-icon') {
+    width: rem(46);
+    height: rem(46);
+    padding-left: rem(3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $w;
+    border-radius: 50%;
+    transition: background 0.4s ease;
+
+    svg {
+      width: rem(9);
+      height: rem(14);
+      fill: $red;
+      stroke: $red;
+    }
+  }
+}

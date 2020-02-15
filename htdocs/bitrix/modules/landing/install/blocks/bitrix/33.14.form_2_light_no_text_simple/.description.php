@@ -9,8 +9,10 @@ use \Bitrix\Main\Localization\Loc;
 return array(
 	'block' => array(
 		'name' => Loc::getMessage('LANDING_BLOCK_FORM_33.14'),
-		'section' => array('forms'),
+		'section' => array('sidebar'),
+		'dynamic' => false,
 		'subtype' => 'form',
+		'type' => ['page', 'store'],
 	),
 	'nodes' => array(),
 	'style' => array(

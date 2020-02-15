@@ -1,0 +1,184 @@
+$parent: 'hint';
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  height: rem(70);
+
+  @include element ($parent, 'head') {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $gray8;
+
+    @include modifier($parent, 'base') {
+      .hint__input {
+        padding-top: 0;
+      }
+    }
+  }
+
+  @include element ($parent, 'close') {
+    position: absolute;
+    top: 50%;
+    right: rem(20);
+    width: rem(17);
+    height: rem(17);
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray;
+    transform: translateY(-50%);
+    transition: background 0.4s ease;
+
+    span {
+      position: relative;
+      display: block;
+      width: rem(10);
+      height: rem(10);
+      margin-left: 1px;
+      transform: rotate(45deg);
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        border-radius: 2px;
+        background-color: $w;
+        transform: translate(-50%, -50%);
+      }
+
+      &::before {
+        width: 100%;
+        height: 1px;
+      }
+
+      &::after {
+        width: 1px;
+        height: 100%;
+      }
+    }
+
+    &:hover {
+      background-color: $purple;
+    }
+  }
+
+  @include element ($parent, 'title') {
+    position: absolute;
+    top: rem(9);
+    left: rem(26);
+    max-width: calc(100% - 30px);
+    font-size: rem(14);
+    line-height: 1.85;
+    font-weight: 400;
+    color: $gray4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @include element ($parent, 'input') {
+    width: 100%;
+    height: 100%;
+    padding: rem(26) rem(20) 0 rem(26);
+    color: $black2;
+    font-size: rem(16);
+
+    &::placeholder {
+      color: $gray4;
+    }
+  }
+
+  @include element ($parent, 'dropdown') {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $w;
+    z-index: 5;
+    // display: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: rem(30);
+      background-color: $w;
+    }
+  }
+
+  @include element ($parent, 'dropdown-content') {
+    padding: rem(18) rem(20) rem(28) rem(26);
+    max-height: rem(348);
+    overflow: auto;
+  }
+
+  @include element ($parent, 'dropdown-item') {
+    margin-bottom: rem(20);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element ($parent, 'dropdown-head') {
+    display: flex;
+    align-items: center;
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-bottom: rem(15);
+    color: $gray-bd;
+
+    svg {
+      width: rem(12);
+      height: rem(14);
+      margin-right: rem(7);
+      flex-shrink: 0;
+      fill: $gray-bd;
+    }
+  }
+
+  @include element ($parent, 'list-item') {
+    margin-bottom: rem(15);
+    font-size: rem(16);
+    line-height: rem(24);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: color 0.4s ease;
+
+    span {
+      color: $red2;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include modifier($parent, 'open') {
+    z-index: 5;
+
+    .hint {
+      &__close {
+        display: flex;
+      }
+
+      &__dropdown {
+        display: block;
+      }
+    }
+  }
+}

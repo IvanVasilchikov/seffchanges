@@ -1,5 +1,5 @@
 <?
 $DB->Query("SET NAMES 'utf8'");
-$DB->Query('SET collation_connection = "utf8_general_ci"');
+//$DB->Query('SET collation_connection = "utf8_unicode_ci"');
 $DB->Query("SET sql_mode=''");
-$DB->Query("SET LOCAL time_zone='" . date('P') . "'");
+$DB->Query("SET LOCAL time_zone='".date('P')."'");

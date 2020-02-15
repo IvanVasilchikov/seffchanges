@@ -50,13 +50,13 @@ class JNRouterComponent extends \CBitrixComponent
 	public function executeComponent()
 	{
 		global $USER;
-		$allowExecute = true;
+
 		if(!$USER->isAuthorized() && $this->arParams["needAuth"] === true)
 		{
-			$allowExecute = $USER->LoginByHttpAuth();
+			$USER->LoginByHttpAuth();
 		}
 
-		if(!$allowExecute)
+		if(!$USER->isAuthorized())
 		{
 			header("HTTP/1.0 401 Not Authorized");
 			header('WWW-Authenticate: Basic realm="Bitrix24"');

@@ -1,0 +1,92 @@
+$parent: textarea;
+
+@include block ($parent) {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.4s ease;
+  }
+
+  @include modifier($parent, 'fail') {
+    &::after {
+      width: 100%;
+      background-color: $red3;
+    }
+
+    @include element ($parent, 'icon--fail') {
+      display: flex;
+      background-color: $red3;
+      z-index: 1;
+    }
+  }
+
+  @include modifier($parent, 'success') {
+    &::after {
+      width: 100%;
+      background-color: $green;
+    }
+
+    @include element ($parent, 'icon--success') {
+      display: flex;
+      background-color: $green;
+      z-index: 1;
+    }
+  }
+
+  @include element ($parent, 'icon') {
+    position: absolute;
+    top: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    right: rem(20);
+    width: rem(17);
+    height: rem(17);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    font-size: rem(12);
+    text-align: center;
+    color: $w;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+
+    svg {
+      width: rem(10);
+      height: rem(10);
+      stroke: $w;
+      stroke-width: 2px;
+    }
+  }
+
+  @include element ($parent, 'input') {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: rem(20);
+    border: rem(1) solid $gray;
+    background-color: $w;
+    font-size: rem(16);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    color: $black;
+    transition: 
+      border 0.4s ease, 
+      color 0.4s ease, 
+      box-shadow 0.4s ease;
+    resize: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.15);
+    }
+  }
+}

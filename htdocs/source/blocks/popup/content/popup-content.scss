@@ -1,0 +1,31 @@
+$parent: popup-content;
+
+@include block($parent) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: rem(607);
+  padding: rem(50) rem(50) rem(55);
+  background-color: $w;
+
+  @include element($parent, 'img') {
+    height: rem(60);
+    width: rem(60);
+    margin-bottom: rem(35);
+  }
+
+  @include element($parent, 'title') {
+    padding-bottom: rem(20);
+  }
+
+  @include element($parent, 'content') {
+    text-align: left;
+    padding-bottom: rem(35);
+  }
+
+  @include element($parent, 'btn') {
+    width: 100%;
+    max-width: rem(270);
+  }
+}

@@ -1,0 +1,4885 @@
+{
+	"banner": {
+		"background": {
+			"sources": {
+				"mobile": [
+					"/assets/images/home/banner/banner_m.jpg"
+				],
+				"tablet": [
+					"/assets/images/home/banner/banner_t.jpg"
+				],
+				"desktop": [
+					"/assets/images/home/banner/banner.jpg"
+				]
+			},
+			"alt": "background",
+			"title": "background"
+		},
+		"title": "охота на лучшую недвижимость",
+		"text": "Премиальная недвижимость в мире и в Москве"
+	},
+	"filter": {
+		"mainFilter": true,
+		"action": "./api/catalog.json",
+		"select": {
+			"name": "tab",
+			"values": [{
+					"text": "Городская",
+					"value": "city",
+					"selected": true
+				},
+				{
+					"text": "Загородная",
+					"value": "country"
+				},
+				{
+					"text": "Офисная",
+					"value": "office"
+				},
+				{
+					"text": "Складская",
+					"value": "sklad"
+				},
+				{
+					"text": "Торговая",
+					"value": "retail"
+				},
+				{
+					"text": "Зарубежная",
+					"value": "foreign"
+				}
+			]
+		},
+		"tabs": [{
+				"active": true,
+				"action": "/city.html",
+				"realty_type": "life",
+				"name": "city",
+				"type": "city",
+				"params": {},
+				"fields": [{
+						"type": "hidden",
+						"name": "test",
+						"value": "test2"
+					},
+					{
+						"type": "radio",
+						"name": "deal_type",
+						"values": [{
+								"id": "buy",
+								"value": "buy",
+								"text": "Купить",
+								"checked": true
+							},
+							{
+								"id": "rent",
+								"value": "rent",
+								"text": "Снять"
+							}
+						]
+					},
+					{
+						"type": "select",
+						"title": "Тип",
+						"name": "object_type",
+						"style": "object_type",
+						"values": [{
+								"text": "Выбрать",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "Квартиру",
+								"value": "city_apartment"
+							},
+							{
+								"text": "Комнату",
+								"value": "city_room"
+							},
+							{
+								"text": "Дом",
+								"value": "city_house"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "price",
+						"range": {
+							"inputs": {
+								"title": "Цена, млн.",
+								"min": {
+									"name": "price_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "price_max",
+									"placeholder": "До",
+									"value": ""
+								},
+								"dropdown": {
+									"dealType": "buy",
+									"buy": {
+										"rub": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 30000000,
+													"text": "30"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 75000000,
+													"text": "75"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												}
+											],
+											"max": [{
+													"value": 30000000,
+													"text": "30"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 75000000,
+													"text": "75"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": "",
+													"text": "1 000+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												}
+											],
+											"max": [{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": "",
+													"text": "10+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												}
+											],
+											"max": [{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": "",
+													"text": "10+"
+												}
+											]
+										}
+									},
+									"rent": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200000,
+													"text": "200"
+												},
+												{
+													"value": 300000,
+													"text": "300"
+												},
+												{
+													"value": 500000,
+													"text": "500"
+												},
+												{
+													"value": 750000,
+													"text": "750"
+												}
+											],
+											"max": [{
+													"value": 200000,
+													"text": "200"
+												},
+												{
+													"value": 300000,
+													"text": "300"
+												},
+												{
+													"value": 500000,
+													"text": "500"
+												},
+												{
+													"value": 750000,
+													"text": "750"
+												},
+												{
+													"value": "",
+													"text": "1000+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										}
+									}
+								}
+							},
+							"currency": {
+								"name": "currency",
+								"values": [{
+										"text": "₽",
+										"value": "rub",
+										"selected": true
+									},
+									{
+										"text": "$",
+										"value": "dollar"
+									},
+									{
+										"text": "€",
+										"value": "euro"
+									}
+								]
+							}
+						}
+					},
+					{
+						"type": "range",
+						"name": "square",
+						"range": {
+							"inputs": {
+								"title": "Площадь",
+								"min": {
+									"name": "square_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "square_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "input",
+						"name": "search",
+						"input": {
+							"name": "search",
+							"placeholder": "Поиск",
+							"value": ""
+						}
+					}
+				],
+				"more": [{
+						"type": "range",
+						"name": "rooms",
+						"range": {
+							"inputs": {
+								"title": "Комнат",
+								"min": {
+									"name": "rooms_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "rooms_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "select",
+						"name": "facing",
+						"title": "Отделка",
+						"values": [{
+								"text": "Без отделки",
+								"value": "without_facing",
+								"selected": true
+							},
+							{
+								"text": "С отделкой",
+								"value": "with_facing"
+							}
+						]
+					},
+					{
+						"type": "select",
+						"name": "parking",
+						"title": "Парковка",
+						"values": [{
+								"text": "С парковкой",
+								"value": "with_parking",
+								"selected": true
+							},
+							{
+								"text": "Без парковки",
+								"value": "without_parking"
+							}
+						]
+					}
+				],
+				"popupButtons": [{
+						"text": "Метро",
+						"popup": "popupAreaMetro",
+						"count": false
+					},
+					{
+						"text": "Районы и округа",
+						"popup": "popupAreaDistrict",
+						"count": false
+					}
+				]
+			},
+			{
+				"text": "Загородная",
+				"action": "/country.html",
+				"name": "country",
+				"type": "country",
+				"fields": [{
+						"type": "radio",
+						"name": "deal_type",
+						"values": [{
+								"id": "buy",
+								"value": "buy",
+								"text": "Купить",
+								"checked": true
+							},
+							{
+								"id": "rent",
+								"value": "rent",
+								"text": "Снять"
+							}
+						]
+					},
+					{
+						"type": "select",
+						"title": "Тип",
+						"name": "country_type",
+						"style": "object_type",
+						"values": [{
+								"text": "Квартиру",
+								"value": "apartment",
+								"selected": true
+							},
+							{
+								"text": "Комнату",
+								"value": "room"
+							},
+							{
+								"text": "Дом",
+								"value": "house"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "price",
+						"range": {
+							"inputs": {
+								"title": "Цена",
+								"min": {
+									"name": "price_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "price_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							},
+							"currency": {
+								"name": "currency",
+								"values": [{
+										"text": "₽",
+										"value": "rub",
+										"selected": true
+									},
+									{
+										"text": "$",
+										"value": "dollar"
+									}
+								]
+							}
+						}
+					},
+					{
+						"type": "range",
+						"name": "square",
+						"range": {
+							"inputs": {
+								"title": "Площадь дома",
+								"min": {
+									"name": "square_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "square_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "input",
+						"name": "search",
+						"input": {
+							"name": "search",
+							"placeholder": "Название шоссе, ID",
+							"value": ""
+						}
+					}
+				],
+				"more": [{
+						"type": "range",
+						"name": "area",
+						"range": {
+							"inputs": {
+								"title": "Площадь участка",
+								"min": {
+									"name": "area_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "area_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "range",
+						"name": "bedrooms",
+						"range": {
+							"inputs": {
+								"title": "Спальни",
+								"min": {
+									"name": "bedrooms_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "bedrooms_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "select",
+						"name": "facing",
+						"title": "Отделка",
+						"values": [{
+								"text": "Без отделки",
+								"value": "without_facing",
+								"selected": true
+							},
+							{
+								"text": "С отделкой",
+								"value": "with_facing"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "mkad",
+						"range": {
+							"inputs": {
+								"title": "От МКАД, км",
+								"min": {
+									"name": "mkad_from",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "mkad_to",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					}
+				],
+				"popupButtons": [{
+					"text": "Шоссе",
+					"popup": "popupAreaDistrict",
+					"variable": "highway",
+					"dataset": "/api/highway.json",
+					"count": false
+				}]
+			},
+			{
+				"text": "Офисная",
+				"action": "/office.html",
+				"name": "office",
+				"type": "office",
+				"fields": [{
+						"type": "radio",
+						"name": "deal_type",
+						"values": [{
+								"id": "buy",
+								"value": "buy",
+								"text": "Купить",
+								"checked": true
+							},
+							{
+								"id": "rent",
+								"value": "rent",
+								"text": "Снять"
+							}
+						]
+					},
+					{
+						"type": "select",
+						"title": "Тип",
+						"name": "object_type",
+						"style": "object_type",
+						"values": [{
+								"text": "Выбрать",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "Бизнес-центр",
+								"value": "business-center"
+							},
+							{
+								"text": "Особняк",
+								"value": "mansion"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "price",
+						"range": {
+							"inputs": {
+								"title": "Цена, млн.",
+								"min": {
+									"name": "price_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "price_max",
+									"placeholder": "До",
+									"value": ""
+								},
+								"dropdown": {
+									"dealType": "buy",
+									"rangeDependency": true,
+									"buy_general": {
+										"rub": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												}
+											],
+											"max": [{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": "",
+													"text": "300+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												}
+											],
+											"max": [{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": "",
+													"text": "4+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												}
+											],
+											"max": [{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": "",
+													"text": "4+"
+												}
+											]
+										}
+									},
+									"buy_meters": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": 750000000,
+													"text": "750"
+												}
+											],
+											"max": [{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": 750000000,
+													"text": "750"
+												},
+												{
+													"value": "",
+													"text": "750+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 4,
+													"text": "4"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												}
+											],
+											"max": [{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 4,
+													"text": "4"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": "",
+													"text": "5+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 4,
+													"text": "4"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												}
+											],
+											"max": [{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 4,
+													"text": "4"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": "",
+													"text": "5+"
+												}
+											]
+										}
+									},
+									"rent_meters_per_year": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 10000,
+													"text": "10"
+												},
+												{
+													"value": 20000,
+													"text": "20"
+												},
+												{
+													"value": 30000,
+													"text": "30"
+												},
+												{
+													"value": 40000,
+													"text": "40"
+												}
+											],
+											"max": [{
+													"value": 10000,
+													"text": "10"
+												},
+												{
+													"value": 20000,
+													"text": "20"
+												},
+												{
+													"value": 30000,
+													"text": "30"
+												},
+												{
+													"value": 40000,
+													"text": "40"
+												},
+												{
+													"value": "",
+													"text": "40+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200,
+													"text": "200"
+												},
+												{
+													"value": 400,
+													"text": "400"
+												},
+												{
+													"value": 600,
+													"text": "600"
+												},
+												{
+													"value": 800,
+													"text": "800"
+												}
+											],
+											"max": [{
+													"value": 200,
+													"text": "200"
+												},
+												{
+													"value": 400,
+													"text": "400"
+												},
+												{
+													"value": 600,
+													"text": "600"
+												},
+												{
+													"value": 800,
+													"text": "800"
+												},
+												{
+													"value": "",
+													"text": "800+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200,
+													"text": "200"
+												},
+												{
+													"value": 400,
+													"text": "400"
+												},
+												{
+													"value": 600,
+													"text": "600"
+												},
+												{
+													"value": 800,
+													"text": "800"
+												}
+											],
+											"max": [{
+													"value": 200,
+													"text": "200"
+												},
+												{
+													"value": 400,
+													"text": "400"
+												},
+												{
+													"value": 600,
+													"text": "600"
+												},
+												{
+													"value": 800,
+													"text": "800"
+												},
+												{
+													"value": "",
+													"text": "800+"
+												}
+											]
+										}
+									},
+									"rent_general_month": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 300000,
+													"text": "300"
+												},
+												{
+													"value": 600000,
+													"text": "600"
+												}
+											],
+											"max": [{
+													"value": 300000,
+													"text": "300"
+												},
+												{
+													"value": 600000,
+													"text": "600"
+												},
+												{
+													"value": "",
+													"text": "600+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												}
+											],
+											"max": [{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												},
+												{
+													"value": "",
+													"text": "30+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												}
+											],
+											"max": [{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												},
+												{
+													"value": "",
+													"text": "30+"
+												}
+											]
+										}
+									}
+								}
+							},
+							"currency": {
+								"name": "currency",
+								"values": [{
+										"text": "₽",
+										"value": "rub",
+										"selected": true
+									},
+									{
+										"text": "$",
+										"value": "dollar"
+									},
+									{
+										"text": "€",
+										"value": "euro"
+									}
+								]
+							},
+							"range": {
+								"name": "range",
+								"values": [{
+										"text": "Общая",
+										"value": "general",
+										"selected": true
+									},
+									{
+										"text": "За м²",
+										"value": "meters"
+									}
+								],
+								"additional": {
+									"buy": [{
+											"text": "Общая",
+											"value": "general",
+											"selected": true
+										},
+										{
+											"text": "За м²",
+											"value": "meters"
+										}
+									],
+									"rent": [{
+											"text": "м²/год",
+											"value": "meters_per_year",
+											"selected": true
+										},
+										{
+											"text": "Помещение/мес.",
+											"value": "general_month"
+										}
+									]
+								}
+							}
+						}
+					},
+					{
+						"type": "select",
+						"name": "class",
+						"title": "Класс",
+						"values": [{
+								"text": "Все варианты",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "A",
+								"value": "a"
+							},
+							{
+								"text": "B",
+								"value": "b"
+							},
+							{
+								"text": "B+",
+								"value": "b+"
+							}
+						]
+					},
+					{
+						"type": "input",
+						"name": "search",
+						"input": {
+							"name": "search",
+							"placeholder": "Адрес или ЖК",
+							"value": ""
+						}
+					}
+				],
+				"more": [{
+						"type": "range",
+						"name": "square",
+						"range": {
+							"inputs": {
+								"title": "Площадь, м²",
+								"min": {
+									"name": "square_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "square_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "select",
+						"name": "facing",
+						"values": [{
+								"text": "Все варианты",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "Без отделки",
+								"value": "without_facing",
+								"selected": true
+							},
+							{
+								"text": "С отделкой",
+								"value": "with_facing"
+							}
+						]
+					}
+				],
+				"popupButtons": [{
+						"text": "Метро",
+						"popup": "popupAreaMetro",
+						"count": false
+					},
+					{
+						"text": "Районы и округа",
+						"popup": "popupAreaDistrict",
+						"count": false
+					}
+				]
+			},
+			{
+				"text": "Складская",
+				"action": "/sklad.html",
+				"name": "sklad",
+				"type": "sklad",
+				"fields": [{
+						"type": "radio",
+						"name": "deal_type",
+						"values": [{
+								"id": "buy",
+								"value": "buy",
+								"text": "Купить",
+								"checked": true
+							},
+							{
+								"id": "rent",
+								"value": "rent",
+								"text": "Снять",
+								"checked": false
+							}
+						]
+					},
+					{
+						"type": "select",
+						"name": "class",
+						"title": "Класс",
+						"values": [{
+								"text": "Все варианты",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "A",
+								"value": "a"
+							},
+							{
+								"text": "B",
+								"value": "b"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "square",
+						"range": {
+							"inputs": {
+								"title": "Площадь, м²",
+								"min": {
+									"name": "squareMin",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "squareMax",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "select",
+						"name": "region",
+						"title": "Регион",
+						"values": [{
+								"text": "Все варианты",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "Московская область",
+								"value": "moscow_district"
+							},
+							{
+								"text": "За МКАД",
+								"value": "out_mkad"
+							},
+							{
+								"text": "Внутри Садового кольца",
+								"value": "sadovoe_ring"
+							},
+							{
+								"text": "Внутри ТТК",
+								"value": "inside__ttk"
+							},
+							{
+								"text": "Внутри МКАД",
+								"value": "inside_mkad"
+							}
+						]
+					},
+					{
+						"type": "input",
+						"name": "search",
+						"input": {
+							"name": "search",
+							"placeholder": "Адрес, метро, район или ЖК",
+							"value": ""
+						}
+					}
+				],
+				"more": [{
+					"type": "range",
+					"name": "mkad",
+					"range": {
+						"inputs": {
+							"title": "От МКАД, км",
+							"min": {
+								"name": "mkad_from",
+								"placeholder": "От",
+								"value": ""
+							},
+							"max": {
+								"name": "mkad_to",
+								"placeholder": "До",
+								"value": ""
+							}
+						}
+					},
+					"condition": "{\"region\": \"moscow_district\"}"
+				}],
+				"popupButtons": [{
+					"text": "Шоссе",
+					"popup": "popupAreaDistrict",
+					"variable": "highway",
+					"dataset": "/api/highway.json",
+					"condition": "{\"region\": \"moscow_district\"}",
+					"count": false
+				}]
+			},
+			{
+				"text": "Торговая",
+				"action": "/retail.html",
+				"name": "retail",
+				"type": "retail",
+				"fields": [{
+						"type": "radio",
+						"name": "deal_type",
+						"values": [{
+								"id": "buy",
+								"value": "buy",
+								"text": "Купить",
+								"checked": true
+							},
+							{
+								"id": "rent",
+								"value": "rent",
+								"text": "Снять"
+							},
+							{
+								"id": "rentBusiness",
+								"value": "rentBusiness",
+								"text": "Арендный бизнес"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "price",
+						"range": {
+							"inputs": {
+								"title": "Цена, млн.",
+								"min": {
+									"name": "price_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "price_max",
+									"placeholder": "До",
+									"value": ""
+								},
+								"dropdown": {
+									"dealType": "buy",
+									"rangeDependency": true,
+									"buy_general": {
+										"rub": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												}
+											],
+											"max": [{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": "",
+													"text": "300+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												}
+											],
+											"max": [{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												},
+												{
+													"value": "",
+													"text": "6+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												}
+											],
+											"max": [{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												},
+												{
+													"value": "",
+													"text": "6+"
+												}
+											]
+										}
+									},
+									"buy_meters": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": 750000000,
+													"text": "750"
+												}
+											],
+											"max": [{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": 750000000,
+													"text": "750"
+												},
+												{
+													"value": "",
+													"text": "750+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										}
+									},
+									"rent_general_month": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 500000,
+													"text": "0.5"
+												},
+												{
+													"value": 1000000,
+													"text": "1"
+												},
+												{
+													"value": 2000000,
+													"text": "2"
+												},
+												{
+													"value": 3000000,
+													"text": "3"
+												}
+											],
+											"max": [{
+													"value": 500000,
+													"text": "0.5"
+												},
+												{
+													"value": 1000000,
+													"text": "1"
+												},
+												{
+													"value": 2000000,
+													"text": "2"
+												},
+												{
+													"value": 3000000,
+													"text": "3"
+												},
+												{
+													"value": "",
+													"text": "3+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												},
+												{
+													"value": 50,
+													"text": "50"
+												}
+											],
+											"max": [{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												},
+												{
+													"value": 50,
+													"text": "50"
+												},
+												{
+													"value": "",
+													"text": "50+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												},
+												{
+													"value": 50,
+													"text": "50"
+												}
+											],
+											"max": [{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": 30,
+													"text": "30"
+												},
+												{
+													"value": 50,
+													"text": "50"
+												},
+												{
+													"value": "",
+													"text": "50+"
+												}
+											]
+										}
+									},
+									"rent_meters_per_year": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 50000,
+													"text": "50"
+												},
+												{
+													"value": 100000,
+													"text": "100"
+												},
+												{
+													"value": 150000,
+													"text": "150"
+												}
+											],
+											"max": [{
+													"value": 50000,
+													"text": "50"
+												},
+												{
+													"value": 100000,
+													"text": "100"
+												},
+												{
+													"value": 150000,
+													"text": "150"
+												},
+												{
+													"value": "",
+													"text": "150+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1000,
+													"text": "1000"
+												},
+												{
+													"value": 1500,
+													"text": "1500"
+												},
+												{
+													"value": 2500,
+													"text": "2500"
+												}
+											],
+											"max": [{
+													"value": 1000,
+													"text": "1000"
+												},
+												{
+													"value": 1500,
+													"text": "1500"
+												},
+												{
+													"value": 2500,
+													"text": "2500"
+												},
+												{
+													"value": "",
+													"text": "2500+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1000,
+													"text": "1000"
+												},
+												{
+													"value": 1500,
+													"text": "1500"
+												},
+												{
+													"value": 2500,
+													"text": "2500"
+												}
+											],
+											"max": [{
+													"value": 1000,
+													"text": "1000"
+												},
+												{
+													"value": 1500,
+													"text": "1500"
+												},
+												{
+													"value": 2500,
+													"text": "2500"
+												},
+												{
+													"value": "",
+													"text": "2500+"
+												}
+											]
+										}
+									},
+									"rentBusiness_general": {
+										"rub": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												}
+											],
+											"max": [{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": "",
+													"text": "300+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												}
+											],
+											"max": [{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												},
+												{
+													"value": "",
+													"text": "6+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												}
+											],
+											"max": [{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 2,
+													"text": "2"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 6,
+													"text": "6"
+												},
+												{
+													"value": "",
+													"text": "6+"
+												}
+											]
+										}
+									},
+									"rentBusiness_meters": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": 750000000,
+													"text": "750"
+												}
+											],
+											"max": [{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 300000000,
+													"text": "300"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": 750000000,
+													"text": "750"
+												},
+												{
+													"value": "",
+													"text": "750+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										},
+										"euro": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										}
+									}
+								}
+							},
+							"currency": {
+								"name": "currency",
+								"values": [{
+										"text": "₽",
+										"value": "rub",
+										"selected": true
+									},
+									{
+										"text": "$",
+										"value": "dollar"
+									},
+									{
+										"text": "€",
+										"value": "euro"
+									}
+								]
+							},
+							"range": {
+								"name": "range",
+								"values": [{
+										"text": "Общая",
+										"value": "general",
+										"selected": true
+									},
+									{
+										"text": "За м²",
+										"value": "meters"
+									}
+								],
+								"additional": {
+									"buy": [{
+											"text": "Общая",
+											"value": "general",
+											"selected": true
+										},
+										{
+											"text": "За м²",
+											"value": "meters"
+										}
+									],
+									"rent": [{
+											"text": "Помещение/мес.",
+											"value": "general_month",
+											"selected": true
+										},
+										{
+											"text": "м²/год",
+											"value": "meters_per_year"
+										}
+									],
+									"rentBusiness": [{
+											"text": "Общая",
+											"value": "general",
+											"selected": true
+										},
+										{
+											"text": "За м²",
+											"value": "meters"
+										}
+									]
+								}
+							}
+						}
+					},
+					{
+						"type": "input",
+						"name": "search",
+						"input": {
+							"name": "search",
+							"placeholder": "Адрес или ЖК",
+							"value": ""
+						}
+					}
+				],
+				"more": [{
+						"type": "select",
+						"title": "Сегмент",
+						"name": "segment",
+						"style": "object_type",
+						"values": [{
+								"text": "Выбрать",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "Торговый центр",
+								"value": "retailCenter"
+							},
+							{
+								"text": "Street Retail",
+								"value": "streetRetail"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "square",
+						"range": {
+							"inputs": {
+								"title": "Площадь, м²",
+								"min": {
+									"name": "square_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "square_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					}
+				],
+				"popupButtons": [{
+						"text": "Метро",
+						"popup": "popupAreaMetro",
+						"count": false
+					},
+					{
+						"text": "Районы и округа",
+						"popup": "popupAreaDistrict",
+						"count": false
+					}
+				]
+			},
+			{
+				"text": "Зарубежная",
+				"action": "/foreign.html",
+				"name": "foreign",
+				"type": "foreign",
+				"params": {},
+				"fields": [{
+						"type": "radio",
+						"name": "deal_type",
+						"values": [{
+								"id": "buy",
+								"value": "buy",
+								"text": "Купить",
+								"checked": true
+							},
+							{
+								"id": "rent",
+								"value": "rent",
+								"text": "Снять"
+							}
+						]
+					},
+					{
+						"type": "select",
+						"name": "country",
+						"title": "Тип",
+						"style": "object_type",
+						"values": [{
+								"text": "Выбрать",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "Дом",
+								"value": "house"
+							},
+							{
+								"text": "Таунхаус",
+								"value": "townhouse"
+							}
+						]
+					},
+					{
+						"type": "range",
+						"name": "price",
+						"range": {
+							"inputs": {
+								"title": "Цена, тыс.",
+								"min": {
+									"name": "price_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "price_max",
+									"placeholder": "До",
+									"value": ""
+								},
+								"dropdown": {
+									"dealType": "buy",
+									"buy": {
+										"rub": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 30000000,
+													"text": "30"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 75000000,
+													"text": "75"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												}
+											],
+											"max": [{
+													"value": 30000000,
+													"text": "30"
+												},
+												{
+													"value": 50000000,
+													"text": "50"
+												},
+												{
+													"value": 75000000,
+													"text": "75"
+												},
+												{
+													"value": 100000000,
+													"text": "100"
+												},
+												{
+													"value": 200000000,
+													"text": "200"
+												},
+												{
+													"value": 500000000,
+													"text": "500"
+												},
+												{
+													"value": "",
+													"text": "1 000+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												}
+											],
+											"max": [{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": "",
+													"text": "10+"
+												}
+											]
+										},
+										"pound": {
+											"title": "Цена, млн.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												}
+											],
+											"max": [{
+													"value": 0.5,
+													"text": "0.5"
+												},
+												{
+													"value": 1,
+													"text": "1"
+												},
+												{
+													"value": 1.5,
+													"text": "1.5"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 8,
+													"text": "8"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": "",
+													"text": "10+"
+												}
+											]
+										}
+									},
+									"rent": {
+										"rub": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 200000,
+													"text": "200"
+												},
+												{
+													"value": 300000,
+													"text": "300"
+												},
+												{
+													"value": 500000,
+													"text": "500"
+												},
+												{
+													"value": 750000,
+													"text": "750"
+												}
+											],
+											"max": [{
+													"value": 200000,
+													"text": "200"
+												},
+												{
+													"value": 300000,
+													"text": "300"
+												},
+												{
+													"value": 500000,
+													"text": "500"
+												},
+												{
+													"value": 750000,
+													"text": "750"
+												},
+												{
+													"value": "",
+													"text": "1000+"
+												}
+											]
+										},
+										"dollar": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										},
+										"pound": {
+											"title": "Цена, тыс.",
+											"min": [{
+													"value": 0,
+													"text": "0"
+												},
+												{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												}
+											],
+											"max": [{
+													"value": 3,
+													"text": "3"
+												},
+												{
+													"value": 5,
+													"text": "5"
+												},
+												{
+													"value": 7,
+													"text": "7"
+												},
+												{
+													"value": 10,
+													"text": "10"
+												},
+												{
+													"value": 15,
+													"text": "15"
+												},
+												{
+													"value": "",
+													"text": "15+"
+												}
+											]
+										}
+									}
+								}
+							},
+							"currency": {
+								"name": "currency",
+								"values": [{
+										"text": "₽",
+										"value": "rub",
+										"selected": true
+									},
+									{
+										"text": "$",
+										"value": "dollar"
+									},
+									{
+										"text": "£",
+										"value": "pound"
+									}
+								]
+							}
+						}
+					},
+					{
+						"type": "range",
+						"name": "square",
+						"range": {
+							"inputs": {
+								"title": "Площадь, м²",
+								"min": {
+									"name": "square_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "square_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "input",
+						"name": "search",
+						"input": {
+							"name": "search",
+							"placeholder": "Адрес или ЖК",
+							"value": ""
+						}
+					}
+				],
+				"more": [{
+						"type": "range",
+						"name": "bedrooms",
+						"range": {
+							"inputs": {
+								"title": "Спальни",
+								"min": {
+									"name": "rooms_min",
+									"placeholder": "От",
+									"value": ""
+								},
+								"max": {
+									"name": "rooms_max",
+									"placeholder": "До",
+									"value": ""
+								}
+							}
+						}
+					},
+					{
+						"type": "select",
+						"name": "state",
+						"title": "Готовность",
+						"values": [{
+								"text": "Строится",
+								"value": "in_progress",
+								"selected": true
+							},
+							{
+								"text": "Построен",
+								"value": "done"
+							}
+						]
+					},
+					{
+						"type": "select",
+						"name": "view",
+						"title": "Вид",
+						"values": [{
+								"text": "Выбрать",
+								"value": "",
+								"selected": true
+							},
+							{
+								"text": "На горы",
+								"value": "mountains"
+							},
+							{
+								"text": "На море",
+								"value": "sea"
+							}
+						]
+					}
+				],
+				"popupButtons": [{
+					"text": "Страна и город",
+					"popup": "popupCountryCity",
+					"className": "popup-area--country",
+					"title": "выбрать страну и город",
+					"count": false
+				}]
+			}
+		],
+		"tags": {
+			"name": "catalogTags",
+			"list": [{
+					"id": "tag1",
+					"text": "Дисконт",
+					"value": "/city.html?tags[]=discount"
+				},
+				{
+					"id": "tag3",
+					"text": "city_room tag",
+					"value": "/city.html?tags[]=city_room"
+				},
+				{
+					"id": "tag2",
+					"text": "city_house tag",
+					"value": "/city.html?tags[]=woodenHouse"
+				}
+			]
+		},
+		"broker": "Заказать подбор брокеру"
+	},
+	"types": {
+		"items": [{
+				"img": "/assets/images/home/types/type_0.jpg",
+				"titleLink": {
+					"text": "Жилая",
+					"url": "#"
+				},
+				"items": [{
+						"text": "Квартиры",
+						"url": "#"
+					},
+					{
+						"text": "Апартаменты",
+						"url": "#"
+					},
+					{
+						"text": "Дома",
+						"url": "#"
+					},
+					{
+						"text": "Таунхаусы",
+						"url": "#"
+					},
+					{
+						"text": "Пентхаусы",
+						"url": "#"
+					}
+				]
+			},
+			{
+				"img": "/assets/images/home/types/type_1.jpg",
+				"titleLink": {
+					"text": "Загородная",
+					"url": "#"
+				},
+				"items": [{
+						"text": "Дома",
+						"url": "#"
+					},
+					{
+						"text": "Квартиры",
+						"url": "#"
+					},
+					{
+						"text": "Таунхаусы",
+						"url": "#"
+					},
+					{
+						"text": "Участки",
+						"url": "#"
+					},
+					{
+						"text": "Поселки",
+						"url": "#"
+					}
+				]
+			},
+			{
+				"img": "/assets/images/home/types/type_2.jpg",
+				"titleLink": {
+					"text": "Коммерческая",
+					"url": "#"
+				},
+				"items": [{
+						"text": "Офисная",
+						"url": "#"
+					},
+					{
+						"text": "Складская",
+						"url": "#"
+					},
+					{
+						"text": "Торговая",
+						"url": "#"
+					}
+				]
+			},
+			{
+				"img": "/assets/images/home/types/type_3.jpg",
+				"titleLink": {
+					"text": "Зарубежная",
+					"url": "#"
+				},
+				"items": []
+			}
+		],
+		"offer": {
+			"title": "Эксклюзив",
+			"text": "Закрытые выгодные предложения для клиентов компании",
+			"popup": "compilation"
+		}
+	},
+	"how": {
+		"picture": {
+			"sources": {
+				"mobile": [
+					"/assets/images/home/how-back_m.jpg"
+				],
+				"tablet": [
+					"/assets/images/home/how-back_t.jpg"
+				],
+				"desktop": [
+					"/assets/images/home/how-back.jpg"
+				]
+			},
+			"alt": "album",
+			"title": "album"
+		},
+		"url": "/ajax/json/success.json",
+		"tabs": [{
+				"title": "Какую недвижимость вы ищите?",
+				"text": "Получите персональную подборку лучших предложений",
+				"answers": [{
+						"text": "Жилую в городе",
+						"value": "1",
+						"name": "answer"
+					},
+					{
+						"text": "Загородную",
+						"value": "1",
+						"name": "answer"
+					},
+					{
+						"text": "Коммерческую",
+						"value": "2",
+						"name": "answer"
+					},
+					{
+						"text": "Зарубежную",
+						"value": "3",
+						"name": "answer"
+					}
+				]
+			},
+			{
+				"title": "Какую недвижимость вы ищите? 2",
+				"text": "Получите персональную подборку лучших предложений 2",
+				"answers": [{
+						"text": "Жилую в городе",
+						"value": "1",
+						"name": "answer_1"
+					},
+					{
+						"text": "Загородную",
+						"value": "2",
+						"name": "answer_1"
+					},
+					{
+						"text": "Коммерческую",
+						"value": "3",
+						"name": "answer_1"
+					}
+				]
+			},
+			{
+				"title": "Какую недвижимость вы ищите? 3",
+				"text": "Получите персональную подборку лучших предложений 3",
+				"answers": [{
+						"text": "Жилую в городе",
+						"value": "1",
+						"name": "answer_2"
+					},
+					{
+						"text": "Загородную",
+						"value": "2",
+						"name": "answer_2"
+					},
+					{
+						"text": "Зарубежную",
+						"value": "3",
+						"name": "answer_2"
+					}
+				]
+			},
+			{
+				"title": "Какую недвижимость вы ищите? 4",
+				"text": "Получите персональную подборку лучших предложений 4",
+				"answers": [{
+						"text": "Жилую в городе",
+						"value": "1",
+						"name": "answer_3"
+					},
+					{
+						"text": "Загородную",
+						"value": "2",
+						"name": "answer_3"
+					},
+					{
+						"text": "Коммерческую",
+						"value": "3",
+						"name": "answer_3"
+					},
+					{
+						"text": "Зарубежную",
+						"value": "4",
+						"name": "answer_3"
+					}
+				]
+			},
+			{
+				"title": "Какую недвижимость вы ищите? 5",
+				"text": "Получите персональную подборку лучших предложений 5",
+				"answers": [{
+						"text": "Жилую в городе",
+						"value": "1",
+						"name": "answer_4"
+					},
+					{
+						"text": "Коммерческую",
+						"value": "1",
+						"name": "answer_4"
+					},
+					{
+						"text": "Зарубежную",
+						"value": "1",
+						"name": "answer_4"
+					}
+				]
+			},
+			{
+				"title": "Какую недвижимость вы ищите? 6",
+				"text": "Получите персональную подборку лучших предложений 6",
+				"answers": [{
+						"text": "Коммерческую",
+						"value": "1",
+						"name": "answer_5"
+					},
+					{
+						"text": "Зарубежную",
+						"value": "1",
+						"name": "answer_5"
+					}
+				]
+			}
+		],
+		"active": 0,
+		"success": {
+			"title": "Заголовок",
+			"text": "Текст",
+			"show": false
+		}
+	},
+	"experience": {
+		"picture": {
+			"sources": {
+				"mobile": [
+					"/assets/images/home/experience/back_m.jpg"
+				],
+				"tablet": [
+					"/assets/images/home/experience/back_t.jpg"
+				],
+				"desktop": [
+					"/assets/images/home/experience/back.jpg"
+				]
+			},
+			"alt": "background",
+			"title": "background"
+		},
+		"title": "<em>Д</em>оверьте подбор недвижимости",
+		"mainTitle": "<span>опытным экспертам</span> Saffari Estate",
+		"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены профессиональными модераторами. Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений",
+		"btn": {
+			"url": "#",
+			"text": "Подробнее о компании"
+		}
+	},
+	"services": {
+		"head": {
+			"title": "Услуги",
+			"text": "<span>Более 95%</span> наших клиентов ежегодно продлевают<br> с нами договора"
+		},
+		"tabs": [{
+				"text": "Собственнику",
+				"value": "owner"
+			},
+			{
+				"text": "Покупателю",
+				"value": "buyer"
+			},
+			{
+				"text": "Арендатору",
+				"value": "arendator"
+			},
+			{
+				"text": "Девелоперу",
+				"value": "developer"
+			}
+		],
+		"sliders": [{
+				"name": "owner",
+				"items": [{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены ",
+						"popup": {
+							"name": "consultation",
+							"ico": "/assets/svg/consult-burgundy.svg",
+							"btnPhrase": "Получить консультацию",
+							"html": "<p>Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены</p><p>Консалтинг в сфере недвижимости становится привычным явлением для регионов. Прошло то время, когда обращение к консультантам считалось необязательным шагом, продиктованным в большей степени имиджевыми соображениями, чем жизненной необходимостью. В последние годы ситуация изменилась. Популярность и необходимость услуг консультантов в этой сфере растет год от года. Все больше новосибирских строительных компаний и девелоперов или уже обращаются к консалтинговым компаниям, или присматриваются к ним.</p>"
+						}
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					},
+					{
+						"ico": "/assets/images/home/services/service_2.svg",
+						"title": "Подбор покупателей",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений"
+					},
+					{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					}
+				]
+			},
+			{
+				"name": "buyer",
+				"items": [{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_2.svg",
+						"title": "Подбор покупателей",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений"
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					},
+					{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					}
+				]
+			},
+			{
+				"name": "arendator",
+				"items": [{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_2.svg",
+						"title": "Подбор покупателей",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений"
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					}
+				]
+			},
+			{
+				"name": "developer",
+				"items": [{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					},
+					{
+						"ico": "/assets/images/home/services/service_2.svg",
+						"title": "Подбор покупателей",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений"
+					},
+					{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_0.svg",
+						"title": "Консалтинг",
+						"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены "
+					},
+					{
+						"ico": "/assets/images/home/services/service_1.svg",
+						"title": "Представление интересов",
+						"text": "Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений "
+					}
+				]
+			}
+		]
+	},
+	"agency": {
+		"title": "<em>М</em>ы единственное агентство в России, у которого есть офис и доступные объекты<br> <span>в <em>М</em>онако</span>",
+		"text": "Вы найдёте объекты по аренде и продаже недвижимости в Москве. Все квартиры, дома и другие объекты проверены профессиональными модераторами. Для упрощения поиска, у нас реализована система рекомендаций похожих объявлений",
+		"slider": [{
+				"picture": {
+					"sources": {
+						"mobile": [
+							"/assets/images/home/agency/apartments_m.jpg"
+						],
+						"tablet": [
+							"/assets/images/home/agency/apartments_t.jpg"
+						],
+						"desktop": [
+							"/assets/images/home/agency/apartments.jpg"
+						]
+					},
+					"alt": "apartment",
+					"title": "apartment"
+				},
+				"name": "<em>А</em>партаменты<br> с видом на море",
+				"price": "17 250 000 €"
+			},
+			{
+				"picture": {
+					"sources": {
+						"mobile": [
+							"/assets/images/home/agency/apartments_m.jpg"
+						],
+						"tablet": [
+							"/assets/images/home/agency/apartments_t.jpg"
+						],
+						"desktop": [
+							"/assets/images/home/agency/apartments.jpg"
+						]
+					},
+					"alt": "apartment",
+					"title": "apartment"
+				},
+				"name": "<em>А</em>партаменты<br> с видом на море 2",
+				"price": "7 250 000 €"
+			},
+			{
+				"picture": {
+					"sources": {
+						"mobile": [
+							"/assets/images/home/agency/apartments_m.jpg"
+						],
+						"tablet": [
+							"/assets/images/home/agency/apartments_t.jpg"
+						],
+						"desktop": [
+							"/assets/images/home/agency/apartments.jpg"
+						]
+					},
+					"alt": "apartment",
+					"title": "apartment"
+				},
+				"name": "<em>А</em>партаменты<br> с видом на море 3",
+				"price": "4 220 000 €"
+			}
+		]
+	},
+	"offers": {
+		"title": "6 эксклюзивных предложений",
+		"sTitle": "которые есть только у нас",
+		"tabs": [{
+				"text": "Жилая в городе",
+				"value": "city"
+			},
+			{
+				"text": "Загородная",
+				"value": "country"
+			},
+			{
+				"text": "Коммерческая",
+				"value": "commercial"
+			},
+			{
+				"text": "Зарубежная",
+				"value": "foreign"
+			}
+		],
+		"itemsWrap": [{
+				"name": "city",
+				"cards": [{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/home/offers/offer_0.jpg", "/assets/images/home/offers/offer_3.jpg"],
+						"title": "2 комн. кв, 90м²",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					}
+				]
+			},
+			{
+				"name": "country",
+				"cards": [{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "Таунхаус",
+						"name": "Покровский Берег",
+						"address": "Хамовники, Ефремова улица, д. 9А",
+						"specs": ["square", "rooms", "floor", "metro", "facing", "parking"],
+						"info": {
+							"square": "850м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							},
+							"facing": "С отделкой",
+							"parking": "С парковкой"
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card3.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "Дом",
+						"labels": ["Эксклюзив"],
+						"name": "Knightsbride Private park",
+						"address": "Истринский район, Новорижское шоссе, 19 км",
+						"specs": ["square", "area", "facing", "floor", "forest", "water"],
+						"info": {
+							"square": "850м²",
+							"area": "22 сотки",
+							"facing": "С отделкой",
+							"floor": "2 этажа",
+							"forest": "Лес рядом",
+							"water": "У водоема"
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "table",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "Легион III (Фаза II)",
+						"name": "Многофункциональный комплекс",
+						"address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+						"table": [{
+								"link": "/detail-object.html",
+								"info": [{
+										"name": "square",
+										"text": "1000 м²"
+									},
+									{
+										"name": "floor",
+										"text": "3 этаж"
+									},
+									{
+										"name": "facing",
+										"text": "Без отделки"
+									},
+									{
+										"name": "price",
+										"text": "25 000 ₽ м² в год"
+									}
+								]
+							},
+							{
+								"link": "/detail-object.html",
+								"info": [{
+										"name": "square",
+										"text": "902 м²"
+									},
+									{
+										"name": "floor",
+										"text": "9 этаж"
+									},
+									{
+										"name": "facing",
+										"text": "С отделкой"
+									},
+									{
+										"name": "price",
+										"text": "25 000 ₽ м² в год"
+									}
+								]
+							},
+							{
+								"link": "/detail-object.html",
+								"info": [{
+										"name": "square",
+										"text": "984 м²"
+									},
+									{
+										"name": "floor",
+										"text": "4 этаж"
+									},
+									{
+										"name": "facing",
+										"text": "С отделкой"
+									},
+									{
+										"name": "price",
+										"text": "25 000 ₽ м² в год"
+									}
+								]
+							}
+						],
+						"specs": ["ring", "square", "date", "facing", "metro"],
+						"info": {
+							"ring": "ТТК",
+							"square": "90м²",
+							"date": "Строится",
+							"facing": "С отделкой",
+							"metro": {
+								"station": "Киевская",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"objects": "17 предложений",
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "Участок",
+						"name": "Парк Авеню",
+						"address": "Рублево-Успенское шоссе, 9 км",
+						"specs": ["area", "distance", "gas", "cleaner", "pump"],
+						"info": {
+							"area": "55 соток",
+							"distance": "11 км от МКАД",
+							"gas": "Газ (магистральный)",
+							"cleaner": "Септик",
+							"pump": "Скважина"
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					}
+				]
+			},
+			{
+				"name": "commercial",
+				"cards": [{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					}
+				]
+			},
+			{
+				"name": "foreign",
+				"cards": [{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					},
+					{
+						"type": "small",
+						"deal_type": "Продажа",
+						"id": "as12713",
+						"images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+						"title": "2 комн. кв",
+						"labels": ["Эксклюзив", "Новостройка"],
+						"name": "Knightsbride Private park",
+						"address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+						"specs": ["square", "rooms", "floor", "metro"],
+						"info": {
+							"square": "90м²",
+							"rooms": "2",
+							"floor": "14/20",
+							"metro": {
+								"station": "Спортивная",
+								"walk": "7 минут пешком"
+							}
+						},
+						"price": {
+							"total": "172 250 000 р.",
+							"meters": "135 000 р./м²"
+						},
+						"phone": {
+							"href": "+74950000000",
+							"text": "+7 (495) 000-00-00"
+						},
+						"link": "/detail-object.html",
+						"isFav": false
+					}
+				]
+			}
+		]
+	},
+	"request": {
+		"picture": {
+			"sources": {
+				"mobile": [
+					"/assets/images/home/banner/background.jpg"
+				],
+				"tablet": [
+					"/assets/images/home/banner/background_t.jpg"
+				],
+				"desktop": [
+					"/assets/images/home/banner/background.jpg"
+				]
+			},
+			"alt": "apartment",
+			"title": "apartment"
+		},
+		"title": "нужна помощь в подборе лучших предложений?",
+		"form": {
+			"url": "/ajax/json/success.json",
+			"hidden": {
+				"user_id": "123"
+			},
+			"inputs": [{
+					"placeholder": "Имя*",
+					"value": "",
+					"name": "name",
+					"type": "text",
+					"className": "",
+					"checked": {
+						"value": "waiting",
+						"required": true,
+						"lengthString": {
+							"min": 1,
+							"max": 50
+						}
+					}
+				},
+				{
+					"type": "input",
+					"name": "phone",
+					"placeholder": "+7 (___) ___-__-__",
+					"value": "",
+					"maskInfo": {
+						"options": {
+							"mask": "+{7}(000) 000-00-00"
+						},
+						"complete": false
+					},
+					"checked": {
+						"value": "waiting",
+						"required": false,
+						"lengthString": {
+							"min": 17,
+							"max": 17
+						}
+					}
+				},
+				{
+					"placeholder": "E-mail*",
+					"value": "",
+					"name": "email",
+					"type": "text",
+					"className": "input--email",
+					"checked": {
+						"value": "waiting",
+						"required": true,
+						"email": true,
+						"lengthString": {
+							"min": 5,
+							"max": 250
+						}
+					}
+				}
+			],
+			"btn": "Отправить заявку",
+			"checkbox": {
+				"text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+				"name": "checkbox",
+				"value": "y",
+				"checked": false
+			}
+		}
+	},
+	"features": {
+		"title": "особенности работы",
+		"sTitle": "компании Saffari Estate",
+		"slider": [{
+				"number": "01",
+				"title": "Большая база",
+				"text": "У нас самая большая база актуальных и эксклюзивных объектов элитной недвижимости",
+				"link": {
+					"text": "Посмотреть",
+					"url": "#"
+				}
+			},
+			{
+				"number": "02",
+				"title": "надежность",
+				"text": "Мы гарантируем абсолютую безопасность и конфиденциальность по сделкам",
+				"link": {
+					"text": "Узнать",
+					"url": "#"
+				}
+			},
+			{
+				"number": "03",
+				"title": "опыт",
+				"text": "Наша команда имеет огромный опыт продаж недвижимости в элитном сегменте",
+				"link": {
+					"text": "Изучить",
+					"url": "#"
+				}
+			},
+			{
+				"number": "04",
+				"title": "Закрытые предложения",
+				"text": "Есть объекты, которые предлагаем только мы",
+				"popup": {
+					"text": "Получить",
+					"type": "form",
+					"name": "brokerSelection"
+				}
+			},
+			{
+				"number": "05",
+				"title": "Большая база",
+				"text": "У нас самая большая база актуальных недвижимости",
+				"link": {
+					"text": "Посмотреть",
+					"url": "#"
+				}
+			}
+		]
+	},
+	"clients": {
+		"title": "наши клиенты",
+		"items": [{
+				"url": "#",
+				"img": {
+					"src": "/assets/images/clients/clients_4.png",
+					"alt": "client"
+				}
+			},
+			{
+				"url": "#",
+				"img": {
+					"src": "/assets/images/clients/clients_3.png",
+					"alt": "client"
+				}
+			},
+			{
+				"url": "#",
+				"img": {
+					"src": "/assets/images/clients/clients_2.png",
+					"alt": "client"
+				}
+			},
+			{
+				"url": "#",
+				"img": {
+					"src": "/assets/images/clients/clients_1.png",
+					"alt": "client"
+				}
+			},
+			{
+				"url": "#",
+				"img": {
+					"src": "/assets/images/clients/clients_0.png",
+					"alt": "client"
+				}
+			}
+		]
+	},
+	"presentation": {
+		"picture": {
+			"sources": {
+				"mobile": [
+					"/assets/images/presentation.jpg",
+					"/assets/images/presentation.webp"
+				],
+				"tablet": [
+					"/assets/images/presentation_t.jpg",
+					"/assets/images/presentation_t.webp"
+				],
+				"desktop": [
+					"/assets/images/presentation.jpg",
+					"/assets/images/presentation.webp"
+				]
+			},
+			"alt": "presentation",
+			"title": "presentation"
+		},
+		"title": "Получите индивидуальную подборку предложений специально для вас",
+		"btn": {
+			"text": "Получить презентацию",
+			"url": "#"
+		}
+	},
+	"seoLinks": {
+		"items": [{
+				"titleBtn": "Квартиры",
+				"title": "у метро",
+				"items": [{
+						"text": "Авиамоторная",
+						"url": "#"
+					},
+					{
+						"text": "Волжская",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Автозаводская",
+						"url": "#"
+					},
+					{
+						"text": "Волоколамская",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Академическая",
+						"url": "#"
+					},
+					{
+						"text": "Воробьевы горы",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Александровский сад",
+						"url": "#"
+					},
+					{
+						"text": "Выставочная",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевская",
+						"url": "#"
+					},
+					{
+						"text": "Крылатское",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					}
+				],
+				"btnOpen": "Показать больше станций"
+			},
+			{
+				"titleBtn": "Квартиры",
+				"title": "в районе",
+				"items": [{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					},
+					{
+						"text": "Академический",
+						"url": "#"
+					},
+					{
+						"text": "Алексеевский",
+						"url": "#"
+					},
+					{
+						"text": "Алтуфьевский",
+						"url": "#"
+					},
+					{
+						"text": "Арбат",
+						"url": "#"
+					},
+					{
+						"text": "Аэропорт",
+						"url": "#"
+					}
+				],
+				"btnOpen": "Показать больше станций"
+			},
+			{
+				"title": "Загородная недвижимость",
+				"items_4_6": [{
+						"text": "Алтуфьевское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Егорьевское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Ленинградское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Носовихинское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Варшавское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Киевское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Минское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Рогачевское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Волоколамское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Калужское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Можайское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Горьковское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Рублевское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Каширское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Новорязанское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Дмитровское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Щелковское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Киевское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Новорижское шоссе",
+						"url": "#"
+					},
+					{
+						"text": "Ярославское шоссе",
+						"url": "#"
+					}
+				],
+				"items_2_6": [{
+						"text": "Коттеджи/Дома",
+						"url": "#"
+					},
+					{
+						"text": "Дома с бассейном",
+						"url": "#"
+					},
+					{
+						"text": "Участки",
+						"url": "#"
+					},
+					{
+						"text": "Деревянные дома",
+						"url": "#"
+					},
+					{
+						"text": "Таунхаусы",
+						"url": "#"
+					},
+					{
+						"text": "Рядом о озером",
+						"url": "#"
+					},
+					{
+						"text": "Поселки",
+						"url": "#"
+					},
+					{
+						"text": "Рядом в лесом",
+						"url": "#"
+					},
+					{
+						"text": "Аренда дома",
+						"url": "#"
+					},
+					{
+						"text": "Ближайшее к Москве",
+						"url": "#"
+					},
+					{
+						"text": "Рядом о озером",
+						"url": "#"
+					},
+					{
+						"text": "Поселки",
+						"url": "#"
+					},
+					{
+						"text": "Рядом в лесом",
+						"url": "#"
+					},
+					{
+						"text": "Аренда дома",
+						"url": "#"
+					},
+					{
+						"text": "Ближайшее к Москве",
+						"url": "#"
+					},
+					{
+						"text": "Рядом о озером",
+						"url": "#"
+					},
+					{
+						"text": "Поселки",
+						"url": "#"
+					},
+					{
+						"text": "Рядом в лесом",
+						"url": "#"
+					},
+					{
+						"text": "Аренда дома",
+						"url": "#"
+					},
+					{
+						"text": "Ближайшее к Москве",
+						"url": "#"
+					}
+				],
+				"btnOpen": "Показать больше"
+			}
+		]
+	}
+}

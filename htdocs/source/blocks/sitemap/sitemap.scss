@@ -1,0 +1,85 @@
+$parent: sitemap;
+
+@include block ($parent) {
+  padding: rem(26) 0 rem(26);
+
+  @media (min-width: $dMin) {
+    padding-bottom: rem(70);
+  }
+
+  @include element ($parent, 'title') {
+    margin: rem(7) 0 rem(45);
+  }
+
+  @include element ($parent, 'items') {
+    margin-bottom: rem(-50);
+
+    @media (min-width: $tMin) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @include element ($parent, 'item') {
+    margin-bottom: rem(50);
+
+    @media (min-width: $tMin) {
+      max-width: 50%;
+      flex-basis: 50%;
+    }
+
+    @media (min-width: $dMin) {
+      max-width: 25%;
+      flex-basis: 25%;
+      padding-right: rem(10);
+    }
+  }
+
+  @include element ($parent, 'item-title') {
+    display: inline-block;
+    margin-bottom: rem(16);
+    font-size: rem(20);
+    font-weight: 600;
+
+    &:hover {
+      color: $red2;
+    }
+  }
+
+  @include element ($parent, 'list') {
+    @include modifier ($parent, 'inner') {
+      margin-top: rem(15);
+      padding-left: rem(10);
+    }
+  }
+
+  @include element ($parent, 'li') {
+    position: relative;
+    margin-bottom: rem(15);
+    padding-left: rem(12);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: rem(3);
+      height: rem(3);
+      background-color: $red2;
+      left: 0;
+      top: rem(9);
+    }
+
+    a {
+      color: $gray2;
+      font-size: rem(14);
+
+      &:hover {
+        color: $red2;
+      }
+    }
+  }
+}

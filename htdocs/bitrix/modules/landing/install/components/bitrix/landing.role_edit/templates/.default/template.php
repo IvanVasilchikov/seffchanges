@@ -178,7 +178,7 @@ unset($site);
 		echo $drawTr(
 			0,
 			$arResult['RIGHTS'][0],
-			Loc::getMessage('LANDING_TPL_RIGHT_DEFAULT_TITLE')
+			$component->getMessageType('LANDING_TPL_RIGHT_DEFAULT_TITLE')
 		);
 		foreach ($arResult['RIGHTS'] as $siteId => $rights)
 		{
@@ -206,9 +206,11 @@ unset($site);
 					LANDING_ALERT_CONTENT_RELOADED: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_ALERT_CONTENT_RELOADED'));?>'
 				}
 			)">
-			<?= Loc::getMessage('LANDING_TPL_ADD_FOR_SITE');?>
+			<?= $component->getMessageType('LANDING_TPL_ADD_FOR_SITE');?>
 		</span>
 	</div>
+	<?else:?>
+		<div style="padding-top: 20px;"></div>
 	<?endif;?>
 
 	<div class="pinable-block">

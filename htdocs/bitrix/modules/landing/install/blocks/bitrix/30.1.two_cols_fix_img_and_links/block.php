@@ -7,7 +7,7 @@
 					<div class="landing-block-node-img-container">
 						<img class="landing-block-node-img img-fluid w-100"
 							 src="https://cdn.bitrix24.site/bitrix/images/landing/business/500x335/img1.jpg" alt="">
-						<div class="landing-block-node-svg-container g-pos-rel">
+						<div class="landing-block-node-svg-container g-pointer-events-none g-pos-rel">
 							<svg class="g-hidden-col-1 g-hidden-col-2 g-pos-abs g-left-0 g-right-0 g-bottom-0"
 								 version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
 								 xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px"
@@ -42,7 +42,7 @@
 					<div class="landing-block-node-img-container">
 						<img class="landing-block-node-img img-fluid w-100"
 							 src="https://cdn.bitrix24.site/bitrix/images/landing/business/500x335/img2.jpg" alt="">
-						<div class="landing-block-node-svg-container g-pos-rel">
+						<div class="landing-block-node-svg-container g-pointer-events-none g-pos-rel">
 							<svg class="g-hidden-col-1 g-hidden-col-2 g-pos-abs g-left-0 g-right-0 g-bottom-0"
 								 version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
 								 xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="140px"

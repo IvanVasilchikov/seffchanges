@@ -15,15 +15,39 @@ class PixelVk extends \Bitrix\Landing\Hook\Page
 	 */
 	protected function getMap()
 	{
+		$helpUrl = \Bitrix\Landing\Help::getHelpUrl('PIXEL');
 		return array(
 			'USE' => new Field\Checkbox('USE', array(
 				'title' => Loc::getMessage('LANDING_HOOK_PIXEL_VK_USE')
 			)),
 			'COUNTER' => new Field\Text('COUNTER', array(
 				'title' => Loc::getMessage('LANDING_HOOK_PIXEL_VK_COUNTER'),
-				'placeholder' => Loc::getMessage('LANDING_HOOK_PIXEL_VK_PLACEHOLDER2')
+				'placeholder' => Loc::getMessage('LANDING_HOOK_PIXEL_VK_PLACEHOLDER2'),
+				'help' => $helpUrl
+					? '<a href="' . $helpUrl . '" target="_blank">' .
+				  			Loc::getMessage('LANDING_HOOK_PIXEL_VK_HELP') .
+				  		'</a>'
+					: ''
 			))
 		);
+	}
+
+	/**
+	 * Exec or not hook in edit mode.
+	 * @return bool
+	 */
+	public function enabledInEditMode()
+	{
+		return false;
+	}
+
+	/**
+	 * Exec or not hook in intranet mode.
+	 * @return boolean
+	 */
+	public function enabledInIntranetMode()
+	{
+		return false;
 	}
 
 	/**

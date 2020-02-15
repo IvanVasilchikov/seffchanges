@@ -1,0 +1,454 @@
+$parent: popup-object;
+
+@include block($parent) {
+  width: 92.4vw;
+  max-width: rem(348);
+  padding: rem(60) 0;
+
+  @media (min-width: $tMin) {
+    max-width: inherit;
+  }
+
+  @media (min-width: $tMin) and (max-width: $tMax) {
+    width: rem(688);
+  }
+
+  @media (min-width: $dMin) and (max-width: $d1279) {
+    width: rem(904);
+  }
+
+  @media (min-width: $dMin) {
+    padding: rem(20) 0 rem(30);
+  }
+
+  @media (min-width: $d1280) {
+    width: rem(1200);
+  }
+
+  @include element($parent, 'content-wrap') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  @include element($parent, 'content') {
+    width: 100%;
+    border: 1px solid $gray3;
+    padding: rem(25) rem(15) rem(30);
+    margin-bottom: rem(14);
+    background-color: $w;
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      width: rem(334);
+      height: rem(372);
+      padding: rem(22) rem(14) rem(30);
+    }
+
+    @media (min-width: $dMin) {
+      padding: rem(32) rem(34) rem(42);
+      height: rem(414);
+    }
+
+    @media (min-width: $dMin) and (max-width: $d1279) {
+      width: rem(352);
+      padding: rem(32) rem(24) rem(42);
+    }
+
+    @media (min-width: $d1280) {
+      // padding: rem(43) rem(60) rem(44) rem(56);
+      // display: flex;
+      // width: 100%;
+      width: rem(396);
+      // max-width: 100%;
+      // flex-basis: auto;
+      // flex-grow: 1;
+    }
+  }
+
+  @include element($parent, 'main') {
+    // @media (min-width: $d1280) {
+    //   // flex-basis: auto;
+    //   // flex-grow: 1;
+    //   width: rem(396);
+    // }
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(15);
+
+    @media (min-width: $d1280) {
+      margin-right: rem(26);
+    }
+  }
+
+  @include element($parent, 'labels') {
+    display: inline-flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    margin-bottom: rem(-5);
+  }
+
+  @include element($parent, 'label') {
+    height: rem(20);
+    line-height: rem(20);
+    text-align: center;
+    padding: 0 rem(5);
+    background-color: $red2;
+    font-size: rem(10);
+    color: $w;
+    text-transform: uppercase;
+    margin-bottom: rem(5);
+
+    // @media (min-width: $d1280) {
+    //   font-size: rem(11);
+    //   padding: 0 rem(9);
+    // }
+
+    &:not(:last-of-type) {
+      margin-right: rem(5);
+
+      // @media (min-width: $d1280) {
+      //   margin-right: rem(10);
+      // }
+    }
+  }
+
+  @include element($parent, 'name') {
+    font-size: rem(14);
+    line-height: rem(26);
+    margin-top: rem(3);
+    color: $gray4;
+
+    @media (min-width: $dMin) {
+      margin-top: rem(6);
+    }
+  }
+
+  @include element($parent, 'address') {
+    max-width: 100%;
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-top: rem(4);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (min-width: $dMin) {
+      margin-top: rem(6);
+    }
+
+    // @media (min-width: $d1280) {
+      // margin-top: 0;
+      // white-space: normal;
+    // }
+  }
+
+  @include element($parent, 'specs') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: rem(15);
+
+    @media (min-width: $d1280) {
+      margin-top: rem(20);
+    }
+  }
+
+  @include element($parent, 'specs-item') {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(10);
+
+    svg {
+      height: rem(18);
+      width: rem(18);
+      margin-right: rem(10);
+      flex-shrink: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(25);
+    }
+  }
+
+  @include element($parent, 'specs-item-text') {
+    font-size: rem(14);
+    line-height: rem(26);
+    color: $black3;
+    flex-shrink: 0;
+
+    span {
+      &:nth-of-type(2) {
+        color: $gray4;
+      }
+    }
+  }
+
+  @include element($parent, 'price') {
+    margin-top: rem(9);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(16);
+    }
+  }
+
+  @include element($parent, 'price-total') {
+    font-size: rem(24);
+    line-height: rem(24);
+    font-weight: 600;
+    display: inline-block;
+
+    @include modifier($parent, 'request') {
+      cursor: pointer;
+    }
+  }
+
+  @include element($parent, 'price-meters') {
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $gray4;
+    margin-top: rem(8);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(4);
+    }
+  }
+
+  @include element($parent, 'side') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: rem(22);
+
+    @media (min-width: $dMin) {
+      margin-top: rem(30);
+    }
+
+    // @media (min-width: $d1280) {
+    //   margin-top: 0;
+    //   max-width: rem(180);
+    //   flex-basis: rem(180);
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   flex-shrink: 0;
+    // }
+  }
+
+  @include element($parent, 'side-content') {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include element($parent, 'phone') {
+    font-size: rem(16);
+    line-height: rem(24);
+    display: inline-block;
+  }
+
+  @include element($parent, 'favorite') {
+    display: inline-flex;
+    align-items: center;
+    margin-top: rem(8);
+    position: relative;
+    z-index: 3;
+
+    svg {
+      height: rem(13);
+      width: rem(16);
+      fill: transparent;
+      stroke: $red2;
+      margin-right: rem(9);
+    }
+
+    span {
+      font-size: rem(14);
+      line-height: rem(26);
+      color: $red2;
+      transition: color $ease;
+    }
+
+    &:hover {
+      svg {
+        fill: $red2;
+      }
+    }
+
+    @include modifier($parent, 'added') {
+      svg {
+        fill: $red2;
+        stroke: $red2;
+        height: rem(18);
+        width: rem(18);
+        margin-right: rem(5);
+      }
+
+      &:hover {
+        span {
+          color: $purple;
+        }
+
+        svg {
+          fill: $purple;
+          stroke: $purple;
+        }
+      }
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'button') {
+    height: rem(60);
+    width: 100%;
+    padding: 0;
+    min-width: 0;
+    width: rem(146);
+
+    @media (min-width: $dMin) {
+      width: rem(154);
+    }
+  }
+
+  @include element($parent, 'request') {
+    width: 100%;
+    margin-bottom: 0;
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      width: rem(334);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $dMin) {
+      height: rem(414);
+      padding: rem(60) rem(176) rem(40) rem(50);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $dMin) and (max-width: $d1279) {
+      width: rem(538);
+      padding: rem(60) rem(32) rem(40) rem(32);
+    }
+
+    @media (min-width: $d1280) {
+      width: rem(788);
+      padding: rem(60) rem(176) rem(40) rem(50);
+    }
+
+    @media (min-width: $tMin) and (max-width: $tMax) {
+      padding: rem(50) rem(24) rem(57);
+
+      .banner-request {
+        &__background {
+          display: none;
+        }
+
+        &__title {
+          margin-bottom: rem(24);
+          font-size: rem(24);
+          text-align: center;
+        }
+
+        &__input {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        &__btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'arrows') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include element($parent, 'arrow-icon') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(34);
+    height: rem(34);
+    border: 1px solid $w;
+    margin-right: rem(12);
+    transition: border $ease;
+
+    svg {
+      width: rem(7);
+      height: rem(10);
+      fill: $w;
+      stroke: $w;
+    }
+  }
+
+  @include element($parent, 'arrow-text') {
+    font-size: rem(16);
+    line-height: 1.5;
+    color: $w;
+    transition: color $ease;
+
+    span {
+      display: none;
+
+      @media (min-width: $tMin) {
+        display: inline;
+      }
+    }
+  }
+
+  @include element($parent, 'arrow') {
+    display: flex;
+    align-items: center;
+
+    @include modifier($parent, 'next') {
+      margin-left: auto;
+
+      .popup-object {
+        &__arrow-icon {
+          margin-right: 0;
+          margin-left: rem(12);
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .popup-object {
+        &__arrow-icon {
+          border-color: $purple;
+
+          svg {
+            fill: $purple;
+            stroke: $purple;
+          }
+        }
+
+        &__arrow-text {
+          color: $purple;
+        }
+      }
+    }
+  }
+}

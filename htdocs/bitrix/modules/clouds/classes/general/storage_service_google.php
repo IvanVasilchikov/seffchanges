@@ -237,7 +237,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 
 		$proto = $APPLICATION->IsHTTPS()? "https": "http";
 
-		return $proto."://$host/".CCloudUtil::URLEncode($URI, "UTF-8");
+		return $proto."://$host/".CCloudUtil::URLEncode($URI, "UTF-8", true);
 	}
 
 	function FileExists($arBucket, $filePath)
@@ -249,7 +249,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$response = $this->SendRequest(
 			$arBucket["SETTINGS"]["ACCESS_KEY"],
@@ -290,7 +290,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			$arBucket["SETTINGS"]["SECRET_KEY"],
 			'PUT',
 			$arBucket["BUCKET"],
-			CCloudUtil::URLEncode($filePath, "UTF-8"),
+			CCloudUtil::URLEncode($filePath, "UTF-8", true),
 			'',
 			'',
 			array(
@@ -328,7 +328,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$response = $this->SendRequest(
 			$arBucket["SETTINGS"]["ACCESS_KEY"],
@@ -359,7 +359,8 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
-		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = str_replace("%", " ", $filePath);
+		$filePath = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$response = $this->SendRequest(
 			$arBucket["SETTINGS"]["ACCESS_KEY"],
@@ -395,6 +396,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			"dir" => array(),
 			"file" => array(),
 			"file_size" => array(),
+			"file_mtime" => array(),
 		);
 
 		$filePath = trim($filePath, '/');
@@ -407,6 +409,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 				$filePath = $arBucket["PREFIX"]."/".ltrim($filePath, "/");
 		}
 		$filePath = $APPLICATION->ConvertCharset($filePath, LANG_CHARSET, "UTF-8");
+		$filePath = str_replace(" ", "+", $filePath);
 
 		$marker = '';
 		while(true)
@@ -450,6 +453,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 						$file_name = substr($a["#"]["Key"][0]["#"], strlen($filePath));
 						$result["file"][] = $APPLICATION->ConvertCharset(urldecode($file_name), "UTF-8", LANG_CHARSET);
 						$result["file_size"][] = $a["#"]["Size"][0]["#"];
+						$result["file_mtime"][] = substr($a["#"]["LastModified"][0]["#"], 0, 19);
 					}
 				}
 
@@ -486,7 +490,8 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"].$filePath;
 		}
-		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePath = str_replace("%", " ", $filePath);
+		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$response = $this->SendRequest(
 			$arBucket["SETTINGS"]["ACCESS_KEY"],
@@ -628,7 +633,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 		}
 
 		$filePath = $NS["Parts"][$found]["filePath"];
-		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$this->UploadRange($filePathU, $arBucket, $NS["Parts"][$found], $data, $NS["Parts"][$found]["filePos"]);
 
@@ -662,7 +667,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 			if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 				$filePath = "/".$arBucket["PREFIX"].$filePath;
 		}
-		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8");
+		$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 		$this->UploadRange($filePathU, $arBucket, $NS, $data, $NS["filePos"]);
 
@@ -697,7 +702,7 @@ class CCloudStorageService_GoogleStorage extends CCloudStorageService
 				if(substr($filePath, 0, strlen($arBucket["PREFIX"])+2) != "/".$arBucket["PREFIX"]."/")
 					$filePath = "/".$arBucket["PREFIX"].$filePath;
 			}
-			$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8");
+			$filePathU = CCloudUtil::URLEncode($filePath, "UTF-8", true);
 
 			$xml = "<ComposeRequest>";
 			foreach ($NS["Parts"] as $i => $part)

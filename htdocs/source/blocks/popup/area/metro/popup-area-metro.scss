@@ -1,0 +1,211 @@
+$parent: 'popup-area-metro';
+
+@include block($parent) {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include element($parent, 'select-btns') {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: rem(20);
+
+    @media (min-width: $tMin) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $dMin) {
+      align-self: flex-end;
+      max-width: 77%;
+      margin-top: rem(-60);
+      padding-bottom: rem(30);
+    }
+  }
+
+  @include element($parent, 'select') {
+    white-space: nowrap;
+    margin-right: auto;
+
+    @media (min-width: $dMin) {
+      height: rem(30);
+      font-size: rem(11);
+    }
+
+    & + .#{$parent}__select {
+      margin-top: rem(10);
+
+      @media (min-width: $tMin) {
+        margin-top: 0;
+        margin-left: rem(10);
+      }
+    }
+
+    @include modifier($parent, 'active') {
+      text-shadow: rem(1) rem(0.3) 0 #000;
+      box-shadow: inset 0 0 0 rem(1) #000;
+    }
+
+    @media (min-width: $dMin) {
+      width: auto;
+      font-size: rem(14);
+    }
+  }
+
+  @include element($parent, 'search-station') {
+    position: relative;
+    padding-bottom: rem(15);
+    z-index: 2;
+
+    @media (min-width: $tMin) {
+      padding-bottom: rem(25);
+    }
+
+    @media (min-width: $dMin) {
+      display: none;
+    }
+
+    input {
+      width: 100%;
+      height: rem(45);
+      padding: rem(9) rem(26) rem(12);
+      border: 1px solid $gray;
+    }
+  }
+
+  @include element($parent, 'map-wrp') {
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: rem(87);
+      background: linear-gradient(180deg, rgba($w, 0.16) 0%, $w 70%);
+      pointer-events: none;
+      z-index: 1;
+
+      @media (min-width: $dMin) {
+        display: none;
+      }
+    }
+
+    position: relative;
+
+    @media (min-width: $dMin) {
+      width: rem(934);
+      max-width: calc(100vw - 136px);
+      border: 1px solid $purple;
+    }
+  }
+
+  @include element($parent, 'content') {
+    position: relative;
+
+    @media (min-width: $tMin) {
+      overflow: hidden;
+      max-height: rem(450);
+    }
+
+    @media (min-width: $dMin) {
+      height: rem(660);
+      max-height: rem(660);
+      padding: rem(50);
+    }
+  }
+
+  @include element($parent, 'map') {
+    display: none;
+
+    @media (min-width: $dMin) {
+      display: block;
+      height: 100%;
+    }
+
+    svg {
+      @media (min-width: $dMin) {
+        height: rem(1000);
+        display: block;
+        pointer-events: all;
+      }
+    }
+  }
+
+  @include element($parent, 'checkboxes') {
+    white-space: nowrap;
+
+    @media (min-width: $tMin) {
+      max-height: rem(720);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $dMin) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'checkbox') {
+    flex-basis: 48%;
+    max-width: 48%;
+    margin-bottom: rem(10);
+
+    @media (max-width: $m374) {
+      max-width: 100%;
+    }
+  }
+
+  @include element($parent, 'buttons') {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: rem(30);
+    padding-bottom: rem(15);
+    margin: -5px;
+
+    @media screen and (min-width: $tMin) {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+  }
+
+  @include element($parent, 'button') {
+    width: 100%;
+    margin: 5px;
+
+    @media screen and (min-width: $tMin) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $dMin) {
+      max-width: rem(226);
+      margin: 0;
+    }
+
+    & + .#{$parent}__button {
+      @media screen and (min-width: $dMin) {
+        margin: 0;
+        margin-left: rem(15);
+      }
+    }
+
+    @include modifier($parent, 'mobile') {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      z-index: 4;
+      bottom: rem(10);
+
+      @media (min-width: $tMin) {
+        display: none;
+      }
+    }
+
+    @include modifier($parent, 'hide') {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

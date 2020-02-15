@@ -1,0 +1,26 @@
+include ./gallery/detail-pdf-gallery.pug
+include ./characteristics/detail-pdf-characteristics.pug
+include ./description/detail-pdf-description.pug
+include ./tags/detail-pdf-tags.pug
+include ./plan/detail-pdf-plan.pug
+include ../../header/static/header-static.pug
+include ../../footer/static/footer-static.pug
+
+mixin detail-pdf(info)
+  +header-static(info.header)
+  .detail-pdf
+    each item in info.content
+      div.detail-pdf__item(class=(item.newPage ? 'new-page' : ''))
+        if (item.type === 'gallery')
+          +detail-pdf-gallery(item)
+        else if (item.type === 'characteristics')
+          +detail-pdf-characteristics(item)
+        else if (item.type === 'description')
+          +detail-pdf-description(item)
+        else if (item.type === 'tags')
+          +detail-pdf-tags(item)
+        else if (item.type === 'plan')
+          +detail-pdf-plan(item)
+        else
+          | <!---->
+  +footer-static(info.footer)

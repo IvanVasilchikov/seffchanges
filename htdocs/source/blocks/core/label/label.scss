@@ -1,0 +1,63 @@
+$parent: 'label';
+
+@include block($parent) {
+  display: inline-block;
+  flex-shrink: 0;
+
+  span {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    height: rem(30);
+    padding: 0 rem(16);
+    font-size: rem(11);
+    text-transform: uppercase;
+    line-height: rem(30);
+    border: 1px solid rgba($purple, 0.3);
+    border-radius: rem(20);
+    transition: background-color $ease, color $ease, border-color $ease;
+    color: $gray2;
+
+    &:hover {
+      @media (min-width: $d1280) {
+        background-color: $purple;
+        border-color: $purple;
+        color: $w;
+
+        @include element($parent, 'count') {
+          border-color: $w;
+          color: $w;
+        }
+      }
+    }
+  }
+
+  @include modifier($parent, 'black') {
+    span {
+      color: $black;
+    }
+  }
+
+  @include element($parent, 'count') {
+    font-size: rem(11);
+    line-height: rem(11);
+    color: $red2;
+    transition: color $ease;
+    margin-left: rem(4);
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+
+  @include modifier($parent, 'checked') {
+    span {
+      background-color: $red2;
+      color: $w;
+      border-color: $red2;
+
+      @include element($parent, 'count') {
+        border-color: $w;
+        color: $w;
+      }
+    }
+  }
+}

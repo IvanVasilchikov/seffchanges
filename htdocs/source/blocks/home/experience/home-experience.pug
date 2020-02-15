@@ -1,0 +1,19 @@
+include ./../../fonts/title/fourth/m/title-fourth-m.pug
+include ./../../fonts/title/title.pug
+include ./../../fonts/text/text.pug
+include ./../../core/btn/btn.pug
+include ./../../core/picture/picture.pug
+
+mixin home-experience(obj)
+  .home-experience
+    if obj.picture
+      +picture(obj.picture, 'home-experience__background', 'lazyload')
+    .home-experience__content.main
+      if obj.title
+        .home-experience__title!= obj.title
+      if obj.mainTitle
+        +title(obj.mainTitle, 'title--m home-experience__main-title')
+      if obj.text
+        +text(obj.text, 'home-experience__text')
+      if obj.btn
+        +btn(obj.btn.url, obj.btn.text, 'btn--transparent btn--white home-experience__btn')

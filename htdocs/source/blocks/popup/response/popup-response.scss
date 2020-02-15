@@ -1,0 +1,30 @@
+$parent: popup-response;
+
+@include block($parent) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: rem(348);
+  padding: rem(50) rem(25) rem(55);
+  background-color: $w;
+
+  @media screen and (min-width: $tMin) {
+    max-width: rem(450);
+    padding: rem(70) rem(75);
+  }
+
+  @include element ($parent, 'title') {
+    color: $black2;
+    padding-bottom: rem(20);
+    text-align: center;
+
+    @media screen and (min-width: $tMin) {
+      padding-bottom: rem(25);
+    }
+  }
+
+  @include element ($parent, 'content') {
+    padding-bottom: rem(30);
+  }
+}

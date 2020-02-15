@@ -1,0 +1,158 @@
+$parent: 'detail-similar';
+
+@include block($parent) {
+  padding-bottom: rem(50);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(70);
+  }
+
+  @media (min-width: $d1280) {
+    padding-bottom: rem(98);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(25);
+  }
+
+  @include element($parent, 'tabs-wrp') {
+    position: relative;
+    margin-bottom: rem(34);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 15%;
+      background: linear-gradient(to left, rgba($w, 0.8) 0%, rgba($w, 0.8) 70%, rgba($w, 0.2) 100%);
+
+      @media (min-width: $tMin) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(30);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  @include element($parent, 'tabs') {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    &::after {
+      content: '';
+      width: rem(55);
+      height: 5px;
+      flex-shrink: 0;
+
+      @media (min-width: $tMin) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      overflow: visible;
+    }
+  }
+
+  @include element($parent, 'cards') {
+    @media (min-width: $tMin) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @include element($parent, 'card') {
+    &:not(:last-of-type) {
+      @media (max-width: $tMax) {
+        margin-bottom: rem(14);
+      }
+    }
+
+    &:nth-of-type(odd) {
+      margin-right: rem(20);
+
+      @media (min-width: $d1280) {
+        margin-right: 0;
+      }
+    }
+
+    &:not(:nth-of-type(3n)) {
+      @media (min-width: $d1280) {
+        margin-right: rem(16);
+      }
+    }
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(20);
+      flex-basis: calc(50% -  0.625rem);
+      max-width: calc(50% -  0.625rem);
+    }
+
+    @media (min-width: $d1280) {
+      max-width: calc(33.3333% -  0.6875rem);
+      flex-basis: calc(33.3333% -  0.6875rem);
+    }
+  }
+
+  @include element($parent, 'tags-wrp') {
+    margin-top: rem(30);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 15%;
+      background: linear-gradient(to left, rgba($w, 0.8) 0%, rgba($w, 0.8) 70%, rgba($w, 0.2) 100%);
+
+      @media (min-width: $d1280) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      margin-top: rem(25);
+    }
+
+    @media (min-width: $d1280) {
+      margin-top: rem(20);
+    }
+  }
+
+  @include element($parent, 'tags') {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    &::after {
+      content: '';
+      width: rem(120);
+      flex-shrink: 0;
+
+      @media (min-width: $d1280) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $d1280) {
+      overflow: visible;
+    }
+  }
+
+  @include element($parent, 'tag') {
+    &:not(:last-of-type) {
+      margin-right: rem(10);
+    }
+  }
+}

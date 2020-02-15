@@ -1,7 +1,8 @@
 <?
 namespace Bitrix\Iblock\Helpers\Filter;
 
-use Bitrix\Main\Localization\Loc,
+use Bitrix\Main\Loader,
+	Bitrix\Main\Localization\Loc,
 	Bitrix\Iblock;
 
 Loc::loadMessages(__FILE__);
@@ -11,12 +12,24 @@ class PropertyManager
 	private $iblockId = 0;
 	private $listProperty = null;
 	private $filterFields = null;
+	private $catalogIncluded = null;
+	private $catalog = null;
 
 	public function __construct($iblockId)
 	{
 		$this->iblockId = (int)$iblockId;
 		$this->listProperty = null;
 		$this->filterFields = null;
+		$this->catalogIncluded = Loader::includeModule('catalog');
+		if ($this->catalogIncluded)
+		{
+			$catalog = \CCatalogSku::GetInfoByIBlock($this->iblockId);
+			if (!empty($catalog))
+			{
+				$this->catalog = $catalog;
+			}
+			unset($catalog);
+		}
 	}
 
 	/**
@@ -26,12 +39,17 @@ class PropertyManager
 	{
 		if ($this->filterFields === null)
 		{
+			$offers = (!empty($this->catalog['CATALOG_TYPE']) && $this->catalog['CATALOG_TYPE'] == \CCatalogSku::TYPE_OFFERS);
+
 			$this->filterFields = [];
 			$listProperty = $this->getListProperty();
 			foreach ($listProperty as $property)
 			{
 				$fieldId = $property['FIELD_ID'];
-				$fieldName = $property['NAME'];
+				$fieldName = ($offers
+					? Loc::getMessage('IBLOCK_PROPERTY_FILTER_MANAGER_MESS_OFFER_TITLE', ['#NAME#' => $property['NAME']])
+					: $property['NAME']
+				);
 
 				if (!empty($property['USER_TYPE']))
 				{
@@ -39,16 +57,6 @@ class PropertyManager
 					$userType = $property["USER_TYPE"];
 					switch ($userType)
 					{
-						case "employee": //TODO: remove this row after intranet 18.3.100 will be stabled
-						case "UserID": //TODO: remove this row after main 18.5.200 will be stabled
-							$field = array(
-								"id" => $fieldId,
-								"name" => $fieldName,
-								"type" => "custom_entity",
-								"filterable" => "",
-								"selector" => array("type" => "user"),
-							);
-							break;
 						case "ECrm": //TODO: remove this row after crm 18.7.200 will be stabled
 							$field = array(
 								"id" => $fieldId,
@@ -196,11 +204,16 @@ class PropertyManager
 				}
 			}
 			unset($property, $listProperty);
+			unset($offers);
 		}
 
 		return $this->filterFields;
 	}
 
+	/**
+	 * @param string $filterId
+	 * @return void
+	 */
 	public function renderCustomFields($filterId)
 	{
 		foreach ($this->getFilterFields() as $filterField)
@@ -218,7 +231,7 @@ class PropertyManager
 
 	/**
 	 * @param string $filterId
-	 * @param array $filter
+	 * @param array &$filter
 	 * @return void
 	 */
 	public function AddFilter($filterId, array &$filter)
@@ -242,13 +255,17 @@ class PropertyManager
 
 		foreach (array_keys($filter) as $index)
 		{
-			if (!isset($listProperty[$index]))
+			$indexData = \CIBlock::MkOperationFilter($index);
+			$propertyId = $indexData['FIELD'];
+
+			if (!isset($listProperty[$propertyId]))
 			{
 				continue;
 			}
-			if (isset($filterFields[$index]['customFilter']))
+
+			if (isset($filterFields[$propertyId]['customFilter']))
 			{
-				$row = $filterFields[$index];
+				$row = $filterFields[$propertyId];
 				$filtered = false;
 				call_user_func_array(
 					$row['customFilter'],
@@ -265,10 +282,10 @@ class PropertyManager
 				unset($filtered);
 				unset($row);
 			}
-			elseif (isset($listProperty[$index]['PROPERTY_USER_TYPE']['AddFilterFields']))
+			elseif (isset($listProperty[$propertyId]['PROPERTY_USER_TYPE']['AddFilterFields']))
 			{
 				$filtered = false;
-				$row = $listProperty[$index];
+				$row = $listProperty[$propertyId];
 				call_user_func_array($row['PROPERTY_USER_TYPE']['AddFilterFields'], array(
 					$row,
 					array('VALUE' => $row['FIELD_ID'], 'FILTER_ID' => $filterId),
@@ -280,15 +297,16 @@ class PropertyManager
 			}
 			else
 			{
-				switch ($listProperty[$index]['PROPERTY_TYPE'])
+				switch ($listProperty[$propertyId]['PROPERTY_TYPE'])
 				{
 					case Iblock\PropertyTable::TYPE_STRING:
-						$filter['?'.$index] = $filter[$index];
-						unset($filter[$index]);
-						break;
 					case Iblock\PropertyTable::TYPE_NUMBER:
-						$filter['='.$index] = $filter[$index];
-						unset($filter[$index]);
+						$value = (string)$filter[$index];
+						if ($value === '')
+						{
+							unset($filter[$index]);
+						}
+						unset($value);
 						break;
 					case Iblock\PropertyTable::TYPE_LIST:
 					case Iblock\PropertyTable::TYPE_ELEMENT:
@@ -302,14 +320,17 @@ class PropertyManager
 							}
 							unset($filter[$index]);
 							if (!empty($newValues))
-								$filter['='.$index] = $newValues;
+								$filter['='.$propertyId] = $newValues;
+							unset($newValues);
 						}
 						else
 						{
-							if ($filter[$index] === 'NOT_REF')
-								$filter[$index] = false;
-							$filter['='.$index] = $filter[$index];
+							$value = $filter[$index];
 							unset($filter[$index]);
+							if ($value === 'NOT_REF')
+								$value = false;
+							$filter['='.$propertyId] = $value;
+							unset($value);
 						}
 						break;
 				}

@@ -14,6 +14,12 @@ class Hook
 	protected static $editMode = false;
 
 	/**
+	 * If true, hook work in intranet mode.
+	 * @var boolean
+	 */
+	protected static $intranetMode = false;
+
+	/**
 	 * Entity type site.
 	 */
 	const ENTITY_TYPE_SITE = 'S';
@@ -119,6 +125,13 @@ class Hook
 				{
 					unset($hooks[$class]);
 				}
+				else if (
+					self::$intranetMode &&
+					!$hooks[$class]->enabledInIntranetMode()
+				)
+				{
+					unset($hooks[$class]);
+				}
 			}
 		}
 
@@ -144,7 +157,7 @@ class Hook
 					foreach ((array)$customExec as $code => $itemExec)
 					{
 						$code = strtoupper($code);
-						if (isset($hooks[$code]))
+						if (isset($hooks[$code]) && is_callable($itemExec))
 						{
 							$hooks[$code]->setCustomExec($itemExec);
 						}
@@ -182,6 +195,15 @@ class Hook
 	public static function setEditMode()
 	{
 		self::$editMode = true;
+	}
+
+	/**
+	 * Set intranet mode to true.
+	 * @return void
+	 */
+	public static function setIntranetMode()
+	{
+		self::$intranetMode = true;
 	}
 
 	/**
@@ -230,6 +252,17 @@ class Hook
 		}
 
 		return $hooks;
+	}
+
+	/**
+	 * Get row hooks for landing.
+	 * @param int $id Landing id.
+	 * @return array
+	 */
+	public static function getForLandingRow($id)
+	{
+		$data = self::getData($id, self::ENTITY_TYPE_LANDING);
+		return $data;
 	}
 
 	/**
@@ -317,20 +350,20 @@ class Hook
 		$data = self::prepareData($data);
 		$hooks = self::getList($id, $type, $data);
 		$dataSave = self::getData($id, $type, true);
-		$enableHook = Manager::checkFeature(Manager::FEATURE_ENABLE_ALL_HOOKS);
 
 		// get hooks with new new data (not saved yet)
 		foreach ($hooks as $hook)
 		{
-			if (!$hook->isFree() && !$enableHook)
-			{
-				continue;
-			}
+			$hookLocked = $hook->isLocked();
 			$codeHook = $hook->getCode();
 			// modify $dataSave ...
 			foreach ($hook->getFields() as $field)
 			{
 				$codeVal = $field->getCode();
+				if ($hookLocked && !$field->isEmptyValue())
+				{
+					continue;
+				}
 				if (!isset($data[$codeHook][$codeVal]))
 				{
 					continue;
@@ -486,5 +519,15 @@ class Hook
 	public static function deleteForLanding($id)
 	{
 		self::deleteData($id, self::ENTITY_TYPE_LANDING);
+	}
+
+	/**
+	 * Returns searchable hook's codes.
+	 * @return array
+	 */
+	public static function getSearchableCodes()
+	{
+		//@todo: make extendable
+		return ['METAMAIN', 'METAOG'];
 	}
 }

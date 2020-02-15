@@ -1,0 +1,31 @@
+include ./../../fonts/title/title.pug
+include ./../../fonts/title/fourth/title-fourth.pug
+include ./../../fonts/text/text.pug
+include ../../services/item/services-item.pug
+include ../../tabs/tabs.pug
+
+mixin home-services(obj)
+  .home-services.main
+    if obj.head
+      .home-services__head
+        if obj.head.title
+          +title(obj.head.title, 'home-services__title')
+        if obj.head.text
+          +text(obj.head.text, 'home-services__text')
+    .home-services__content
+      .home-services__tabs-wrap
+        if obj.tabs
+          +tabs(obj.tabs, 'home-services__tabs')(@changeTab='changeTab')
+        .home-services__arrows
+          a.home-services__arrow(class=(isBeginning === true ? 'swiper-button-disabled' : ''), @click='slider.slidePrev()')
+            svg
+              use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+          a.home-services__arrow(class=(isEnd === true ? 'swiper-button-disabled' : ''), @click='slider.slideNext()')
+            svg
+              use(xlink:href=loadAssets('./svg/arrow-right2.svg'))
+      .home-services__sliders-wrap
+        each item, i in obj.sliders
+          .home-services__slider.swiper-container(v-if='activeTab === item.name')
+            .swiper-wrapper
+              each el in item.items
+                +services-item(el, 'home-services__slide swiper-slide', true)

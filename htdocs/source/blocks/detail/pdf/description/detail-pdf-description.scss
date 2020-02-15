@@ -1,0 +1,51 @@
+$parent: detail-pdf-description;
+
+@include block($parent) {
+  width: 100%;
+
+  @include element ($parent, 'heading') {
+    margin-bottom: 44px;
+  }
+
+  @include element ($parent, 'items') {
+    display: flex;
+    display: -webkit-box;
+    flex-wrap: wrap;
+  }
+
+  @include element ($parent, 'item') {
+    margin-bottom: rem(40);
+
+    span {
+      display: block;
+      width: 100%;
+      font-size: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      span {
+        display: inline-block;
+        width: auto;
+        font-size: 16px;
+        text-transform: lowercase;
+      }
+
+      &+span {
+        padding-top: 11px;
+        font-size: 18px;
+        font-weight: 400;
+        color: $gray2;
+        text-transform: initial;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(130);
+    }
+  }
+
+  @include element ($parent, 'description') {
+    width: 100%;
+    line-height: 28px;
+  }
+}

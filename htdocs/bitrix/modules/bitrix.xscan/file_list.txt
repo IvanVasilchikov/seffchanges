@@ -1,0 +1,7 @@
+/var/www/saffariestate.ru/htdocs/local/modules/idem.realty/lib/import/intrum.php	[710] file from the Internet
+/var/www/saffariestate.ru/htdocs/vendor/cakephp/collection/Iterator/NestIterator.php	[650] variable as a function
+/var/www/saffariestate.ru/htdocs/vendor/cakephp/utility/Text.php	[650] variable as a function
+/var/www/saffariestate.ru/htdocs/vendor/phug/ast/src/Phug/Ast/Node.php	[650] variable as a function
+/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/CatNamespace.php	[650] variable as a function
+/var/www/saffariestate.ru/htdocs/vendor/symfony/console/Tests/Helper/TableTest.php	[663] binary data
+/var/www/saffariestate.ru/htdocs/phinx.php	[400] bitrix auth

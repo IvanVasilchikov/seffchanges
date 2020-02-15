@@ -1,0 +1,86 @@
+mixin header(obj, className)
+  .header(class=className)
+    a.header__logo(href='/')
+      svg.header__logo-icon
+        use(xlink:href=loadAssets('./svg/logo.svg'))
+      .header__logo-text
+        svg.header__logo-name
+          use(xlink:href=loadAssets('./svg/logo_name.svg'))
+        svg.header__logo-group
+          use(xlink:href=loadAssets('./svg/logo_group.svg'))
+    .header__menu
+      .header__menu-wrp
+        if obj.list
+          ul.header__list.header__list--main
+            each item in obj.list
+              li.header__list-item(class=[item.more ? 'header__list-item--dropdown' : '', (item.more && item.more.small) ? 'header__list-item--small-drop' : ''])
+                if (item.more)
+                  .header__list-link(class=(item.more ? 'header__list-link--dropdown' : ''))
+                    span!= item.text
+                  .header__dropdown(class=(item.more.small ? 'header__dropdown--small' : ''))
+                    .header__dropdown-wrp
+                      .header__dropdown-single
+                        each column in item.more.links.slice(0, 1)
+                          ul.header__list.header__dropdown-list
+                            each link in column
+                              li.header__list-item.header__dropdown-item
+                                a.header__list-link.header__dropdown-link(href=link.url, class=(link.type ? 'header__dropdown-link--bold' : ''))
+                                  if (link.type === 'all')
+                                    svg
+                                      use(xlink:href=loadAssets('./svg/objects.svg'))
+                                  if (link.type === 'exclusive')
+                                    svg
+                                      use(xlink:href=loadAssets('./svg/diamond.svg'))
+                                  span!= link.text
+                      if (item.more.links.slice(1).length !== 0)
+                        .header__dropdown-wrap
+                          each column in item.more.links.slice(1)
+                            ul.header__list.header__dropdown-list
+                              each link in column
+                                li.header__list-item.header__dropdown-item
+                                  a.header__list-link.header__dropdown-link(href=link.url, class=(link.type ? 'header__dropdown-link--bold' : ''))
+                                    if (link.type === 'all')
+                                      svg
+                                        use(xlink:href=loadAssets('./svg/objects.svg'))
+                                    if (link.type === 'exclusive')
+                                      svg
+                                        use(xlink:href=loadAssets('./svg/diamond.svg'))
+                                    span!= link.text
+                else
+                  a.header__list-link(href=item.url)= item.text
+        .header__m-footer
+          if obj.language
+            a.header__lang(href=obj.language.url)= obj.language.text
+          if obj.phone
+            .header__phone
+              a.header__phone-link(href=obj.phone.href)
+                span= obj.phone.text
+              if (obj.phone.replace)
+                button.header__phone-replace(type= 'button')
+                  span Заказать обратный звонок
+    .header__right
+      if obj.phone
+        a.header__phone-link(href=obj.phone.href)
+          span= obj.phone.text
+      if obj.language
+        .header__btn.header__btn--lang
+          a.header__lang(href=obj.language.url)= obj.language.text
+      .header__btn(id='favoriteBlock')
+
+      if obj.phone
+        .header__btn
+          .header__phone
+            a.header__phone-link(href=obj.phone.href)
+              svg
+                use(xlink:href=loadAssets('./svg/phone.svg'))
+              span= obj.phone.text
+            if (obj.phone.replace)
+              button.header__phone-replace(type= 'button')
+                svg
+                  use(xlink:href=loadAssets('./svg/phone.svg'))
+                span Заказать обратный звонок
+      .header__btn.header__btn--menu
+        a.header__btn-menu
+          span
+          span
+          span

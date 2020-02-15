@@ -1,0 +1,34 @@
+include ../animation/fade/animation-fade.pug
+include ../checkbox/checkbox.pug
+
+mixin select(info, className, animationTime, title)
+  - var selected = { text: '' }
+  - var isOpen = false;
+
+  .select(class=[className, {'select--open' : isOpen}, info.multiple ? 'select--multiple' : ''])
+    .select__head(data-title=(info.title ? info.title : ''), ref='head')
+      if title
+        .select__pre-title!= title
+      else
+        | <!---->
+      .select__title!= selected.text
+      svg.select__head-ico
+        use(xlink:href=loadAssets('./svg/arrow-right.svg'))
+    +animation-fade(animationTime)
+      if (isOpen)
+        .select__dropdown(ref='dropdown')
+          if (info.multiple)
+            ul.select__ul
+              each item, index in info.values
+                li.select__li(class=[{'select__li--active' : computedClass(item)}, (item.disabled ? 'select__li--disabled' : '')])
+                  if (!item.disabled)
+                    +checkbox(item, 'select__checkbox')(@change='changeMultiple(item)')
+                  else
+                    | <!---->
+          else
+            ul.select__ul
+              each item, index in info.values
+                li.select__li(@click='change(item)', :class='{"select__li--active" : computedClass(item)}')
+                  span!= item.text
+      else
+        | <!---->

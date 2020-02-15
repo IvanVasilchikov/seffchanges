@@ -1,0 +1,12 @@
+include ../core/picture/picture.pug
+
+mixin error(info)
+  .error
+    +picture(info, 'error__bg')
+    .error__text
+      .error__title Ошибка
+        span 404
+      span= info.unfound
+      span.error__desc= info.desc
+      a.error__back(href='/')= info.linkText
+

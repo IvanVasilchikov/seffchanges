@@ -1,5 +1,4 @@
 <?
-$MESS["LANDING_DEMO_STORE_CHATS_DARK-MAIN-DESC"] = "Mobilfreundliche Seiten, um via Chats und Messenger zu verkaufen. Sie konnen Ihre Kunden oder Bestellungen registrieren oder mobile Zahlungen akzeptieren.";
 $MESS["LANDING_DEMO_STORE_CHATS_DARK-MAIN-DESC_NEW"] = "Online store to enable sales in social media and messengers. Send product and service pages to a customer and accept payment directly in chat.";
 $MESS["LANDING_DEMO_STORE_CHATS_DARK-MAIN-NAME"] = "Chat enabled sales";
 $MESS["LANDING_DEMO_STORE_CHATS_DARK-MAIN-RICH_DESC"] = "Learn who we are and what we do. Contact us if you need to know more!";

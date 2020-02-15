@@ -1,0 +1,37 @@
+mixin picture(data, className, optimize)
+  if (optimize)
+    picture.picture(class= className)
+      if data.sources.mobile
+        each image in data.sources.mobile
+          source(data-srcset=image, media='(max-width: 767px)')
+      else
+        | <!---->
+      if data.sources.tablet
+        each image in data.sources.tablet
+          source(data-srcset=image, media='(min-width: 768px) and (max-width: 1279px)')
+      else
+        | <!---->
+      if data.sources.desktop
+        each image in data.sources.desktop
+          source(data-srcset=image, media='(min-width: 1280px)')
+      else
+        | <!---->
+      img(data-src=data.sources.desktop[0], alt=data.alt, title=data.title, class=optimize)
+  else
+    picture.picture(class= className)
+      if data.sources.mobile
+        each image in data.sources.mobile
+          source(srcset=image, media='(max-width: 767px)')
+      else
+        | <!---->
+      if data.sources.tablet
+        each image in data.sources.tablet
+          source(srcset=image, media='(min-width: 768px) and (max-width: 1279px)')
+      else
+        | <!---->
+      if data.sources.desktop
+        each image in data.sources.desktop
+          source(srcset=image, media='(min-width: 1280px)')
+      else
+        | <!---->
+      img(src=data.sources.desktop[0], alt=data.alt, title=data.title)

@@ -1,0 +1,1 @@
+a:2:{i:0;s:57:"/var/www/saffariestate.ru/source/blocks/footer/footer.pug";i:1;s:73:"/var/www/saffariestate.ru/source/blocks/fonts/text/little/text-little.pug";}

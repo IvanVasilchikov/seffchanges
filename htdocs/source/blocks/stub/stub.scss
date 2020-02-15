@@ -1,0 +1,294 @@
+$parent: stub;
+
+@include block ($parent) {
+  position: relative;
+  width: 100%;
+  padding: rem(25) rem(14);
+  color: $w;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  @media (min-width: $tMin) {
+    padding: rem(55) 0;
+
+  }
+
+  @media (min-width: $dMin) and (min-height: 610px) {
+    height: 100vh;
+  }
+
+  @include element ($parent, 'bg') {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    img {
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element ($parent, 'logo') {
+    position: absolute;
+    height: rem(38);
+    width: rem(50);
+    left: rem(14);
+    top: rem(20);
+    z-index: 1;
+
+    @media (min-width: $tMin) {
+      height: rem(58);
+      width: rem(78);
+      left: rem(30);
+    }
+
+    @media (min-width: $dMin) {
+      height: rem(64);
+      width: rem(86);
+      left: rem(40);
+    }
+  }
+
+  @include element ($parent, 'location') {
+    padding-top: rem(70);
+    z-index: 1;
+    width: 100%;
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      padding-top: rem(30);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (min-width: $dMin) {
+      margin-bottom: rem(10);
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 0 rem(50) 0 rem(130);
+    }
+  }
+
+  @include element ($parent, 'location-item') {
+    margin-bottom: rem(15);
+    position: relative;
+    display: flex;
+
+    @media (min-width: $dMin) {
+      margin: 0 rem(35) 0 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media (min-width: $dMin) {
+        margin-right: 0;
+      }
+    }
+
+    img {
+      display: inline-block;
+      margin-right: rem(13);
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  @include element ($parent, 'content') {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  @include element ($parent, 'title') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $dMin) {
+      margin-bottom: rem(43);
+    }
+
+    span {
+      font-family: $BaronNeue;
+      display: block;
+
+      &:first-child {
+        font-size: rem(28);
+        line-height: rem(32);
+
+        @media (min-width: $tMin) {
+          font-size: rem(42);
+          line-height: rem(46);
+
+          br {
+            display: none;
+          }
+        }
+
+        @media (min-width: $dMin) {
+          line-height: normal;
+          font-size: rem(58);
+          margin-bottom: rem(15);
+        }
+      }
+
+      &:last-child {
+        font-size: rem(32);
+
+        @media (min-width: $tMin) {
+          font-size: rem(48);
+        }
+
+        @media (min-width: $dMin) {
+          font-size: rem(64);
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'advice-text') {
+    font-size: rem(18);
+    margin-bottom: rem(16);
+
+    @media (min-width: $dMin) {
+      margin-bottom: rem(18);
+    }
+  }
+
+  @include element ($parent, 'phone-number') {
+    display: inline-block;
+    color: $w;
+    font-size: rem(26);
+    border-bottom: rem(2) solid transparent;
+    transition: border-color 0.4s ease;
+    margin-bottom: rem(25);
+
+    @media (min-width: $tMin) {
+      font-size: rem(38);
+      border-bottom-width: rem(4);
+      margin-bottom: rem(30);
+    }
+
+    @media (min-width: $dMin) {
+      margin-bottom: rem(47);
+      font-size: rem(50);
+      border-bottom-width: rem(6);
+    }
+
+    &:hover {
+      border-bottom-color: $w;
+    }
+  }
+
+  @include element ($parent, 'present-text') {
+    margin-bottom: rem(24);
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+
+  @include element ($parent, 'clocks') {
+    display: inline-flex;
+  }
+
+  @include element ($parent, 'time-item') {
+    position: relative;
+    width: rem(72);
+    height: rem(54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba($red2, 0.5);
+    margin-right: rem(8);
+
+    @media (min-width: $tMin) {
+      width: rem(139);
+      height: rem(120);
+      margin-right: rem(20);
+    }
+
+    @media (min-width: $dMin) {
+      width: rem(159);
+      height: rem(140);
+      margin-right: rem(40);
+    }
+
+    &::before {
+      content: ':';
+      font-family: $BaronNeue;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: rem(25);
+      left: rem(-6);
+      margin-top: rem(-6);
+
+      @media (min-width: $tMin) {
+        font-size: rem(50);
+        left: rem(-15);
+        margin-top: rem(-12);
+      }
+
+      @media (min-width: $dMin) {
+        font-size: rem(60);
+        left: rem(-24);
+        margin-top: rem(-20);
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+
+    @include modifier ($parent, 'tablet') {
+      display: none;
+
+      @media (min-width: $tMin) {
+        display: flex;
+      }
+    }
+  }
+
+  @include element ($parent, 'time-num') {
+    font-family: $BaronNeue;
+    font-size: rem(22);
+    line-height: rem(23);
+    margin: rem(-5) 0 rem(5);
+
+    @media (min-width: $tMin) {
+      font-size: rem(48);
+      line-height: rem(49);
+      margin: rem(-10) 0 rem(10);
+    }
+
+    @media (min-width: $dMin) {
+      font-size: rem(60);
+      line-height: rem(61);
+      margin-bottom: rem(21);
+    }
+  }
+
+  @include element ($parent, 'time-text') {
+    font-size: rem(14);
+    line-height: 1;
+    font-family: $BaronNeue;
+
+    @media (min-width: $tMin) {
+      font-size: rem(18);
+    }
+  }
+}

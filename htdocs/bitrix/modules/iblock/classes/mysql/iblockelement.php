@@ -1,4 +1,5 @@
 <?
+use Bitrix\Main;
 use Bitrix\Main\Loader;
 
 class CIBlockElement extends CAllIBlockElement
@@ -6,13 +7,13 @@ class CIBlockElement extends CAllIBlockElement
 	///////////////////////////////////////////////////////////////////
 	// Function returns lock status of element (red, yellow, green)
 	///////////////////////////////////////////////////////////////////
-	function WF_GetLockStatus($ID, &$locked_by, &$date_lock)
+	public static function WF_GetLockStatus($ID, &$locked_by, &$date_lock)
 	{
 		global $DB, $USER;
 		$err_mess = "FILE: ".__FILE__."<br> LINE:";
-		$ID = intval($ID);
-		$MAX_LOCK = intval(COption::GetOptionString("workflow","MAX_LOCK_TIME","60"));
-		$uid = is_object($USER)? intval($USER->GetID()): 0;
+		$ID = (int)$ID;
+		$MAX_LOCK = (int)COption::GetOptionString("workflow","MAX_LOCK_TIME","60");
+		$uid = is_object($USER)? (int)$USER->GetID(): 0;
 
 		$strSql = "
 			SELECT WF_LOCKED_BY,
@@ -33,11 +34,11 @@ class CIBlockElement extends CAllIBlockElement
 	///////////////////////////////////////////////////////////////////
 	// Locking element
 	///////////////////////////////////////////////////////////////////
-	function WF_Lock($LAST_ID, $bWorkFlow=true)
+	public static function WF_Lock($LAST_ID, $bWorkFlow=true)
 	{
 		global $DB, $USER;
-		$LAST_ID = intval($LAST_ID);
-		$USER_ID = is_object($USER)? intval($USER->GetID()): 0;
+		$LAST_ID = (int)$LAST_ID;
+		$USER_ID = is_object($USER)? (int)$USER->GetID(): 0;
 
 		if ($bWorkFlow === true)
 		{
@@ -80,11 +81,11 @@ class CIBlockElement extends CAllIBlockElement
 	///////////////////////////////////////////////////////////////////
 	// Unlock element
 	///////////////////////////////////////////////////////////////////
-	function WF_UnLock($LAST_ID, $bWorkFlow=true)
+	public static function WF_UnLock($LAST_ID, $bWorkFlow=true)
 	{
 		global $DB, $USER;
-		$LAST_ID = intval($LAST_ID);
-		$USER_ID = is_object($USER)? intval($USER->GetID()): 0;
+		$LAST_ID = (int)$LAST_ID;
+		$USER_ID = is_object($USER)? (int)$USER->GetID(): 0;
 
 		if ($bWorkFlow === true)
 		{
@@ -2608,5 +2609,26 @@ class CIBlockElement extends CAllIBlockElement
 		";
 
 		return $DB->Query($strSql, false, "FILE: ".__FILE__."<br> LINE: ".__LINE__);
+	}
+
+	/**
+	 * @param mixed $order
+	 * @return string
+	 */
+	protected function getIdOrder($order)
+	{
+		if (is_array($order))
+		{
+			Main\Type\Collection::normalizeArrayValuesByInt($order, false);
+			if (!empty($order))
+			{
+				return 'FIELD(BE.ID, '.implode(', ', $order).')';
+			}
+			else
+			{
+				return parent::getIdOrder('');
+			}
+		}
+		return parent::getIdOrder($order);
 	}
 }

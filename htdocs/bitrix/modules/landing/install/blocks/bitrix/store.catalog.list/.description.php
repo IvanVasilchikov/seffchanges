@@ -25,19 +25,6 @@ $return = array(
 		),
 		'namespace' => 'bitrix',
 	),
-	'assets' => array(
-		'css' => array(
-			'/bitrix/components/bitrix/catalog.section/templates/bootstrap_v4/style.css',
-			'/bitrix/components/bitrix/catalog.item/templates/bootstrap_v4/style.css',
-		),
-		'js' => array(
-			'/bitrix/components/bitrix/catalog.section/templates/bootstrap_v4/script.js',
-			'/bitrix/components/bitrix/catalog.item/templates/bootstrap_v4/script.js',
-		),
-		'ext' => array(
-			'currency',
-		),
-	),
 	'nodes' => array(
 		'bitrix:landing.blocks.cmpfilter' => array(
 			'type' => 'component',
@@ -67,6 +54,7 @@ $return = array(
 							'section',
 						),
 					),
+					'ALLOW_SEO_DATA' => array(),
 					'HIDE_NOT_AVAILABLE' => array(),
 					'HIDE_NOT_AVAILABLE_OFFERS' => array(),
 					// sort

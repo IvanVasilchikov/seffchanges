@@ -1,12 +1,11 @@
 <?
 define("BX_USE_MYSQLI", true);
 define("DBPersistent", false);
-define('ELASTIC_INDEX', 'dev_realty_objects');
 $DBType = "mysql";
 $DBHost = "localhost";
-$DBLogin = "saffariestate";
-$DBPassword = "gfdfdfg#212!sas";
-$DBName = "saffariestate";
+$DBLogin = "prod";
+$DBPassword = "L2r2X9l!d3";
+$DBName = "prod";
 $DBDebug = false;
 $DBDebugToFile = false;
 
@@ -20,6 +19,7 @@ define("CACHED_b_site_template", 3600);
 define("CACHED_b_event", 3600);
 define("CACHED_b_agent", 3660);
 define("CACHED_menu", 3600);
+define('BX_CRONTAB_SUPPORT', true);
 
 define("BX_UTF", true);
 define("BX_FILE_PERMISSIONS", 0777);

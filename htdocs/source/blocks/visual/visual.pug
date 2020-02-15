@@ -1,0 +1,40 @@
+include ../banner/visual/banner-visual.pug
+include ../filter/visual/filter-visual.pug
+include ../banner/request/banner-request.pug
+include ../seo/links/seo-links.pug
+include ../fonts/title/fourth/title-fourth.pug
+include ../fonts/text/text.pug
+include ../card/visual/card-visual.pug
+include ../core/loader/loader.pug
+include ../filter/noResult/filter-noResult.pug
+
+mixin visual(info)
+  - visibleLoader = false;
+
+  .visual
+    if info.btn_catalog
+      a.visual__btn-catalog(href=info.btn_catalog.url)
+        svg
+          use(xlink:href=loadAssets('./svg/catalog.svg'))
+        span !{info.btn_catalog.text}
+    +banner-visual(info.banner)
+    .visual__content.main
+      if info.title
+        +title-fourth(info.title, 'title-fourth--up visual__title')
+      if info.filter
+        +filter-visual(info.filter, info.pagination, 'visual__filter')(@filterSubmit='loadNewData')
+      if (info.cards && info.cards.length !== 0)
+        .visual__cards
+          .visual__cards-items
+            each card, index in info.cards
+              +card-visual(card, 'visual__cards-item')(@click='openObjectPopup(index)')
+          +loader('visual__cards-btn-loader')(v-if='visibleLoader')
+      else
+        +filter-noResult(info.error_cards, 'visual__error', false)
+    +banner-request(info.request, 'visual__banner-request main', 'banner-request__background--right')
+    if info.desc
+      .visual__text-wrap.main
+        .visual__text-title !{info.desc.title}
+        +text(info.desc.describe, 'visual__text')
+    if info.seo
+      +seo-links(info.seo, 'visual__seo main')

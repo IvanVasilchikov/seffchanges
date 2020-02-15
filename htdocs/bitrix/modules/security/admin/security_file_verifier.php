@@ -1,4 +1,4 @@
-<?
+<?define("BX_INTEGRITY_VALUE",'D%FD%90%05Jz%A7%26%BB%1A%FC%0A%19%EE%C6%E2%C2%C5%9CQ%0Ah%C9%FA%EE%ED%F1r%22%91Is%AB%A8');?><?
 @set_time_limit(10000);
 ini_set("track_errors", "1");
 ignore_user_abort(true);

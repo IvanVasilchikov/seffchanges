@@ -118,13 +118,18 @@ $containerId .= $arParams['ID'] ?: 'def';
 		<input data-role="tile-input" type="text" class="ui-tile-selector-input" autocomplete="off" style="display: none;">
 
 		<?if ($arParams['SHOW_BUTTON_SELECT'] && !$arParams['READONLY']):?>
-			<span data-role="tile-select" class="ui-tile-selector-select">
-				<?if ($arParams['BUTTON_SELECT_CAPTION']):?>
-					<?=htmlspecialcharsbx($arParams['BUTTON_SELECT_CAPTION'])?>
-				<?else:?>
-					<?=Loc::getMessage('UI_TILE_SELECTOR_SELECT')?>
-				<?endif;?>
+			<span class="ui-tile-selector-select-container">
+				<span data-role="tile-select" class="ui-tile-selector-select">
+					<?if ($arParams['BUTTON_SELECT_CAPTION']):?>
+						<?=htmlspecialcharsbx($arParams['BUTTON_SELECT_CAPTION'])?>
+					<?else:?>
+						<?=Loc::getMessage('UI_TILE_SELECTOR_SELECT')?>
+					<?endif;?>
+				</span>
 			</span>
+		<?endif;?>
+		<?if ($arParams['LOCK']):?>
+			<span class="ui-tile-selector-lock-icon"></span>
 		<?endif;?>
 	</span>
 	<?if ($arParams['SHOW_BUTTON_ADD'] && !$arParams['READONLY']):?>

@@ -1,0 +1,194 @@
+$parent: popup-area-district;
+
+@include block($parent) {
+  width: 100%;
+
+  @include element($parent, 'search') {
+    width: 100%;
+    padding-bottom: rem(25);
+
+    @media screen and (min-width: $dMin) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'search-input') {
+    width: 100%;
+    height: rem(45);
+    padding: rem(9) rem(26) rem(12);
+    border: 1px solid $gray;
+  }
+  
+  @include element($parent, 'select-btns') {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: rem(20);
+
+    @media screen and (min-width: $tMin) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'select') {
+    & + .#{$parent}__select {
+      margin-top: rem(10);
+    }
+  }
+  
+  @include element($parent, 'checkboxes-wrapper') {
+    position: relative;
+    width: 100%;
+    margin-bottom: rem(25);
+
+    @media screen and (min-width: $dMin) {
+      border: 1px solid $purple;
+    }
+  }
+
+  @include element($parent, 'checkboxes-shadow') {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: rem(87);
+    background: linear-gradient(180deg, rgba($w, 0.16) 0%, $w 70%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    @include modifier($parent, 'show') {
+      opacity: 1;
+    }
+  }
+
+  @include element($parent, 'checkboxes-content') {
+    position: relative;
+
+    @media (min-width: $tMin) {
+      overflow: hidden;
+      max-height: rem(660);
+      padding-bottom: rem(30);
+    }
+
+    @media screen and (min-width: $dMin) {
+      padding: rem(25) rem(30) rem(30);
+    }
+
+    .ps {
+      &__rail-y {
+        width: 5px;
+        background-color: $gray-f2;
+        z-index: 1;
+      }
+
+      &__thumb-y {
+        width: 5px;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  @include element($parent, 'checkboxes') {
+    columns: 1;
+
+    @media screen and (min-width: $tMin) {
+      columns: 2;
+    }
+
+    @media screen and (min-width: $dMin) {
+      columns: 3;
+    }
+  }
+
+  @include element($parent, 'checkbox-list') {
+    @media screen and (min-width: $tMin) {
+      padding-bottom: rem(35);
+    }
+  }
+
+  @include element($parent, 'checkbox-list-heading') {
+    display: none;
+    font-family: $Lato;
+    font-weight: bold;
+    font-size: rem(16);
+    line-height: rem(24);
+
+    @media screen and (min-width: $tMin) {
+      display: block;
+    }
+  }
+
+  @include element($parent, 'checkbox-list-description') {
+    display: none;
+    font-family: $Lato;
+    font-size: rem(16);
+    line-height: rem(24);
+    padding-bottom: rem(25);
+    color: $gray4;
+
+    @media screen and (min-width: $tMin) {
+      display: block;
+    }
+  }
+
+  @include element($parent, 'checkbox') {
+    margin-bottom: rem(15);
+  }
+
+  @include element($parent, 'buttons') {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+    
+    @media screen and (min-width: $tMin) {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+  }
+
+  @include element($parent, 'button') {
+    min-width: initial;
+    width: 100%;
+    max-width: calc(50% - 10px);
+    margin: 5px;
+
+    &:first-child {
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: $tMin) {
+      max-width: rem(270);
+      margin: 0;
+
+      &:first-child {
+        max-width: rem(270);
+      }
+    }
+
+    & + .#{$parent}__button {
+      @media screen and (min-width: $tMin) {
+        margin-left: rem(15);
+      }
+    }
+
+    @include modifier($parent, 'mobile') {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      z-index: 4;
+      bottom: rem(10);
+
+      @media (min-width: $tMin) {
+        display: none;
+      }
+    }
+
+    @include modifier($parent, 'hide') {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "list": [
+    {
+      "text": "Городская",
+      "url": "./catalog.html",
+      "more": {
+        "links": [
+          [
+            {
+              "type": "all",
+              "text": "Все объекты",
+              "url": "/catalog.html"
+            },
+            {
+              "type": "exclusive",
+              "text": "Эксклюзивы",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Квартиры",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Пентхаус",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Вилла",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Апартаменты",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Таунхаус",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Особняк",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Новостройка",
+              "url": "/catalog.html"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "text": "Загородная",
+      "url": "./catalog.html",
+      "more": {
+        "links": [
+          [
+            {
+              "type": "all",
+              "text": "Все объекты",
+              "url": "/catalog.html"
+            },
+            {
+              "type": "exclusive",
+              "text": "Эксклюзив",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Дом",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Участок",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Поселки",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Таунхаус",
+              "url": "/catalog.html"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "text": "Коммерческая",
+      "url": "./catalog.html",
+      "more": {
+        "links": [
+          [
+            {
+              "type": "all",
+              "text": "Все объекты",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Офисная",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Складская",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Торговая",
+              "url": "/catalog.html"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "text": "Зарубежная",
+      "url": "./catalog.html",
+      "more": {
+        "links": [
+          [
+            {
+              "type": "all",
+              "text": "Все объекты",
+              "url": "/catalog.html"
+            },
+            {
+              "type": "exclusive",
+              "text": "Эксклюзив",
+              "url": "/catalog.html"
+            }
+          ],
+          [
+            {
+              "text": "Апартаменты",
+              "url": "/catalog.html"
+            },
+            {
+              "text": "Вилла",
+              "url": "/catalog.html"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "text": "Компания",
+      "url": "",
+      "more": {
+        "small": true,
+        "links": [
+          [
+            {
+              "text": "О компании",
+              "url": "./about.html"
+            },
+            {
+              "text": "Контакты",
+              "url": "./contacts.html"
+            }
+          ]
+        ]
+      }
+    }
+  ],
+  "language": {
+    "text": "RU",
+    "url": "#"
+  },
+  "favorites": "0",
+  "favorites_link": "/favorite.html",
+  "phone": {
+    "href": "tel:+79455602010",
+    "text": "+7 (945) 560-20-10",
+    "replace": true
+  }
+}

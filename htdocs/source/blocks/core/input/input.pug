@@ -1,0 +1,11 @@
+mixin input(obj, className)
+  if (obj.type === 'hidden')
+    input(type=obj.type, value=obj.value, name=obj.name)
+  else 
+    .input(class= [className, obj.className, (obj.checked && (obj.checked.value === 'fail') ? 'input--fail' : ''), (obj.checked && (obj.checked.value === 'success') ? 'input--success' : '')])
+      .input__icon.input__icon--fail
+        span !
+      .input__icon.input__icon--success
+        svg
+          use(xlink:href=loadAssets('./svg/check.svg'))
+      input.input__item(ref= 'input', type= obj.type, value= obj.value, :value= obj.value, placeholder= obj.placeholder, name= obj.name, maxlength=(obj.checked && obj.checked.lengthString ? obj.checked.lengthString.max : ''), @input='inputDefault($event.target.value)', @change='change($event.target.value)')

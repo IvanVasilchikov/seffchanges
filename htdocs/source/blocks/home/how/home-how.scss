@@ -1,0 +1,199 @@
+$parent: home-how;
+
+@include block($parent) {
+  position: relative;
+  background-color: $gray;
+  margin-bottom: rem(40);
+
+  @media screen and (min-width: $tMin) and (max-width: $tMax) {
+    width: 100%;
+    margin-bottom: rem(50);
+  }
+
+  @media screen and (min-width: $tMin) {
+    margin-bottom: rem(80);
+  }
+
+  @include element ($parent, 'img') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    @media screen and (min-width: $tMin) {
+      display: block;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: left center;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element ($parent, 'content') {
+    position: relative;
+    padding: rem(50) rem(22) rem(52);
+    min-height: rem(240);
+    z-index: 1;
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      min-height: rem(450);
+      padding: rem(70) rem(60) rem(72) rem(255);
+    }
+
+    @media screen and (min-width: $dMin) and (max-width: $d1279) {
+      padding: rem(60) rem(36) rem(52) 22.2%;
+      min-height: rem(331);
+    }
+
+    @media screen and (min-width: $d1280) {
+      padding: rem(78) rem(40) rem(42) 38.2%;
+      min-height: rem(339);
+    }
+
+    @include modifier($parent, 'success') {
+      .home-how__items,
+      .home-how__pag {
+        display: none;
+      }
+
+      .home-how__success {
+        display: block;
+      }
+    }
+  }
+
+  @include element ($parent, 'items') {
+    margin-bottom: rem(18);
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      margin-bottom: rem(16);
+    }
+
+    @media screen and (min-width: $dMin) {
+      margin-bottom: rem(26);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    text-align: center;
+    margin-bottom: rem(18);
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      font-size: rem(28);
+      line-height: 1.3;
+    }
+
+    @media screen and (min-width: $tMin) {
+      text-align: left;
+    }
+  }
+
+  @include element ($parent, 'text') {
+    text-align: center;
+    margin-bottom: rem(27);
+    color: $gray4;
+
+    @media screen and (min-width: $tMin) {
+      text-align: left;
+    }
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      margin-bottom: rem(22);
+    }
+
+    @media screen and (min-width: $dMin) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  @include element ($parent, 'answers') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: $tMin) {
+      flex-direction: row;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+
+  @include element ($parent, 'answer') {
+    width: rem(228);
+    height: rem(54);
+    margin-bottom: rem(10);
+    display: block;
+    font-size: rem(16);
+    line-height: rem(24);
+    cursor: pointer;
+
+    @media screen and (min-width: $tMin) {
+      margin-right: rem(10);
+      margin-bottom: rem(12);
+    }
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      width: rem(202);
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(156);
+    }
+
+    input {
+      display: none;
+
+      &:checked {
+        & + .home-how__answer-content {
+          background-color: $purple;
+          color: $w;
+        }
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+
+      @media screen and (min-width: $tMin) {
+        margin-bottom: rem(12);
+      }
+    }
+  }
+
+  @include element ($parent, 'answer-content') {
+    width: 100%;
+    height: 100%;
+    border: 1px solid $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba($purple, 0);
+    transition: background 0.4s ease, color 0.4s ease;
+
+    &:hover {
+      background-color: $purple;
+      color: $w;
+    }
+  }
+
+  @include element ($parent, 'pag') {
+    text-align: center;
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $red;
+
+    @media screen and (min-width: $tMin) {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+include ./../../fonts/title/fourth/title-fourth.pug
+include ./../../fonts/text/text.pug
+
+mixin home-types(obj)
+  .home-types.main
+    each item in obj.items
+      .home-types__item(style='background-image: url(' + item.img + ')')
+        .home-types__item-content
+          if item.titleLink
+            a.home-types__title(href=item.titleLink.href)= item.titleLink.text
+          else
+            | <!---->
+          .home-types__links
+            each el in item.items
+              a.home-types__link(href=el.url)= el.text
+    if (obj.offer)
+      .home-types__item.home-types__item--offer(@click= 'popupOpen(\'form\', obj.offer.popup)')
+        .home-types__item-content
+          if obj.offer.title
+            +title-fourth(obj.offer.title, 'title-fourth--up home-types__title')
+          else
+            | <!---->
+          if obj.offer.text
+            +text(obj.offer.text, 'home-types__item-text')
+          else
+            | <!---->
+          .home-types__item-icon
+            svg
+              use(xlink:href=loadAssets('./svg/arrow-right2.svg'))
+        svg.home-types__item-giraffe
+          use(xlink:href=loadAssets('./svg/giraffe.svg'))
+    else
+      | <!---->

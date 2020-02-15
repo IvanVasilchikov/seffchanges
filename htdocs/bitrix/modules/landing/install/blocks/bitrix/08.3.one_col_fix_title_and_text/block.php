@@ -1,4 +1,4 @@
-<section class="landing-block g-pt-115 g-pt-80 g-pb-80">
+<section class="landing-block g-pt-80 g-pb-80">
 	<div class="container">
 		<div class="row landing-block-inner">
 

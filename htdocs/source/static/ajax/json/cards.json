@@ -1,0 +1,214 @@
+[
+  {
+    "type": "default",
+    "deal_type": "Продажа",
+    "id": "as12713",
+    "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+    "title": "2 комн. кв",
+    "labels": ["Эксклюзив", "Новостройка"],
+    "name": "Knightsbride Private park",
+    "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+    "specs": ["square", "rooms", "floor", "metro"],
+    "info": {
+      "square": "90м²",
+      "rooms": "2",
+      "floor": "14/20",
+      "metro": {
+        "station": "Спортивная",
+        "walk": "7 минут пешком"
+      }
+    },
+    "price": {
+      "total": "172 250 000 р.",
+      "meters": "135 000 р./м²"
+    },
+    "phone": {
+      "href": "+74950000000",
+      "text": "+7 (495) 000-00-00"
+    },
+    "link": "./detail.html",
+    "isFav": false
+  },
+  {
+    "type": "default",
+    "deal_type": "Продажа",
+    "id": "as12713",
+    "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+    "title": "Таунхаус",
+    "name": "Покровский Берег",
+    "address": "Хамовники, Ефремова улица, д. 9А",
+    "specs": ["square", "rooms", "floor", "metro", "facing", "parking"],
+    "info": {
+      "square": "850м²",
+      "rooms": "2",
+      "floor": "14/20",
+      "metro": {
+        "station": "Спортивная",
+        "walk": "7 минут пешком"
+      },
+      "facing": "С отделкой",
+      "parking": "С парковкой"
+    },
+    "price": {
+      "total": "172 250 000 р.",
+      "meters": "135 000 р./м²"
+    },
+    "phone": {
+      "href": "+74950000000",
+      "text": "+7 (495) 000-00-00"
+    },
+    "link": "./detail.html",
+    "isFav": false
+  },
+  {
+    "type": "default",
+    "deal_type": "Продажа",
+    "id": "as12713",
+    "images": ["/assets/images/cards/card3.jpg", "/assets/images/cards/card2.jpg"],
+    "title": "Дом",
+    "labels": ["Эксклюзив"],
+    "name": "Knightsbride Private park",
+    "address": "Истринский район, Новорижское шоссе, 19 км",
+    "specs": ["square", "area", "facing", "floor", "forest", "water"],
+    "info": {
+      "square": "850м²",
+      "area": "22 сотки",
+      "facing": "С отделкой",
+      "floor": "2 этажа",
+      "forest": "Лес рядом",
+      "water": "У водоема"
+    },
+    "price": {
+      "total": "172 250 000 р.",
+      "meters": "135 000 р./м²"
+    },
+    "phone": {
+      "href": "+74950000000",
+      "text": "+7 (495) 000-00-00"
+    },
+    "link": "./detail.html",
+    "isFav": false
+  },
+  {
+    "type": "table",
+    "deal_type": "Продажа",
+    "id": "as12713",
+    "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+    "title": "Легион III (Фаза II)",
+    "name": "Многофункциональный комплекс",
+    "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+    "table": [
+      {
+        "link": "/detail-object.html",
+        "info": [
+          {
+            "name": "square",
+            "text": "1000 м²"
+          },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      },
+      {
+        "link": "/detail-object.html",
+        "info": [
+          {
+            "name": "square",
+            "text": "902 м²"
+          },
+          {
+            "name": "floor",
+            "text": "9 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      },
+      {
+        "link": "/detail-object.html",
+        "info": [
+          {
+            "name": "square",
+            "text": "984 м²"
+          },
+          {
+            "name": "floor",
+            "text": "4 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      }
+    ],
+    "specs": ["ring", "square", "date", "facing", "metro"],
+    "info": {
+      "ring": "ТТК",
+      "square": "90м²",
+      "date": "Строится",
+      "facing": "С отделкой",
+      "metro": {
+        "station": "Киевская",
+        "walk": "7 минут пешком"
+      }
+    },
+    "price": {
+      "total": "172 250 000 р.",
+      "meters": "135 000 р./м²"
+    },
+    "phone": {
+      "href": "+74950000000",
+      "text": "+7 (495) 000-00-00"
+    },
+    "link": "/detail-object.html",
+    "isFav": false
+  },
+  {
+    "type": "default",
+    "deal_type": "Продажа",
+    "id": "as12713",
+    "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+    "title": "Участок",
+    "name": "Парк Авеню",
+    "address": "Рублево-Успенское шоссе, 9 км",
+    "specs": ["area", "distance", "gas", "cleaner", "pump"],
+    "info": {
+      "area": "55 соток",
+      "distance": "11 км от МКАД",
+      "gas": "Газ (магистральный)",
+      "cleaner": "Септик",
+      "pump": "Скважина"
+    },
+    "price": {
+      "total": "172 250 000 р.",
+      "meters": "135 000 р./м²"
+    },
+    "phone": {
+      "href": "+74950000000",
+      "text": "+7 (495) 000-00-00"
+    },
+    "link": "./detail.html",
+    "isFav": false
+  }
+]

@@ -1,0 +1,10 @@
+include ./../../core/picture/picture.pug
+include ./../../fonts/title/title.pug
+
+mixin banner-visual(obj, className)
+  .banner-visual(class= className)
+    if obj.background
+      +picture(obj.background, 'banner-visual__background')
+    .banner-visual__content.main
+      if obj.title
+        +title(obj.title, 'banner-visual__title')

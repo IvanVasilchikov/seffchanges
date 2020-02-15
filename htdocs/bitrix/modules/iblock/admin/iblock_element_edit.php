@@ -853,24 +853,6 @@ do{ //one iteration loop
 						}
 						include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/catalog/admin/templates/product_edit_validator.php");
 					}
-					if ($arShowTabs['sku'])
-					{
-						if ($bCopy || $ID == 0)
-						{
-							$arFilter = array(
-								'IBLOCK_ID' => $arMainCatalog['IBLOCK_ID'],
-								'=PROPERTY_'.$arMainCatalog['SKU_PROPERTY_ID'] => '-'.$str_TMP_ID
-							);
-							if ((int)CIBlockElement::GetList(
-								array(),
-								$arFilter,
-								array()
-							) == 0)
-							{
-								$strWarning .= GetMessage('IBLOCK_ELEMENT_OFFERS_IS_ABSENT').'<br>';
-							}
-						}
-					}
 					if ($arShowTabs['product_set'])
 					{
 						CCatalogAdminProductSetEdit::setProductFormParams(array('TYPE' => CCatalogProductSet::TYPE_SET));
@@ -1073,6 +1055,7 @@ do{ //one iteration loop
 						{
 							if ($arShowTabs['sku'])
 							{
+								$offersFound = false;
 								Catalog\Product\Sku::enableDeferredCalculation();
 								$arFilter = array(
 									'IBLOCK_ID' => $arMainCatalog['IBLOCK_ID'],
@@ -1087,6 +1070,7 @@ do{ //one iteration loop
 								);
 								while ($arOfferItem = $rsOffersItems->Fetch())
 								{
+									$offersFound = true;
 									CIBlockElement::SetPropertyValues(
 										$arOfferItem['ID'],
 										$arMainCatalog['IBLOCK_ID'],
@@ -1101,6 +1085,35 @@ do{ //one iteration loop
 
 								$boolFlagClear = CIBlockOffersTmp::Delete($str_TMP_ID);
 								$boolFlagClearAll = CIBlockOffersTmp::DeleteOldID($IBLOCK_ID);
+
+								if (!$offersFound)
+								{
+									$iterator = Catalog\Model\Product::getList(array(
+										'select' => array('ID', 'TYPE'),
+										'filter' => array('=ID' => $ID)
+									));
+									$productRow = $iterator->fetch();
+									if (empty($productRow))
+									{
+										$productResult = Catalog\Model\Product::add(array(
+											'fields' => array(
+												'ID' => $ID,
+												'TYPE' => Catalog\ProductTable::TYPE_EMPTY_SKU
+											),
+											'external_fields' => array(
+												'IBLOCK_ID' => $IBLOCK_ID
+											)
+										));
+										if (!$productResult->isSuccess())
+										{
+											$strWarning .= implode('. ', $productResult->getErrorMessages());
+										}
+										unset($productResult);
+									}
+									unset($productRow);
+									unset($iterator);
+								}
+								unset($offersFound);
 							}
 						}
 					}

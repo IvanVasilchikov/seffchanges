@@ -22,6 +22,68 @@ $postRight = $APPLICATION->GetGroupRight($module_id);
 IncludeModuleLangFile($docRoot . '/bitrix/modules/main/options.php');
 Loc::loadMessages(__FILE__);
 
+// local function for build iblocks tree
+$getIblocksTree = function()
+{
+	static $iblocks = null;
+
+	if ($iblocks !== null)
+	{
+		return $iblocks;
+	}
+
+	$iblocks = [];
+	if (\Bitrix\Main\Loader::includeModule('iblock'))
+	{
+		// first gets types
+		$iblockTypes = [];
+		$res = \CIBlockType::getList();
+		while($row = $res->fetch())
+		{
+			if ($typeLang = \CIBlockType::getByIDLang($row['ID'], LANG))
+			{
+				$iblockTypes[$typeLang['IBLOCK_TYPE_ID']] = [
+					'NAME' => $typeLang['NAME'],
+					'SORT' => $typeLang['SORT']
+				];
+			}
+		}
+
+		// and iblocks then
+		$res = \CIBlock::getList(['sort' => 'asc']);
+		while ($row = $res->GetNext(true, false))
+		{
+			if (!isset($iblocks[$row['IBLOCK_TYPE_ID']]))
+			{
+				$iblocks[$row['IBLOCK_TYPE_ID']] = [
+					'ID' => $row['IBLOCK_TYPE_ID'],
+					'NAME' => $iblockTypes[$row['IBLOCK_TYPE_ID']]['NAME'],
+					'SORT' => $iblockTypes[$row['IBLOCK_TYPE_ID']]['SORT'],
+					'ITEMS' => []
+				];
+			}
+			$iblocks[$row['IBLOCK_TYPE_ID']]['ITEMS'][] = [
+				'ID' => $row['ID'],
+				'NAME' => $row['NAME']
+			];
+		}
+
+		// sorting by sort
+		usort($iblocks,
+		  	function($a, $b)
+			{
+				if ($a['SORT'] == $b['SORT'])
+				{
+					return 0;
+				}
+				return ($a['SORT'] < $b['SORT']) ? -1 : 1;
+			}
+		);
+
+		return $iblocks;
+	}
+};
+
 if ($postRight >= 'R'):
 
 	// sites list
@@ -63,28 +125,30 @@ if ($postRight >= 'R'):
 	}
 
 	// paths for sites
-	if (!Manager::isB24())
+	$allOptions[] = array(
+		'header',
+		Loc::getMessage('LANDING_OPT_PUB_PATH_HEADER'),
+		Loc::getMessage('LANDING_OPT_PUB_PATH_HELP')
+	);
+	foreach ($sites as $row)
 	{
 		$allOptions[] = array(
-			'header',
-			Loc::getMessage('LANDING_OPT_PUB_PATH_HEADER'),
-			Loc::getMessage('LANDING_OPT_PUB_PATH_HELP')
+			'pub_path_' . $row['LID'],
+			$row['NAME'] . ' [' . $row['LID'] . ']:',
+			array('text', 32),
+			\Bitrix\Landing\Manager::getPublicationPathConst()
 		);
-		foreach ($sites as $row)
-		{
-			$allOptions[] = array(
-				'pub_path_' . $row['LID'],
-				$row['NAME'] . ' [' . $row['LID'] . ']:',
-				array('text', 32),
-				\Bitrix\Landing\Manager::getPublicationPathConst()
-			);
-		}
 	}
 
 	// other options
 	$allOptions[] = array(
 		'header',
 		Loc::getMessage('LANDING_OPT_OTHER')
+	);
+	$allOptions[] = array(
+		'google_images_key',
+		Loc::getMessage('LANDING_OPT_GOOGLE_IMAGES_KEY') . ':',
+		array('text', 32)
 	);
 	if (Manager::isB24())
 	{
@@ -111,6 +175,15 @@ if ($postRight >= 'R'):
 		'enable_mod_zip',
 		Loc::getMessage('LANDING_OPT_ENABLE_MOD_ZIP') . ':',
 		array('checkbox')
+	);
+	$allOptions[] = array(
+		'source_iblocks',
+		Loc::getMessage('LANDING_OPT_SOURCE_IBLOCKS') . ':',
+		array(
+			'selectboxtree',
+			$getIblocksTree(),
+			'multiple="multiple" size="10"'
+		)
 	);
 
 	// tabs
@@ -149,7 +222,10 @@ if ($postRight >= 'R'):
 			{
 				$val = ${$name.'_1'} . 'x' . ${$name.'_2'};
 			}
-			elseif ($arOption[2][0] == 'selectbox')
+			elseif (
+				$arOption[2][0] == 'selectbox' ||
+				$arOption[2][0] == 'selectboxtree'
+			)
 			{
 				$val = '';
 				for ($j=0; $j<count($$name); $j++)
@@ -327,12 +403,44 @@ if ($postRight >= 'R'):
 			elseif ($type[0] == 'selectbox'):
 				$arr = $type[1];
 				$arr_keys = array_keys($arr);
-				$arVal = explode(',', $val);
+				$currValue = explode(',', $val);
 				?><select name="<?echo \htmlspecialcharsbx($Option[0])?>[]"<?= $type[2]?>><?
 					for($j = 0; $j < count($arr_keys); $j++):
-						?><option value="<?echo $arr_keys[$j]?>"<?if(in_array($arr_keys[$j], $arVal))echo ' selected="selected"'?>><?echo \htmlspecialcharsbx($arr[$arr_keys[$j]])?></option><?
+						?><option value="<?echo $arr_keys[$j]?>"<?if(in_array($arr_keys[$j], $currValue))echo ' selected="selected"'?>><?echo \htmlspecialcharsbx($arr[$arr_keys[$j]])?></option><?
 					endfor;
 					?></select><?
+			elseif ($type[0] == 'selectboxtree'):
+				$arr = $type[1];
+				$currValue = explode(',', $val);
+
+				$output = '<select name="'.\htmlspecialcharsbx($Option[0]).'[]"'.$type[2].'>';
+				$output .= '<option></option>';
+				foreach ($getIblocksTree() as $rowType)
+				{
+					$strIBlocksCpGr = '';
+					foreach ($rowType['ITEMS'] as $rowIb)
+					{
+						if (in_array($rowIb['ID'], $currValue))
+						{
+							$sel = ' selected="selected"';
+						}
+						else
+						{
+							$sel = '';
+						}
+						$strIBlocksCpGr .= '<option value="' . $rowIb['ID'] . '"' . $sel . '>' .
+										   		$rowIb['NAME'] .
+										   '</option>';
+					}
+					if ($strIBlocksCpGr != '')
+					{
+						$output .= '<optgroup label="'.$rowType['NAME'].'">';
+						$output .= $strIBlocksCpGr;
+						$output .= '</optgroup>';
+					}
+				}
+				$output .= '</select>';
+				echo $output;
 			endif;
 			echo $Option[4];?>
 		</td>

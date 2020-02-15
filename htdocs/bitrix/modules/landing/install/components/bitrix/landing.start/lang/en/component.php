@@ -1,11 +1,9 @@
 <?
-$MESS["LANDING_CMP_MODULE_NOT_INSTALLED_CRM"] = "Cannot prepare CRM data.";
-$MESS["LANDING_CMP_ACCESS_DENIED2"] = "Insufficient permission.";
-$MESS["LANDING_CMP_TITLE"] = "Sites";
-$MESS["LANDING_CMP_MODULE_NOT_INSTALLED"] = "Bitrix24 Sites service is currently unavailable.";
 $MESS["LANDING_CMP_ACCESS_DENIED"] = "Bitrix24 Sites service is currently available to administrators only.";
+$MESS["LANDING_CMP_ACCESS_DENIED2"] = "Insufficient permission.";
+$MESS["LANDING_CMP_AGREEMENT_LABEL"] = "I accept the Terms of Use";
 $MESS["LANDING_CMP_AGREEMENT_NAME"] = "Bitrix24 Sites Terms of Use";
-$MESS["LANDING_CMP_AGREEMENT_TEXT"] = "<p>Bitrix24 Sites provides services that you can use to create websites and landing pages for your business, your customers or for personal use. It is imperative that any website or landing page abides by law of the country in which it is created.</p>
+$MESS["LANDING_CMP_AGREEMENT_TEXT2"] = "<p>Bitrix24 Sites provides services that you can use to create websites and landing pages for your business, your customers or for personal use. It is imperative that any website or landing page abides by law of the country in which it is created.</p>
 <p>We reserve the right to close your website without notice if any violation is detected (as a result of internal investigation, user complaint or notice from any third party).</p>
 <p>The rules are simple. You must own or have permission for the content you publish on your website or landing page, and follow all applicable laws.</p>
 <p>By clicking the &laquo;I accept the terms&raquo; button, you guarantee:</p>
@@ -19,4 +17,8 @@ $MESS["LANDING_CMP_AGREEMENT_TEXT"] = "<p>Bitrix24 Sites provides services that 
 </ul>
 <p>Bitrix Inc. reserves the right to close your websites and/or access to the Bitrix24 Sites services should you violate the aforementioned statements.</p>
 <p>For complete Bitrix24 terms of service, please refer to <a href=\"https://www.bitrix24.com/terms/\">Terms of Service</a>.</p>";
+$MESS["LANDING_CMP_MODULE_NOT_INSTALLED"] = "Bitrix24 Sites service is currently unavailable.";
+$MESS["LANDING_CMP_MODULE_NOT_INSTALLED_CRM"] = "Cannot prepare CRM data.";
+$MESS["LANDING_CMP_TITLE"] = "Sites";
+$MESS["LANDING_CMP_TYPE_IS_NOT_ENABLED"] = "Type is not supported";
 ?>

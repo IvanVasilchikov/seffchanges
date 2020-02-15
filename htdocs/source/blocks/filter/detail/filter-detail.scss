@@ -1,0 +1,83 @@
+$parent: 'filter-detail';
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include element($parent, 'field') {
+    display: flex;
+    margin-bottom: rem(30);
+    width: 100%;
+    order: 1;
+    @include modifier($parent, 'hidden') {
+      display:none;
+    }
+
+    @media (min-width: $d1280) {
+      padding-right: rem(16);
+      margin-bottom: 0;
+      width: auto;
+    }
+
+    @include modifier($parent, 'deal_type') {
+      width: 60%;
+
+      @media (min-width: $tMin) {
+        width: 30.3%;
+      }
+
+      @media (min-width: $d1280) {
+        padding-right: 0;
+        width: rem(190);
+      }
+
+      @include element($parent, 'radio') {
+        border-right: none;
+      }
+    }
+
+    @include modifier($parent, 'object_type') {
+      width: 40%;
+
+      @media (min-width: $tMin) {
+        width: 20.2%;
+      }
+
+      @media (min-width: $d1280) {
+        width: rem(170);
+      }
+    }
+
+    @include modifier($parent, 'price') {
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        max-width: 49.5%;
+        flex-basis: 49.5%;
+      }
+    }
+
+    @include modifier($parent, 'square') {
+      max-width: rem(197);
+      flex-basis: rem(197);
+
+      @media (min-width: $d1280) {
+        max-width: rem(200);
+        flex-basis: rem(200);
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include element($parent, 'group-wrp') {
+    width: 100%;
+  }
+
+  @include element($parent, 'radio') {
+    width: 100%;
+  }
+
+  @include element($parent, 'select') {
+    width: 100%;
+  }
+}

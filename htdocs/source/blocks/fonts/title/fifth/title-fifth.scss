@@ -1,0 +1,23 @@
+$parent: title-fifth;
+
+@include block($parent) {
+  font-size: rem(20);
+  line-height: 1.2;
+  font-weight: 400;
+  color: $black;
+
+  @include modifier($parent, 'up') {
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+
+    @media screen and (min-width: $tMin) {
+      font-size: rem(22);
+      line-height: 1.4;
+    }
+
+    em {
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+}

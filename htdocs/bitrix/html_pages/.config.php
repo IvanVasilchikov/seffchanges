@@ -1,7 +1,7 @@
 <?
 $arHTMLPagesOptions = array(
 	"INCLUDE_MASK" => "/*",
-	"EXCLUDE_MASK" => "/bitrix/*; /404.php; ",
+	"EXCLUDE_MASK" => "/bitrix/*; /404.php; /api/*;",
 	"FILE_QUOTA" => "100",
 	"BANNER_BGCOLOR" => "#E94524",
 	"BANNER_STYLE" => "white",
@@ -17,9 +17,10 @@ $arHTMLPagesOptions = array(
 	"~EXCLUDE_MASK" => array(
 		0 => "'^/bitrix/.*?\$'",
 		1 => "'^/404\\.php\$'",
+		2 => "'^/api/.*?\$'",
 	),
 	"~FILE_QUOTA" => "104857600",
-	"INDEX_ONLY" => "",
+	"INDEX_ONLY" => "1",
 	"~GET" => array(
 		0 => "id",
 		1 => "ELEMENT_ID",
@@ -54,14 +55,14 @@ $arHTMLPagesOptions = array(
 	"COOKIE_NCC" => "BITRIX_SM_NCC",
 	"COOKIE_CC" => "BITRIX_SM_CC",
 	"COOKIE_PK" => "BITRIX_SM_PK",
-	"NO_PARAMETERS" => "N",
+	"NO_PARAMETERS" => "Y",
 	"GROUPS" => array(
 	),
 	"DOMAINS" => array(
-		"dev.saffariestate.ru" => "dev.saffariestate.ru",
+		"saffariestate.ru" => "saffariestate.ru",
 	),
 	"AUTO_UPDATE" => "N",
-	"AUTO_UPDATE_TTL" => "0",
+	"AUTO_UPDATE_TTL" => "3600",
 	"FRAME_MODE" => "Y",
 	"FRAME_TYPE" => "STATIC",
 	"AUTO_COMPOSITE" => "N",

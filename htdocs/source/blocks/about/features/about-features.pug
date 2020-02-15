@@ -1,0 +1,16 @@
+include ../../fonts/title/title.pug
+include ../../fonts/title/fifth/title-fifth.pug
+include ../../feature/feature.pug
+
+mixin about-features(info)
+  if info
+    .about-features
+      .main
+        +title(info.title, 'about-features__title')
+        if info.subtitle
+          +title-fifth(info.subtitle, 'about-features__subtitle')
+
+        if info.list
+          .about-features__list
+            each feature in info.list
+              +feature(feature, 'about-features__item')

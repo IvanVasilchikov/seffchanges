@@ -1,4 +1,4 @@
-<?php
+?php
 define("NOT_CHECK_PERMISSIONS", true);
 define("NO_AGENT_CHECK", true);
 $GLOBALS["DBType"] = 'mysql';

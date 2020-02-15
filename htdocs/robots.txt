@@ -1,10 +1,11 @@
 User-Agent: *
+Allow: /bitrix/cache/js/
+Allow: /bitrix/cache/css/
+Sitemap: https://saffariestate.ru/sitemap.xml
 Disallow: /bitrix/
 Disallow: /auth/
 Disallow: /ajax/
 Disallow: /personal/
-Allow: /bitrix/cache/js/
-Allow: /bitrix/cache/css/
 Disallow: */?realty_type=*
 Disallow: */?type_page=*
 Disallow: */map/*
@@ -12,7 +13,7 @@ Disallow: */?price*
 Disallow: */?currency=*
 Disallow: */?order=*
 Disallow: */?search=*
-Sitemap: https://saffariestate.ru/sitemap.xml
+Disallow: */?page=*
 
 User-Agent: Yandex
 Clean-param: sort_check&sort&filter&object_type
@@ -29,7 +30,8 @@ Disallow: */?price*
 Disallow: */?currency=*
 Disallow: */?order=*
 Disallow: */?search=*
-Host: saffariestate.ru
+Disallow: */?page=*
+Host: https://saffariestate.ru
 
 User-Agent: Googlebot
 Disallow: /bitrix/
@@ -45,3 +47,4 @@ Disallow: */?price*
 Disallow: */?currency=*
 Disallow: */?order=*
 Disallow: */?search=*
+Disallow: */?page=*

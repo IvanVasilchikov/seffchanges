@@ -1,0 +1,42 @@
+$parent: 'catalog-filter-popup-area';
+
+@include block($parent) {
+  @include element($parent, 'content') {
+    max-width: rem(1070);
+
+    @include modifier($parent, 'big') {
+      max-width: rem(1240);
+    }
+  }
+
+  @include element($parent, 'close') {
+    @media (max-width: $screen-lg-max) {
+      top: rem(-50);
+      right: -5px;
+    }
+  }
+
+  @include element($parent, 'radio-btns') {
+    @media (min-width: $screen-lg-min) {
+      justify-content: center;
+      max-width: 360px;
+      margin: auto;
+    }
+  }
+
+  @include element($parent, 'radio') {
+    width: 100%;
+
+    &:first-of-type {
+      @media (min-width: $screen-lg-min) {
+        width: 220px;
+      }
+    }
+
+    &:last-of-type {
+      @media (min-width: $screen-lg-min) {
+        width: 140px;
+      }
+    }
+  }
+}

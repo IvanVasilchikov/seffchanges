@@ -113,9 +113,11 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				array($siteId, $landingId),
 				$this->arParams['PAGE_URL_LANDING_VIEW']
 			);
-			$redirect .= (strpos($redirect, '?') === false ? '?' : '&')
-						. 'IFRAME=N';
-			\localRedirect($redirect, true);
+			$uriEdit = new \Bitrix\Main\Web\Uri($redirect);
+			$uriEdit->addParams([
+				'IFRAME' => ($this->arParams['DONT_LEAVE_FRAME'] != 'Y') ? 'N' : 'Y'
+			]);
+			\localRedirect($uriEdit->getUri(), true);
 		}
 		else
 		{
@@ -276,7 +278,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 	 * @param \Bitrix\Landing\Landing $landing Landing instance after create.
 	 * @return boolean|int Id of new landing.
 	 */
-	protected function createPage($siteId, $code, &$landing = null)
+	public function createPage($siteId, $code, &$landing = null)
 	{
 		static $firstPage = true;
 		$demo = $this->getDemoPage($code);
@@ -290,7 +292,11 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 					$demo[$code]['REST']
 				);
 			}
-			$data = $demo[$code]['DATA'];
+			if (!($data = $demo[$code]['DATA']))
+			{
+				$this->addError('WRONG_DATA', 'Wrong data');
+				return false;
+			}
 			$pageData = $this->prepareMainFields(
 				$data['fields'],
 				$firstPage
@@ -302,6 +308,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 			$pageData['SITE_ID'] = $siteId;
 			$pageData['ACTIVE'] = 'N';
 			$pageData['PUBLIC'] = 'N';
+			$pageData['SYSTEM'] = ($demo[$code]['ACTIVE'] == 'Y') ? 'N' : 'Y';
 			$pageData['TPL_CODE'] = $code;
 			$pageData['XML_ID'] = $data['name'] . '|' . $code;
 			// localization
@@ -336,6 +343,10 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 					$blocksIds = array();
 					$blocksCodes = array();
 					$blocksAccess = array();
+					if (!is_array($data['items']))
+					{
+						$data['items'] = [];
+					}
 					foreach ($data['items'] as $k => $block)
 					{
 						if (is_array($block))
@@ -462,6 +473,12 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 									$updated = true;
 									$block->updateNodes($newData['nodes']);
 								}
+								// update menu
+								if (isset($newData['menu']) && !empty($newData['menu']))
+								{
+									$updated = true;
+									$block->updateNodes($newData['menu']);
+								}
 								// update attrs
 								if (isset($newData['attrs']) && !empty($newData['attrs']))
 								{
@@ -472,6 +489,11 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 										unset($newData['attrs']['#wrapper']);
 									}
 									$block->setAttributes($newData['attrs']);
+								}
+								// dynamic
+								if (isset($newData['dynamic']) && is_array($newData['dynamic']))
+								{
+									$block->saveDynamicParams($newData['dynamic']);
 								}
 							}
 						}
@@ -627,13 +649,12 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 
 	/**
 	 * Get domain id for new site.
-	 * @return mixed
+	 * @deprecated since 20.0.0
+	 * @return int|string
 	 */
 	protected function getDomainId()
 	{
-		return !Manager::isB24()
-			? Domain::getCurrentId()
-			: ' ';
+		return \Bitrix\Landing\Site\Type::getDomainId();
 	}
 
 	/**
@@ -733,7 +754,6 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 						strtolower(\randString(5)),
 						$this->urlTpl
 					),
-					'DOMAIN_ID' => $this->getDomainId(),
 					'TYPE' => 'PREVIEW',
 					'SMN_SITE_ID' => $smnSiteId
 				));
@@ -797,6 +817,25 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 	}
 
 	/**
+	 * Binding site if, if binding params specified.
+	 * @param int $siteId Site id.
+	 * @return void
+	 */
+	protected function bindingSite($siteId)
+	{
+		$this->arParams['BINDING_TYPE'] = strtoupper(
+			$this->arParams['BINDING_TYPE']
+		);
+		if ($this->arParams['BINDING_TYPE'] == 'GROUP')
+		{
+			$binding = new \Bitrix\Landing\Binding\Group(
+				intval(trim($this->arParams['BINDING_ID']))
+			);
+			$binding->bindSite($siteId);
+		}
+	}
+
+	/**
 	 * Create site or page by template.
 	 * @param string $code Demo site code.
 	 * @param mixed $additional Data from form.
@@ -816,10 +855,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 			);
 			if ($landingId)
 			{
-				if (!$this->redirectToLanding($landingId))
-				{
-					return false;
-				}
+				return $this->redirectToLanding($landingId);
 			}
 			else
 			{
@@ -837,19 +873,32 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 					$demo[$code]['REST']
 				);
 			}
-			$data = $demo[$code]['DATA'];
+			if (!($data = $demo[$code]['DATA']))
+			{
+				$this->addError('WRONG_DATA', 'Wrong data');
+				return false;
+			}
 			$version = $data['version'];
-			$siteData = $this->prepareMainFields($data['fields'], false);
+			$siteData = $this->prepareMainFields($data['fields'], true);
 			$siteData = $this->prepareAdditionalFieldsSite($siteData);
-			$siteData['DOMAIN_ID'] = $this->getDomainId();
 			$siteData['ACTIVE'] = 'N';
-			$siteData['CODE'] = str_replace(
-				'#rand#',
-				strtolower(\randString(5)),
-				$this->urlTpl
-			);
+			if (isset($siteData['TITLE']))
+			{
+				$siteData['CODE'] = \CUtil::translit(
+					$siteData['TITLE'],
+					LANGUAGE_ID
+				);
+			}
+			else
+			{
+				$siteData['CODE'] = str_replace(
+					'#rand#',
+					strtolower(\randString(5)),
+					$this->urlTpl
+				);
+			}
 			$siteData['XML_ID'] = $data['name'] . '|' . $code;
-			$siteData['TYPE'] = $demo[$code]['TYPE'];
+			$siteData['TYPE'] = $this->arParams['TYPE'];
 			$pageIndex = $siteData['LANDING_ID_INDEX']
 						? $siteData['LANDING_ID_INDEX']
 						: '';
@@ -872,10 +921,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 			}
 			else
 			{
-				if (
-					$siteData['TYPE'] == 'STORE' &&
-					Manager::isB24()
-				)
+				if (self::checkAllowDemoData($siteData))
 				{
 					$settings = Settings::getDataForSite();
 					// if shop section exist, save for site
@@ -912,6 +958,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 			}
 			if ($siteId)
 			{
+				$this->bindingSite($siteId);
 				$siteData['ID'] = $siteId;
 				$forSiteUpdate = array();
 				$firstLandingId = false;
@@ -936,6 +983,8 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				{
 					$data['items'][] = $code;
 				}
+				/** @var Landing $landingInstance */
+				$landingInstance = null;
 				Landing::disableUpdate();
 				foreach ($data['items'] as $page)
 				{
@@ -958,7 +1007,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				}
 				Landing::enableUpdate();
 				// publication after create
-				if ($demo[$code]['PUBLICATION'])
+				if ($landingInstance !== null && $demo[$code]['PUBLICATION'])
 				{
 					$landingInstance->publication();
 				}
@@ -967,6 +1016,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				{
 					$landingReplace['\'#landing' . $oldId . '\''] = '\'#landing' . $newId . '\'';
 					$landingReplace['"#landing' . $oldId . '"'] = '"#landing' . $newId . '"';
+					$landingReplaceDynamic['#landing' . $oldId] = '#landing' . $newId;
 				}
 				// update site for some fields
 				if (isset($landings[$pageIndex]))
@@ -998,6 +1048,17 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 										$content,
 										$count
 									);
+									// dynamic part
+									$dynamicParams = $block->getDynamicParams();
+									if ($dynamicParams)
+									{
+										$block->saveDynamicParams(
+											$dynamicParams,
+											[
+												'linkReplace' => $landingReplaceDynamic
+											]
+										);
+									}
 								}
 								else
 								{
@@ -1160,6 +1221,25 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 	}
 
 	/**
+	 * Returns true, if allow create store data.
+	 *
+	 * @param array $demo
+	 * @return bool
+	 */
+	private static function checkAllowDemoData(array $demo)
+	{
+		if (!Manager::isB24())
+		{
+			return false;
+		}
+		if (!isset($demo['TYPE']))
+		{
+			return false;
+		}
+		return (is_array($demo['TYPE']) ? in_array('STORE', $demo['TYPE']) : $demo['TYPE'] == 'STORE');
+	}
+
+	/**
 	 * Create store step.
 	 * @param string $code Step code.
 	 * @param null $additional
@@ -1180,7 +1260,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 			return $result;
 		}
 
-		if ($demo[$code]['TYPE'] == 'STORE' && Manager::isB24())
+		if (self::checkAllowDemoData($demo[$code]))
 		{
 			Loader::includeModule('iblock');
 
@@ -1413,6 +1493,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 							'TITLE' => $row['TITLE'],
 							'ACTIVE' => $row['ACTIVE'],
 							'AVAILABLE' => true,
+							'SECTION' => [],//@todo
 							'DESCRIPTION' => $row['DESCRIPTION'],
 							'SORT' => --$sort,
 							'PREVIEW' => $row['PREVIEW'],
@@ -1488,7 +1569,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 					Manager::getCacheManager()->registerTag(self::DEMO_TAG);
 				}
 			}
-			
+
 			// get from cloud only if it not repo
 			$restSrc = Manager::getOption('block_vendor_bitrix');
 			if (
@@ -1525,6 +1606,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 					$res = Json::decode($http->get(
 						$restSrc . 'landing_cloud.cloud.' . $command .
 						'?user_lang=' . LANGUAGE_ID .
+						'&version=2' .
 						'&type=' . $this->arParams['TYPE'] .
 						($instEnabled ? '&inst=1' : '') .// tmp
 						($chatsEnabled ? '&chats=1' : '') .// tmp
@@ -1539,8 +1621,6 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				{
 					$data[$subDir] = $res['result'];
 				}
-				
-				
 
 				// system cache end
 				if ($cacheStarted)
@@ -1608,11 +1688,8 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				{
 					$itemData['type'] = $siteTypeDef;
 				}
-				else
-				{
-					$itemData['type'] = strtoupper($itemData['type']);
-				}
-				if ($siteTypeCurr == $itemData['type'] && isset($itemData['name']))
+				$itemData['type'] = array_map('strtoupper', (array)$itemData['type']);
+				if (in_array($siteTypeCurr, $itemData['type']) && isset($itemData['name']))
 				{
 					if (!isset($itemData['fields']) || !is_array($itemData['fields']))
 					{
@@ -1654,6 +1731,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 						'PUBLICATION' => isset($itemData['publication']) ? $itemData['publication'] : false,
 						'AVAILABLE' => isset($itemData['available']) ? $itemData['available'] : true,
 						'SINGLETON' =>  isset($itemData['singleton']) ? $itemData['singleton'] : false,
+						'SECTION' => isset($itemData['section']) ? (array)$itemData['section'] : [],
 						'DESCRIPTION' => isset($itemData['description'])
 										? $itemData['description']
 										: '',
@@ -1712,12 +1790,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 			// available - first
 			foreach ($items as $key => $item)
 			{
-				if (!$item['ACTIVE'])
-				{
-					unset($items[$key]);
-					continue;
-				}
-				elseif ($item['AVAILABLE'])
+				if ($item['AVAILABLE'])
 				{
 					$data[$subDir][$key] = $item;
 					unset($items[$key]);
@@ -2120,10 +2193,22 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 	 */
 	public function executeComponent()
 	{
-		$application = Manager::getApplication();
 		$init = $this->init();
+
+		if (!$init)
+		{
+			parent::executeComponent();
+			return;
+		}
+
+		$application = Manager::getApplication();
 		set_time_limit(300);
 		$this->checkParam('SITE_ID', 0);
+		$this->checkParam('TYPE', '');
+
+		\Bitrix\Landing\Site\Type::setScope(
+			$this->arParams['TYPE']
+		);
 
 		// check access
 		if ($this->arParams['SITE_ID'] > 0)
@@ -2148,11 +2233,13 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 		// if all ok
 		if ($init)
 		{
-			$this->checkParam('TYPE', '');
 			$this->checkParam('ACTION_FOLDER', 'folderId');
 			$this->checkParam('PAGE_URL_SITES', '');
 			$this->checkParam('PAGE_URL_LANDING_VIEW', '');
 			$this->checkParam('SITE_WORK_MODE', 'N');
+			$this->checkParam('DONT_LEAVE_FRAME', 'N');
+			$this->checkParam('BINDING_TYPE', '');
+			$this->checkParam('BINDING_ID', '');
 
 			if (
 				$this->arParams['SITE_ID'] > 0 &&
@@ -2207,6 +2294,17 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 					}
 				}
 			}
+
+			// may be in future we will use sections,
+			// but now sections used only for system things
+			foreach ($this->arResult['DEMO'] as $code => $item)
+			{
+				if ($item['SECTION'] || !$item['ACTIVE'])
+				{
+					unset($this->arResult['DEMO'][$code]);
+				}
+			}
+
 
 			// init nav
 			$this->lastNavigation = new \Bitrix\Main\UI\PageNavigation('nav');
@@ -2533,7 +2631,7 @@ class LandingSiteDemoComponent extends LandingBaseComponent
 				'TRANS_SPACE' => '_',
 				'TRANS_OTHER' => '_',
 				'TRANS_EAT' => 'Y',
-				'USE_GOOGLE' => 'Y'
+				'USE_GOOGLE' => 'N'
 			);
 			$iblock = new \CIBlock;
 			$iblock->update($iblockId, array(

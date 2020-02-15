@@ -1,5 +1,50 @@
 .bitrix24-default-theme .mp { margin-right: 15px; }
 
+.mp-slider-view .pagetitle-above,
+.mp-slider-view .pagetitle-wrap,
+.mp-slider-view .ui-page-slider-workarea {
+	overflow: hidden;
+}
+
+.mp-slider-view .ui-sidepanel-sidebar {
+	margin-top: 0;
+}
+
+.mp-slider-view .ui-sidepanel-head {
+	margin-right: 17px;
+	height: auto;
+}
+
+.mp-slider-view .ui-sidepanel-menu-link-text {
+	display: flex;
+	align-items: center;
+	white-space: normal;
+	overflow: visible;
+}
+
+.mp-slider-view .ui-sidepanel-menu-link-text-item {
+	flex-grow: 1;
+	flex-shrink: 1;
+	display: inline-block;
+	margin: 0 8px 0 0;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.mp-slider-view .ui-sidepanel-menu-link-text-counter {
+	font: 12px 'OpenSans-Regular', "Helvetica Neue", Arial, Helvetica, sans-serif;
+	color: #525C69;
+	letter-spacing: -0.28px;
+	opacity: .5;
+}
+
+.mp-slider-view .ui-sidepanel-menu-active .ui-sidepanel-menu-link-text-counter {
+	color: #fff;
+	opacity: .8;
+}
+
 .mp-container {
 	margin-bottom: 90px;
 	min-height: 150px;
@@ -230,3 +275,125 @@
 .mp-item-controls .ui-btn:hover { border-color: #3eddff; }
 
 .mp-item-controls .ui-btn:active { border-color: #12b1e3; }
+
+.mp-badge-ribbon-wrap {
+	position: absolute;
+	top: 6px;
+	left: -2px;
+	z-index: 1;
+}
+
+.mp-badge-ribbon-box {
+	display: block;
+	margin: 0 0 3px 0;
+}
+
+.mp-badge-ribbon-item {
+	position: relative;
+	display: inline-block;
+	padding: 0 0 0 6px;
+	height: 13px;
+	background-color: #ff5752;
+	font: 8px/12px "OpenSans-Bold", "Helvetica Neue", Arial, sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	box-shadow: 0 1px 0 0 rgba(0,0,0,.07);
+}
+
+.mp-badge-ribbon-item-after {
+	display: inline-block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	right: -11px;
+	border-width: 6.5px 6px;
+	border-style: solid;
+	border-color: #ff5752 transparent #ff5752 #ff5752;
+	box-shadow: 0 1px 0 0 rgba(0,0,0,.07);
+}
+.mp-badge-ribbon-box-blue .mp-badge-ribbon-item {
+	background-color: #2066B0;
+}
+.mp-badge-ribbon-box-blue .mp-badge-ribbon-item-after {
+	border-color: #2066B0 transparent #2066B0 #2066B0;
+}
+.mp-badge-ribbon-box-yellow .mp-badge-ribbon-item {
+	background-color: #F7A700;
+}
+.mp-badge-ribbon-box-yellow .mp-badge-ribbon-item-after {
+	border-color: #F7A700 transparent #F7A700 #F7A700;
+}
+
+#mp-category-block {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.mp-section-with-menu {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.mp-left-menu-block {
+	min-width: 240px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+#mp-left-menu {
+	margin-right: 23px;
+	width: 267px;
+	background: #e6e9eb;
+}
+
+.mp-head-status-box {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(0,0,0,0.04);
+	box-sizing: border-box;
+	cursor: default;
+}
+
+.mp-head-status-value {
+	display: inline-block;
+	margin: 0 8px 0 0;
+	font: 30px "OpenSans-Light", "Helvetica Neue", Arial, sans-serif;
+	color: #2FC6F6;
+	letter-spacing: -0.69px;
+}
+
+.mp-head-status-plus {
+	display: inline-block;
+	color: #2Fc6F6;
+	font: 30px "OpenSans-Light", "Helvetica Neue", Arial, sans-serif;
+}
+
+.mp-head-status-text {
+	font: 12px "OpenSans-Regular", "Helvetica Neue", Arial, sans-serif;
+	color: #525c69;
+	letter-spacing: -0.28px;
+	opacity: .81;
+	white-space: normal;
+}
+
+.mp-head-status-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 22px;
+	height: 22px;
+	border-radius: 100%;
+	border: none;
+	background-color: #9dcf00;
+	font-size: 13px;
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+	margin-left: 10px;
+}

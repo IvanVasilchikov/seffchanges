@@ -1,0 +1,323 @@
+$parent: 'detail-table';
+
+@include block($parent) {
+  @include element($parent, 'container') {
+    position: relative;
+    border: 1px solid $gray3;
+  }
+
+  @include element($parent, 'main') {
+    @media (min-width: $d1280) {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      background-color: $w;
+    }
+  }
+
+  @include element($parent, 'top') {
+    display: none;
+
+    @media (min-width: $d1280) {
+      display: table;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @include element($parent, 'head') {
+      pointer-events: auto;
+    }
+
+    @include element($parent, 'row') {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @include element($parent, 'wrp') {
+    position: relative;
+
+    @media (min-width: $d1280) {
+      max-height: rem(400);
+      overflow-x: hidden;
+      overflow-y: hidden;
+      width: calc(100% + 14px);
+      padding-right: 14px;
+    }
+
+    .ps {
+      &__rail-x {
+        display: none;
+      }
+
+      &__rail-y {
+        position: absolute;
+        right: rem(-12);
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: $gray;
+        display: none;
+        margin-top: rem(50);
+      }
+
+      &__thumb-y {
+        width: 100%;
+        background-color: $red2;
+        position: absolute;
+      }
+    }
+
+    &.ps--active-y {
+      .ps__rail-y {
+        @media (min-width: $d1280) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'head') {
+    display: none;
+
+    @media (min-width: $d1280) {
+      background-color: $gray8;
+      display: table-row;
+      height: rem(50);
+      border-bottom: 1px solid $gray3;
+    }
+
+    @include element($parent, 'cell') {
+      color: $gray2;
+    }
+  }
+
+  @include element($parent, 'row') {
+    background-color: $w;
+    position: relative;
+    padding: rem(25) rem(14) rem(22);
+    display: flex;
+    flex-wrap: wrap;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $gray3;
+    }
+
+    @media (min-width: $tMin) {
+      padding: rem(30) rem(37) 0;
+    }
+
+    @media (min-width: $d1280) {
+      padding: 0;
+      background-color: transparent;
+      display: table-row;
+      height: rem(70);
+      cursor: pointer;
+      box-shadow: rem(-25) rem(10) rem(40) transparent;
+      transition: box-shadow $ease, background-color $ease;
+
+      &:hover {
+        background-color: $w;
+        box-shadow: rem(-25) rem(10) rem(40) rgba(#000, 0.15);
+
+        @include element($parent, 'like') {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'cell') {
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-bottom: rem(35);
+    margin-right: rem(24);
+    order: 1;
+
+    &::before {
+      content: attr(data-title);
+      color: $gray2;
+      display: block;
+      font-weight: 400;
+      font-size: rem(16);
+      margin-bottom: rem(8);
+
+      @media (min-width: $d1280) {
+        display: none;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @media (max-width: $mMax) {
+        flex-grow: 1;
+      }
+    }
+
+    &:nth-of-type(3) {
+      @media (max-width: $mMax) {
+        order: 4;
+      }
+    }
+
+    &:nth-of-type(4) {
+      @media (max-width: $mMax) {
+        order: 3;
+      }
+
+      @media (min-width: $tMin) {
+        min-width: 0;
+      }
+    }
+
+    &:last-child,
+    &:nth-last-child(2) {
+      @media (max-width: $mMax) {
+        margin-bottom: 0;
+        margin-right: 0;
+        align-self: flex-end;
+      }
+    }
+
+    @media (min-width: $m375) {
+      min-width: 20%;
+    }
+
+    @media (min-width: $tMin) {
+      min-width: 0;
+      margin-bottom: rem(40);
+      margin-right: 0;
+      flex-basis: 25%;
+      max-width: 25%;
+      padding-right: rem(15);
+    }
+
+    @media (min-width: $d1280) {
+      display: table-cell;
+      text-align: center;
+      position: relative;
+      vertical-align: middle;
+
+      &:first-of-type {
+        width: rem(148);
+      }
+
+      &:nth-of-type(2) {
+        width: rem(154);
+      }
+
+      &:nth-of-type(3) {
+        width: rem(120);
+      }
+
+      &:nth-of-type(4) {
+        width: rem(110);
+      }
+
+      &:last-of-type {
+        width: rem(214);
+      }
+    }
+
+    @include modifier($parent, 'plan') {
+      order: 100;
+    }
+
+    @include modifier($parent, 'price') {
+      font-weight: 600;
+      font-size: rem(20);
+      order: 100;
+      flex-grow: 1;
+
+      @media (max-width: $mMax) {
+        flex-basis: 60%;
+      }
+
+      @media (min-width: $tMin) {
+        max-width: 100%;
+      }
+    }
+
+    @include modifier($parent, 'price-width') {
+      @media (min-width: $d1280) {
+        width: rem(230);
+      }
+    }
+
+    @include modifier($parent, 'order') {
+      order: 100;
+
+      @media (min-width: $tMin) and (max-width: $d1279) {
+        align-self: flex-end;
+      }
+    }
+
+    @include modifier($parent, 'sort') {
+      cursor: pointer;
+
+      &>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          width: 9px;
+          height: 15px;
+          margin-left: 10px;
+          stroke: #C7C7C7;
+        }
+      }
+    }
+
+    @include modifier($parent, 'sort-active') {
+      &>div {
+        &>svg {
+          stroke: #7A1B1B;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'button') {
+    color: $red2;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include element($parent, 'like') {
+    position: absolute;
+    top: rem(14);
+    right: rem(14);
+    height: rem(13);
+    width: rem(16);
+    transition: $ease;
+
+    svg {
+      fill: none;
+      stroke: $red2;
+      stroke-width: 2;
+    }
+
+    @media (min-width: $d1280) {
+      opacity: 0;
+    }
+
+    @include modifier($parent, 'liked') {
+      svg {
+        fill: $red2;
+      }
+    }
+  }
+
+  @include element($parent, 'error') {
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+}

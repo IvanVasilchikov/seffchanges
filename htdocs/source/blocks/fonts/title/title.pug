@@ -1,0 +1,5 @@
+mixin title(text, className, link)
+  if (link)
+    a.title(class=className, href=link, title=title)!= text
+  else
+    .title(class=className)!= text

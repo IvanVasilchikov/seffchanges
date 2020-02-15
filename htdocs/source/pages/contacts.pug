@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/contacts/contacts.pug
+
+block vars
+  - homepage = false;
+  - var contacts = require('../data/contacts.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      contacts: !{JSON.stringify(contacts)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +contacts(contacts)

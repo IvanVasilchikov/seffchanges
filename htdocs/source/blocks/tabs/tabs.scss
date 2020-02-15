@@ -1,0 +1,56 @@
+$parent: 'tabs';
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: rem(4);
+
+  @include element($parent, 'btn') {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    font-size: rem(15);
+    line-height: 1.6;
+    font-weight: 600;
+    color: $gray2;
+    cursor: pointer;
+    transition: color $ease;
+
+    &:not(:last-of-type) {
+      margin-right: rem(25);
+
+      @media (min-width: $tMin) {
+        margin-right: rem(40);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: rem(-4);
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $red2;
+      transition: width 0.4s ease;
+    }
+
+    &:hover {
+      color: $red2;
+    }
+
+    span {
+      color: $red2;
+    }
+
+    @include modifier($parent, 'active') {
+      color: $red2;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

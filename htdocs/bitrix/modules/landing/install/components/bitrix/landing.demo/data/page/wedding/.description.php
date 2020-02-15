@@ -525,7 +525,7 @@ return array(
 				</div>
 				<img class="landing-block-node-img img-fluid g-mb-20 flex-shrink-0" src="https://cdn.bitrix24.site/bitrix/images/landing/business/315x435/img1.jpg" alt="" data-fileid="-1" data-filehash="9eef207add73028ae50f74a9033c20cb" />
 				<div class="g-mb-40 landing-block-node-text g-line-height-1_8 g-font-size-default g-color-white-opacity-0_8 g-font-size-14 g-font-open-sans text-left"><p>Nunc vitae maximus. Vestibulum sodales nisi massa, vitae blandit massa luctus id. Nunc diam tellus.</p></div>
-				<div class="landing-block-node-button-container mt-auto">
+				<div class="landing-block-node-button-container">
 					<a class="landing-block-node-button btn btn-lg u-btn-inset u-btn-white g-font-open-sans g-color-primary g-font-size-11 g-rounded-25 g-brd-0" href="#" target="_self">View More</a>
 				</div>
 			</div>
@@ -537,7 +537,7 @@ return array(
 				</div>
 				<img class="landing-block-node-img img-fluid g-mb-20 flex-shrink-0" src="https://cdn.bitrix24.site/bitrix/images/landing/business/315x435/img2.jpg" alt="" data-fileid="-1" data-filehash="9eef207add73028ae50f74a9033c20cb" />
 				<div class="g-mb-40 landing-block-node-text g-line-height-1_8 g-font-size-default g-color-white-opacity-0_8 g-font-size-14 g-font-open-sans text-left"><p>Nunc vitae maximus. Vestibulum sodales nisi massa, vitae blandit massa luctus id. Nunc diam tellus.</p></div>
-				<div class="landing-block-node-button-container mt-auto">
+				<div class="landing-block-node-button-container">
 					<a class="landing-block-node-button btn btn-lg u-btn-inset u-btn-white g-font-open-sans g-color-primary g-font-size-11 g-rounded-25 g-brd-0" href="#" target="_self">View More</a>
 				</div>
 			</div>
@@ -549,7 +549,7 @@ return array(
 				</div>
 				<img class="landing-block-node-img img-fluid g-mb-20 flex-shrink-0" src="https://cdn.bitrix24.site/bitrix/images/landing/business/315x435/img3.jpg" alt="" data-fileid="-1" data-filehash="9eef207add73028ae50f74a9033c20cb" />
 				<div class="g-mb-40 landing-block-node-text g-line-height-1_8 g-font-size-default g-color-white-opacity-0_8 g-font-size-14 g-font-open-sans text-left"><p>Nunc vitae maximus. Vestibulum sodales nisi massa, vitae blandit massa luctus id. Nunc diam tellus.</p></div>
-				<div class="landing-block-node-button-container mt-auto">
+				<div class="landing-block-node-button-container">
 					<a class="landing-block-node-button btn btn-lg u-btn-inset u-btn-white g-font-open-sans g-color-primary g-font-size-11 g-rounded-25 g-brd-0" href="#" target="_self">View More</a>
 				</div>
 			</div>
@@ -561,7 +561,7 @@ return array(
 				</div>
 				<img class="landing-block-node-img img-fluid g-mb-20 flex-shrink-0" src="https://cdn.bitrix24.site/bitrix/images/landing/business/315x435/img4.jpg" alt="" data-fileid="-1" data-filehash="9eef207add73028ae50f74a9033c20cb" />
 				<div class="g-mb-40 landing-block-node-text g-line-height-1_8 g-font-size-default g-color-white-opacity-0_8 g-font-size-14 g-font-open-sans text-left"><p>Nunc vitae maximus. Vestibulum sodales nisi massa, vitae blandit massa luctus id. Nunc diam tellus.</p></div>
-				<div class="landing-block-node-button-container mt-auto">
+				<div class="landing-block-node-button-container">
 					<a class="landing-block-node-button btn btn-lg u-btn-inset u-btn-white g-font-open-sans g-color-primary g-font-size-11 g-rounded-25 g-brd-0" href="#" target="_self">View More</a>
 				</div>
 			</div>

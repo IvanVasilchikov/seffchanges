@@ -1,0 +1,65 @@
+$parent: 'detail-offers';
+
+@include block($parent) {
+  position: relative;
+  padding-top: rem(30);
+  margin-bottom: rem(40);
+
+  @media (min-width: $tMin) {
+    padding-top: rem(50);
+    margin-bottom: rem(50);
+  }
+
+  @media (min-width: $d1280) {
+    padding-top: rem(70);
+    margin-bottom: rem(80);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(45);
+    }
+  }
+
+  @include element($parent, 'filter-wrap') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(35);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(44);
+    }
+  }
+
+  @include element($parent, 'popup-btns') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: rem(10);
+  }
+
+  @include element($parent, 'popup-btn') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    transition: color $ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $purple;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(30);
+    }
+  }
+
+  @include element($parent, 'pagination') {
+    margin-top: rem(34);
+  }
+}

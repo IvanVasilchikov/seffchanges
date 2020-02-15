@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/sitemap/sitemap.pug
+
+block vars
+  - homepage = false;
+  - var sitemap = require('../data/sitemap.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      sitemap: !{JSON.stringify(sitemap)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +sitemap(sitemap)

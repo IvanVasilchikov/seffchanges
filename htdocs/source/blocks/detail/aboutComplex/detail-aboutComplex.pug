@@ -1,0 +1,13 @@
+include ../../core/picture/picture.pug
+include ../../fonts/title/title.pug
+include ../../fonts/text/text.pug
+include ../../core/btn/btn.pug
+
+mixin detail-aboutComplex(info)
+  .detail-aboutComplex(id='aboutComplex', data-screen='aboutComplex')
+    +picture(info.image, 'detail-aboutComplex__image', 'lazyload')
+    .main.detail-aboutComplex__main
+      .detail-aboutComplex__content
+        +title(info.title, 'detail-aboutComplex__title', info.button.link, info.complex)
+        +text(info.text, 'detail-aboutComplex__text')
+        +btn(info.button.link, info.button.text, 'btn--border-white detail-aboutComplex__button')

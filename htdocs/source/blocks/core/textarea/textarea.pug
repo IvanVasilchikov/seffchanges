@@ -1,0 +1,8 @@
+mixin textarea(info, className)
+  .textarea(class= [className, (info.checked && (info.checked.value === 'fail') ? 'textarea--fail' : ''), (info.checked && (info.checked.value === 'success') ? 'textarea--success' : '')])
+    .textarea__icon.textarea__icon--fail
+      span !
+    .textarea__icon.textarea__icon--success
+      svg
+        use(xlink:href=loadAssets('./svg/check.svg'))
+    textarea.textarea__input(name= info.name, placeholder= info.placeholder, value= info.value, :value= info.value, @input= 'input($event.target.value)', @change= 'change($event.target.value)')

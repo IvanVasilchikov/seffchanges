@@ -1,0 +1,66 @@
+$parent: popup-area;
+
+@include block($parent) {
+  padding: rem(50) rem(14) rem(20);
+  width: 100%;
+  max-width: rem(1070);
+  background-color: $w;
+
+  @media screen and (min-width: $tMin) {
+    padding: rem(50) rem(30) rem(30);
+  }
+
+  @media screen and (min-width: $dMin) {
+    padding: rem(60) rem(68);
+  }
+
+  @include element($parent, 'title') {
+    padding-bottom: rem(30);
+  }
+
+  @include element($parent, 'radio-btns') {
+    display: flex;
+    margin-bottom: rem(30);
+
+    @media screen and (min-width: $dMin) {
+      max-width: 33%;
+    }
+  }
+
+  @include element($parent, 'radio') {
+    height: rem(30);
+
+    & + .#{$parent}__radio {
+      margin-left: rem(40);
+    }
+
+    input {
+      display: none;
+
+      &:checked + label {
+        border-bottom: 2px solid $red2;
+      }
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: $red2;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+  @include modifier($parent, 'country') {
+    @media (max-width: $mMax) {
+      min-width: 100vw;
+      max-width: 100vw;
+    }
+
+    @include element($parent, 'radio-btns') {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<pre>[Bitrix\Main\DB\SqlQueryException] 
+Mysql query error: (2006) MySQL server has gone away (400)
+select ID,CODE from b_iblock WHERE CODE LIKE 'zhk_sitemap';
+/var/www/saffariestate.ru/htdocs/bitrix/modules/main/lib/db/mysqliconnection.php:137
+#0: Bitrix\Main\DB\MysqliConnection-&gt;queryInternal(string, array, NULL)
+	/var/www/saffariestate.ru/htdocs/bitrix/modules/main/lib/db/connection.php:330
+#1: Bitrix\Main\DB\Connection-&gt;query(string)
+	/var/www/saffariestate.ru/htdocs/local/php_interface/functions.php:81
+#2: getIBlockIdByCode(string)
+	/var/www/saffariestate.ru/htdocs/local/php_interface/classes/util/util.php:444
+#3: app\Util\Util-&gt;updateSitemapIblock(integer, array)
+	/var/www/saffariestate.ru/htdocs/cron/import/delete_update_intrum.php:139
+</pre><pre>[Elasticsearch\Common\Exceptions\NoNodesAvailableException] 
+No alive nodes found in your cluster (0)
+/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/ConnectionPool/StaticNoPingConnectionPool.php:53
+#0: Elasticsearch\ConnectionPool\StaticNoPingConnectionPool-&gt;nextConnection()
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:78
+#1: Elasticsearch\Transport-&gt;getConnection()
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:96
+#2: Elasticsearch\Transport-&gt;performRequest(string, string, array, NULL, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:262
+#3: Elasticsearch\Connections\Connection-&gt;Elasticsearch\Connections\{closure}(array)
+	/var/www/saffariestate.ru/htdocs/vendor/react/promise/src/FulfilledPromise.php:25
+#4: React\Promise\FulfilledPromise-&gt;then(object, NULL, NULL)
+	/var/www/saffariestate.ru/htdocs/vendor/guzzlehttp/ringphp/src/Future/CompletedFutureValue.php:55
+#5: GuzzleHttp\Ring\Future\CompletedFutureValue-&gt;then(object, NULL, NULL)
+	/var/www/saffariestate.ru/htdocs/vendor/guzzlehttp/ringphp/src/Core.php:341
+#6: GuzzleHttp\Ring\Core::proxy(object, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:315
+#7: Elasticsearch\Connections\Connection-&gt;Elasticsearch\Connections\{closure}(array, object, object, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:187
+#8: Elasticsearch\Connections\Connection-&gt;performRequest(string, string, array, NULL, array, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:112
+#9: Elasticsearch\Transport-&gt;performRequest(string, string, array, NULL, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/BooleanRequestWrapper.php:40
+#10: Elasticsearch\Namespaces\BooleanRequestWrapper::performRequest(object, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/IndicesNamespace.php:40
+#11: Elasticsearch\Namespaces\IndicesNamespace-&gt;exists(array)
+	/var/www/saffariestate.ru/htdocs/local/modules/idem.realty/lib/import/intrum.php:634
+#12: Idem\Realty\Import\Intrum-&gt;objectsIndex()
+	/var/www/saffariestate.ru/htdocs/cron/import/delete_update_intrum.php:132
+</pre><pre>[Elasticsearch\Common\Exceptions\NoNodesAvailableException] 
+No alive nodes found in your cluster (0)
+/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/ConnectionPool/StaticNoPingConnectionPool.php:53
+#0: Elasticsearch\ConnectionPool\StaticNoPingConnectionPool-&gt;nextConnection()
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:78
+#1: Elasticsearch\Transport-&gt;getConnection()
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:96
+#2: Elasticsearch\Transport-&gt;performRequest(string, string, array, NULL, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:262
+#3: Elasticsearch\Connections\Connection-&gt;Elasticsearch\Connections\{closure}(array)
+	/var/www/saffariestate.ru/htdocs/vendor/react/promise/src/FulfilledPromise.php:25
+#4: React\Promise\FulfilledPromise-&gt;then(object, NULL, NULL)
+	/var/www/saffariestate.ru/htdocs/vendor/guzzlehttp/ringphp/src/Future/CompletedFutureValue.php:55
+#5: GuzzleHttp\Ring\Future\CompletedFutureValue-&gt;then(object, NULL, NULL)
+	/var/www/saffariestate.ru/htdocs/vendor/guzzlehttp/ringphp/src/Core.php:341
+#6: GuzzleHttp\Ring\Core::proxy(object, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:315
+#7: Elasticsearch\Connections\Connection-&gt;Elasticsearch\Connections\{closure}(array, object, object, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:187
+#8: Elasticsearch\Connections\Connection-&gt;performRequest(string, string, array, NULL, array, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:112
+#9: Elasticsearch\Transport-&gt;performRequest(string, string, array, NULL, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/BooleanRequestWrapper.php:40
+#10: Elasticsearch\Namespaces\BooleanRequestWrapper::performRequest(object, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Namespaces/IndicesNamespace.php:40
+#11: Elasticsearch\Namespaces\IndicesNamespace-&gt;exists(array)
+	/var/www/saffariestate.ru/htdocs/local/modules/idem.realty/lib/import/intrum.php:634
+#12: Idem\Realty\Import\Intrum-&gt;objectsIndex()
+	/var/www/saffariestate.ru/htdocs/cron/import/delete_update_intrum.php:132
+</pre><pre>[Elasticsearch\Common\Exceptions\NoNodesAvailableException] 
+No alive nodes found in your cluster (0)
+/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/ConnectionPool/StaticNoPingConnectionPool.php:53
+#0: Elasticsearch\ConnectionPool\StaticNoPingConnectionPool-&gt;nextConnection()
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:78
+#1: Elasticsearch\Transport-&gt;getConnection()
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:96
+#2: Elasticsearch\Transport-&gt;performRequest(string, string, array, string, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:262
+#3: Elasticsearch\Connections\Connection-&gt;Elasticsearch\Connections\{closure}(array)
+	/var/www/saffariestate.ru/htdocs/vendor/react/promise/src/FulfilledPromise.php:25
+#4: React\Promise\FulfilledPromise-&gt;then(object, NULL, NULL)
+	/var/www/saffariestate.ru/htdocs/vendor/guzzlehttp/ringphp/src/Future/CompletedFutureValue.php:55
+#5: GuzzleHttp\Ring\Future\CompletedFutureValue-&gt;then(object, NULL, NULL)
+	/var/www/saffariestate.ru/htdocs/vendor/guzzlehttp/ringphp/src/Core.php:341
+#6: GuzzleHttp\Ring\Core::proxy(object, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:315
+#7: Elasticsearch\Connections\Connection-&gt;Elasticsearch\Connections\{closure}(array, object, object, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php:187
+#8: Elasticsearch\Connections\Connection-&gt;performRequest(string, string, array, string, array, object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php:112
+#9: Elasticsearch\Transport-&gt;performRequest(string, string, array, array, array)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Client.php:1586
+#10: Elasticsearch\Client-&gt;performRequest(object)
+	/var/www/saffariestate.ru/htdocs/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Client.php:834
+#11: Elasticsearch\Client-&gt;index(array)
+	/var/www/saffariestate.ru/htdocs/local/modules/idem.realty/lib/import/intrum.php:1074
+#12: Idem\Realty\Import\Intrum-&gt;objectsIndex()
+	/var/www/saffariestate.ru/htdocs/cron/import/delete_update_intrum.php:132
+</pre>

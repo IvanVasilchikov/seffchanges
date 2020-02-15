@@ -1,0 +1,26 @@
+include ../../core/btn/btn.pug
+mixin detail-nav(nav, className, offersAnchor)
+  - var fixHeader = false;
+  - var activeAnchor = '';
+  .detail-nav(class=[className, fixHeader ? 'detail-nav--fixed' : ''])
+    .main.detail-nav__main
+      if (nav.title)
+        .detail-nav__info-wrp
+          .detail-nav__info
+            .detail-nav__title!= nav.title
+            if (nav.price)
+              .detail-nav__price!= nav.price
+            else
+              | <!---->
+          if (offersAnchor)
+            +btn('button', 'Планировки и цены', 'btn--border detail-nav__button')(@click='scrollTo(offersAnchor)')
+          else
+            +btn('button', 'Записаться на просмотр', 'btn--border detail-nav__button')(@click='openPopup')
+      else
+        | <!---->
+      if nav
+        .detail-nav__links(class=(nav.title ? '' : 'detail-nav__links--big'))
+          each btn in nav.links
+            .detail-nav__link(@click='scrollTo(btn.anchor)', class=(activeAnchor === btn.anchor ? 'detail-nav__link--active' : ''))!= btn.text
+      else
+        | <!---->

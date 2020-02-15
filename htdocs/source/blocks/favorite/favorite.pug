@@ -1,0 +1,45 @@
+include ../core/breadcrumbs/breadcrumbs.pug
+include ../fonts/title/title.pug
+include ../tabs/tabs.pug
+include ../card/card.pug
+include ../card/table/card-table.pug
+
+mixin favorite(info)
+  - 
+    var filteredCards = info.cards;
+    var tabs = info.tabs
+  .favorite
+    .main
+      +breadcrumbs(info.breadcrumbs, 'favorite__breadcrumbs')
+      +title(info.title, 'favorite__title')
+      if (filteredCards.length > 0)
+        div
+          .favorite__nav
+            .favorite__buttons
+              .favorite__button(@click='printPage')
+                svg(style='stroke: none;')
+                  use(xlink:href=loadAssets('./svg/print.svg'))
+                span Печатать все
+              .favorite__button(@click='removeAllCards')
+                svg
+                  use(xlink:href=loadAssets('./svg/close.svg'))
+                span Удалить все
+            if tabs
+              .favorite__filter
+                +tabs(tabs, 'favorite__tabs')(@changeTab='setTab')
+            else
+              | <!---->
+          .favorite__cards
+            each card in filteredCards
+              .favorite__card
+                if (card.type === 'table')
+                  +card-table(card)(:key='card.id', @removeFav='removeCard(card.id)')
+                else
+                  +card(card)(:key='card.id', @removeFav='removeCard(card.id)')
+      else
+        .favorite__error
+          if (info.error)
+            .favorite__error-text!= info.error
+          else
+            | <!---->
+          a.favorite__error-link(href='/') Вернуться назад

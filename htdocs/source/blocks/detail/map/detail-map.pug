@@ -1,0 +1,10 @@
+include ../../fonts/title/title.pug
+include ../../map/map.pug
+include ../../core/label/label.pug
+
+mixin detail-map(info, className)
+  .detail-map(id='map', data-screen='map', class=className)
+    .main.detail-map__main
+      +title(info.title, 'detail-map__title')
+    .detail-map__wrp.main
+      +map(info.map, 'detail-map__map')(ref='map')

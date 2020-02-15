@@ -1,0 +1,42 @@
+include ../core/picture/picture.pug
+
+mixin stub(info)
+  - var countdownExpired = false;
+
+  .stub
+    +picture(info.bg, 'stub__bg')
+    .stub__logo
+      svg
+        use(xlink:href=loadAssets('./svg/logo_full-white.svg'))
+    if (info.locates)
+      .stub__location
+        each locate in info.locates
+          .stub__location-item
+            img(src= locate.img alt='')
+            span= locate.text
+    else
+      | <!---->
+    .stub__content
+      .stub__title
+        span!= info.title
+        span!= info.titleContinue
+      .stub__advice-text По всем, интересующим Вас вопросам, обращайтесь по телефону
+      a.stub__phone-number(href='tel:' + info.phone.url)= info.phone.text
+      .stub__present-text Новый дизайн сайта Вы увидите через:
+      if (!countdownExpired)
+        .stub__clocks
+          .stub__time-item
+            .stub__time-num {{ days }}
+            .stub__time-text дней
+          .stub__time-item
+            .stub__time-num {{ hours }}
+            .stub__time-text часов
+          .stub__time-item
+            .stub__time-num {{ minutes }}
+            .stub__time-text минут
+          .stub__time-item.stub__time-item--tablet
+            .stub__time-num {{ seconds }}
+            .stub__time-text секунд
+      else
+        | <!---->
+

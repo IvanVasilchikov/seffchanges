@@ -2,7 +2,7 @@
         <div class="container">
 
             <!-- Icon Blocks -->
-            <div class="row no-gutters landing-block-inner">
+            <div class="landing-block-node-row justify-content-center row no-gutters landing-block-inner">
 
                 <div class="landing-block-node-element landing-block-card js-animation fadeInLeft col-md-4 col-lg-4 g-parent g-brd-around g-brd-gray-light-v4 g-brd-bottom-primary--hover g-brd-bottom-2--hover g-mb-30 g-mb-0--lg g-transition-0_2 g-transition--ease-in">
                     <!-- Icon Blocks -->

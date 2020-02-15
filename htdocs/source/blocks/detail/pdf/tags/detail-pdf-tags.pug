@@ -1,0 +1,12 @@
+include ../../../fonts/title/title.pug
+
+mixin detail-pdf-tags(info)
+  .detail-pdf-tags
+    +title(info.heading, 'detail-pdf-tags__heading')
+    if (info.items)
+      .detail-pdf-tags__content
+        each item in info.items
+          .detail-pdf-tags__tag
+            span!= item
+    else
+      | <!---->

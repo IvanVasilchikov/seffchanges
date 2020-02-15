@@ -1,0 +1,13 @@
+$parent: detail-pdf;
+
+@include block($parent) {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 71px 0 100px;
+
+  @include element ($parent, 'item') {
+    &+.#{$parent}__item {
+      padding-top: 55px;
+    }
+  }
+}

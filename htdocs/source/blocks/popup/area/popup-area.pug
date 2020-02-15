@@ -1,0 +1,17 @@
+include ../../fonts/title/fourth/title-fourth.pug
+
+mixin popup-area(info)
+  .popup-area(class=(info.className), ref='popupArea')
+    if (info.title)
+      +title-fourth(info.title, 'title-fourth--up popup-area__title')
+    else
+      +title-fourth('выбрать расположение', 'title-fourth--up popup-area__title')
+    if (tabs && tabs.length !== 0)
+      .popup-area__radio-btns
+        each btn in tabs
+          .popup-area__radio
+            input(type='radio', value=btn.popup, v-model='districtTab')
+            label(@click='districtTab=btn.popup')= btn.text
+    else
+      | <!---->
+    .popup-area__tab(:is='districtTab', :popupData='Object.assign({}, info)')

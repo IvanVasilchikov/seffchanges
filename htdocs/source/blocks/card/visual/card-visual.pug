@@ -1,0 +1,14 @@
+include ../gallery/card-gallery.pug
+
+mixin card-visual(card, className)
+  a.card-visual(class=className)(@click='$emit(\'click\')')
+    .card-visual__gallery-wrp
+      +card-gallery(card.imagesCard, 'card-visual__gallery', 'card-visual__pagination')
+      if (card.deal_type)
+        .card-visual__label!= card.deal_type
+      else
+        | <!---->
+      if (card.id)
+        .card-visual__id ID: #{card.id}
+      else
+        | <!---->

@@ -1,0 +1,443 @@
+$parent: 'card';
+
+@include block($parent) {
+  position: relative;
+  background-color: $w;
+  box-shadow: 0 rem(10) rem(40) transparent;
+  transition: box-shadow $ease;
+
+  &:hover {
+    box-shadow: 0 rem(10) rem(40) rgba(#000, 0.15);
+
+    @include element($parent, 'pagination') {
+      @media (min-width: $d1280) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  @media (min-width: $tMin) {
+    display: flex;
+    height: auto;
+  }
+
+  @media (min-width: $d1280) {
+    min-height: rem(300);
+  }
+
+  @media print {
+    min-height: rem(300);
+  }
+
+  @include element($parent, 'gallery-wrp') {
+    height: rem(220);
+    width: 100%;
+    position: relative;
+
+    @media (min-width: $tMin) {
+      flex-basis: 43%;
+      max-width: 43%;
+      height: auto;
+    }
+
+    @media (min-width: $d1280) {
+      width: rem(390);
+      flex-basis: auto;
+      max-width: none;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    @media print {
+      width: rem(390);
+      flex-basis: auto;
+      max-width: none;
+      position: relative;
+      flex-shrink: 0;
+    }
+  }
+
+  @include element($parent, 'gallery') {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  @include element($parent, 'id') {
+    font-size: rem(14);
+    line-height: rem(26);
+    font-weight: 600;
+    color: $w;
+    text-shadow: 0 0 rem(50) rgba(#000, 0.8);
+    position: absolute;
+    right: rem(32);
+    bottom: rem(20);
+    z-index: 3;
+  }
+
+  @include element($parent, 'label-deal') {
+    position: absolute;
+    left: rem(32);
+    bottom: rem(20);
+    z-index: 3;
+  }
+
+  @include element($parent, 'content') {
+    border: 1px solid $gray3;
+    padding: rem(25) rem(15) rem(30);
+    position: relative;
+
+    @media (min-width: $tMin) {
+      padding: rem(34) rem(35) rem(42);
+      border-left: none;
+      flex-basis: 57%;
+      max-width: 57%;
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(43) rem(60) rem(44) rem(56);
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+
+    @media print {
+      padding: rem(43) rem(60) rem(44) rem(56);
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+  }
+
+  @include element($parent, 'link') {
+    display: block;
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  @include element($parent, 'main') {
+    @media (min-width: $d1280) {
+      flex-basis: auto;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    @media print {
+      flex-basis: auto;
+      flex-grow: 1;
+      width: 100%;
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(15);
+
+    @media (min-width: $d1280) {
+      margin-right: rem(26);
+    }
+
+    @media print {
+      margin-right: rem(26);
+    }
+  }
+
+  @include element($parent, 'labels') {
+    display: inline-flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    margin-bottom: rem(-5);
+  }
+
+  @include element($parent, 'label') {
+    height: rem(20);
+    line-height: rem(20);
+    text-align: center;
+    padding: 0 rem(5);
+    background-color: $red2;
+    font-size: rem(10);
+    color: $w;
+    text-transform: uppercase;
+    margin-bottom: rem(5);
+
+    @media (min-width: $d1280) {
+      font-size: rem(11);
+      padding: 0 rem(9);
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(5);
+
+      @media (min-width: $d1280) {
+        margin-right: rem(10);
+      }
+    }
+  }
+
+  @include element($parent, 'name') {
+    font-size: rem(14);
+    line-height: rem(26);
+    margin-top: rem(5);
+    color: $gray4;
+  }
+
+  @include element($parent, 'address') {
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-top: rem(6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $gray4;
+
+    @media (min-width: $d1280) {
+      margin-top: 2px;
+      white-space: normal;
+    }
+
+    @media print {
+      margin-top: 0;
+      white-space: normal;
+    }
+  }
+
+  @include element($parent, 'specs') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: rem(15);
+
+    @media (min-width: $d1280) {
+      margin-top: rem(22);
+    }
+
+    @media print {
+      margin-top: rem(20);
+    }
+  }
+
+  @include element($parent, 'specs-item') {
+    display: none;
+    align-items: center;
+    margin-bottom: rem(10);
+
+    svg {
+      height: rem(18);
+      width: rem(18);
+      margin-right: rem(10);
+      flex-shrink: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(25);
+    }
+
+    @include modifier($parent, 'area') {
+      display: flex;
+    }
+
+    @include modifier($parent, 'rooms') {
+      display: flex;
+    }
+
+    @include modifier($parent, 'bedrooms') {
+      display: flex;
+    }
+
+    @include modifier($parent, 'facing') {
+      display: flex;
+    }
+
+    @include modifier($parent, 'area') {
+      display: flex;
+    }
+
+    @include modifier($parent, 'distance') {
+      display: flex;
+    }
+
+    @media (min-width: $tMin) {
+      display: flex;
+    }
+  }
+
+  @include element($parent, 'specs-item-text') {
+    font-size: rem(14);
+    line-height: rem(26);
+    color: $black3;
+    flex-shrink: 0;
+
+    span {
+      &:nth-of-type(2) {
+        color: $gray4;
+      }
+    }
+  }
+
+  @include element($parent, 'price') {
+    margin-top: rem(10);
+
+    @media (min-width: $d1280) {
+      margin-top: rem(18);
+    }
+
+    @media print {
+      margin-top: rem(18);
+    }
+  }
+
+  @include element($parent, 'price-total') {
+    font-size: rem(24);
+    line-height: rem(24);
+    font-weight: 600;
+    display: inline-block;
+
+    @include modifier($parent, 'request') {
+      cursor: pointer;
+      transition: color $ease;
+      position: relative;
+      z-index: 3;
+
+      &:hover {
+        color: $red2;
+      }
+    }
+  }
+
+  @include element($parent, 'price-meters') {
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $gray4;
+    margin-top: rem(7);
+  }
+
+  @include element($parent, 'side') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: rem(25);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(30);
+    }
+
+    @media (min-width: $d1280) {
+      margin-top: 0;
+      max-width: rem(180);
+      flex-basis: rem(180);
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+      padding-bottom: rem(7);
+    }
+
+    @media print {
+      margin-top: 0;
+      max-width: rem(180);
+      flex-basis: rem(180);
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+  }
+
+  @include element($parent, 'phone') {
+    font-size: rem(16);
+    line-height: rem(24);
+    display: inline-block;
+  }
+
+  @include element($parent, 'favorite') {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+
+    svg {
+      height: rem(13);
+      width: rem(16);
+      fill: transparent;
+      stroke: $red2;
+    }
+
+    span {
+      font-size: rem(14);
+      line-height: rem(26);
+      color: $red2;
+      transition: color $ease;
+      margin-right: rem(8);
+    }
+
+    @media (min-width: $d1280) {
+      &:hover {
+        svg {
+          fill: $red2;
+        }
+      }
+    }
+
+    @include modifier($parent, 'added') {
+      svg {
+        fill: $red2;
+        stroke: $red2;
+      }
+
+      @media (min-width: $d1280) {
+        &:hover {
+          span {
+            color: $purple;
+          }
+
+          svg {
+            fill: $purple;
+            stroke: $purple;
+          }
+        }
+      }
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'description') {
+    margin-top: rem(20);
+    font-size: rem(16);
+    line-height: rem(24);
+    padding-right: rem(20);
+  }
+
+  @include element($parent, 'button') {
+    height: rem(60);
+    width: 100%;
+    padding: 0;
+    min-width: 0;
+    max-width: rem(146);
+    position: relative;
+    z-index: 3;
+
+    @media (min-width: $d1280) {
+      max-width: rem(180);
+    }
+
+    @media print {
+      max-width: rem(180);
+    }
+  }
+}

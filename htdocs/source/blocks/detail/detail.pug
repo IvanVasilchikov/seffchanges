@@ -1,0 +1,51 @@
+include ../core/animation/fade/animation-fade.pug
+include ./nav/detail-nav.pug
+include ./main/detail-main.pug
+include ./characteristics/detail-characteristics.pug
+include ../banner/detail/banner-detail.pug
+include ./aboutComplex/detail-aboutComplex.pug
+include ./infrastructure/detail-infrastructure.pug
+include ./map/detail-map.pug
+include ./aboutDistrict/detail-aboutDistrict.pug
+include ./similar/detail-similar.pug
+
+mixin detail(info)
+  .detail
+    +animation-fade(0.4)
+    if (info.main)
+      +detail-main(info.main)(ref='main')
+    else
+      | <!---->
+    .detail__content
+      if (info.nav)
+        +detail-nav(info.nav)(ref='nav')
+      else
+        | <---->
+      if (info.characteristics)
+        +detail-characteristics(info.characteristics)
+      else
+        | <!---->
+      if (info.banner)
+        +banner-detail(info.banner)
+      else
+        | <!---->
+      if (info.complex)
+        +detail-aboutComplex(info.complex)
+      else
+        | <!---->
+      if (info.infrastructure)
+        +detail-infrastructure(info.infrastructure)
+      else
+        | <!---->
+      if (info.map)
+        +detail-map(info.map)
+      else
+        | <!---->
+      if (info.district)
+        +detail-aboutDistrict(info.district)
+      else
+        | <!---->
+      if (info.similar)
+        +detail-similar(info.similar)
+      else
+        | <!---->

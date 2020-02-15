@@ -1,0 +1,782 @@
+{
+  "nav": {
+    "title": "8 комн. квартира 494,9 м²",
+    "price": "172 250 000 р.",
+    "links": [
+      {
+        "text": "Описание объекта",
+        "anchor": "#main"
+      },
+      {
+        "text": "Характеристики",
+        "anchor": "#characteristics"
+      },
+      {
+        "text": "О жилом комплексе",
+        "anchor": "#aboutComplex"
+      },
+      {
+        "text": "Инфраструктура",
+        "anchor": "#infrastructure"
+      },
+      {
+        "text": "О районе",
+        "anchor": "#district"
+      }
+    ]
+  },
+  "main": {
+    "breadcrumbs": [
+      {
+        "href": "/",
+        "title": "Главная"
+      },
+      {
+        "href": "/office.html",
+        "title": "Офисная недвижимость"
+      },
+      {
+        "href": "#",
+        "title": "Офис"
+      }
+    ],
+    "id": "object_id_1",
+    "isFav": false,
+    "type": "object",
+    "similar": "Похожие объекты",
+    "images": [
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      }
+    ],
+    "name": "Миллениум Парк",
+    "title": "8 комн. квартира 494,9 м²",
+    "address": "Москва, ЦАО, р-н Пресненский, Ефремова ул., до 19 корпус 3",
+    "metro": {
+      "station": "м. Спортивная,",
+      "text": "7 мин. пешком"
+    },
+    "info": [
+      {
+        "icon": "/assets/svg/icons/room.svg",
+        "text": "75 предложений"
+      },
+      {
+        "icon": "/assets/svg/icons/floor.svg",
+        "text": "25 этажей"
+      },
+      {
+        "icon": "/assets/svg/icons/rent.svg",
+        "text": "20 в аренде"
+      },
+      {
+        "icon": "/assets/svg/icons/discount.svg",
+        "text": "20 в продаже"
+      }
+    ],
+    "price": {
+      "meters": {
+        "rub": "135 000 р./м2",
+        "dollar": "135 $/м2",
+        "euro": "135 000 €/м2",
+        "pound": "135 000 £/м2"
+      },
+      "total": {
+        "rub": "172 250 000 р.",
+        "dollar": "172 250 $",
+        "euro": "172 250 €",
+        "pound": "172 250 £"
+      },
+      "selected": {
+        "meters": "135 000 р./м2",
+        "total": "172 250 000 р."
+      },
+      "offer": true
+    },
+    "phone": {
+      "text": "+7 (495) 000-00-00",
+      "url": "+74950000000"
+    }
+  },
+  "characteristics": {
+    "title": "Характеристики",
+    "info": [
+      {
+        "icon": "/assets/svg/icons/ruller.svg",
+        "title": "Общая площадь",
+        "text": "494,9 м²"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Тип квартиры",
+        "text": "Вторичка",
+        "url": "#"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Кухня",
+        "text": "90 м²"
+      },
+      {
+        "icon": "/assets/svg/icons/bed.svg",
+        "title": "Количество комнат",
+        "text": "8"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Этаж/этажей в доме",
+        "text": "5/7"
+      },
+      {
+        "icon": "/assets/svg/icons/bed.svg",
+        "title": "Количество спален",
+        "text": "5"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Количество санузлов",
+        "text": "5"
+      },
+      {
+        "icon": "/assets/svg/icons/facing.svg",
+        "title": "Отделка",
+        "text": "без отделки"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Балкон",
+        "text": "1"
+      }
+    ],
+    "description": "Предлагается квартира без отделки свободной планировки в элитном жилом комплексе 'Knightsbridge Private Park'. Возможно спланировать: прихожую, просторную <br>кухню-столовую-гостиную, три спальни со своими ванными и гардеробными комнатами, <br>кабинет, гостевой санузел. <br>Неоспоримыми преимуществами являются высокие потолки 3,6 м, панорамное остекление, наличие двух террас, а также возможность установки камина. За квартирой закреплено два машино-места в подземном паркинге. <br>Knightsbridge Private park  - новый элитный жилой комплекс, расположившийся на 3 га жилой квартал в английском стиле, состоящий из 4 зданий.",
+    "presentation": "/pdf.html",
+    "share": [
+      {
+        "icon": "/assets/svg/socials/email.svg",
+        "name": "Email"
+      },
+      {
+        "icon": "/assets/svg/socials/facebook.svg",
+        "name": "facebook"
+      },
+      {
+        "icon": "/assets/svg/socials/twitter.svg",
+        "name": "twitter"
+      },
+      {
+        "icon": "/assets/svg/socials/vk.svg",
+        "name": "vk"
+      },
+      {
+        "icon": "/assets/svg/socials/viber.svg",
+        "name": "viber"
+      },
+      {
+        "icon": "/assets/svg/socials/whatsapp.svg",
+        "name": "whatsApp"
+      },
+      {
+        "icon": "/assets/svg/socials/telegram.svg",
+        "name": "telegram"
+      }
+    ]
+  },
+  "banner": {
+    "picture": {
+      "sources": {
+        "tablet": [
+          "/assets/images/detail/banner/background-tablet.jpg",
+          "/assets/images/detail/banner/background-tablet.webp"
+        ],
+        "desktop": [
+          "/assets/images/detail/banner/background-xl.jpg",
+          "/assets/images/detail/banner/background-xl.webp"
+        ]
+      },
+      "alt": "",
+      "title": ""
+    },
+    "title": "забронируйте время для просмотра объекта",
+    "form": {
+      "url": "/ajax/json/success.json",
+      "hidden": {
+        "user_id": "123"
+      },
+      "inputs": [
+        {
+          "title": "Имя",
+          "placeholder": "Имя*",
+          "value": "",
+          "name": "name",
+          "type": "text",
+          "className": "",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 1,
+              "max": 50
+            }
+          }
+        },
+        {
+          "title": "Телефон",
+          "placeholder": "+7 (___) ___-__-__*",
+          "value": "",
+          "name": "phone",
+          "type": "text",
+          "className": "input--phone",
+          "maskInfo": {
+            "complete": false
+          },
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 17,
+              "max": 17
+            }
+          }
+        }
+      ],
+      "timeInputs": [
+        {
+          "title": "Время",
+          "placeholder": "От",
+          "name": "time_from",
+          "type": "text",
+          "timeMask": {
+            "complete": false
+          }
+        },
+        {
+          "placeholder": "До",
+          "name": "time_to",
+          "type": "text",
+          "timeMask": {
+            "complete": false
+          }
+        }
+      ],
+      "btn": "Забронировать",
+      "checkbox": {
+        "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+        "name": "checkbox",
+        "value": "y",
+        "checked": false
+      }
+    }
+  },
+  "complex": {
+    "image": {
+      "sources": {
+        "desktop": [
+          "/assets/images/detail/complex.jpg",
+          "/assets/images/detail/complex.webp"
+        ]
+      },
+      "alt": "",
+      "title": "complex"
+    },
+    "title": "Дом класса deluxe",
+    "complex": "Knightsbridge Private Park",
+    "text": "Жилой комплекс Knightsbridge Private Park с роскошным частным парком на территории трех гектаров расположен в престижном районе Хамовники. В разработке и реализации проекта комплекса участвовали дизайнеры с мировым именем.",
+    "button": {
+      "link": "./detail-complex.html",
+      "text": "Подробнее о жилом комплексе"
+    }
+  },
+  "infrastructure": {
+    "title": "Инфраструктура",
+    "tabs": [
+      {
+        "button": {
+          "text": "Парковая зона",
+          "value": "parks"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Парковая зона"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Безопасность",
+          "value": "safety"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Безопасность"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Парковка",
+          "value": "parking"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Парковка"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Консьерж-сервис",
+          "value": "concierge"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Консьерж-сервис"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Расположение",
+          "value": "location"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Расположение"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      }
+    ]
+  },
+  "map": {
+    "title": "на карте",
+    "map": {
+      "zoom": 14,
+      "center": "-28.024, 140.887",
+      "markers": [
+        {
+          "coords": "-33.718234, 150.313181",
+          "icon": "/assets/svg/map/default-pin.svg",
+          "type": "default",
+          "tooltip": {
+            "type": "table",
+            "deal_type": "Продажа",
+            "id": "as12713",
+            "labels": ["Эксклюзив"],
+            "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+            "title": "Легион II (Фаза I)",
+            "name": "Многофункциональный комплекс",
+            "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+            "table": [
+              [
+                {
+                  "name": "square",
+                  "text": "1000 м²"
+                },
+                {
+                  "name": "floor",
+                  "text": "3 этаж"
+                },
+                {
+                  "name": "facing",
+                  "text": "Без отделки"
+                },
+                {
+                  "name": "price",
+                  "text": "25 000 ₽ м² в год"
+                }
+              ],
+              [
+                {
+                  "name": "square",
+                  "text": "902 м²"
+                },
+                {
+                  "name": "floor",
+                  "text": "9 этаж"
+                },
+                {
+                  "name": "facing",
+                  "text": "С отделкой"
+                },
+                {
+                  "name": "price",
+                  "text": "25 000 ₽ м² в год"
+                }
+              ],
+              [
+                {
+                  "name": "square",
+                  "text": "984 м²"
+                },
+                {
+                  "name": "floor",
+                  "text": "4 этаж"
+                },
+                {
+                  "name": "facing",
+                  "text": "С отделкой"
+                },
+                {
+                  "name": "price",
+                  "text": "25 000 ₽ м² в год"
+                }
+              ]
+            ],
+            "specs": ["ring", "square", "date", "facing", "metro"],
+            "info": {
+              "ring": "ТТК",
+              "square": "90м²",
+              "date": "Строится",
+              "facing": "С отделкой",
+              "metro": {
+                "station": "Киевская",
+                "walk": "7 минут пешком"
+              }
+            },
+            "price": {
+              "total": "172 250 000 р.",
+              "meters": "135 000 р./м²"
+            },
+            "phone": {
+              "href": "+74950000000",
+              "text": "+7 (495) 000-00-00"
+            },
+            "link": "./detail-object.html",
+            "objects": "17 предложений",
+            "isFav": false
+          },
+          "id": "marker_1"
+        }
+      ]
+    }
+  },
+  "district": {
+    "preTitle": "Knightsbridge Private Park <br>находится в зеленом районе",
+    "title": "Хамовники",
+    "text": "В самом центре… но вдалеке от городского шума. <br>Зеленый район Хамовники находится всего в сорока минутах ходьбы от <br>Красной площади, но кажется, что расположенный здесь комплекс <br>Knightsbridge Private Park на тысячи километров удален от суеты мегаполиса.",
+    "link": "./district.html",
+    "image": {
+      "sources": {
+        "mobile": [
+          "/assets/images/detail/district.jpg",
+          "/assets/images/detail/district.webp"
+        ],
+        "tablet": [
+          "/assets/images/detail/district.jpg",
+          "/assets/images/detail/district.webp"
+        ],
+        "desktop": [
+          "/assets/images/detail/district.jpg",
+          "/assets/images/detail/district.webp"
+        ]
+      },
+      "alt": "Хамовники",
+      "title": "Хамовники"
+    }
+  },
+  "similar": {
+    "title": "Мы подобрали для вас похожие квартиры",
+    "ajaxLink": "./ajax/json/cards.json",
+    "tabs": [
+      {
+        "text": "В этом районе",
+        "value": "district"
+      },
+      {
+        "text": "В этом доме",
+        "value": "house"
+      },
+      {
+        "text": "В этом бюджете",
+        "value": "budget"
+      }
+    ],
+    "cards": [
+      {
+        "type": "small",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/home/offers/offer_0.jpg", "/assets/images/home/offers/offer_3.jpg"],
+        "title": "2 комн. кв, 90м²",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "small",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "small",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      }
+    ],
+    "tags": [
+      {
+        "value": "moscowCenter",
+        "text": "В центре Москвы",
+        "id": "moscowCenter",
+        "checked": false
+      },
+      {
+        "value": "hamovniki",
+        "text": "В Хамовниках",
+        "id": "hamovniki",
+        "checked": false
+      },
+      {
+        "value": "presnenskiy",
+        "text": "Пресненский район",
+        "id": "presnenskiy",
+        "checked": false
+      },
+      {
+        "value": "moscowCenter2",
+        "text": "В центре Москвы",
+        "id": "moscowCenter2",
+        "checked": false
+      },
+      {
+        "value": "hamovniki2",
+        "text": "В Хамовниках",
+        "id": "hamovniki2",
+        "checked": false
+      },
+      {
+        "value": "presnenskiy2",
+        "text": "Пресненский район",
+        "id": "presnenskiy2",
+        "checked": false
+      },
+      {
+        "value": "moscowCenter3",
+        "text": "В центре Москвы",
+        "id": "moscowCenter3",
+        "checked": false
+      }
+    ]
+  }
+}

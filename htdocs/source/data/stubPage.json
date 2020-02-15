@@ -1,0 +1,41 @@
+{
+  "bg": {
+    "sources": {
+      "mobile": [
+        "/assets/images/stub/stub-bg.jpg",
+        "/assets/images/stub/stub-bg.webp"
+      ],
+      "tablet": [
+        "/assets/images/stub/stub-bg.jpg",
+        "/assets/images/stub/stub-bg.webp"
+      ],
+      "desktop": [
+        "/assets/images/stub/stub-bg.jpg",
+        "/assets/images/stub/stub-bg.webp"
+      ]
+    },
+    "alt": "building",
+    "title": "building"
+  },
+  "locates": [
+    {
+      "img": "/assets/svg/kremlin.svg",
+      "text": "Moscow, Prechistenca 27"
+    },
+    {
+      "img": "/assets/svg/casino.svg",
+      "text": "Monaco, 3 Saint Michell"
+    },
+    {
+      "img": "/assets/svg/eiffel.svg",
+      "text": "France, 38 Bd Marinoni, Beaulieu-Sur-Mer"
+    }
+  ],
+  "deadline": "Jun 24, 2019 00:00:00",
+  "title": "hunt for the best<br> real estate",
+  "titleContinue": "in the world",
+  "phone": {
+    "text": "+7 (495) 205-00-17",
+    "url": "+74952050017"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "unfound": "Страница не найдена",
+  "desc": "Страница, которую вы искали по какой-то причине больше не находится по запрашиваему адресу.",
+  "linkText": "Перейти на главную",
+  "sources": {
+    "mobile": [
+      "/assets/images/houses.jpg",
+      "/assets/images/houses.webp"
+    ],
+    "tablet": [
+      "/assets/images/houses.jpg",
+      "/assets/images/houses.webp"
+    ],
+    "desktop": [
+      "/assets/images/houses.jpg",
+      "/assets/images/houses.webp"
+    ]
+  },
+  "alt": "houses",
+  "title": "houses"
+}

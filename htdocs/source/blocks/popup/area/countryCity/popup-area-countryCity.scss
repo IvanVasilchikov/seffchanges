@@ -1,0 +1,145 @@
+$parent: popup-area-countryCity;
+
+@include block($parent) {
+	width: 100%;
+
+	@include element($parent, 'search') {
+		width: 100%;
+		padding-bottom: rem(30);
+	}
+
+	@include element($parent, 'search-input') {
+		width: 100%;
+		height: rem(60);
+		padding: 0 rem(20);
+		border: 1px solid $gray;
+		font-size: rem(16);
+		line-height: rem(24);
+	}
+
+	@include element($parent, 'wrapper') {
+		position: relative;
+		width: 100%;
+		margin-bottom: rem(25);
+
+		@media (min-width: $dMin) {
+			border: 1px solid rgba($purple, 0.3);
+			min-width: rem(888);
+		}
+
+		@media (min-width: $d1280) {
+			min-width: rem(934);
+		}
+	}
+
+	@include element($parent, 'checkboxes-content') {
+		position: relative;
+
+		@media (min-width: $tMin) {
+			overflow: hidden;
+			max-height: rem(360);
+			padding-bottom: rem(60);
+		}
+
+		@media (min-width: $dMin) {
+			padding: rem(25) rem(30) rem(30);
+		}
+
+		.ps {
+			&__rail-y {
+				width: 5px;
+				background-color: $gray-f2;
+				z-index: 1;
+			}
+
+			&__thumb-y {
+				width: 5px;
+				border-radius: 6px;
+			}
+		}
+	}
+
+	@include element($parent, 'checkboxes-wrapper') {
+		@media (min-width: $tMin) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	@include element($parent, 'checkbox-list-heading') {
+		font-size: rem(20);
+		font-weight: 600;
+		margin-bottom: rem(20);
+	}
+
+	@include element($parent, 'checkbox-list') {
+		padding-bottom: rem(30);
+
+		@media (min-width: $tMin) {
+			max-width: 50%;
+			flex-basis: 50%;
+		}
+
+		@media (min-width: $dMin) {
+			flex-basis: 33.333%;
+			max-width: 33.333%;
+		}
+
+		@include modifier($parent, 'hidden') {
+			display: none;
+		}
+	}
+
+	@include element($parent, 'checkbox') {
+		&:not(:last-of-type) {
+			margin-bottom: rem(15);
+		}
+	}
+
+	@include element($parent, 'checkbox-item') {
+		display: inline-flex;
+		width: 100%;
+		margin-bottom: rem(15);
+	}
+
+	@include element($parent, 'buttons') {
+		@media (min-width: $tMin) {
+			display: flex;
+			justify-content: flex-start;
+		}
+	}
+
+	@include element($parent, 'button') {
+		@media (max-width: $mMax) {
+			min-width: auto;
+			width: 100%;
+		}
+
+		&:not(:last-of-type) {
+			margin-bottom: rem(16);
+
+			@media (min-width: $tMin) {
+				margin-right: rem(16);
+				margin-bottom: 0;
+			}
+		}
+
+		@include modifier($parent, 'mobile') {
+			position: fixed;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 0;
+			z-index: 4;
+			bottom: rem(10);
+
+			@media (min-width: $tMin) {
+				display: none;
+			}
+		}
+
+		@include modifier($parent, 'hide') {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+}

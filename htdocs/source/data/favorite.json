@@ -1,0 +1,159 @@
+{
+  "breadcrumbs": [
+    {
+      "href": "./",
+      "title": "Главная"
+    },
+    {
+      "href": "./favorite.html",
+      "title": "Избранное"
+    }
+  ],
+  "title": "Избранное",
+  "tabs": [
+    {
+      "text": "Все",
+      "value": "all"
+    },
+    {
+      "text": "Продажа",
+      "value": "sell"
+    },
+    {
+      "text": "Аренда",
+      "value": "rent"
+    },
+    {
+      "text": "Загородная",
+      "value": "country"
+    }
+  ],
+  "cards": [
+    {
+      "map_coords": "-33.718234, 150.363181",
+      "type": "default",
+      "deal_type": "Продажа",
+      "category": "sell",
+      "id": "as12713",
+      "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "2 комн. кв",
+      "labels": ["Эксклюзив", "Новостройка"],
+      "name": "Knightsbride Private park",
+      "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+      "specs": ["square", "rooms", "floor", "metro"],
+      "info": {
+        "square": "90м²",
+        "rooms": "2",
+        "floor": "14/20",
+        "metro": {
+          "station": "Спортивная",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail.html",
+      "isFav": false
+    },
+    {
+      "type": "table",
+      "deal_type": "Продажа",
+      "category": "rent",
+      "id": "as12713",
+      "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "Легион III (Фаза II)",
+      "name": "Многофункциональный комплекс",
+      "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+      "table": [{
+        "link": "/detail-object.html",
+        "info": [{
+          "name": "square",
+          "text": "1000 м²"
+        },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      },
+        {
+          "link": "/detail-object.html",
+          "info": [{
+            "name": "square",
+            "text": "902 м²"
+          },
+            {
+              "name": "floor",
+              "text": "9 этаж"
+            },
+            {
+              "name": "facing",
+              "text": "С отделкой"
+            },
+            {
+              "name": "price",
+              "text": "25 000 ₽ м² в год"
+            }
+          ]
+        },
+        {
+          "link": "/detail-object.html",
+          "info": [{
+            "name": "square",
+            "text": "984 м²"
+          },
+            {
+              "name": "floor",
+              "text": "4 этаж"
+            },
+            {
+              "name": "facing",
+              "text": "С отделкой"
+            },
+            {
+              "name": "price",
+              "text": "25 000 ₽ м² в год"
+            }
+          ]
+        }
+      ],
+      "specs": ["ring", "square", "date", "facing", "metro"],
+      "info": {
+        "ring": "ТТК",
+        "square": "90м²",
+        "date": "Строится",
+        "facing": "С отделкой",
+        "metro": {
+          "station": "Киевская",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "objects": "17 предложений",
+      "link": "/detail-object.html",
+      "isFav": false
+    }
+  ],
+  "error": "Нет добавленных предложений в избранном"
+}

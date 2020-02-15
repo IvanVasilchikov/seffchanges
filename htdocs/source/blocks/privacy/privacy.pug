@@ -1,0 +1,29 @@
+include ../core/breadcrumbs/breadcrumbs.pug
+include ../fonts/title/title.pug
+include ../fonts/title/fourth/title-fourth.pug
+include ../fonts/text/text.pug
+
+mixin privacy(info)
+  .privacy.main
+    +breadcrumbs(info.breadcrumbs, 'privacy__breadcrumbs')
+    if info.head
+      .privacy__head
+        if (info.head.title)
+          +title(info.head.title, 'title--m privacy__head-title')
+        if (info.head.text)
+          .privacy__head-text!= info.head.text
+    if info.content
+      .privacy__content
+        +title-fourth(info.content.title, 'title-fourth--up privacy__content-title')
+        if info.content.items
+          ul.privacy__content-list
+            each item in info.content.items
+              li
+                a(@click='scroll($event, item.id)')!= item.title
+        if info.content.items
+          each item in info.content.items
+            .privacy__content-item(id=item.id)
+              if item.title
+                +title-fourth(item.title, 'title-fourth--up privacy__title')
+              if item.text
+                .privacy__text!= item.text

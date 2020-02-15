@@ -1,0 +1,23 @@
+extends ../layouts/main.pug
+
+include ../blocks/error/error.pug
+
+block vars
+  - homepage = false;
+  - var errorPage = require('../data/errorPage.json');
+  - noFooter = true;
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      errorPage: !{JSON.stringify(errorPage)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +error(errorPage)

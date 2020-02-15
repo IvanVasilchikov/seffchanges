@@ -1,0 +1,18 @@
+include ../../fonts/title/fourth/title-fourth.pug
+include ../../fonts/text/text.pug
+
+
+mixin services-item(info, className, isLazy)
+  .services-item(class=className)
+    if (info.link)
+      a.services-item__link(href=info.link)
+    else if (info.popup)
+      button.services-item__link(type= 'button', @click= 'openPopup()')
+    else
+      | <!---->
+    if isLazy
+      img.services-item__img.lazyload(data-src=info.ico, alt=info.title)
+    else
+      img.services-item__img(src=info.ico, alt=info.title)
+    +title-fourth(info.title, 'title-fourth--up services-item__title')
+    +text(info.text, 'services-item__text')

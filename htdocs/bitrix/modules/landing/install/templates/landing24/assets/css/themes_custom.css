@@ -37,11 +37,6 @@ img.u-block-hover__main--zoom-v1 {
 }
 
 
-/*content in correct charset*/
-.u-quote-v1::before {
-	content: "“";
-}
-
 /*rounded INSET for buttons without class u-btn-inset--rounded*/
 .u-btn-inset.rounded-0::before {
 	border-radius: 0 !important;

@@ -404,8 +404,7 @@
 				}
 				alertHtml += '<p class="u-form-alert-text">' + message + '</p>';
 
-				var messageNode = BX.create({
-					tag: 'div',
+				var messageNode = BX.create('div', {
 					props: {className: 'u-form-alert'},
 					html: alertHtml
 				});

@@ -1,0 +1,358 @@
+$parent: 'catalog';
+$filter: 'filter-catalog';
+
+@include block($parent) {
+  position: relative;
+  padding: rem(26) 0 rem(60);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(70);
+  }
+
+  @media (min-width: $d1280) {
+    padding-bottom: rem(85);
+  }
+
+  @include element($parent, 'visual-search') {
+    background-color: $purple;
+    padding: rem(26) rem(16) rem(21);
+    display: none;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    width: rem(110);
+    transition: background-color $ease;
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    top: 70%;
+
+    @media (min-width: $tMin) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    svg {
+      height: rem(24);
+      width: rem(40);
+      fill: $w;
+      margin-bottom: rem(9);
+    }
+
+    span {
+      font-size: rem(11);
+      line-height: rem(15);
+      font-weight: 600;
+      color: $w;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      background-color: $red2;
+    }
+  }
+
+  @include element($parent, 'top') {
+    box-shadow: 0 rem(10) rem(10) rgba(#000, 0.1);
+    position: relative;
+    z-index: 5;
+
+    @include block($filter) {
+      @include element($filter, 'group') {
+        @include modifier($filter, 'input') {
+          @media (min-width: $d1280) {
+            flex-basis: rem(382);
+            max-width: rem(382);
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'filter') {
+    margin-top: rem(15);
+    padding-bottom: rem(18);
+  }
+
+  @include element($parent, 'map') {
+    height: rem(50);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @include element($parent, 'map-btn') {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+
+    svg {
+      height: rem(22);
+      width: rem(14);
+      margin-right: rem(10);
+    }
+
+    span {
+      font-family: $BaronNeue;
+      font-size: rem(14);
+      line-height: rem(17);
+      font-weight: 600;
+    }
+  }
+
+  @include element($parent, 'main') {
+    padding-top: rem(40);
+
+    @media (min-width: $tMin) {
+      padding-top: rem(50);
+    }
+
+    @media (min-width: $d1280) {
+      padding-top: rem(57);
+    }
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(4);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  @include element($parent, 'main-wrp') {
+    @media (min-width: $tMin) {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  @include element($parent, 'offers') {
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $gray4;
+
+    @media (min-width: $tMin) {
+      margin-right: rem(20);
+      width: 100%;
+    }
+
+    @media (min-width: $d1280) {
+      width: auto;
+    }
+  }
+
+  @include element($parent, 'order') {
+    font-size: rem(14);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $red2;
+    margin-top: rem(15);
+    transition: color $ease;
+
+    &:hover {
+      color: $purple;
+    }
+
+    @media (min-width: $tMin) {
+      margin-top: rem(0);
+    }
+  }
+
+  @include element($parent, 'sort-wrp') {
+    margin-top: rem(30);
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $tMin) {
+      margin-top: 0;
+    }
+
+    @media (min-width: $d1280) {
+      margin-top: rem(8);
+      flex-basis: auto;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  @include element($parent, 'sort') {
+    flex-grow: 1;
+
+    @media (min-width: $tMin) {
+      min-width: rem(288);
+      flex-grow: 0;
+    }
+  }
+
+  @include element($parent, 'switch') {
+    display: none;
+
+    input {
+      display: none;
+
+      &:checked {
+        +label {
+          border-color: $red;
+
+          svg {
+            fill: $red;
+          }
+        }
+      }
+    }
+
+    label {
+      height: rem(45);
+      width: rem(45);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $gray;
+      transition: border-color $ease;
+      cursor: pointer;
+
+      svg {
+        height: rem(13);
+        width: rem(14);
+        fill: $gray;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      margin-left: rem(16);
+      display: inline-flex;
+    }
+  }
+
+  @include element($parent, 'list') {
+    margin-top: rem(20);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(25);
+    }
+  }
+
+  @include element($parent, 'pagination') {
+    width: 100%;
+    flex-basis: 100%;
+    padding-top: rem(20);
+
+    @media (min-width: $d1280) {
+      padding-top: rem(34);
+    }
+  }
+
+  @include element ($parent, 'banner-request') {
+    margin-bottom: rem(14);
+
+    .title-second {
+      @media (min-width: $d1280) {
+        font-size: rem(24);
+        line-height: rem(30);
+      }
+    }
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      margin-bottom: rem(20);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  @include element ($parent, 'presentation') {
+    margin-top: rem(40);
+
+    @media (min-width: $d1280) {
+      margin-top: rem(90);
+    }
+  }
+
+  @include element ($parent, 'text') {
+    margin-top: rem(40);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(64);
+    }
+
+    @media (min-width: $d1280) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(80);
+    }
+  }
+
+  @include element ($parent, 'text-title') {
+    font-size: rem(30);
+    line-height: rem(36);
+    font-family: $BaronNeue;
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      font-size: rem(36);
+      line-height: rem(44);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: 0;
+      max-width: rem(255);
+    }
+  }
+
+  @include element ($parent, 'text-desc') {
+    color: $gray4;
+    text-align: justify;
+
+    @media (min-width: $d1280) {
+      max-width: rem(795);
+    }
+  }
+
+  @include element($parent, 'seo') {
+    margin-top: rem(40);
+
+    @media (min-width: $d1280) {
+      margin-top: rem(90);
+    }
+  }
+
+  @include element($parent, 'error-text') {
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-bottom: rem(18);
+  }
+
+  @include element($parent, 'error-link') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    display: inline-block;
+    transition: color $ease;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}

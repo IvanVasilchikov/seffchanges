@@ -14,10 +14,13 @@ Loc::loadMessages(dirname(__FILE__) . '/template.php');
 	'landing_master'
 ]);
 
+$disableFrame = $this->getPageName() == 'landing_view';
+
 ob_start();
 ?>
 <script type="text/javascript">
 	BX.message({
+		LANDING_TPL_JS_PAY_TARIFF_TITLE: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_JS_PAY_TARIFF_TITLE'));?>',
 		LANDING_TPL_JS_PAY_TARIFF: '<?= \CUtil::jsEscape(Loc::getMessage('LANDING_TPL_JS_PAY_TARIFF'));?>'
 	});
 </script>
@@ -46,7 +49,7 @@ if ($arParams['SEF_MODE'] != 'Y')
 }
 
 // iframe header
-if ($request->get('IFRAME') == 'Y')
+if ($request->get('IFRAME') == 'Y' && !$disableFrame)
 {
 	\Bitrix\Landing\Manager::getApplication()->restartBuffer();
 	include 'slider_header.php';
@@ -94,8 +97,8 @@ elseif (in_array($this->getPageName(), array('template', 'site_show')))
 			{
 				$link = new \Bitrix\Main\Web\Uri($link);
 				$link->addParams(array(
-									 $arParams['ACTION_FOLDER'] => $folderId
-								 ));
+					$arParams['ACTION_FOLDER'] => $folderId
+				));
 				$link = $link->getUri();
 			}
 		}
@@ -113,6 +116,33 @@ elseif (in_array($this->getPageName(), array('template', 'site_show')))
 
 	$folderId = $request->get($arParams['ACTION_FOLDER']);
 
+	// settings menu
+	$settingsLink = [];
+	if (
+		$arResult['VARS']['site_show'] > 0 &&
+		$arResult['ACCESS_SITE_SETTINGS'] == 'Y'
+	)
+	{
+		$settingsLink[] = [
+			'TITLE' => Loc::getMessage('LANDING_TPL_SETTING_SITE'),
+			'LINK' => $linkSett = str_replace(
+				'#site_edit#',
+				$arResult['VARS']['site_show'],
+				$arParams['PAGE_URL_SITE_EDIT']
+			)
+		];
+		if ($arParams['TYPE'] == 'STORE')
+		{
+			$uriSettCatalog = new \Bitrix\Main\Web\Uri($linkSett);
+			$uriSettCatalog->addParams(['tpl' => 'catalog']);
+			$settingsLink[] = [
+				'TITLE' => Loc::getMessage('LANDING_TPL_SETTING_CATALOG'),
+				'LINK' => $uriSettCatalog->getUri()
+			];
+			unset($linkSett, $uriSettCatalog);
+		}
+	}
+
 	$APPLICATION->IncludeComponent(
 		'bitrix:landing.filter',
 		'.default',
@@ -120,13 +150,7 @@ elseif (in_array($this->getPageName(), array('template', 'site_show')))
 			'FILTER_TYPE' => $this->getPageName() == 'site_show'
 							? 'LANDING'
 							: 'SITE',
-			'SETTING_LINK' => ($arResult['VARS']['site_show'] > 0)
-								? str_replace(
-									'#site_edit#',
-									$arResult['VARS']['site_show'],
-									$arParams['PAGE_URL_SITE_EDIT']
-								)
-								: '',
+			'SETTING_LINK' => $settingsLink,
 			'BUTTONS' => ($link && $title)
 							? array(
 								array(
@@ -136,10 +160,13 @@ elseif (in_array($this->getPageName(), array('template', 'site_show')))
 							)
 							: array(),
 			'TYPE' => $arParams['TYPE'],
+			'DRAFT_MODE' => $arParams['DRAFT_MODE'],
 			'FOLDER_SITE_ID' => !$folderId ? $arResult['VARS']['site_show'] : 0
 		),
 		$this->__component
 	);
+
+	unset($settingsLink);
 }
 
 if (
@@ -149,4 +176,15 @@ if (
 )
 {
 	include __DIR__ . '/popups/agreement.php';
+	?>
+	<script type="text/javascript">
+		BX.ready(function()
+		{
+			if (typeof landingAgreementPopup !== 'undefined')
+			{
+				landingAgreementPopup();
+			}
+		});
+	</script>
+	<?
 }

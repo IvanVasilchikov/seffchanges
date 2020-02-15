@@ -1,0 +1,19 @@
+@import "../../blocks/header/static/header-static.scss";
+@import "../../blocks/detail/pdf/detail-pdf.scss";
+@import "../../blocks/detail/pdf/gallery/detail-pdf-gallery.scss";
+@import "../../blocks/detail/pdf/characteristics/detail-pdf-characteristics.scss";
+@import "../../blocks/fonts/title/title.scss";
+@import "../../blocks/fonts/text/text.scss";
+@import "../../blocks/detail/pdf/description/detail-pdf-description.scss";
+@import "../../blocks/detail/pdf/tags/detail-pdf-tags.scss";
+@import "../../blocks/detail/pdf/plan/detail-pdf-plan.scss";
+@import "../../blocks/footer/static/footer-static.scss";
+
+.new-page {
+	page-break-after: always;
+	padding-top: 100px;
+
+	&:last-of-type {
+		page-break-after: inherit;
+	}
+}

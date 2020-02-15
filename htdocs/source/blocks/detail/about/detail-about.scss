@@ -1,0 +1,310 @@
+$parent: 'detail-about';
+
+@include block($parent) {
+  position: relative;
+  padding-bottom: rem(100);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(95);
+  }
+
+  @media (min-width: $d1280) {
+    padding-bottom: rem(120);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(35);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(40);
+      max-width: 80%;
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(50);
+      max-width: 55%;
+    }
+  }
+
+  @include element($parent, 'container') {
+    background-color: $gray5;
+  }
+
+  @include element($parent, 'main') {
+    position: relative;
+    padding: rem(40) 0 0;
+
+    @media (min-width: $tMin) {
+      padding: rem(50) 0 0;
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(70) 0 rem(75);
+      min-height: rem(494);
+    }
+  }
+
+  @include element($parent, 'content') {
+    @media (min-width: $tMin) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: $d1280) {
+      max-width: 50%;
+    }
+  }
+
+  @include element($parent, 'info') {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(5);
+
+    @media (min-width: $tMin) {
+      display: block;
+      margin-bottom: 0;
+      max-width: 42%;
+      flex-basis: 42%;
+      padding-right: rem(40);
+    }
+
+    @media (min-width: $d1280) {
+      padding-right: rem(60);
+    }
+  }
+
+  @include element($parent, 'item') {
+    margin-bottom: rem(30);
+
+    &:nth-of-type(odd) {
+      margin-right: rem(40);
+
+      @media (min-width: $tMin) {
+        margin-right: 0;
+      }
+    }
+
+    &:not(:last-of-type) {
+      @media (min-width: $tMin) {
+        margin-bottom: rem(40);
+      }
+    }
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element($parent, 'item-title') {
+    font-size: rem(28);
+    font-weight: 600;
+    margin-bottom: rem(6);
+
+    span {
+      font-size: rem(16);
+    }
+  }
+
+  @include element($parent, 'item-text') {
+    font-size: rem(14);
+    color: $gray2;
+  }
+
+  @include element($parent, 'text') {
+    @media (min-width: $tMin) {
+      max-width: 46%;
+      flex-basis: 46%;
+    }
+
+    @media (min-width: $d1280) {
+      max-width: 53%;
+      flex-basis: 53%;
+    }
+  }
+
+  @include element($parent, 'more') {
+    margin-top: rem(40);
+
+    @media (min-width: $tMin) {
+      margin-top: rem(65);
+      width: 100%;
+    }
+  }
+
+  @include element($parent, 'link') {
+    text-transform: lowercase;
+    font-family: $BaronNeue;
+    font-size: rem(16);
+    color: $red2;
+    border-bottom: 2px solid $red2;
+    transition: color $ease, border-color $ease;
+    padding-bottom: 3px;
+
+    &:hover {
+      color: $purple;
+      border-color: $purple;
+    }
+
+    @media (min-width: $tMin) {
+      margin-top: rem(65);
+    }
+  }
+
+  @include element($parent, 'wrap') {
+    position: relative;
+    top: rem(40);
+
+    @media (min-width: $tMin) {
+      top: rem(60);
+    }
+
+    @media (min-width: $d1280) {
+      position: absolute;
+      right: rem(-40);
+      top: rem(-175);
+    }
+
+    @media (min-width: $d1440) {
+      right: rem(-120);
+    }
+  }
+
+  @include element($parent, 'slider') {
+    position: relative;
+    height: rem(337);
+    width: 100%;
+    margin: 0;
+
+    @media (min-width: $tMin) {
+      height: rem(480);
+    }
+
+    @media (min-width: $d1280) {
+      width: rem(615);
+    }
+  }
+
+  @include element($parent, 'slide-image') {
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'slider-btns') {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 rem(14);
+    z-index: 3;
+
+    @media (min-width: $tMin) {
+      padding: 0 rem(30);
+    }
+  }
+
+  @include element($parent, 'slider-btn') {
+    pointer-events: auto;
+    height: rem(15);
+    width: rem(9);
+    cursor: pointer;
+
+    svg {
+      fill: $w;
+      stroke: $w;
+      stroke-width: 1px;
+    }
+
+    @include modifier($parent, 'next') {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element($parent, 'buttons') {
+    margin-top: rem(14);
+    display: flex;
+    justify-content: space-between;
+
+    @media (min-width: $tMin) {
+      margin-top: rem(30);
+      justify-content: flex-start;
+    }
+  }
+
+  @include element($parent, 'button') {
+    height: rem(180);
+    max-width: calc(50% - 7px);
+    flex-basis: calc(50% - 7px);
+    position: relative;
+    display: flex;
+    padding: rem(95) rem(20) rem(20);
+    background-color: $purple;
+    transition: background-color $ease;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      @media (min-width: $tMin) {
+        margin-right: rem(30);
+      }
+    }
+
+    @include modifier($parent, 'plan') {
+      background-color: $gray7;
+    }
+
+    &:hover {
+      background-color: $red2;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: rem(90);
+      width: 100%;
+
+      @media (min-width: $tMin) {
+        height: rem(110);
+      }
+    }
+
+    @media (min-width: $tMin) {
+      height: rem(210);
+      width: 100%;
+      max-width: rem(236);
+      flex-basis: rem(236);
+      padding: rem(115) rem(20) rem(30);
+    }
+  }
+
+  @include element($parent, 'button-link') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  @include element($parent, 'button-text') {
+    color: $w;
+    font-size: rem(16);
+    line-height: rem(20);
+    text-align: center;
+    width: 100%;
+  }
+}

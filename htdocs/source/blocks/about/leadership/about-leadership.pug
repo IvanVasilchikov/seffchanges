@@ -1,0 +1,36 @@
+include ../../fonts/title/title.pug
+include ../../fonts/text/text.pug
+include ../../fonts/title/fourth/title-fourth.pug
+include ../../core/picture/picture.pug
+
+mixin about-leadership(info)
+  .about-leadership
+    svg.about-leadership__bg
+      use(xlink:href=loadAssets('./svg/about-leadership.svg'))
+    .main
+      +title(info.title, 'about-leadership__title')
+      .about-leadership__slider.swiper-container
+        .swiper-wrapper
+          each slide, index in info.slides
+            .swiper-slide.about-leadership__slide
+              .about-leadership__content-wrp
+                .about-leadership__content
+                  if slide.quote
+                    .about-leadership__quote!= slide.quote
+                  else
+                    | <!---->
+                  .about-leadership__info
+                    +title-fourth(slide.name, 'title-fourth--up about-leadership__name')
+                    +text(slide.post, 'about-leadership__post')
+                    +text(slide.description, 'about-leadership__descr')
+              +picture(slide.image, 'about-leadership__image', 'lazyload')
+
+        if info.slides.length > 1
+          .about-leadership__buttons
+            .about-leadership__button.about-leadership__button--prev(@click='slider.slidePrev()')
+              svg
+                use(xlink:href=loadAssets('./svg/arrow-right.svg'))
+            .about-leadership__button.about-leadership__button--next(@click='slider.slideNext()')
+              svg
+                use(xlink:href=loadAssets('./svg/arrow-right.svg'))
+

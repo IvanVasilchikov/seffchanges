@@ -1,0 +1,21 @@
+include ../../fonts/title/title.pug
+include ../../fonts/title/fourth/title-fourth.pug
+include ../../fonts/text/text.pug
+include ../../core/picture/picture.pug
+
+mixin detail-aboutDistrict(info)
+  if info
+    .detail-aboutDistrict(id='district', data-screen='district')
+      +picture(info.image, 'detail-aboutDistrict__image', 'lazyload')
+      .main.detail-aboutDistrict__main
+        +title-fourth(info.preTitle, 'detail-aboutDistrict__pre-title title-fourth--up')
+        .detail-aboutDistrict__title!= info.title
+        .detail-aboutDistrict__info
+          +text(info.text, 'detail-aboutDistrict__text')
+          a.detail-aboutDistrict__link(href=info.link, target='_blank')
+            span.detail-aboutDistrict__link-text Узнать больше <br>о районе
+            span.detail-aboutDistrict__link-icon
+              svg
+                use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+  else
+    | <!---->

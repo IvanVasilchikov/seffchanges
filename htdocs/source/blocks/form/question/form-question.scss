@@ -1,0 +1,74 @@
+$parent: 'form-question';
+
+@include block ($parent) {
+  @include element ($parent, 'wrap') {
+    margin-bottom: rem(12);
+
+    @media (min-width: $tMin) {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include modifier ($parent, 'reverse') {
+      margin-bottom: 0;
+
+      @media (min-width: $tMin) {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+  }
+
+  @include element ($parent, 'inputs') {
+    margin-bottom: rem(10);
+
+    @media (min-width: $tMin) {
+      flex-basis: calc(43% - 0.5rem);
+      max-width: calc(43% - 0.5rem);
+      margin-bottom: rem(27);
+    }
+
+    @media (min-width: $d1280) {
+      flex-basis: calc(42% - 0.5rem);
+      max-width: calc(42% - 0.5rem);
+    }
+  }
+
+  @include element ($parent, 'input') {
+    &:not(:last-of-type) {
+      margin-bottom: rem(10);
+
+      @media (min-width: $tMin) {
+        margin-bottom: rem(16);
+      }
+    }
+  }
+
+  @include element ($parent, 'textarea') {
+    width: 100%;
+    height: rem(136);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(27);
+      flex-basis: calc(57% - 0.5rem);
+      max-width: calc(57% - 0.5rem);
+    }
+
+    @media (min-width: $d1280) {
+      flex-basis: calc(58% - 0.5rem);
+      max-width: calc(58% - 0.5rem);
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    margin-bottom: rem(35);
+    width: 100%;
+    height: rem(60);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(0);
+      max-width: rem(226);
+    }
+  }
+}

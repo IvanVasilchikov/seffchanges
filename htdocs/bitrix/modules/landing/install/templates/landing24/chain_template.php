@@ -26,10 +26,10 @@ if (
 }
 
 // insert custom main page
-$arResult = array(array(
+$arResult = array_merge(array(array(
 	'LINK' => '#system_mainpage',
 	'TITLE' => Loc::getMessage('LANDING_TPL_CHAIN_TPL_MAIN')
-)) + $arResult;
+)), (array) $arResult);
 
 $arResult = array_values($arResult);
 

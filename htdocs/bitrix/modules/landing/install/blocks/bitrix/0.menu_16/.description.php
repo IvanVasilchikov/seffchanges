@@ -10,6 +10,7 @@ return array(
 	'block' => array(
 		'name' => Loc::getMessage('LANDING_BLOCK_0.MENU_1_NAME_NEW'),
 		'section' => 'menu',
+		'dynamic' => false,
 		'subtype' => 'menu',
 		'subtype_params' => array(
 			'selector' => '.landing-block-node-menu-list-item-link',
@@ -138,7 +139,7 @@ return array(
 			),
 			'.landing-block-node-menu-contact-title-style' => array(
 				'name' => Loc::getMessage('LANDING_BLOCK_0_MENU_16-CONTACT_TITLE'),
-				'type' => ['typo'],
+				'type' => ['typo-link'],
 			),
 			'.landing-block-node-menu-contact-value' => array(
 				//deprecated
@@ -147,7 +148,7 @@ return array(
 			),
 			'.landing-block-node-menu-contact-text-style' => array(
 				'name' => Loc::getMessage('LANDING_BLOCK_0_MENU_16-CONTACT_TEXT'),
-				'type' => ['typo'],
+				'type' => ['typo-link'],
 			),
 			'.landing-block-node-menu-contact-img-container' => array(
 				'name' => Loc::getMessage('LANDING_BLOCK_0_MENU_16-CONTACT_ICON'),

@@ -1,0 +1,19 @@
+include ./../../core/picture/picture.pug
+include ./../../fonts/title/title.pug
+include ./../../fonts/title/fifth/title-fifth.pug
+
+mixin banner-home(obj, className)
+  .banner-home(class= className)
+    if obj.background
+      +picture(obj.background, 'banner-home__background')
+    else
+      | <!---->
+    .banner-home__content.main
+      if obj.title
+        +title(obj.title, 'banner-home__title')
+      else
+        | <!---->
+      if obj.text
+        +title-fifth(obj.text, 'banner-home__text')
+      else
+        | <!---->
