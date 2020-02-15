@@ -1,0 +1,14 @@
+include ../map.pug
+include ../../filter/filter.pug
+include ../../core/breadcrumbs/breadcrumbs.pug
+
+mixin map-search(info)
+  .map-search
+    .map-search__filter-wrap
+      .main
+        if (info.breadcrumbs)
+          +breadcrumbs(info.breadcrumbs, 'map-search__breadcrumbs')
+        else
+          | <!---->
+        +filter(info.filter, 'map-search__filter')(@filterSubmit='updateMap')
+    +map(info.map, 'map-search__map')(ref='map')

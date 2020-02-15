@@ -1,0 +1,105 @@
+$parent: 'share';
+
+@include block($parent) {
+  position: relative;
+
+  @include element($parent, 'link') {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity $ease;
+
+    svg {
+      flex-shrink: 0;
+      margin-right: rem(9);
+      fill: $red2;
+    }
+
+    span {
+      color: $red2;
+      font-size: rem(16);
+      line-height: rem(24);
+      transition: color $ease;
+    }
+
+    &:hover {
+      svg {
+        fill: $purple;
+      }
+
+      span {
+        color: $purple;
+      }
+    }
+
+    @include modifier($parent, 'hide') {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @include element($parent, 'btns') {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    background-color: $w;
+
+    @media (min-width: $tMin) {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @include element($parent, 'btn') {
+    height: rem(40);
+    width: rem(40);
+    background-color: $purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color $ease;
+    flex-shrink: 0;
+
+    img {
+      max-width: rem(22);
+      max-height: rem(20);
+      width: auto;
+      height: auto;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 1px;
+    }
+
+    &:hover {
+      background-color: $red2;
+    }
+
+    @include modifier($parent, 'close') {
+      position: relative;
+
+      &::after,
+      &::before {
+        content: '';
+        height: 1px;
+        width: rem(18);
+        background-color: $w;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+  }
+}

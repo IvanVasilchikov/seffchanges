@@ -1,0 +1,47 @@
+stages:
+- deploy
+ 
+frontend:
+    stage: deploy
+    only:
+    - dev_server
+    tags:
+    - deploy
+    script:
+    - export PATH=$PATH:/home/gitlab-runner/.nvm/versions/node/v9.11.1/bin
+    - npm install
+    - npm run build
+    - cp -r dist/* /var/www/$CI_PROJECT_NAME/htdocs/
+    cache:
+        paths:
+        - node_modules/
+
+integration:
+    stage: deploy
+    only:
+    - dev_server
+    tags:
+    - backend
+    script:
+    - cd ~/projects/$CI_PROJECT_NAME
+    - git reset --hard
+    - git pull
+    - docker-compose exec -T php7.2 bash -c 'cd ./htdocs && ./vendor/bin/phinx migrate'
+
+pre_prod:
+    stage: deploy
+    only:
+    - pre_master
+    tags:
+    - backend
+    script:
+        - ssh jon@84.201.133.184 'cd /var/www/dev.saffariestate.ru/;git pull;cd htdocs; composer install; ./vendor/bin/phinx migrate'
+
+prod:
+    stage: deploy
+    only:
+    - master
+    tags:
+    - backend
+    script:
+        - ssh jon@84.201.133.184 'cd /var/www/saffariestate.ru/;git pull;cd htdocs; composer install; ./vendor/bin/phinx migrate'

@@ -1,0 +1,97 @@
+$parent: 'core-checkbox-with-circle';
+
+@include block($parent) {
+  position: relative;
+
+  @include element($parent, 'label') {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  @include element($parent, 'box') {
+    width: rem(24);
+    height: rem(24);
+    border: 1px solid $gray;
+    background-color: $w;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border 0.4s ease, background 0.4s ease;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: rem(9);
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(10);
+      height: rem(7);
+      opacity: 0;
+      transition: opacity $ease;
+      border: 2px solid $w;
+      border-right: none;
+      border-top: none;
+      transform: rotate(-47deg) translate(0, -100%);
+      left: 50%;
+      top: 50%;
+      border-radius: 1px;
+    }
+  }
+
+  @include element($parent, 'content') {
+    display: flex;
+    align-items: center;
+    font-size: rem(14);
+    color: $black;
+
+    @media (min-width: $dMin) {
+      font-size: rem(16);
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+
+    &:checked {
+      + label {
+        @include element($parent, 'box') {
+          background-color: $red2;
+          border-color: $gray3;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @include modifier($parent, 'polls') {
+    @include element($parent, 'label') {
+      padding: rem(6) rem(8);
+    }
+  }
+
+  @include modifier($parent, 'bold') {
+    @include element($parent, 'text') {
+      font-weight: 600;
+    }
+  }
+
+  @include element($parent, 'text-circle') {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+}

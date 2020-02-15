@@ -1,0 +1,62 @@
+$parent: 'detail-choose';
+
+@include block($parent) {
+  position: relative;
+  margin-bottom: rem(35);
+
+  @media (min-width: $tMin) {
+    margin-bottom: rem(55);
+  }
+
+  @media (min-width: $d1280) {
+    margin-bottom: rem(70);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(35);
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  @include element($parent, 'sort') {
+    @media (min-width: $d1280) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'table') {
+    margin-top: rem(30);
+  }
+
+  @include element($parent, 'cards') {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(30);
+  }
+
+  @include element($parent, 'card') {
+    margin-bottom: rem(14);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      flex-basis: calc(50% - 0.625rem);
+      max-width: calc(50% - 0.625rem);
+      margin-bottom: rem(20);
+    }
+
+    @media (min-width: $d1280) {
+      flex-basis: calc(33.333% - 10.7px);
+      max-width: calc(33.333% - 10.7px);
+      margin-bottom: rem(16);
+
+      &:not(:nth-child(3n)) {
+        margin-right: rem(16);
+      }
+    }
+  }
+
+  @include element($parent , 'pagination') {
+    margin-top: rem(20);
+  }
+}

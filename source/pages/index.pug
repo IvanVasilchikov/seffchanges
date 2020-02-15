@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/home/home.pug
+
+block vars
+  - homepage = true;
+  - var indexPage = require('../data/indexPage.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      indexPage: !{JSON.stringify(indexPage)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +home(indexPage)

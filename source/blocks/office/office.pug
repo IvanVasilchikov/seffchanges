@@ -1,0 +1,11 @@
+include ../fonts/title/title.pug
+include ../fonts/title/fourth/title-fourth.pug
+include ./item/office-item.pug
+
+mixin office(info, className)
+  .office(class= className)
+    +title('пресс-служба', '')
+    +title-fourth('компании saffari estate', 'title-fourth--up')
+    .office__items
+      each item in info.items
+        +office-item(item, 'office__item')

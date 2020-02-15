@@ -1,0 +1,118 @@
+include ../../core/btn/btn.pug
+include ./../gallery/card-gallery.pug
+
+mixin card-table(card, className)
+  .card-table(class=className)
+    .card-table__gallery-wrp(@click='openLink')
+      +card-gallery(card.images, 'card-table__gallery', 'card-table__pagination')
+      if (card.tag)
+        .card-table__label.card-table__tag!= card.tag
+      else
+        | <!---->
+      if (card.deal_type)
+        .card-table__label.card-table__label-deal!= card.deal_type
+      else
+        | <!---->
+      if (card.id)
+        .card-table__id ID: #{card.id}
+      else
+        | <!---->
+
+    .card-table__content
+      a.card-table__link(href=card.link, target='_blank')!= card.title
+      .card-table__main
+        .card-table__main-info
+          .card-table__title!= card.title
+          if (card.labels)
+            .card-table__labels
+              each label in card.labels
+                .card-table__label!= label
+          else
+            | <!---->
+          .card-table__name!= card.name
+          if card.address
+            .card-table__address!= card.address
+          else
+            | <!---->
+
+        if (card.table)
+          .card-table__table
+            each row in card.table
+              .card-table__row(@click='goToPage(row.link)')
+                each cell in row.info
+                  .card-table__cell!= cell.text ? cell.text : '—'
+        else
+          | <!---->
+        if (card.specs)
+          .card-table__specs
+            each text, spec in card.info
+              .card-table__specs-item(class='card-table__specs-item--' + spec)
+                if spec === 'ring'
+                  svg(height='17', width='17')
+                    use(xlink:href=loadAssets('./svg/ring.svg'))
+                if spec === 'square'
+                  svg(height='14', width='17')
+                    use(xlink:href=loadAssets('./svg/ruller.svg'))
+                if spec === 'date'
+                  svg(height='14', width='14')
+                    use(xlink:href=loadAssets('./svg/calendar.svg'))
+                if spec === 'facing'
+                  svg(height='14', width='14')
+                    use(xlink:href=loadAssets('./svg/facing.svg'))
+                if spec === 'area'
+                  svg(height='14', width='15')
+                    use(xlink:href=loadAssets('./svg/fences.svg'))
+                if spec === 'rooms'
+                  svg(height='14', width='17')
+                    use(xlink:href=loadAssets('./svg/bed.svg'))
+                if spec === 'floor'
+                  svg(height='14', width='14')
+                    use(xlink:href=loadAssets('./svg/apartment.svg'))
+                if spec === 'metro'
+                  svg(height='18', width='16')
+                    use(xlink:href=loadAssets('./svg/bus.svg'))
+                if spec === 'forest'
+                  svg(height='17', width='17')
+                    use(xlink:href=loadAssets('./svg/trees.svg'))
+                if spec === 'water'
+                  svg(height='17', width='17')
+                    use(xlink:href=loadAssets('./svg/waves.svg'))
+                if spec === 'parking'
+                  svg(height='17', width='17')
+                    use(xlink:href=loadAssets('./svg/parking.svg'))
+                if spec === 'distance'
+                  svg(height='15', width='16')
+                    use(xlink:href=loadAssets('./svg/route.svg'))
+                if spec === 'gas'
+                  svg(height='15', width='16')
+                    use(xlink:href=loadAssets('./svg/gas.svg'))
+                if spec === 'cleaner'
+                  svg(height='15', width='17')
+                    use(xlink:href=loadAssets('./svg/septik.svg'))
+                if spec === 'pump'
+                  svg(height='16', width='16')
+                    use(xlink:href=loadAssets('./svg/pumpjack.svg'))
+                if spec === 'sewage'
+                  svg(height='17', width='16')
+                    use(xlink:href=loadAssets('./svg/kanaliz.svg'))
+                if spec === 'class'
+                  svg(height='13', width='13')
+                    use(xlink:href=loadAssets('./svg/class.svg'))
+                if spec === 'metro'
+                  .card-table__specs-item-text
+                    span!= text.station
+                    if (text.walk)
+                      span!= ', ' + text.walk
+                    else
+                      | <!---->
+                else
+                  .card-table__specs-item-text!= text
+        else
+          | <!---->
+
+      .card-table__buttons
+        button.card-table__favorite(class=(card.isFav ? 'card-table__favorite--added' : ''), @click='toggleFav')
+          span!= card.isFav ? 'В избранном' : 'В избранное'
+          svg
+            use(xlink:href=loadAssets('./svg/like.svg'))
+        +btn(card.link, card.objects || 'Подробнее', 'btn--border card-table__button')

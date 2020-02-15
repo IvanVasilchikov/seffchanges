@@ -1,0 +1,33 @@
+include ../../core/label/label.pug
+include ../../core/hint/hint.pug
+include ../address/filter-address.pug
+
+mixin filter-visual(info, pagination, className)
+  .filter-visual(id='filter-visual')
+    .filter-visual__top
+      .filter-visual__left
+        if pagination
+          .filter-visual__offers!= pagination.objects_count
+        if info.order
+          button.filter-visual__order(type= 'button', @click= 'popupOpen(\'form\', \'brokerSelection\')')!= info.order
+      .filter-visual__right
+        if info.fields
+          each field in info.fields
+            .filter-visual__right-input
+              if (field.type === 'hidden')
+                input(type='hidden', name=field.name, value=field.value)
+              else if (field.type === 'input' && field.name === 'search')
+                +hint(field, 'filter-address filter-visual__address')(@passHint='changeHint')
+              else
+                | <!---->
+        if info.popupButtons
+          .filter-visual__popup-btns
+            each btn in info.popupButtons
+              .filter-visual__popup-btn(@click='openAreaPopup(btn)')!= btn.text
+    if info.tags && info.tags.selected
+      .filter-visual__tags-wrap
+        .filter-visual__tags
+          .filter-visual__tags-items
+            each tag, index in info.tags.selected
+              +label(tag, 'filter-visual__tag')(:key=tag.value+index, @change='setTag(tag)')
+        a.filter-visual__tags-more(v-if='activeTabsBtn', @click='changeTabsAccordion()') {{ textTabsBtn }}

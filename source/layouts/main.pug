@@ -1,0 +1,75 @@
+include ../blocks/header/header.pug
+include ../blocks/footer/footer.pug
+include ../blocks/popup/popup.pug
+include ../blocks/cookies/cookies.pug
+
+-
+  loadAssets = function(file) {
+    const req = require.context(
+      "../assets/",
+      true, // Load files recursively. Pass false to skip recursion.
+      /^\.\/.*\.(svg|jpg|png)$/ // Match files ending with .md.
+    );
+    if (file.indexOf('.svg') !== -1) {
+      return req(file).symbol
+    }
+    return req(file);
+  }
+  var homepage = false;
+  var headerInfo = require('../data/header.json');
+  var footerInfo = require('../data/footer.json');
+  var cookiesInfo = require('../data/cookies.json')
+  var noFooter = false;
+  var stub = false;
+
+block vars
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='format-detection', content='telephone=no')
+    link(href='./favicon.ico', rel='shortcut icon', type='image/x-icon')
+    title Saffari Estate
+    each css in htmlWebpackPlugin.files.css
+      link(rel='stylesheet' href=css)
+  body
+    block script
+    script.
+      window.setting = {
+        hints: '/api/hint.json',
+        api: {
+          object: {
+            favorite: '/',
+            userRelation: '/'
+          },
+          city: '/api/city.json',
+          country: '/api/country.json',
+          foreign: '/api/foreign.json',
+          office: '/api/office.json',
+          sklad: '/api/sklad.json',
+          retail: '/api/retail.json',
+          objects: '/api/objects.json',
+          district: '/api/district.json',
+          countryCity: '/api/countryCity.json',
+          metro: '/api/metro.json',
+          highway: '/api/highway.json',
+          village: '/api/village.json',
+          catalog: '/api/catalog.json',
+          visualSearch: '/api/visualSearch.json',
+          tooltip: '/api/'
+        }
+      }
+
+    .page(class=[noFooter ? 'page--noFooter' : '', stub ? 'page--full' : ''])
+      if !stub
+        +header(headerInfo)
+      block content
+    if !noFooter
+      +footer(footerInfo)
+    +popup()
+    +cookies(cookiesInfo)
+    each js in htmlWebpackPlugin.files.js
+      script(type='text/javascript' src=js async defer)

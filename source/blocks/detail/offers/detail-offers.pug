@@ -1,0 +1,33 @@
+include ../../fonts/title/title.pug
+include ../../filter/filter.pug
+include ../../card/small/card-small.pug
+include ../../catalog/list/catalog-list.pug
+include ../../filter/noResult/filter-noResult.pug
+include ../../core/pagination/pagination.pug
+//-  to do убрать popupButtons, он в табсах сейас
+mixin detail-offers(info)
+  .detail-offers(id='offers', data-screen='offers')
+    .main
+      +title(info.title, 'detail-offers__title')
+      if (info.filter)
+        .detail-offers__filter-wrap
+          +filter(info.filter, 'detail-offers__filter')(@filterSubmit='submitFilter')
+          if (info.filter.popupButtons)
+            .detail-offers__popup-btns
+              each btn in info.filter.popupButtons
+                .detail-offers__popup-btn(@click='openPopup(btn.popup)')!= btn.text
+          else
+            | <!---->
+      else
+        | <!---->
+
+      if (info.cards && info.cards.length !== 0)
+        +catalog-list('catalog-list--tiles')
+          each card in info.cards
+            +card-small(card, 'catalog-list__card-small')(:key='card.id')
+      else
+        +filter-noResult(info.error, 'detail-offers__error')
+      if (info.cards &&  info.pagination && info.pagination.count >= 2)
+        +pagination(info.pagination, 'detail-offers__pagination')(@setPage='setPage')
+      else
+        | <!---->

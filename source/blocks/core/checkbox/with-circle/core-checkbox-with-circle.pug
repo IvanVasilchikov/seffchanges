@@ -1,0 +1,9 @@
+mixin core-checkbox-with-circle(id, name, text, className, attributes, colorCircle)
+  .core-checkbox-with-circle(class= className)
+    input(id= id, name= name, type='checkbox', value=attributes.value, :checked='checked', @change='$emit(\'change\', $event.target.checked)')
+    label.core-checkbox-with-circle__label(for= id)
+      .core-checkbox-with-circle__box
+      .core-checkbox-with-circle__content
+        .core-checkbox-with-circle__text-circle(style= colorCircle ? 'background:' + colorCircle : '')
+        .core-checkbox-with-circle__text= text
+        block

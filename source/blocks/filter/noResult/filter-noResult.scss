@@ -1,0 +1,23 @@
+$parent: 'filter-noResult';
+
+@include block($parent) {
+  @include element($parent, 'text') {
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-bottom: rem(18);
+  }
+
+  @include element($parent, 'button') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    display: inline-block;
+    transition: color $ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}

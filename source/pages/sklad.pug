@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/catalog/catalog.pug
+
+block vars
+  - homepage = false;
+  - var catalog = require('../data/sklad.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      catalog: !{JSON.stringify(catalog)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +catalog(catalog)

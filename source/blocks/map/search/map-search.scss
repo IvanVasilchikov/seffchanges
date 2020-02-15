@@ -1,0 +1,52 @@
+$parent: 'map-search';
+
+@include block($parent) {
+  position: relative;
+  min-height: rem(730);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $d1280) {
+    min-height: inherit;
+  }
+
+  @include element($parent, 'breadcrumbs') {
+    margin-bottom: rem(30);
+  }
+
+  @include element($parent, 'map') {
+    min-height: rem(300);
+    flex-basis: auto;
+    flex-grow: 1;
+
+    @media (min-width: $tMin) {
+      height: calc(100vh - 55px);
+    }
+
+    @media (min-width: $d1280) {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  @include element($parent, 'filter-wrap') {
+    position: relative;
+    background-color: $w;
+    z-index: 5;
+    padding: rem(25) 0 rem(30);
+    box-shadow: 0 4px rem(15) rgba(#000, 0.1);
+
+    @media (min-width: $tMin) {
+      padding: rem(30) 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(20) 0;
+    }
+  }
+}

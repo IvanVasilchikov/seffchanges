@@ -1,0 +1,185 @@
+$parent: privacy;
+
+@include block($parent) {
+  padding: rem(20) 0 rem(40);
+
+  @media (min-width: $tMin) {
+    padding: rem(24) 0 rem(47);
+  }
+
+  @include element ($parent, 'breadcrumbs') {
+    margin-bottom: rem(12);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  @include element ($parent, 'head') {
+    margin-bottom: rem(22);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(29);
+    }
+  }
+
+  @include element ($parent, 'head-title') {
+    margin-bottom: rem(20);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(24);
+    }
+  }
+
+  // @include element ($parent, 'head-text') {
+  //
+  // }
+
+  // @include element ($parent, 'content') {
+  //
+  // }
+
+  @include element ($parent, 'content-title') {
+    margin-bottom: rem(10);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(12);
+    }
+  }
+
+  @include element ($parent, 'content-list') {
+    margin-bottom: rem(22);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(26);
+    }
+
+    li {
+      a {
+        font-size: rem(16);
+        line-height: rem(30);
+        color: $black;
+
+        span {
+          color: $red2;
+        }
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+  }
+
+
+  @include element ($parent, 'content-item') {
+    margin-bottom: rem(24);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(30);
+    }
+
+    @media (min-width: $d1280) {
+      padding-right: rem(66);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    margin-bottom: rem(12);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(15);
+    }
+
+    span {
+      color: $red2;
+    }
+  }
+
+  .privacy__head-text,
+  .privacy__text{
+    p {
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $black;
+
+      span {
+        color: $red2;
+      }
+
+      a {
+        color: $red2;
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+
+    ul {
+      margin: rem(15) 0 rem(16);
+
+      @media (min-width: $tMin) {
+        margin: rem(19) 0 rem(20);
+      }
+
+      li {
+        position: relative;
+        margin-bottom: rem(6);
+        padding-left: rem(16);
+        font-size: rem(16);
+        line-height: rem(24);
+        color: $black;
+
+        span {
+          color: $red2;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: rem(9);
+          width: rem(8);
+          height: rem(8);
+          background-color: $red2;
+        }
+      }
+    }
+
+    br {
+      line-height: rem(24);
+    }
+
+    h3 {
+      margin: rem(2) 0 rem(18);
+      font-weight: 400;
+      font-size: rem(18);
+      line-height: 1.2;
+      color: $black;
+      font-family: $BaronNeue;
+      text-transform: lowercase;
+
+      @media (min-width: $tMin) {
+        margin: rem(4) 0 rem(22);
+      }
+
+      span {
+        color: $red2;
+      }
+
+      em {
+        font-style: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  // @include element ($parent, 'text') {
+  //
+  // }
+}

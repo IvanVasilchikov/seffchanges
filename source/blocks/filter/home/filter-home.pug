@@ -1,0 +1,47 @@
+include ../../filter/catalog/filter-catalog.pug
+include ../../core/select/select.pug
+
+mixin filter-home(info)
+  - var activeTab = '';
+  - var tags = [];
+
+  .filter-home.main
+    if (info.tabs)
+      .filter-home__form
+        if (info.select && info.select.values)
+          .filter-home__select-wrp
+            +select(info.select, 'filter-home__tab-select', 0.3)(@input='changeTab')
+            .filter-home__tabs
+              each btn in info.select.values
+                .filter-home__tab-btn(@click='changeTab(btn.value, btn.value, btn.disabled)', style='width: calc(100% / ' + info.select.values.length + ')', class=(activeTab === btn.value ? 'filter-home__tab-btn--active' : ''))!= btn.text
+        else
+          | <!---->
+        .filter-home__form-wrp
+          each tab in info.tabs
+            .filter-home__tab
+              if (tab.name === activeTab)
+                +filter-catalog(tab, 'filter-home__filter', true)(@filterSubmit='submitFilter')
+              else
+                | <!---->
+          .filter-home__bottom
+            if (info.tags)
+              .filter-home__tags
+                .filter-home__tags-wrp
+                  each tag, index in info.tags.list
+                    +label(tag, 'filter-home__tag')(:key='tag.value', @change='openTag(tag)')
+            else
+              | <!---->
+            if (info.broker)
+              .filter-home__broker(@click= 'openPopup(\'form\', \'brokerSelection\', info.typeEstate)')!= info.broker
+            else
+              | <!---->
+    else
+      | <!---->
+
+    if info.mapBtn
+      a.filter-home__map-btn(href=info.mapBtn.url, style='background-image: url(' + info.mapBtn.img + ')')
+        svg
+          use(xlink:href=loadAssets('./svg/pin.svg'))
+        span= info.mapBtn.text
+    else
+      | <!---->

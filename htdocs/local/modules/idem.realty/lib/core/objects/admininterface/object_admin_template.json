@@ -1,0 +1,1334 @@
+{
+  "MAIN": {
+    "parent_id": {
+      "name": "Привязка к ЖК",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "date_create": {
+      "name": "Дата создания",
+      "datatype": "date",
+      "helper": "",
+      "multiple": false
+    },
+    "date_update": {
+      "name": "Дата обновления",
+      "datatype": "date",
+      "helper": "",
+      "multiple": false
+    },
+    "active": {
+      "name": "Активный",
+      "datatype": "radio",
+      "helper": "",
+      "multiple": false
+    },
+    "luxury_housing": {
+      "name": "Элитный",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1184
+      },
+      "multiple": false
+    },
+    "exclusive": {
+      "name": "Эксклюзивный объект",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1613,
+        "2": 1614,
+        "3": 1615,
+        "5": 1616
+      },
+      "multiple": false
+    },
+    "gas_in_the_house": {
+      "name": "Подведен газ",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 462,
+        "3": 540
+      },
+      "multiple": false
+    },
+    "electricity_in_the_house": {
+      "name": "Подведено электричество",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 535
+      },
+      "multiple": false
+    },
+    "plumbing": {
+      "name": "Водопровод (линия)",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 532
+      },
+      "multiple": false
+    },
+    "heated": {
+      "name": "Отапливаемый",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 531,
+        "4": 561
+      },
+      "multiple": false
+    },
+    "sewage": {
+      "name": "Канализация",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 534
+      },
+      "multiple": false
+    },
+    "security": {
+      "name": "Охраняемый",
+      "datatype": "radio",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 465,
+        "2": 501,
+        "3": 541
+      },
+      "multiple": false
+    },
+    "floors": {
+      "name": "Этажей в доме",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 467,
+        "2": 493,
+        "3": 816,
+        "5": 1690
+      },
+      "multiple": false
+    },
+    "floor": {
+      "name": "Этаж",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 448,
+        "2": 506,
+        "5": 1689
+      },
+      "multiple": false
+    },
+    "address": {
+      "name": "Адрес",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 667,
+        "2": 668,
+        "3": 1149,
+        "4": 673
+      },
+      "multiple": false
+    },
+    "search": {
+      "name": "Текстовый поиск",
+      "datatype": "text",
+      "helper": "",
+      "multiple": false
+    },
+    "country": {
+      "name": "Страна",
+      "datatype": "select",
+      "helper": "Country",
+      "intrum_property_id": {
+        "5": 802
+      },
+      "multiple": false
+    },
+    "city": {
+      "name": "Регион",
+      "datatype": "select",
+      "helper": "City",
+      "intrum_property_id": {
+        "1": 481,
+        "2": 512,
+        "3": 553,
+        "4": 565,
+        "5": 803
+      },
+      "multiple": false
+    },
+    "rooms": {
+      "name": "Комнат",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 446,
+        "3": 530
+      },
+      "multiple": false
+    },
+    "number": {
+      "name": "Номер квартиры",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 833,
+        "3": 1495
+      },
+      "multiple": false
+    },
+    "balcones": {
+      "name": "Балконов",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 455
+      },
+      "multiple": false
+    },
+    "zhk_name": {
+      "name": "Название жк",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1163
+      },
+      "multiple": false
+    },
+    "lot_name": {
+      "name": "Название лота",
+      "datatype": "text",
+      "helper": "",
+      "multiple": false
+    },
+    "cian_zhk_name": {
+      "name": "Название жк для CIAN",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1576
+      },
+      "multiple": false
+    },
+    "zhk_description": {
+      "name": "Описание ЖК",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1589,
+        "3": 1591
+      },
+      "multiple": false
+    },
+    "description": {
+      "name": "Описание",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 624,
+        "2": 625,
+        "3": 626,
+        "4": 627,
+        "5": 809
+      },
+      "multiple": false
+    },
+    "distance_metro": {
+      "name": "Расстояние до метро пешком",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 486,
+        "2": 517,
+        "4": 570
+      },
+      "multiple": false
+    },
+    "distance_metro_auto": {
+      "name": "Расстояние до метро на транспорте",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1116,
+        "2": 1152,
+        "4": 1151
+      },
+      "multiple": false
+    },
+    "distance_mkad": {
+      "name": "Расстояние до города(км)",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 466,
+        "2": 518,
+        "3": 542
+      },
+      "multiple": false
+    },
+    "house": {
+      "name": "Дом",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 484,
+        "2": 515,
+        "3": 556,
+        "4": 568
+      },
+      "multiple": false
+    },
+    "bedrooms": {
+      "name": "Количество спален",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 548,
+        "5": 805
+      },
+      "multiple": false
+    },
+    "manager_id": {
+      "name": "Менеджер",
+      "datatype": "select",
+      "helper": "Manager",
+      "intrum_property_id": "author",
+      "multiple": false
+    },
+    "bathrooms": {
+      "name": "Санузлов",
+      "datatype": "select",
+      "helper": "Bathroom",
+      "intrum_property_id": {
+        "1": 468
+      },
+      "multiple": false
+    },
+    "floor_height": {
+      "name": "Высота потолков",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 459,
+        "2": 498
+      },
+      "multiple": false
+    },
+    "flat_type": {
+      "name": "Тип квартиры",
+      "datatype": "select",
+      "helper": "Flattype",
+      "intrum_property_id": {
+        "1": 776
+      },
+      "multiple": false
+    },
+    "parking_type": {
+      "name": "Тип недвижимости(парковка)",
+      "datatype": "select",
+      "helper": "Parkingtype",
+      "intrum_property_id": {
+        "3": 779
+      },
+      "multiple": false
+    },
+    "department": {
+      "name": "Департамент",
+      "datatype": "select",
+      "helper": "Departament",
+      "multiple": false
+    },
+    "department_id": {
+      "name": "ID Департамента",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "built_status": {
+      "name": "Готовность",
+      "datatype": "select",
+      "helper": "Builtstatus",
+      "intrum_property_id": {
+        "1": 1455
+      },
+      "multiple": false
+    },
+    "finish_type": {
+      "name": "Отделка",
+      "datatype": "select",
+      "helper": "Finishtype",
+      "intrum_property_id": {
+        "1": 469,
+        "3": 1662,
+        "2": 508
+      },
+      "multiple": false
+    },
+    "deal_type": {
+      "name": "Тип сделки",
+      "datatype": "select",
+      "helper": "Dealtype",
+      "multiple": false
+    },
+    "object_type": {
+      "name": "Тип объекта",
+      "datatype": "select",
+      "helper": "Objecttype",
+      "intrum_property_id": {
+        "1": 1578,
+        "3": 1646,
+        "2": 777,
+        "5": 1617
+      },
+      "multiple": false
+    },
+    "realty_type": {
+      "name": "квартира новостройка/квартира вторичка",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 776
+      },
+      "multiple": false
+    },
+    "wall_material": {
+      "name": "Материал стен",
+      "datatype": "select",
+      "helper": "Wallmaterial",
+      "intrum_property_id": {
+        "1": 458,
+        "2": 497,
+        "3": 538
+      },
+      "multiple": false
+    },
+    "realty_class": {
+      "name": "Класс недвижимости",
+      "datatype": "select",
+      "helper": "Realtyclass",
+      "intrum_property_id": {
+        "1": 490,
+        "2": 490
+      },
+      "multiple": false
+    },
+    "built_type": {
+      "name": "Тип здания(коммерция)",
+      "datatype": "select",
+      "helper": "Builttype",
+      "intrum_property_id": {
+        "2": 489
+      },
+      "multiple": false
+    },
+    "use_room": {
+      "name": "Назначение помещения(коммерция)",
+      "datatype": "select",
+      "helper": "Useroom",
+      "intrum_property_id": {
+        "2": 520
+      },
+      "multiple": false
+    },
+    "locality": {
+      "name": "Район",
+      "datatype": "select",
+      "helper": "Locality",
+      "intrum_property_id": {
+        "1": 630,
+        "2": 631,
+        "3": 787,
+        "4": 632
+      },
+      "multiple": false
+    },
+    "district": {
+      "name": "Округ",
+      "datatype": "select",
+      "helper": "District",
+      "intrum_property_id": {
+        "1": 1597,
+        "2": 1605,
+        "3": 1601
+      },
+      "multiple": false
+    },
+    "metro": {
+      "name": "Метро",
+      "datatype": "select",
+      "helper": "Metro",
+      "intrum_property_id": {
+        "1": 485,
+        "2": 516,
+        "3": 1153,
+        "4": 569
+      },
+      "multiple": false
+    },
+    "highway": {
+      "name": "Шоссе",
+      "datatype": "select",
+      "helper": "Highway",
+      "intrum_property_id": {
+        "3": 822
+      },
+      "multiple": false
+    },
+    "view": {
+      "name": "Вид из окна",
+      "datatype": "text",
+      "helper": "View",
+      "intrum_property_id": {
+        "1": 1579
+      },
+      "multiple": false
+    },
+    "views": {
+      "name": "Вид из окна",
+      "datatype": "select",
+      "helper": "Views",
+      "intrum_property_id": {
+        "5": 1688
+      },
+      "multiple": false
+    },
+    "park_zone_infra": {
+      "name": "Парковая зона",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1618
+      },
+      "multiple": false
+    },
+    "security_infra": {
+      "name": "Безопасность",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1619
+      },
+      "multiple": false
+    },
+    "parking_infra": {
+      "name": "Парковка",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1620
+      },
+      "multiple": false
+    },
+    "concierge_infra": {
+      "name": "Консьерж-сервис",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1621
+      },
+      "multiple": false
+    },
+    "location_infra": {
+      "name": "Расположение",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1622
+      },
+      "multiple": false
+    },
+    "education_infra": {
+      "name": "Образование",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1641
+      },
+      "multiple": false
+    },
+    "parks_ponds_infra": {
+      "name": "Парки и водоемы",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1642
+      },
+      "multiple": false
+    },
+    "fitness_spa_infra": {
+      "name": "Фитнес и спа",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1640
+      },
+      "multiple": false
+    },
+    "cafes_restaurants_infra": {
+      "name": "Консьерж-сервис",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1643
+      },
+      "multiple": false
+    },
+    "desc_jk_charact": {
+      "name": "Описание ЖК с характеристиками",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1629
+      },
+      "multiple": false
+    },
+    "total_area_building": {
+      "name": "Общая площадь здания (м2)",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1624
+      },
+      "multiple": false
+    },
+    "count_flats": {
+      "name": "Количество квартир",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1625
+      },
+      "multiple": false
+    },
+    "count_parking_spaces": {
+      "name": "Количество парковочных мест",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1628
+      },
+      "multiple": false
+    },
+    "area_park_g": {
+      "name": "Площадь собственного парка (Га)",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1630
+      },
+      "multiple": false
+    },
+    "transport_ring": {
+      "name": "Транспортное кольцо",
+      "datatype": "select",
+      "helper": "Transportring",
+      "intrum_property_id": {
+        "1": 1596,
+        "2": 1604,
+        "3": 1600
+      },
+      "multiple": false
+    },
+    "forest": {
+      "name": "Лес рядом",
+      "datatype": "select",
+      "helper": "Forest",
+      "intrum_property_id": {
+        "3": 1610
+      },
+      "multiple": false
+    },
+    "water": {
+      "name": "У водоема",
+      "datatype": "select",
+      "helper": "Water",
+      "intrum_property_id": {
+        "3": 1611
+      },
+      "multiple": false
+    },
+    "parking": {
+      "name": "С парковкой",
+      "datatype": "select",
+      "helper": "Parking",
+      "intrum_property_id": {
+        "1": 1612
+      },
+      "multiple": false
+    },
+    "finishyear": {
+      "name": "Готовность дома",
+      "datatype": "select",
+      "helper": "Finishyear",
+      "intrum_property_id": {
+        "1": 1626
+      },
+      "multiple": false
+    },
+    "finish": {
+      "name": "Готовность",
+      "datatype": "select",
+      "helper": "Finish",
+      "intrum_property_id": {
+        "5": 1684
+      },
+      "multiple": false
+    },
+    "zhkclass": {
+      "name": "Класс ЖК",
+      "datatype": "select",
+      "helper": "Zhkclass",
+      "intrum_property_id": {
+        "1": 1623
+      },
+      "multiple": false
+    },
+    "tags": {
+      "name": "Теги",
+      "datatype": "text",
+      "helper": "Tags",
+      "intrum_property_id": {
+        "1": 1598,
+        "2": 1606,
+        "3": 1679,
+        "5": 1680
+      },
+      "multiple": false
+    },
+    "district_area": {
+      "name": "Район области",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 784
+      },
+      "multiple": false
+    },
+    "finish_country": {
+      "name": "Отделка",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1631
+      },
+      "multiple": false
+    },
+    "communications": {
+      "name": "Коммуникации",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1632
+      },
+      "multiple": false
+    },
+    "electricity_house": {
+      "name": "Электричество в доме",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1115
+      },
+      "multiple": false
+    },
+    "gas_line": {
+      "name": "Газ (линия)",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1113
+      },
+      "multiple": false
+    },
+    "permit_type": {
+      "name": "Вид разрешительного использования",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 543
+      },
+      "multiple": false
+    },
+    "land_category": {
+      "name": "Категория земли",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 544
+      },
+      "multiple": false
+    },
+    "name_kp_cian": {
+      "name": "Название КП для циан",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1581
+      },
+      "multiple": false
+    },
+    "price_hidden": {
+      "name": "Цена по запросу",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1644
+      },
+      "multiple": false
+    },
+    "price_hidden_lot": {
+      "name": "Цена по запросу у лота",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1692,
+        "2": 1696,
+        "3": 1695,
+        "5": 1697
+      },
+      "multiple": false
+    },
+    "mebel": {
+      "name": "Мебель",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 478,
+        "3": 550
+      },
+      "multiple": false
+    },
+    "dop_build": {
+      "name": "Доп. строения",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 547
+      },
+      "multiple": false
+    },
+    "infrastructure": {
+      "name": "Инфраструктура",
+      "datatype": "text",
+      "helper": "Infrastructure",
+      "intrum_property_id": {
+        "1": 1599,
+        "2": 1607,
+        "3": 1603,
+        "5": 1609
+      },
+      "multiple": false
+    },
+    "gas_poselok": {
+      "name": "Газ в поселке",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1670
+      },
+      "multiple": false
+    },
+    "vodosn_poselok": {
+      "name": "Водоснабжение в поселке",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1671
+      },
+      "multiple": false
+    },
+    "sewage_poselok": {
+      "name": "Канализация в поселке",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1672
+      },
+      "multiple": false
+    },
+    "gas_objects": {
+      "name": "Газ в объекте",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1673
+      },
+      "multiple": false
+    },
+    "vodosn_objects": {
+      "name": "Водоснабжение в объекте",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1674
+      },
+      "multiple": false
+    },
+    "sewage_objects": {
+      "name": "Канализация в объекте",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1675
+      },
+      "multiple": false
+    },
+    "top9": {
+      "name": "ТОП 9",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1659,
+        "3": 1658
+      },
+      "multiple": false
+    },
+    "top9jk": {
+      "name": "Топ 9 родитель",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1668,
+        "3": 1669
+      },
+      "multiple": false
+    },
+    "recom": {
+      "name": "Рекомендуем",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1678,
+        "3": 1679,
+        "5": 1680
+      },
+      "multiple": false
+    },
+    "loggia": {
+      "name": "Лоджия",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "5": 1685
+      },
+      "multiple": false
+    },
+    "pool": {
+      "name": "Бассейн",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "5": 1691
+      },
+      "multiple": false
+    },
+    "location": {
+      "name": "Расположение",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "5": 1686
+      },
+      "multiple": false
+    },
+    "to_the_airport": {
+      "name": "До аэропорта",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "5": 1687
+      },
+      "multiple": false
+    },
+    "type_real": {
+      "name": "Тип недвижимости",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 1698
+      },
+      "multiple": false
+    },
+    "сommission": {
+      "name": "Комиссия",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 1702
+      },
+      "multiple": false
+    },
+    "year_finish": {
+      "name": "Год постройки",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 495
+      },
+      "multiple": false
+    },
+    "description_parent": {
+      "name": "Описание МФК/БЦ",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 1593
+      },
+      "multiple": false
+    },
+    "heating_system": {
+      "name": "Система отопления",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 499
+      },
+      "multiple": false
+    },
+    "water_system": {
+      "name": "Система водоснабжения",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 519
+      },
+      "multiple": false
+    },
+    "conditioning system": {
+      "name": "Система кондиционирования",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 504
+      },
+      "multiple": false
+    }
+  },
+  "AREA": {
+    "area": {
+      "name": "Площадь",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 447,
+        "2": 488,
+        "3": 1154,
+        "5": 807
+      },
+      "multiple": false
+    },
+    "live_area": {
+      "name": "Жилая площадь",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 450
+      },
+      "multiple": false
+    },
+    "kitchen_area": {
+      "name": "Площадь кухни",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 451
+      },
+      "multiple": false
+    },
+    "area_weaving": {
+      "name": "Площадь участка (сот.)",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 1136,
+        "3": 527,
+        "5": 808
+      },
+      "multiple": false
+    },
+    "area_building": {
+      "name": "Площадь строения (кв.м.)",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 526
+      },
+      "multiple": false
+    },
+    "rooms_area": {
+      "name": "Площадь комнат",
+      "datatype": "text",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 634
+      },
+      "multiple": false
+    }
+  },
+  "IMG": {
+    "zhk_main_img": {
+      "name": "Основное изображение ЖК",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1588,
+        "3": 1590,
+        "2": 1592
+      },
+      "multiple": true
+    },
+    "main_img": {
+      "name": "Основное изображение",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 474,
+        "2": 510,
+        "3": 558,
+        "4": 572,
+        "5": 885
+      },
+      "multiple": true
+    },
+    "plan": {
+      "name": "Планировка",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1198,
+        "2": 1700
+      },
+      "multiple": false
+    },
+    "park_img": {
+      "name": "Парковая зона",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1654
+      },
+      "multiple": false
+    },
+    "safety_img": {
+      "name": "Безопасность",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1655
+      },
+      "multiple": false
+    },
+    "parking_img": {
+      "name": "Парковка",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1656
+      },
+      "multiple": false
+    },
+    "place_img": {
+      "name": "Расположение",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1657
+      },
+      "multiple": false
+    },
+    "kons_img": {
+      "name": "Консьерж-сервис",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 1663
+      },
+      "multiple": false
+    },
+    "spa_img": {
+      "name": "Фитнес и спа",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1664
+      },
+      "multiple": false
+    },
+    "educ_img": {
+      "name": "Образование",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1665
+      },
+      "multiple": false
+    },
+    "park_river_img": {
+      "name": "Парки и водоемы",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1666
+      },
+      "multiple": false
+    },
+    "cafe_img": {
+      "name": "Кафе и рестораны",
+      "datatype": "file",
+      "helper": "",
+      "intrum_property_id": {
+        "3": 1667
+      },
+      "multiple": false
+    }
+  },
+  "MAP": {
+    "map_coords": {
+      "name": "Объект на карте",
+      "datatype": "point",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 487,
+        "2": 511,
+        "3": 557,
+        "4": 571,
+        "5": 1000
+      },
+      "multiple": false
+    }
+  },
+  "PRICE": {
+    "valute": {
+      "name": "Валюта",
+      "datatype": "select",
+      "helper": "Valute",
+      "intrum_property_id": {
+        "1": 471,
+        "2": 492,
+        "3": 529,
+        "4": 563,
+        "5": 811
+      },
+      "multiple": true
+    },
+    "base_price": {
+      "name": "Базовая цена",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 470,
+        "3": 528,
+        "4": 562,
+        "5": 810,
+        "2": 491
+      },
+      "multiple": false
+    },
+    "base_square_price": {
+      "name": "Базовая цена за кв метр",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "1": 855,
+        "2": 856,
+        "3": 546
+      },
+      "multiple": false
+    },
+    "price_rub": {
+      "name": "Цена в рублях",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "price_dol": {
+      "name": "Цена в долларах",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "price_eur": {
+      "name": "Цена в евро",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "price_pound": {
+      "name": "Цена в фунтах",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "square_price_rub": {
+      "name": "Цена за кв.м.(сотку-для загородной) в рублях",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "square_price_dol": {
+      "name": "Цена за кв.м.(сотку-для загородной) в долларах",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "square_price_eur": {
+      "name": "Цена за кв.м.(сотку-для загородной) в евро",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "square_price_pound": {
+      "name": "Цена за кв.м.(сотку-для загородной) в фунтах",
+      "datatype": "integer",
+      "helper": "",
+      "multiple": false
+    },
+    "rental_rate_all": {
+      "name": "Арендная ставка за весь объект",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 1703
+      },
+      "multiple": false
+    },
+    "rental_rate_square": {
+      "name": "Арендная ставка за кв.м.",
+      "datatype": "integer",
+      "helper": "",
+      "intrum_property_id": {
+        "2": 824
+      },
+      "multiple": false
+    }
+  },
+  "SEO": {
+    "seo_title": {
+      "name": "Заголовок",
+      "datatype": "text",
+      "helper": "",
+      "multiple": false
+    },
+    "seo_description": {
+      "name": "Описание",
+      "datatype": "text",
+      "helper": "",
+      "multiple": false
+    },
+    "seo_keywords": {
+      "name": "Keywords",
+      "datatype": "text",
+      "helper": "",
+      "multiple": false
+    }
+  }
+}

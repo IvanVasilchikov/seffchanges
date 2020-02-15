@@ -1,0 +1,7 @@
+<?
+if($INCLUDE_FROM_CACHE!='Y')return false;
+$datecreate = '001580197951';
+$dateexpire = '001580201551';
+$ser_content = 'a:2:{s:7:"CONTENT";s:0:"";s:4:"VARS";a:1:{s:3:"pos";a:1:{s:8:"sections";s:1169:"menu_site,menu_iblock_%2Fcompany%2F4,menu_iblock_%2Fcompany%2F3,iblock_admin,menu_iblock_%2Fcompany%2F1,menu_iblock_%2Fcompany%2F2,menu_iblock_%2Fcompany%2F5,menu_iblock_%2Fcompany%2F6,menu_iblock_%2Fcompany%2F7,menu_iblock_%2Fcompany%2F8,menu_iblock_%2Fcompany%2F11,menu_iblock_%2Fcompany%2F12,menu_iblock_%2Fservices%2F9,menu_iblock_%2Fservices%2F10,menu_iblock_%2Fcompany%2F13,menu_iblock_%2Fcompany%2F14,menu_vote,menu_vote_settings,menu_vote_channels,menu_iblock_%2Fdebriefing%2F15,menu_iblock_%2Fdebriefing%2F16,menu_iblock_%2Fsliders%2F18,menu_iblock_%2Fsliders%2F17,menu_perfmon,menu_util,backup,menu_fileman_file_s1_,menu_users,menu_perfmon_index_list,menu_iblock_%2Fcontent%2F26,menu_system,menu_templates,menu_module_settings,menu_iblock_%2Fzhk_sitemap%2F20,diag,menu_composite,menu_webforms,menu_seo,menu_iblock_%2Fzhk_sitemap%2F38,menu_iblock_/commerc_sitemap,menu_iblock_/zhk_sitemap,menu_iblock_%2Fcommerc_sitemap%2F22,menu_iblock_/foreign_sitemap,menu_iblock_%2Fforeign_sitemap%2F23,menu_iblock_/country_sitemap,menu_iblock_%2Fcountry_sitemap%2F21,menu_iblock_%2Fcommerc_sitemap%2F40,menu_iblock_%2Fcountry_sitemap%2F39,menu_iblock_/content,menu_fileman";}}}';
+return true;
+?>

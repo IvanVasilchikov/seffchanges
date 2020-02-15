@@ -1,0 +1,22 @@
+$parent: title-fourth;
+
+@include block($parent) {
+  font-weight: 400;
+  font-size: rem(20);
+  line-height: rem(30);
+  color: $black;
+
+  @media (min-width: $tMin) {
+    font-size: rem(22);
+  }
+
+  @include modifier($parent, 'up') {
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+
+    em {
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+}

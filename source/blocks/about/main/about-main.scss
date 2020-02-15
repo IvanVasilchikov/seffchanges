@@ -1,0 +1,176 @@
+$parent: 'about-main';
+
+@include block($parent) {
+  position: relative;
+  padding: rem(25) 0 rem(165);
+
+  @media (min-width: $tMin) {
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $d1280) {
+    height: rem(609);
+    padding-top: rem(27);
+  }
+
+  @include element($parent, 'background') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    img {
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'container') {
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: $d1280) {
+      height: 100%;
+    }
+  }
+
+  @include element($parent, 'content') {
+    padding-top: rem(40);
+
+    @media (min-width: $tMin) {
+      padding-top: rem(50);
+    }
+
+    @media (min-width: $d1280) {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      padding-top: rem(89);
+    }
+  }
+
+  @include element($parent, 'titles') {
+    @media (min-width: $d1280) {
+      flex-basis: 60%;
+      max-width: 60%;
+      padding-right: rem(50);
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-family: $BaronNeue;
+    font-size: rem(45);
+    line-height: 1;
+
+    @media (min-width: $tMin) {
+      font-size: rem(60);
+    }
+  }
+
+  @include element($parent, 'text') {
+    margin-top: rem(35);
+
+    @media (min-width: $d1280) {
+      flex-basis: 40%;
+      max-width: 40%;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: rem(24);
+
+      &:not(:last-child) {
+        margin-bottom: rem(25);
+
+        @media (min-width: $tMin) {
+          margin-bottom: rem(30);
+        }
+      }
+
+      b {
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include element($parent, 'info') {
+    background-color: $w;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: auto;
+    top: calc(100% + 2.8125rem);
+    padding: rem(20) 0 rem(40);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      right: 0;
+      bottom: 0;
+      background-color: $w;
+    }
+
+    @media (min-width: $tMin) {
+      margin-top: rem(69);
+      position: relative;
+      top: auto;
+      display: flex;
+      align-items: center;
+      padding: rem(40) 0 rem(60);
+    }
+
+    @media (min-width: $d1280) {
+      margin-top: 0;
+      padding: rem(69) rem(125) rem(50) 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @include element($parent, 'info-item') {
+    position: relative;
+    z-index: 2;
+
+    span {
+      font-size: rem(15);
+      line-height: rem(24);
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(30);
+
+      @media (min-width: $tMin) {
+        margin-right: rem(85);
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $d1280) {
+        margin-right: rem(98);
+      }
+    }
+  }
+
+  @include element($parent, 'info-item-title') {
+    font-family: $BaronNeue;
+    font-weight: 600;
+    line-height: 1;
+    font-size: rem(80);
+    color: $red2;
+    margin-right: rem(11);
+    display: inline-block;
+
+    @media (min-width: $tMin) {
+      font-size: rem(100);
+    }
+  }
+}

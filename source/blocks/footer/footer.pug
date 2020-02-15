@@ -1,0 +1,46 @@
+include ./../fonts/text/little/text-little.pug
+
+mixin footer(obj)
+  .footer
+    .footer__content.main
+      .footer__top
+        ul.footer__list
+          each item in obj.list
+            li.footer__list-item
+              a.footer__list-link(href=item.url)= item.text
+        .footer__contacts
+          if obj.contacts
+            if obj.contacts.phone
+              a.footer__phone(href=obj.contacts.phone.url)= obj.contacts.phone.text
+            if obj.contacts.address
+              p.footer__address= obj.contacts.address
+            if obj.contacts.email
+              a.footer__email(href=obj.contacts.email.url)= obj.contacts.email.text
+            if obj.contacts.write
+              button.footer__write(type= 'button')
+                svg
+                  use(xlink:href=loadAssets('./svg/mail.svg'))
+                span Написать нам
+      .footer__copy-wrap
+        if obj.copyWrap
+          if obj.copyWrap.copy
+            +text-little(obj.copyWrap.copy, 'footer__copy')
+          if obj.copyWrap.socials
+            .footer__socials
+              if obj.copyWrap.socials.fb
+                a.footer__social-item(href=obj.copyWrap.socials.fb, target='_blank')
+                  svg
+                    use(xlink:href=loadAssets('./svg/fb.svg'))
+              if obj.copyWrap.socials.tw
+                a.footer__social-item(href=obj.copyWrap.socials.tw, target='_blank')
+                  svg
+                    use(xlink:href=loadAssets('./svg/tw.svg'))
+              if obj.copyWrap.socials.insta
+                a.footer__social-item(href=obj.copyWrap.socials.insta, target='_blank')
+                  svg
+                    use(xlink:href=loadAssets('./svg/insta.svg'))
+    if obj.map
+      .footer__map
+        img.lazyload(data-src=obj.map.image, alt='map')
+        svg
+          use(xlink:href=loadAssets(obj.map.icon))

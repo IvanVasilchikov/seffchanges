@@ -1,0 +1,28 @@
+include ../../core/picture/picture.pug
+include ../../fonts/title/second/title-second.pug
+include ../../core/input/input.pug
+include ../../core/textarea/textarea.pug
+include ../../core/select/select.pug
+include ../../core/btn/btn.pug
+include ../../core/checkbox/checkbox.pug
+
+mixin popup-form(info)
+  .popup-form(class= info.className)
+    if (info.picture)
+      +picture(info.picture, 'popup-form__background-img')
+    else
+      | <!---->
+    +title-second(info.title, 'popup-form__title')
+    form.popup-form__form(v-on:submit.prevent='onSubmit', action= info.action, ref= 'form')
+      each input in info.inputs
+        .popup-form__input-wrapper
+          if (input.type === 'input')
+            +input(input, 'popup-form__input')(v-model= 'formModel[input.name]')
+          else if (input.type === 'textarea')
+            +textarea(input, 'popup-form__input popup-form__input--textarea')(v-model= 'formModel[input.name]')
+          else if (input.type === 'select')
+            +select(input.info, 'select--higher select--shadow popup-form__input popup-form__input--select', 0.3, '')(v-model= 'formModel[input.info.name]')
+          else
+            | <!---->
+      +btn('button', info.btnPhrase, 'popup-form__btn', (!info.checkbox.checked))
+      +checkbox(info.checkbox, 'popup-form__checkbox')

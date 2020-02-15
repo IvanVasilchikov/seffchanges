@@ -1,0 +1,70 @@
+mixin detail-table(table, info, className)
+	.detail-table(class=className)
+		if (info && info.length !== 0)
+			.detail-table__container
+				.detail-table__top
+					.detail-table__head
+						each head in table
+							.detail-table__cell(class=[head.sorter ? 'detail-table__cell--sort' : '', (sortField == head.sortField) ? 'detail-table__cell--sort-active' : '', head.dopClass], @click='setSort(head)')
+								div= head.title
+									if head.sorter
+										svg
+											use(xlink:href=loadAssets('./svg/sort.svg'))
+						.detail-table__cell
+					.detail-table__row
+						each head in table
+							.detail-table__cell(class=[head.view ? 'detail-table__cell--plan' : '', head.dopClassList], data-title=head.title)
+								if (head.view == 'plan')
+									div
+										//- if util.getByPath(info[0], head.field) != '-'
+										a.detail-table__button(href=util.getByPath(info[0], head.field), target='_blank') Посмотреть
+										//- else
+											//- span -
+								else if (head.view == 'price')
+									div
+										if (util.getByPath(info[0], head.field) != '-' && info[0].price.request != true)
+											span!= util.getByPath(info[0], head.field)
+										else
+											span По запросу
+								else
+									span!= util.getByPath(info[0], head.field)
+						.detail-table__cell.detail-table__cell--order
+									.detail-table__button(@click.prevent='openPopup(item.id)') Оставить заявку
+									.detail-table__like(@click.prevent='toggleFav(item)', class=(info[0].isFav ? 'detail-table__like--liked' : ''))
+										svg
+											use(xlink:href=loadAssets('./svg/heart.svg'))
+				.detail-table__wrp
+					.detail-table__main
+						.detail-table__head
+							each head in table
+								.detail-table__cell(class=[head.sorter ? 'detail-table__cell--sort' : '', (sortField == head.sortField) ? 'detail-table__cell--sort-active' : '', head.dopClass], @click='setSort(head)')
+									div= head.title
+										if head.sorter
+											svg
+												use(xlink:href=loadAssets('./svg/sort.svg'))
+							.detail-table__cell
+						each item in info
+							.detail-table__row(@click='goToPage(item.link, $event)')
+								each head in table
+									.detail-table__cell(class=[head.view ? 'detail-table__cell--plan' : '', head.dopClassList], data-title=head.title)
+											if (head.view == 'plan')
+												div
+													//- if util.getByPath(item, head.field) != '-'
+													a.detail-table__button(href=item.link, target='_blank') Посмотреть
+													//- else
+														span -
+											else if (head.view == 'price')
+												div
+													if (util.getByPath(item, head.field) != '-' && item.price.request != true)
+														span!= util.getByPath(item, head.field)
+													else
+														span По запросу
+											else
+												span!= util.getByPath(item, head.field)
+								.detail-table__cell.detail-table__cell--order
+									.detail-table__button(@click.prevent='openPopup(item.id)') Оставить заявку
+									.detail-table__like(@click.prevent='toggleFav(item)', class=(item.isFav ? 'detail-table__like--liked' : ''))
+										svg
+											use(xlink:href=loadAssets('./svg/heart.svg'))
+		else
+			.detail-table__error Ничего не найдено

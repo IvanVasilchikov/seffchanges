@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/privacy/privacy.pug
+
+block vars
+  - homepage = false;
+  - var privacyPolicy = require('../data/privacyPolicyPage.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      privacyPolicy: !{JSON.stringify(privacyPolicy)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +privacy(privacyPolicy)

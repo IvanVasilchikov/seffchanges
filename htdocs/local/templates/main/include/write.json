@@ -1,0 +1,52 @@
+{
+  "title": "Написать нам",
+  "action": "/ajax/write_us_footer.php",
+  "hidden": {
+    "param": "PARAM_1"
+  },
+  "inputs": [
+    {
+      "type": "input",
+      "name": "name",
+      "placeholder": "Имя*",
+      "value": "",
+      "checked": {
+        "value": "waiting",
+        "required": true,
+        "lengthString": {
+          "min": 1,
+          "max": 50
+        }
+      }
+    }, {
+      "type": "input",
+      "name": "email",
+      "placeholder": "E-mail*",
+      "value": "",
+      "checked": {
+        "value": "waiting",
+        "required": true,
+        "email": true
+      }
+    }, {
+      "type": "textarea",
+      "name": "message",
+      "placeholder": "Сообщение*",
+      "value": "",
+      "checked": {
+        "required": true,
+        "lengthString": {
+          "min": 1,
+          "max": 160
+        }
+      }
+    }
+  ],
+  "btnPhrase": "Отправить заявку",
+  "checkbox": {
+    "checked": false,
+    "name": "checkbox",
+    "text": "Согласен на обработку <a href=\"/privacy-policy/\" target=\"_blank\">персональных данных</a>",
+    "value": ""
+  }
+}

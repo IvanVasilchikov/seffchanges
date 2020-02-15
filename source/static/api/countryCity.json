@@ -1,0 +1,180 @@
+[
+	{
+		"name": "Страны",
+		"listName": "country",
+		"inner": [
+			{
+				"text": "Франция",
+				"value": "france"
+			},
+			{
+				"text": "Страна 2",
+				"value": "country2"
+			},
+			{
+				"text": "Страна 3",
+				"value": "country3"
+			}
+		]
+	},
+	{
+		"name": "Австрия",
+		"listName": "city",
+		"inner": [
+			{
+				"text": "Город austria",
+				"value": "city1austria"
+			},
+			{
+				"text": "Город 2 austria",
+				"value": "city2austria"
+			},
+			{
+				"text": "Город 3 austria",
+				"value": "city3austria"
+			}
+		]
+	},
+	{
+		"name": "Болгария",
+		"listName": "bulgaria",
+		"inner": [
+			{
+				"text": "Город bulgaria",
+				"value": "city1bulgaria"
+			},
+			{
+				"text": "Город 2 bulgaria",
+				"value": "city2bulgaria"
+			},
+			{
+				"text": "Город 3 bulgaria",
+				"value": "city3bulgaria"
+			}
+		]
+	},
+	{
+		"name": "Барбадос",
+		"listName": "barbados",
+		"inner": [
+			{
+				"text": "Город 1Barbados",
+				"value": "city1Barbados"
+			},
+			{
+				"text": "Город 2Barbados",
+				"value": "city2Barbados"
+			}
+		]
+	},
+	{
+		"name": "Великобритания",
+		"listName": "greatBritain",
+		"inner": [
+			{
+				"text": "Город greatBritain",
+				"value": "city1greatBritain"
+			},
+			{
+				"text": "Город 2 greatBritain",
+				"value": "city2greatBritain"
+			},
+			{
+				"text": "Город 3 greatBritain",
+				"value": "city3greatBritain"
+			}
+		]
+	},
+	{
+		"name": "Германия",
+		"listName": "germany",
+		"inner": [
+			{
+				"text": "Город germany",
+				"value": "city1germany"
+			},
+			{
+				"text": "Город 2 germany",
+				"value": "city2germany"
+			},
+			{
+				"text": "Город 3 germany",
+				"value": "city3germany"
+			}
+		]
+	},
+	{
+		"name": "Греция",
+		"listName": "greece",
+		"inner": [
+			{
+				"text": "Город greece",
+				"value": "city1greece"
+			},
+			{
+				"text": "Город 2 greece",
+				"value": "city2greece"
+			},
+			{
+				"text": "Город 3 greece",
+				"value": "city3greece"
+			}
+		]
+	},
+	{
+		"name": "Израиль",
+		"listName": "israel",
+		"inner": [
+			{
+				"text": "Город 1israel",
+				"value": "city1israel"
+			},
+			{
+				"text": "Город 2israel",
+				"value": "city2israel"
+			}
+		]
+	},
+	{
+		"name": "Ирландия",
+		"listName": "ireland",
+		"inner": [
+			{
+				"text": "Город 1ireland",
+				"value": "city1ireland"
+			},
+			{
+				"text": "Город 2ireland",
+				"value": "city2ireland"
+			}
+		]
+	},
+	{
+		"name": "Испания",
+		"listName": "spain",
+		"inner": [
+			{
+				"text": "Город 1spain",
+				"value": "city1spain"
+			},
+			{
+				"text": "Город 2spain",
+				"value": "city2spain"
+			}
+		]
+	},
+	{
+		"name": "Италия",
+		"listName": "italy",
+		"inner": [
+			{
+				"text": "Город 1italy",
+				"value": "city1italy"
+			},
+			{
+				"text": "Город 2italy",
+				"value": "city2italy"
+			}
+		]
+	}
+]

@@ -1,0 +1,19 @@
+include ../../fonts/title/title.pug
+include ../../tabs/tabs.pug
+include ../../services/item/services-item.pug
+
+mixin about-services(info)
+  .about-services
+    .main
+      .about-services__container
+        +title(info.title, 'about-services__title')
+        .about-services__subtitle!= info.subtitle
+        if info.buttons
+          .about-services__buttons-wrp
+            +tabs(info.buttons, 'about-services__buttons')(@changeTab='changeTab')
+      if info.tabs
+        .about-services__tabs
+          each tab in info.tabs
+            .about-services__tab(v-if='activeTab === tab.name')
+              each service in tab.services
+                +services-item(service, 'about-services__item', 'lazy')

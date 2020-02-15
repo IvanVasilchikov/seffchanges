@@ -1,0 +1,19 @@
+include ./object/popup-object.pug
+
+mixin popup()
+  - var modal = null;
+  - var className = null;
+  - var wrapperClass = null;
+
+  .popup
+    if modal
+      .popup__wrapper(@click= 'contentClickOver($event)', class=(wrapperClass ? wrapperClass : ''), ref='wrapper')
+        .popup__content(class=(className ? className : ''), ref= 'content')
+          button.popup__close(type= 'button', @click= 'close()')
+            svg
+              use(xlink:href=loadAssets('./svg/close.svg'))
+        //-nossr
+          div(:is='modal', :info='info', @close='close')
+          nossr-//
+    else
+      | <!---->

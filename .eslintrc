@@ -1,0 +1,23 @@
+{
+  "globals": {
+    "window": true,
+    "document": true,
+    "google": true,
+    "FormData": true,
+    "XMLHttpRequest": true,
+    "CustomEvent": true,
+    "Event": true
+  },
+  "settings" : {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.resolve.js"
+      }
+    }
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "linebreak-style": 0,
+    "no-new": 0
+  }
+}

@@ -1,0 +1,1 @@
+<?php $filesInfo = array("/local/templates/main/css/custom.css" => "157424725937",); ?>

@@ -1,0 +1,11 @@
+include ../core/btn/btn.pug
+
+mixin cookies(info, className)
+  .cookies(class=className)
+    .cookies__text= info.attention.text
+      | &nbsp;
+      a.cookies__link(href=info.attention.url, target="_blank")= info.attention.link
+    .cookies__wrap
+      svg.cookies__logo-icon
+        use(xlink:href=loadAssets('./svg/logo.svg'))
+      +btn('button', info.button, 'btn--white cookies__button')

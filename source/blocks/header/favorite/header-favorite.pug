@@ -1,0 +1,7 @@
+mixin header-favorite()
+	-var count = 0;
+	.header__btn
+		a.header__heart(@click='send')
+			svg
+				use(xlink:href=loadAssets('./svg/heart.svg'))
+			span= count

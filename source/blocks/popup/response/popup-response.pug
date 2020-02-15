@@ -1,0 +1,12 @@
+include ../../fonts/title/second/title-second.pug
+include ../../wysiwyg/wysiwyg.pug
+include ../../core/btn/btn.pug
+
+mixin popup-response(info)
+  .popup-response(class= info.className)
+    +title-second(info.title, 'popup-response__title')
+    if (info.html)
+      +wysiwyg(info.html, 'popup-response__content')
+    else
+      | <!---->
+    +btn('button', 'Ок', 'popup-response__btn')(@click='close()')

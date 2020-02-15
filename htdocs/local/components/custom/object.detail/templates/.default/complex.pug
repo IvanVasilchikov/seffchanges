@@ -1,0 +1,51 @@
+include /blocks/detail/detail.pug
+include /blocks/core/animation/fade/animation-fade.pug
+include /blocks/detail/nav/detail-nav.pug
+include /blocks/detail/main/detail-main.pug
+include /blocks/detail/characteristics/detail-characteristics.pug
+include /blocks/banner/detail/banner-detail.pug
+include /blocks/detail/about/detail-about.pug
+include /blocks/detail/infrastructure/detail-infrastructure.pug
+include /blocks/detail/map/detail-map.pug
+include /blocks/detail/district/detail-district.pug
+include /blocks/detail/map/detail-map.pug
+include /blocks/detail/aboutDistrict/detail-aboutDistrict.pug
+include /blocks/detail/similar/detail-similar.pug
+include /blocks/detail/choose/detail-choose.pug
+
+.detail.detail--complex
+    +animation-fade(0.4)
+      +detail-nav(json.nav, 'detail-nav--complex')(ref='nav')
+    +detail-main(json.main)(ref='main')
+    if (json.characteristics)
+        +detail-characteristics(json.characteristics)
+    else
+        | <!---->
+    if (json.banner)
+        +banner-detail(json.banner)
+    else
+        | <!---->
+    if (json.about)
+        +detail-about(json.about)
+    else
+        | <!---->
+    if (json.apartments)
+        +detail-choose(json.apartments)
+    else
+        | <!---->
+    if (json.infrastructure)
+        +detail-infrastructure(json.infrastructure)
+    else
+        | <!---->
+    if (json.map)
+        +detail-map(json.map)
+    else
+        | <!---->
+    if (json.district)
+        +detail-aboutDistrict(json.district)
+    else
+        | <!---->
+    if (json.similar)
+        +detail-similar(json.similar)
+    else
+        | <!---->

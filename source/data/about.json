@@ -1,0 +1,730 @@
+{
+  "top":  {
+    "breadcrumbs": [
+      {
+        "href": "./",
+        "title": "Главная"
+      },
+      {
+        "href": "./more.html",
+        "title": "Еще"
+      },
+      {
+        "href": "./about.html",
+        "title": "О компании"
+      }
+    ],
+    "image": {
+      "sources": {
+        "mobile": ["/assets/images/about/about-main-mobile.jpg", "/assets/images/about/about-main-mobile.webp"],
+        "tablet": ["/assets/images/about/about-main-tablet.jpg", "/assets/images/about/about-main-tablet.webp"],
+        "desktop": ["/assets/images/about/about-main-desktop.jpg", "/assets/images/about/about-main-desktop.webp"]
+      },
+      "alt": "about bg",
+      "title": ""
+    },
+    "preTitle": "консалтинговая компания",
+    "title": "Saffari Estate",
+    "text": ["Крупнейшая независимая международная консалтинговая компания, в сфере коммерческой деятельности и управления.", "<b>Saffari Estate</b> - единственная международная консалтинговая компания, которая продает недвижимость в Монако и имеет свой офис без посредников. Saffari Estate является лидером на двух основных рынках: коммерческой и элитной жилой недвижимости. Компания оказывает полный цикл услуг: от исследования рынка и создания концепции проекта, до инвестиционной продажи объектов"],
+    "info": [
+      {
+        "number": 12,
+        "text": "лет <br>опыт работы"
+      },
+      {
+        "number": 69,
+        "text": "объектов по <br>всей россии"
+      }
+    ]
+  },
+  "features": {
+    "title": "особенности работы",
+    "subtitle": "компании saffari estate",
+    "list": [
+      {
+        "number": "01",
+        "title": "большая база",
+        "text": "У нас самая большая база актуальных и эксклюзивных объектов элитной недвижимости",
+        "button": {
+          "text": "Посмотреть",
+          "popup": ""
+        }
+      },
+      {
+        "number": "02",
+        "title": "надежность",
+        "text": "Мы гарантируем абсолютую безопасность и конфиденциальность по сделкам",
+        "button": {
+          "text": "Узнать",
+          "popup": ""
+        }
+      },
+      {
+        "number": "03",
+        "title": "опыт",
+        "text": "Наша команда имеет огромный опыт продаж недвижимости в элитном сегменте",
+        "button": {
+          "text": "Изучить",
+          "popup": ""
+        }
+      },
+      {
+        "number": "04",
+        "title": "Закрытые предложения",
+        "text": "Есть объекты, которые предлагаем только мы",
+        "button": {
+          "text": "Получить",
+          "popup": ""
+        }
+      },
+      {
+        "number": "05",
+        "title": "Индивидуальность",
+        "text": "Персональный подбор предложений под клиента",
+        "button": {
+          "text": "Получить",
+          "popup": ""
+        }
+      },
+      {
+        "number": "06",
+        "title": "Оперативность",
+        "text": "Быстро реагируем и организуем работу",
+        "button": {
+          "text": "Получить",
+          "popup": ""
+        }
+      }
+    ]
+  },
+  "location": {
+    "image": {
+      "sources": {
+        "desktop": ["/assets/images/about/monako.jpg", "/assets/images/about/monako.webp"]
+      },
+      "alt": "Монако",
+      "title": "Монако"
+    },
+    "preTitle": "Мы единственное агентство в России, у которого есть офис и доступные объекты",
+    "title": "в монако",
+    "link": {
+      "url": "./objects.html",
+      "text": "Посмотреть все объекты"
+    },
+    "map": {
+      "center": "-28.024, 140.887",
+      "markers": [
+        {
+          "coords": "-33.718234, 150.363181",
+          "icon": "/assets/svg/map/shop.svg",
+          "type": "shops",
+          "infoWindow": "Пресненская наб., 2, Москва, ТРЦ Афимолл Сити, эт. 1",
+          "id": "marker_1"
+        },
+        {
+          "coords": "-33.727111, 150.371124",
+          "icon": "/assets/svg/map/health.svg",
+          "type": "health&beauty",
+          "infoWindow": "Пресненская наб., 1, Москва",
+          "id": "marker_2"
+        },
+        {
+          "coords": "-33.848588, 151.209834",
+          "icon": "/assets/svg/map/baby.svg",
+          "type": "kindergarten",
+          "infoWindow": "Пресненская наб., 10, Москва, ТРЦ Афимолл Сити, эт. 1",
+          "id": "marker_3"
+        },
+        {
+          "coords": "-33.851702, 151.216968",
+          "icon": "/assets/svg/map/education.svg",
+          "type": "education",
+          "infoWindow": "Пресненская наб., 14, Москва",
+          "id": "marker_4"
+        },
+        {
+          "coords": "-34.671264, 150.863657",
+          "icon": "/assets/svg/map/movie.svg",
+          "type": "entertainment",
+          "infoWindow": "Пресненская наб., 11, Москва",
+          "id": "marker_5"
+        },
+        {
+          "coords": "-34.571264, 150.863657",
+          "icon": "/assets/svg/map/coffee.svg",
+          "type": "entertainment",
+          "infoWindow": "Пресненская наб., 17, Москва",
+          "id": "marker_6"
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Услуги",
+    "subtitle": "<b>Более 95%</b> наших клиентов ежегодно продлевают с нами договора",
+    "buttons": [
+      {
+        "text": "Собственнику",
+        "value": "owner"
+      },
+      {
+        "text": "Покупателю",
+        "value": "buyer"
+      },
+      {
+        "text": "Арендатору",
+        "value": "arendator"
+      },
+      {
+        "text": "Девелоперу",
+        "value": "developer"
+      }
+    ],
+    "tabs": [
+      {
+        "name": "owner",
+        "services": [
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          }
+        ]
+      },
+      {
+        "name": "buyer",
+        "services": [
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          }
+        ]
+      },
+      {
+        "name": "arendator",
+        "services": [
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          }
+        ]
+      },
+      {
+        "name": "developer",
+        "services": [
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/buyers.svg",
+            "title": "Подбор покупателей",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/consulting.svg",
+            "title": "Консалтинг",
+            "text": "Вы найдёте объекты по <br>аренде и продаже <br>недвижимости в Москве. <br>Все квартиры, дома и <br>другие объекты проверены"
+          },
+          {
+            "link": "./service.html",
+            "ico": "/assets/svg/interest.svg",
+            "title": "Представление интересов",
+            "text": "Для упрощения поиска, у <br>нас реализована система <br>рекомендаций похожих <br>объявлений"
+          }
+        ]
+      }
+    ]
+  },
+  "leadership": {
+    "title": "наше руководство",
+    "slides": [
+      {
+        "quote": "Наличие нашей команды в проекте - гарантирует успех! Мы - надежная опора и дружественное плечо для любого застройщика",
+        "name": "Анна cергеева",
+        "post": "Директор по маркетингу и PR",
+        "description": "Опыт работы на рынке более 4-х  лет",
+        "image": {
+          "sources": {
+            "desktop": ["/assets/images/people/sergeeva.png", "/assets/images/people/sergeeva.webp"]
+          },
+          "alt": "Анна Сергеева",
+          "title": "Анна Сергеева"
+        }
+      },
+      {
+        "quote": "Наличие нашей команды в проекте - гарантирует успех! Мы - надежная опора и дружественное плечо для любого застройщика",
+        "name": "Анна Фёдорова",
+        "post": "Директор по маркетингу и PR",
+        "description": "Опыт работы на рынке более 5-х  лет",
+        "image": {
+          "sources": {
+            "desktop": ["/assets/images/people/sergeeva.png", "/assets/images/people/sergeeva.webp"]
+          },
+          "alt": "Анна Сергеева",
+          "title": "Анна Сергеева"
+        }
+      },
+      {
+        "quote": "Наличие нашей команды в проекте - гарантирует успех!",
+        "name": "Анна cергеева",
+        "post": "Директор по маркетингу и PR",
+        "description": "Опыт работы на рынке более 4-х  лет",
+        "image": {
+          "sources": {
+            "desktop": ["/assets/images/people/sergeeva.png", "/assets/images/people/sergeeva.webp"]
+          },
+          "alt": "Анна Сергеева",
+          "title": "Анна Сергеева"
+        }
+      },
+      {
+        "quote": "Наличие нашей команды в проекте - гарантирует успех! Мы - надежная опора и дружественное плечо для любого застройщика и дружественное плечо для любого застройщика",
+        "name": "Анна Фёдорова",
+        "post": "Директор по маркетингу и PR",
+        "description": "Опыт работы на рынке более 5-х  лет",
+        "image": {
+          "sources": {
+            "desktop": ["/assets/images/people/sergeeva.png", "/assets/images/people/sergeeva.webp"]
+          },
+          "alt": "Анна Сергеева",
+          "title": "Анна Сергеева"
+        }
+      },
+      {
+        "quote": "Наличие нашей команды в проекте - гарантирует успех! Мы - надежная опора и дружественное плечо для любого застройщика и дружественное плечо для любого застройщика и дружественное плечо для любого застройщика",
+        "name": "Анна Фёдорова",
+        "post": "Директор по маркетингу и PR",
+        "description": "Опыт работы на рынке более 5-х  лет",
+        "image": {
+          "sources": {
+            "desktop": ["/assets/images/people/sergeeva.png", "/assets/images/people/sergeeva.webp"]
+          },
+          "alt": "Анна Сергеева",
+          "title": "Анна Сергеева"
+        }
+      }
+    ]
+  },
+  "awards": {
+    "title": "16 заслуженных наград",
+    "subtitle": "которыми мы гордимся",
+    "years": [
+      {
+        "text":  "2019",
+        "value": "2019"
+      },
+      {
+        "text":  "2018",
+        "value": "2018"
+      },
+      {
+        "text":  "2017",
+        "value": "2017"
+      },
+      {
+        "text":  "2016",
+        "value": "2016"
+      }
+    ],
+    "sliders": [
+      {
+        "year": "2019",
+        "list": [
+          {
+            "title": "CRE AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "CRE AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          }
+        ]
+      },
+      {
+        "year": "2018",
+        "list": [
+          {
+            "title": "CRE AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "CRE AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          }
+        ]
+      },
+      {
+        "year": "2017",
+        "list": [
+          {
+            "title": "CRE AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "CRE AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          }
+        ]
+      },
+      {
+        "year": "2016",
+        "list": [
+          {
+            "title": "CRE AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "CRE AWARDS 2018: Победитель премии",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          },
+          {
+            "title": "AWARDS 2018: Победитель премии в номинации “Упраляющая компания года”",
+            "image": {
+              "sources": {
+                "desktop": ["/assets/images/awards/award.png", "/assets/images/awards/award.webp"]
+              },
+              "alt": "CRE AWARDS 2018",
+              "title": "CRE AWARDS 2018"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "clients": {
+    "title": "наши клиенты",
+    "items": [
+      {
+        "url": "#",
+        "img": {
+          "src": "/assets/images/clients/clients_4.png",
+          "alt": "client"
+        }
+      },
+      {
+        "url": "#",
+        "img": {
+          "src": "/assets/images/clients/clients_3.png",
+          "alt": "client"
+        }
+      },
+      {
+        "url": "#",
+        "img": {
+          "src": "/assets/images/clients/clients_2.png",
+          "alt": "client"
+        }
+      },
+      {
+        "url": "#",
+        "img": {
+          "src": "/assets/images/clients/clients_1.png",
+          "alt": "client"
+        }
+      },
+      {
+        "url": "#",
+        "img": {
+          "src": "/assets/images/clients/clients_0.png",
+          "alt": "client"
+        }
+      },
+      {
+        "url": "#",
+        "img": {
+          "src": "/assets/images/clients/clients_0.png",
+          "alt": "client"
+        }
+      }
+    ],
+    "moreClients": "./ajax/json/clients.json"
+  }
+}

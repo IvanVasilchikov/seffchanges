@@ -1,0 +1,48 @@
+include ../../core/select/select.pug
+
+mixin filter-range(info, className, name, parentName)
+  - var showDropdown = false;
+  - var dropdown = false;
+  - var range = info.range;
+  - var title = info.inputs.title;
+
+  .filter-range(class=[className, info.range ? 'filter-range--big' : ''])
+    if info.inputs
+      .filter-range__inputs(data-title=title, ref='head')
+        if (name === 'price')
+          .filter-range__inputs-wrp
+            input(type='text', name=info.inputs.min.name, placeholder=info.inputs.min.placeholder, value=info.inputs.min.value, @keyup='formatPrice($event, info.inputs.min)', v-model='formData[info.inputs.min.name]')
+            input(type='text', name=info.inputs.max.name, placeholder=info.inputs.max.placeholder, value=info.inputs.max.value, @keyup='formatPrice($event, info.inputs.max)', v-model='formData[info.inputs.max.name]')
+        else
+          .filter-range__inputs-wrp
+            input(type='text', name=info.inputs.min.name, placeholder=info.inputs.min.placeholder, value=info.inputs.min.value, v-model='formData[info.inputs.min.name]')
+            input(type='text', name=info.inputs.max.name, placeholder=info.inputs.max.placeholder, value=info.inputs.max.value, v-model='formData[info.inputs.max.name]')
+        if (dropdown && showDropdown)
+          .filter-range__dropdown(ref='drop')
+            if (dropdown.min)
+              ul.filter-range__dropdown-ul
+                each item, index in dropdown.min
+                  li.filter-range__dropdown-li(@click='change(item, \'min\')', :class='{"filter-range__dropdown-li--active" : computedClass(item, \'min\')}')
+                    span!= item.text
+            else
+              | <!---->
+
+            if (dropdown.max)
+              ul.filter-range__dropdown-ul
+                each item, index in dropdown.max
+                  li.filter-range__dropdown-li(@click='change(item, \'max\')', :class='{"filter-range__dropdown-li--active" : computedClass(item, \'max\')}')
+                    span!= item.text
+            else
+              | <!---->
+        else
+          | <!---->
+    else
+      | <!---->
+    if info.currency
+      +select(info.currency, 'filter-range__select filter-range__currency')(v-model='formData[info.currency.name]', @input='updateDropdown()')
+    else
+      | <!---->
+    if range
+      +select(range, 'filter-range__select filter-range__range')(v-model='formData[range.name]', @input='updateDropdown()')
+    else
+      | <!---->

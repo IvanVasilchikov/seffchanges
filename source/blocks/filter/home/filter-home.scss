@@ -1,0 +1,439 @@
+$parent: filter-home;
+$radio: filter-radio;
+$filter: filter-catalog;
+
+@include block($parent) {
+  position: relative;
+  margin-bottom: rem(30);
+  z-index: 3;
+
+  @media screen and (min-width: $tMin) and (max-width: $d1279) {
+    margin-bottom: rem(35);
+  }
+
+  @media screen and (min-width: $d1280) {
+    margin-bottom: rem(40);
+  }
+
+  @include element($parent, 'tab-select') {
+    @media (min-width: $dMin) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'tabs') {
+    display: none;
+
+    @media (min-width: $dMin) {
+      display: flex;
+      padding: 0 rem(20);
+      border-bottom: 1px solid $gray;
+    }
+
+    @media (min-width: $d1280) {
+      padding: 0 rem(30);
+    }
+  }
+
+  @include element($parent, 'tab-btn') {
+    height: rem(66);
+    line-height: rem(66);
+    font-size: rem(16);
+    color: $black;
+    text-align: center;
+    position: relative;
+    text-transform: lowercase;
+    font-family: $BaronNeue;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: $red2;
+      transform: translateX(-50%);
+      transition: width 0.4s ease;
+    }
+
+    @include modifier($parent, 'active') {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  @include element($parent, 'form') {
+    box-shadow: 0 rem(10) rem(40) rgba(#000, 0.15);
+    background-color: $w;
+    margin: rem(-320) 0 rem(40);
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      margin: rem(-176) 0 rem(40);
+    }
+
+    @media screen and (min-width: $d1280) {
+      margin: rem(-38) 0 rem(20);
+    }
+  }
+
+  @include element($parent, 'form-wrp') {
+    padding: rem(30) rem(16);
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      padding: rem(30) rem(10) rem(35);
+    }
+
+    @media (min-width: $d1280) {
+      padding: rem(35) rem(30) rem(25);
+    }
+
+    @include block($filter + '--office') {
+      @include element($filter, 'group--search') {
+        @media (min-width: $d1280) {
+          flex-basis: rem(223);
+          max-width: rem(223);
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'radio-wrap') {
+    width: 100%;
+    height: rem(70);
+    display: flex;
+    border: none;
+
+    @media screen and (min-width: $d1280) {
+      width: rem(192);
+    }
+
+    .filter-radio__item {
+      width: 50%;
+      height: 100%;
+      border: none;
+      border-bottom: 1px solid $gray8;
+      display: block;
+
+      input {
+        display: none;
+
+        &:checked {
+          &+label {
+            font-weight: 600;
+            color: $red2;
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      font-size: rem(16);
+      line-height: rem(24);
+      transition: color 0.4s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        bottom: -1px;
+        left: 50%;
+        width: 0%;
+        height: 2px;
+        background-color: $red2;
+        transform: translateX(-50%);
+        transition: width 0.4s ease;
+      }
+
+      &:hover {
+        color: $red2;
+      }
+    }
+  }
+
+  @include element ($parent, 'select') {
+    width: 100%;
+    height: rem(70);
+
+    @media screen and (min-width: $d1280) {
+      width: rem(170);
+    }
+
+    .select__head {
+      height: 100%;
+      border-color: $gray8;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &:not(:last-of-type) {
+      @media screen and (min-width: $d1280) {
+        margin-right: -1px;
+      }
+    }
+  }
+
+  @include element ($parent, 'price') {
+    display: flex;
+    height: rem(70);
+    padding: 0 rem(5);
+    width: 100%;
+    border: 1px solid $gray8;
+    align-items: flex-end;
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      border-top: none;
+    }
+
+    @media (min-width: $d1280) {
+      border: 1px solid $gray8;
+      padding: 0 rem(0);
+      border-left: none;
+      width: auto;
+    }
+
+    >* {
+      &:before {
+        padding: 0 0.625rem;
+        left: 0;
+        font-size: .875rem;
+        color: #303030;
+      }
+
+      border: none;
+    }
+
+    .select {
+      height: 100%;
+    }
+
+    .select__head {
+      height: 100%;
+      border: none;
+      border-left: 1px solid #f6f5fa
+    }
+  }
+
+  @include element ($parent, 'btns-wrap') {
+    width: 100%;
+    margin-top: auto;
+    margin-left: auto;
+
+    @media screen and (min-width: $d1280) {
+      width: 12.42%;
+      margin-top: 0;
+    }
+  }
+
+  @include element ($parent, 'hint') {
+    width: 100%;
+
+    @media screen and (min-width: $d1280) {
+      width: rem(238);
+      margin-left: -1px;
+
+      .hint__head {
+        border-right: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    min-width: inherit;
+    width: 50%;
+    height: rem(70);
+
+    @media screen and (min-width: $d1280) {
+      width: 100%;
+    }
+
+    @include modifier($parent, 'more') {
+      @media screen and (min-width: $d1280) {
+        display: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'tags-wrap') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: rem(30);
+
+    @media screen and (min-width: $tMin) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      margin-bottom: rem(24);
+    }
+
+    @media screen and (min-width: $d1280) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  @include element ($parent, 'tags') {
+    position: relative;
+    flex-grow: 1;
+    max-width: rem(468);
+    width: 100vw;
+    margin: 0 -0.875rem rem(15);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      max-width: 72%;
+      margin: 0 -2.5rem;
+      margin-right: rem(22);
+    }
+
+    @media screen and (min-width: $d1280) {
+      width: auto;
+      max-width: inherit;
+      margin: 0;
+    }
+  }
+
+  @include element ($parent, 'tags-wrp') {
+    display: flex;
+    align-items: flex-start;
+    overflow: auto;
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(-10);
+    }
+
+    @media (min-width: $d1280) {
+      flex-wrap: wrap;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      height: 1px;
+      min-width: 0.875rem;
+
+      @media screen and (min-width: $tMin) and (max-width: $d1279) {
+        min-width: 2.5rem;
+      }
+
+      @media screen and (min-width: $d1280) {
+        display: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'tag') {
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+    flex-shrink: 0;
+
+    &:last-of-type {
+      margin-right: 0;
+
+      @media screen and (min-width: $d1280) {
+        margin-right: rem(10);
+      }
+    }
+  }
+
+  @include element ($parent, 'tags-btn') {
+    text-transform: uppercase;
+    font-size: rem(14);
+    line-height: 1.85;
+    font-weight: 600;
+    color: $red;
+
+    @media screen and (min-width: $tMin) {
+      margin-left: auto;
+    }
+
+    @media screen and (min-width: $d1280) {
+      margin-top: 3px;
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'map-btn') {
+    width: 100%;
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(18);
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+
+    em {
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    svg {
+      width: rem(14);
+      height: rem(22);
+      margin-right: rem(5);
+      flex-shrink: 0;
+
+      @media screen and (min-width: $tMin) {
+        margin-right: rem(10);
+      }
+    }
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  @include element($parent, 'bottom') {
+    margin-top: rem(30);
+    overflow: hidden;
+
+    @media (min-width: $tMin) {
+      margin-top: rem(25);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include element($parent, 'broker') {
+    font-size: rem(14);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $red2;
+    margin-top: rem(15);
+    transition: color $ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $purple;
+    }
+
+    @media (min-width: $tMin) {
+      margin-top: rem(0);
+    }
+  }
+}

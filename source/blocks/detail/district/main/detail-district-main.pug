@@ -1,0 +1,24 @@
+include ../../../core/breadcrumbs/breadcrumbs.pug
+include ../../../core/picture/picture.pug
+include ../../../core/btn/btn.pug
+include ../../../fonts/title/first/title-first.pug
+
+mixin detail-district-main(info)
+  .detail-district-main(id='main', data-screen='main')
+    +picture(info.image, 'detail-district-main__bg')
+    .main
+      +breadcrumbs(info.breadcrumbs, 'breadcrumbs--white detail-district-main__breadcrumbs')
+      .detail-district-main__wrp
+        .detail-district-main__content
+          .detail-district-main__title!= info.title
+          .detail-district-main__subtitle!= info.subtitle
+          +btn('button', 'Предложения в районе', 'detail-district-main__button')(@click='scrollTo("#offers")')
+        if (info.info)
+          .detail-district-main__info
+            each item in info.info
+              .detail-district-main__info-item
+                .detail-district-main__info-icon
+                  img(src=item.icon, alt=item.text)
+                .detail-district-main__info-text!= item.text
+        else
+          | <!---->

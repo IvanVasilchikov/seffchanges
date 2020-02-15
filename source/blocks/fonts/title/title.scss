@@ -1,0 +1,30 @@
+$parent: title;
+
+@include block($parent) {
+  font-family: $BaronNeue;
+  text-transform: lowercase;
+  font-size: rem(32);
+  line-height: rem(44);
+  font-weight: 400;
+  color: $black;
+
+  @media screen and (min-width: $tMin) {
+    font-size: rem(36);
+    line-height: rem(44);
+  }
+
+  @include modifier($parent, 'm') {
+    font-size: rem(28);
+    line-height: 1.6;
+
+    @media screen and (min-width: $tMin) {
+      font-size: rem(36);
+      line-height: 1.35;
+    }
+  }
+
+  em {
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}

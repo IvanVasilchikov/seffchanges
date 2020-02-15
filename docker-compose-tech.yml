@@ -1,0 +1,66 @@
+version: "3"
+services:
+  elastic:
+    restart: always
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    volumes:
+      - ./docker/esdata:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+    labels:
+      - traefik.enable=false
+    networks:
+      - inner
+  mysql:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=devpass
+      - MYSQL_DATABASE=rootdb
+      - BACKUP=http://backup.idemitest.ru/safari-site/db.sql
+    restart: always
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    labels:
+      - traefik.enable=false
+    networks:
+      - inner
+  php7.2:
+    restart: always
+    build:
+      context: ./docker/php7.2
+    links:
+      - mysql
+      - elastic
+    volumes:
+      - ./htdocs/:/var/www/htdocs/
+      - ./source:/var/www/source
+      - ./docker/php7.2/ssmtp.conf:/etc/ssmtp/ssmtp.conf
+      - ./docker/php7.2/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php7.2/revaliases:/etc/ssmtp/revaliases
+    labels:
+        - traefik.enable=false
+    networks:
+      - inner
+  nginx:
+    restart: always
+    image: nginx
+    labels:
+        - traefik.backend=tech-safari-site
+        - traefik.frontend.rule=Host:tech-safari-site.idemcloud.ru
+        - traefik.docker.network=proxy
+        - traefik.port=80
+    volumes:
+      - ./htdocs:/var/www/htdocs
+      - ./docker/nginx/sites:/etc/nginx/conf.d
+      - ./docker/nginx/conf/bitrix:/etc/nginx/bitrix
+      - ./docker/nginx/conf/htpasswd:/usr/share/nginx/htpasswd
+    links:
+      - php7.2
+    networks:
+      - proxy
+      - inner
+networks:
+  proxy:
+    external: true
+  inner:
+    external: false

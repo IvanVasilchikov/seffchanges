@@ -1,0 +1,97 @@
+$parent: presentation;
+
+@include block($parent) {
+  position: relative;
+  padding: rem(50) 0 rem(55);
+  background-color: $gray7;
+
+  &.main {
+    margin-top: rem(-138);
+    margin-bottom: rem(20);
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      margin-top: rem(-163);
+      margin-bottom: rem(39);
+    }
+  }
+
+  @media screen and (min-width: $tMin) and (max-width: $tMax) {
+    padding: rem(71) rem(24) rem(76) rem(216);
+  }
+
+  @media (min-width: $dMin) {
+    padding: rem(75) rem(130) rem(75) 0;
+  }
+
+  @include element ($parent, 'background') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    @media screen and (min-width: $tMin) {
+      display: block;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element ($parent, 'content') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+
+    @media screen and (min-width: $tMin) {
+      align-items: flex-start;
+    }
+
+    @media (min-width: $dMin) {
+      max-width: rem(435);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    max-width: 100%;
+    margin-bottom: rem(20);
+    text-align: center;
+    color: $w;
+
+    @media screen and (min-width: $tMin) {
+      text-align: left;
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    width: rem(250);
+    height: rem(60);
+  }
+
+  @include modifier ($parent, 'catalog') {
+    @media (min-width: $tMin) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include element ($parent, 'content') {
+      @media (min-width: $tMin) {
+        max-width: rem(450);
+        flex-basis: rem(450);
+      }
+
+      @media (min-width: $dMin) {
+        max-width: rem(540);
+        flex-basis: rem(540);
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+include ../../core/breadcrumbs/breadcrumbs.pug
+include ../../core/picture/picture.pug
+include ../../fonts/title/fourth/title-fourth.pug
+
+mixin about-main(info)
+  if info
+    .about-main
+      +picture(info.image, 'about-main__background')
+      .main.about-main__container
+        +breadcrumbs(info.breadcrumbs, 'about-main__breadcrumbs')
+        .about-main__content
+          if info.preTitle || info.title
+            .about-main__titles
+              if info.preTitle
+                +title-fourth(info.preTitle, 'title-fourth--up about-main__pre-title')
+              else
+                | <!---->
+              if info.title
+                .about-main__title!= info.title
+              else
+                | <!---->
+          else
+            | <!---->
+          if info.text
+            .about-main__text
+              each text in info.text
+                p!= text
+          else
+            | <!---->
+          if info.info
+            .about-main__info
+              each item in info.info
+                .about-main__info-item
+                  .about-main__info-item-title!= item.number
+                  span!= item.text
+          else
+            | <!---->

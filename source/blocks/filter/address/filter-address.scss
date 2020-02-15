@@ -1,0 +1,25 @@
+$parent: 'filter-address';
+
+@include block($parent) {
+  // border: 1px solid $gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: rem(45);
+  // padding: 0 rem(26);
+  width: 100%;
+
+  >.hint__head {
+    border-color: $gray;
+  }
+
+  @include element($parent, 'input') {
+    height: 100%;
+    width: 100%;
+    font-size: rem(16);
+
+    &::placeholder {
+      color: $gray4;
+    }
+  }
+}

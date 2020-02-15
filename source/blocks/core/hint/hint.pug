@@ -1,0 +1,45 @@
+include ../animation/fade/animation-fade.pug
+
+mixin hint(obj, className, animationTime)
+  -var hints = [];
+  .hint(class=[className, {'hint--open' : isOpen}])
+    .hint__head(class=(obj.title ? '' : 'hint__head--base'))
+      if obj.title
+        .hint__title= obj.title
+      else
+        | <!---->
+      a.hint__close(@click='closeDropDown()')
+        span
+      if obj.input
+        input.hint__input(type='text', v-model='value', value=obj.input.value, placeholder=obj.input.placeholder, autocomplete='off', @input='getTips', @change='confirmValue()')
+      else
+        | <!---->
+    if hints.length
+      +animation-fade(animationTime)
+        .hint__dropdown(v-if='isOpen')
+          .hint__dropdown-content
+            if hints
+              each item in hints
+                .hint__dropdown-item
+                  if item.head
+                    .hint__dropdown-head
+                      if item.head.icon
+                        svg
+                          if item.head.icon === 'pin2'
+                            use(xlink:href=loadAssets('./svg/pin2.svg'))
+                          else if item.head.icon === 'sity'
+                            use(xlink:href=loadAssets('./svg/sity.svg'))
+                          else
+                            | <!---->
+                      else
+                        | <!---->
+                      span= item.head.text
+                  else
+                    | <!---->
+                  ul.hint__list
+                    each el in item.items
+                      li.hint__list-item.text(@click='change(el)')!= el
+            else
+              | <!---->
+    else
+      | <!---->

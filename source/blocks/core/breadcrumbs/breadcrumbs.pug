@@ -1,0 +1,4 @@
+mixin breadcrumbs(links, className)
+  .breadcrumbs(class= className)
+    each link in links
+      a.breadcrumbs__link(href=link.href)!= link.title

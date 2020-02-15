@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/visual/visual.pug
+
+block vars
+  - homepage = false;
+  - var visualSearchPage = require('../data/visualSearchNotFoundPage.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      visualSearchPage: !{JSON.stringify(visualSearchPage)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +visual(visualSearchPage)

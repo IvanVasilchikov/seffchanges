@@ -1,0 +1,23 @@
+$parent: title-fourth-m;
+
+@include block($parent) {
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: 1.7;
+  color: $black;
+
+  @media screen and (min-width: $tMin) {
+    font-size: rem(22);
+    line-height: 1.4;
+  }
+
+  @include modifier($parent, 'up') {
+    font-family: $BaronNeue;
+    text-transform: lowercase;
+
+    em {
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+}

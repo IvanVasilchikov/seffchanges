@@ -1,0 +1,207 @@
+$parent: home-services;
+
+@include block($parent) {
+  margin-bottom: rem(44);
+
+  @media screen and (min-width: $tMin) and (max-width: $d1279) {
+    margin-bottom: rem(60);
+  }
+
+  @media screen and (min-width: $d1280) {
+    margin-bottom: rem(181);
+  }
+
+  @media screen and (min-width: $d1280) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include element ($parent, 'head') {
+    max-width: 80%;
+    margin-bottom: rem(30);
+
+    @media screen and (min-width: $d1280) {
+      position: relative;
+      max-width: inherit;
+      padding-right: rem(40);
+      margin-bottom: 0;
+      width: 25.3%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% + 50vw);
+        height: 100%;
+        background-color: $w;
+        z-index: 3;
+      }
+    }
+  }
+
+  @include element ($parent, 'title') {
+    margin-bottom: rem(11);
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(19);
+    }
+
+    @media screen and (min-width: $d1280) {
+      position: relative;
+      z-index: 4;
+    }
+  }
+
+  @include element ($parent, 'text') {
+    @media screen and (min-width: $d1280) {
+      position: relative;
+      z-index: 4;
+    }
+
+    br {
+      @media screen and (min-width: $tMin) and (max-width: $tMax) {
+        display: none;
+      }
+    }
+
+    span {
+      font-size: rem(20);
+      font-weight: 600;
+    }
+  }
+
+  @include element ($parent, 'content') {
+    @media screen and (min-width: $d1280) {
+      width: 74.7%;
+      padding-top: rem(4);
+    }
+  }
+
+  @include element ($parent, 'tabs-wrap') {
+    position: relative;
+    width: calc(100% + 1.75rem);
+    padding-left: rem(14);
+    margin-left: rem(-14);
+    margin-bottom: rem(30);
+
+    @media screen and (min-width: $tMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    @media screen and (min-width: $d1280) {
+      margin-bottom: rem(38);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(72);
+      height: 100%;
+      background-image: linear-gradient(90deg, rgba($w, 0), $w);
+      z-index: 1;
+      pointer-events: none;
+
+      @media screen and (min-width: $tMin) {
+        display: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'tabs') {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    overflow: auto;
+
+    &::after {
+      content: '';
+      height: 1px;
+      min-width: rem(16);
+      display: block;
+
+      @media screen and (min-width: $tMin) {
+        display: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'arrows') {
+    display: none;
+
+    @media screen and (min-width: $tMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      width: rem(62);
+      margin-left: rem(14);
+      padding-bottom: rem(6);
+      margin-right: rem(-7);
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    display: block;
+    width: rem(22);
+    height: rem(22);
+    padding: rem(2);
+
+    svg {
+      fill: $red;
+      stroke: $red;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.5;
+
+      svg {
+        fill: $purple;
+        stroke: $purple;
+      }
+    }
+
+    &:hover {
+      svg {
+        fill: $purple;
+        stroke: $purple;
+      }
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    width: rem(316);
+    margin: 0;
+    overflow: visible;
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      width: rem(592);
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: 100%;
+    }
+  }
+
+  @include element ($parent, 'slide') {
+    width: rem(316);
+    margin-right: rem(14);
+    height: auto;
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      margin-right: rem(20);
+    }
+
+    @media screen and (min-width: $d1280) {
+      width: rem(288);
+      margin-right: rem(16);
+    }
+  }
+}

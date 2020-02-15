@@ -1,0 +1,28 @@
+$parent: home;
+
+@include block($parent) {
+  @include element ($parent, 'clients') {
+    padding: rem(40) 0 rem(174);
+    background-color: $gray5;
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      padding: rem(62) 0 rem(213);
+    }
+
+    @media screen and (min-width: $d1280) {
+      padding: rem(91) 0 rem(176);
+    }
+  }
+
+  @include element ($parent, 'seo-links') {
+    padding: rem(20) 0 rem(59);
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      padding: rem(20) 0 rem(72);
+    }
+
+    @media screen and (min-width: $d1280) {
+      padding: rem(20) 0 rem(87);
+    }
+  }
+}

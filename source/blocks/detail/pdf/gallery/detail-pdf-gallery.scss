@@ -1,0 +1,124 @@
+$parent: detail-pdf-gallery;
+
+@include block($parent) {
+  width: 100%;
+
+  @include element ($parent, 'heading') {
+    display: block;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 44px;
+  }
+
+  @include element ($parent, 'address') {
+    display: block;
+    color: $gray2;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include element ($parent, 'gallery-wrapper') {
+    padding-top: 35px;
+  }
+
+  @include element ($parent, 'gallery-item') {
+    display: flex;
+    display: -webkit-box;
+    width: 100%;
+    height: 536px;
+
+    &+.#{$parent}__gallery-item {
+      margin-top: 16px;
+    }
+
+    @include modifier ($parent, 'revers') {
+      &>* {
+        -webkit-box-ordinal-group: 2;
+      }
+
+      @include element ($parent, 'gallery-item-container') {
+        padding-left: 0;
+        padding-right: 16px;
+        order: -1;
+        -webkit-box-ordinal-group: 1;
+      }
+    }
+  }
+
+  @include element ($parent, 'gallery-main-image') {
+    position: relative;
+    width: 775px;
+    height: 536px;
+
+    .img {
+      width: 100%;
+      height: 536px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  @include element ($parent, 'image-amount-container') {
+    position: absolute;
+    display: flex;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 19px 29px 27px;
+    background-color: $purple;
+
+    span {
+      display: inline-block;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 34px;
+      color: $w;
+
+      &+span {
+        padding-left: 12px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  @include element ($parent, 'amount') {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  @include element ($parent, 'gallery-item-container') {
+    display: flex;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    width: 465px;
+    padding-left: 16px;
+
+    .img {
+      width: 100%;
+      height: (536px / 2 - 8);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &:not(.detail-pdf-gallery--main) {
+    height: 1780px;
+  }
+}

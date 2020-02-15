@@ -1,0 +1,61 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+$aMenuLinks = Array(
+    Array(
+        "Городская",
+        "catalog/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Услуги",
+        "services/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Загородная",
+        "catalog/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "О компании",
+        "about/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Коммерческая",
+        "catalog/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Контакты",
+        "contacts/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Зарубежная",
+        "catalog/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Карта сайта",
+        "/sitemap/",
+        Array(),
+        Array(),
+        ""
+    ),
+);
+?>

@@ -1,0 +1,75 @@
+$parent: footer-static;
+
+@include block($parent) {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 85px;
+  background-color: $black;
+
+  @include element ($parent, 'maps-image') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+  }
+
+  @include element ($parent, 'item') {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    
+    height: 100%;
+    padding: 0 20px;
+
+    &:last-child {
+
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 408px;
+              flex: 0 0 408px;
+    }
+  }
+
+  @include element ($parent, 'phone') {
+    margin-left: 20px;
+    color: $w;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  @include element ($parent, 'address') {
+    margin-right: 97px;
+    color: $brown;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-left: 150px;
+    white-space: nowrap;
+  }
+
+  @include element ($parent, 'logo-icon') {
+    width: 83px;
+    height: 44px;
+    z-index: 1;
+  }
+}

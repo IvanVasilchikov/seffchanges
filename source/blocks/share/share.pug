@@ -1,0 +1,20 @@
+include ../core/animation/fade/animation-fade.pug
+
+mixin share(buttons, className)
+  - var showButtons = false;
+
+  if buttons
+    .share(class=className)
+      .share__link(@click='showButtons = true, $emit("visibilityToggle")', class=(showButtons ? 'share__link--hide' : ''))
+        svg(style='width: 15px; height: 16px;')
+          use(xlink:href=loadAssets('./svg/share.svg'))
+        span Поделиться
+      +animation-fade(0.4)
+        if (showButtons)
+          .share__btns(:style='{width: btnsWidth + "px"}', ref='btns')
+            each btn in buttons
+              .share__btn(@click='shareClick(btn.name)')
+                img.lazyload(data-src=btn.icon, alt=btn.name)
+            .share__btn.share__btn--close(@click='showButtons = false, $emit("visibilityToggle")')
+  else
+    | <!---->

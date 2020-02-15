@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+include ../blocks/favorite/favorite.pug
+
+block vars
+  - homepage = false;
+  - var favoritePage = require('../data/favorite.json');
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      favorite: !{JSON.stringify(favoritePage)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +favorite(favoritePage)

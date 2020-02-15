@@ -1,0 +1,184 @@
+include ../../core/btn/btn.pug
+include ../../core/animation/fade/animation-fade.pug
+include ../../core/picture/picture.pug
+include ../../core/breadcrumbs/breadcrumbs.pug
+
+mixin detail-main(info)
+	- var fullGallery = false;
+	.detail-main(id='main', data-screen='main')
+		.main.detail-main__nav
+			if (info.breadcrumbs)
+				+breadcrumbs(info.breadcrumbs, 'detail-main__breadcrumbs')
+			else
+				| <!---->
+
+			.detail-main__nav-wrp
+				a.detail-main__back(href=info.backPage)
+					.detail-main__back-ico
+						svg
+							use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+					span Назад
+				.detail-main__nav-buttons
+					if (info.similar)
+						.detail-main__nav-btn.detail-main__nav-btn--similar(@click='scrollTo("#detail-similar")')
+							.detail-main__nav-btn-ico
+							span!= info.similar
+					else
+						| <!---->
+					.detail-main__nav-btn.detail-main__fav(@click='toggleFav', class=(info.isFav ? 'detail-main__fav--added' : ''))
+						.detail-main__nav-btn-ico
+							svg
+								use(xlink:href=loadAssets('./svg/like.svg'))
+						span В избранное
+		.detail-main__slider-wrp
+			if (info.images.length > 1)
+				.detail-main__slider-nav
+					.detail-main__slider-btn.detail-main__slider-btn--prev(@click='mainSlider.slidePrev()')
+						svg
+							use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+					.detail-main__slider-btn.detail-main__slider-btn--next(@click='mainSlider.slideNext()')
+						svg
+							use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+			else
+				| <!---->
+			.detail-main__slider.swiper-container
+				.swiper-wrapper
+					each slide, index in info.images
+						.swiper-slide.detail-main__slide
+							+picture(slide, 'detail-main__slide-image', (index === 0 ? false : 'swiper-lazy'))
+
+			if (info.images.length > 1)
+				.detail-main__thumb-slider.swiper-container
+					.swiper-wrapper
+						each slide in info.images
+							.swiper-slide.detail-main__thumb-slide
+								+picture(slide, 'detail-main__thumb-slide-image')
+			else
+				| <!---->
+
+		.detail-main__content
+			.main.detail-main__content-main
+				h1.detail-main__text.detail-main__text--id!= info.id
+				if (info.name)
+					.detail-main__text.detail-main__text--name!= info.name
+				else
+					| <!---->
+				.detail-main__title!= info.title
+				.detail-main__text.detail-main__text--address!= info.address
+				.detail-main__map(@click='scrollTo("#map")')
+					svg
+						use(xlink:href=loadAssets('./svg/pin2.svg'))
+					span Посмотреть на карте
+				if (info.metro)
+					.detail-main__metro
+						span.detail-main__metro-station!= info.metro.station
+						if (info.metro.text)
+							span.detail-main__metro-text!= ' ' + info.metro.text
+						else
+							| <!---->
+				else
+					| <!---->
+				if (info.info)
+					.detail-main__info
+						each item in info.info
+							.detail-main__info-item
+								img.detail-main__info-item-icon(src=item.icon, alt='')
+								span.detail-main__info-item-text!= item.text
+				else
+					| <!---->
+				if (info.price)
+					.detail-main__price-container
+						if (info.price.request)
+							.detail-main__price-wrap
+								.detail-main__price
+									.detail-main__price-total.detail-main__price-total--request(@click= 'popupOpen(\'form\', \'request_price\')') По запросу
+									if (info.price.offer)
+										button.detail-main__price-offer(type= 'button', @click= 'popupOpen(\'form\', \'yourPrice\')') Предложить цену
+									else
+										| <!---->
+						else
+							.detail-main__price-wrap
+								if (info.price.selected)
+									.detail-main__price
+										if (info.price.selected.meters)
+											.detail-main__price-meters!= info.price.selected.meters
+										else
+											| <!---->
+										if (info.price.selected.total)
+											.detail-main__price-total!= info.price.selected.total
+										else
+											| <!---->
+										if (info.price.offer)
+											button.detail-main__price-offer(type= 'button', @click= 'popupOpen(\'form\', \'yourPrice\')') Предложить цену
+										else
+											| <!---->
+								else
+									| <!---->
+								if (info.price.total)
+									.detail-main__price-changer
+										if (info.price.total.rub)
+											.detail-main__price-button
+												input(type='radio', value='rub', v-model='currency', name='currencyChange', id='currencyRub')
+												label(for='currencyRub', @click='currency = "rub"') ₽
+										else
+											| <!---->
+										if (info.price.total.dollar)
+											.detail-main__price-button
+												input(type='radio', value='dollar', v-model='currency', name='currencyChange', id='currencyDollar')
+												label(for='currencyDollar', @click='currency = "dollar"') $
+										else
+											| <!---->
+										if (info.price.total.euro)
+											.detail-main__price-button
+												input(type='radio', value='euro', v-model='currency', name='currencyChange', id='currencyEuro')
+												label(for='currencyEuro', @click='currency = "euro"') €
+										else
+											| <!---->
+										if (info.price.total.pound)
+											.detail-main__price-button
+												input(type='radio', value='pound', v-model='currency', name='currencyChange', id='currencyPound')
+												label(for='currencyPound', @click='currency = "pound"') £
+										else
+											| <!---->
+								else
+									| <!---->
+				else
+					| <!---->
+
+			.detail-main__content-buttons
+				.detail-main__phone
+					a(href='tel:' + info.phone.url)
+					.detail-main__phone-icon
+						svg
+							use(xlink:href=loadAssets('./svg/phone-2.svg'))
+					.detail-main__phone-text
+						span Отдел продаж
+						span!= info.phone.text
+				.detail-main__order(@click='popupOpen(\'form\', \'writeUs\')')
+					.detail-main__order-text Записаться <br>на просмотр
+					.detail-main__order-ico
+						svg
+							use(xlink:href=loadAssets('./svg/arrow-right.svg'))
+
+		if fullGallery
+			.detail-main__slider-wrp.detail-main__slider-wrp--full
+				.detail-main__slider-cross(@click='closeFullscreen()')
+					svg
+						use(xlink:href=loadAssets('./svg/close.svg'))
+				if (info.images.length > 1)
+					.detail-main__slider-nav
+						.detail-main__slider-btn.detail-main__slider-btn--prev(@click='fullSlider.slidePrev()')
+							svg
+								use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+						.detail-main__slider-btn.detail-main__slider-btn--next(@click='fullSlider.slideNext()')
+							svg
+								use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+				else
+					| <!---->
+				.detail-main__slider.swiper-container
+					.swiper-wrapper
+						each slide, index in info.images
+							.swiper-slide.detail-main__slide
+								+picture(slide, 'detail-main__slide-image', (index === 0 ? false : 'swiper-lazy'))
+		else
+			| <!---->

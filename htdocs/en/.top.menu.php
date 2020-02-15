@@ -1,0 +1,54 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+$aMenuLinks = Array(
+	Array(
+		"Living",
+        "catalog/".LIVE_REALTY_URL."/",
+        Array(),
+        Array('type'=>LIVE_REALTY_URL),
+        ""
+    ),
+	Array(
+		"Countryside",
+        "catalog/".COUNTRY_REALTY_URL."/",
+        Array(),
+        Array('type'=>COUNTRY_REALTY_URL),
+        ""
+    ),
+    Array(
+		"Commercial",
+        "catalog/".COMMERC_REALTY_URL."/",
+        Array(),
+        Array('type'=>COMMERC_REALTY_URL),
+        ""
+	),
+    Array(
+		"Foreign",
+        "catalog/".FOREIGN_REALTY_URL."/",
+        Array(),
+        Array('type'=>FOREIGN_REALTY_URL),
+        ""
+	),
+    Array(
+		"Services",
+		"services/",
+		Array(),
+		Array(),
+		""
+	),
+    Array(
+		"About company",
+		"about/",
+		Array(),
+		Array(),
+		""
+	),
+    Array(
+		"Contacts",
+		"contacts/",
+		Array(),
+		Array(),
+		""
+	),
+);
+?>

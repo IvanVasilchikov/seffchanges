@@ -1,0 +1,1262 @@
+{
+  "nav": {
+    "links": [{
+        "text": "О проекте",
+        "anchor": "#about"
+      },
+      {
+        "text": "Инфраструктура",
+        "anchor": "#infrastructure"
+      },
+      {
+        "text": "Расположение",
+        "anchor": "#map"
+      },
+      {
+        "text": "Предложения в районе",
+        "anchor": "#offers"
+      }
+    ]
+  },
+  "main": {
+    "breadcrumbs": [{
+        "href": "/",
+        "title": "Главная"
+      },
+      {
+        "href": "/city.html",
+        "title": "Жилая в Москве"
+      },
+      {
+        "href": "/detail-district.html",
+        "title": "Район Хамовники"
+      }
+    ],
+    "title": "Хамовники",
+    "subtitle": "Готовые дома комфорт-класса в москве",
+    "info": [{
+        "icon": "./assets/svg/walk.svg",
+        "text": "5 минут до <br>Садового кольца"
+      },
+      {
+        "icon": "./assets/svg/book.svg",
+        "text": "Лучшее школьное <br>образование"
+      },
+      {
+        "icon": "./assets/svg/ball.svg",
+        "text": "Развитая инфраструктура <br>для занятий спортом"
+      }
+    ],
+    "image": {
+      "sources": {
+        "mobile": [
+          "/assets/images/district-bg-mobile.jpg",
+          "/assets/images/district-bg-mobile.webp"
+        ],
+        "tablet": [
+          "/assets/images/district-bg-tablet.jpg",
+          "/assets/images/district-bg-tablet.webp"
+        ],
+        "desktop": [
+          "/assets/images/district-bg-desktop.jpg",
+          "/assets/images/district-bg-desktop.webp"
+        ]
+      },
+      "alt": "Хамовники",
+      "title": "Хамовники"
+    }
+  },
+  "about": {
+    "title": "О проекте",
+    "text": [
+      "Хамовники являются одним из самых востребованных районов столицы среди покупателей жилья. Однако доступен район не всем: средние цены квадратного метра на первичном и вторичном рынках в этом районе составляют 738,2 и 768,8 тыс. руб. соответственно, отмечают опрошенные редакцией «РБК-Недвижимость» риелторы.",
+      "Сейчас Хамовники, по оценке риелторов, пользуются популярностью из-за центрального расположения, хорошей экологии и транспортной доступности. В районе много парков, через район протекает Москва-река. Здесь нет комфорт-класса среди новостроек. На вторичном рынке представлены все типы жилья: дореволюционные, сталинские, кирпичные дома ЦК и панельные пятиэтажки."
+    ],
+    "info": [{
+        "title": "97",
+        "text": "тыс. численность <br>населения"
+      },
+      {
+        "title": "950",
+        "text": "га. территория <br>района"
+      },
+      {
+        "title": "2530",
+        "text": "тыс. м² общая <br>площадь района"
+      }
+    ]
+  },
+  "infrastructure": {
+    "title": "Инфраструктура",
+    "tabs": [{
+        "button": {
+          "text": "Экология",
+          "value": "ecology"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Экология"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Безопасность",
+          "value": "safety"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Безопасность"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Транспорт",
+          "value": "transport"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Транспорт"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Расположение",
+          "value": "location"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Расположение"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      }
+    ]
+  },
+  "map": {
+    "title": "на карте",
+    "map": {
+      "center": "-28.024, 140.887",
+      "markers": [{
+        "coords": "-33.718234, 150.313181",
+        "icon": "/assets/svg/map-pin.svg",
+        "iconActive": "/assets/svg/map-pin-active.svg",
+        "type": "default",
+        "tooltip": {
+          "type": "table",
+          "deal_type": "Продажа",
+          "id": "as12713",
+          "labels": ["Эксклюзив"],
+          "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+          "title": "Легион II (Фаза I)",
+          "name": "Многофункциональный комплекс",
+          "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+          "table": [
+            [{
+                "name": "square",
+                "text": "1000 м²"
+              },
+              {
+                "name": "floor",
+                "text": "3 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "Без отделки"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ],
+            [{
+                "name": "square",
+                "text": "902 м²"
+              },
+              {
+                "name": "floor",
+                "text": "9 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "С отделкой"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ],
+            [{
+                "name": "square",
+                "text": "984 м²"
+              },
+              {
+                "name": "floor",
+                "text": "4 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "С отделкой"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ]
+          ],
+          "specs": ["ring", "square", "date", "facing", "metro"],
+          "info": {
+            "ring": "ТТК",
+            "square": "90м²",
+            "date": "Строится",
+            "facing": "С отделкой",
+            "metro": {
+              "station": "Киевская",
+              "walk": "7 минут пешком"
+            }
+          },
+          "price": {
+            "total": "172 250 000 р.",
+            "meters": "135 000 р./м²"
+          },
+          "phone": {
+            "href": "+74950000000",
+            "text": "+7 (495) 000-00-00"
+          },
+          "link": "./detail-object.html",
+          "objects": "17 предложений",
+          "isFav": false
+        },
+        "id": "marker_1"
+      }]
+    }
+  },
+  "offers": {
+    "title": "Предложения в районе",
+    "filter": {
+      "action": "./api/catalog.json",
+      "tabs": [{
+          "name": "city",
+          "active": true,
+          "fields": [{
+              "type": "hidden",
+              "name": "test",
+              "value": "test2"
+            },
+            {
+              "type": "radio",
+              "name": "deal_type",
+              "values": [{
+                  "id": "buy",
+                  "value": "buy",
+                  "text": "Купить",
+                  "checked": true
+                },
+                {
+                  "id": "rent",
+                  "value": "rent",
+                  "text": "Снять",
+                  "checked": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "realty_type",
+              "values": [{
+                  "text": "Жилую",
+                  "value": "city",
+                  "selected": true
+                },
+                {
+                  "text": "Коммерческую",
+                  "value": "commercial"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "object_type",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Квартиру",
+                  "value": "flat"
+                },
+                {
+                  "text": "Апартаменты",
+                  "value": "apartment"
+                },
+                {
+                  "text": "Дом",
+                  "value": "house"
+                },
+                {
+                  "text": "Таунхаусы",
+                  "value": "townhouse"
+                },
+                {
+                  "text": "Пентхаусы",
+                  "value": "penthouse"
+                }
+              ]
+            },
+            {
+              "type": "range",
+              "name": "price",
+              "range": {
+                "inputs": {
+                  "title": "Цена, тыс.",
+                  "min": {
+                    "name": "priceMin",
+                    "placeholder": "От",
+                    "value": ""
+                  },
+                  "max": {
+                    "name": "priceMax",
+                    "placeholder": "До",
+                    "value": ""
+                  }
+                },
+                "currency": {
+                  "name": "currency",
+                  "values": [{
+                      "text": "₽",
+                      "value": "rub",
+                      "selected": true
+                    },
+                    {
+                      "text": "$",
+                      "value": "dollar"
+                    }
+                  ]
+                },
+                "range": {
+                  "name": "range",
+                  "values": [{
+                      "text": "Общая",
+                      "value": "general",
+                      "selected": true
+                    },
+                    {
+                      "text": "За м²",
+                      "value": "meters"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "input",
+              "name": "address",
+              "input": {
+                "name": "address",
+                "placeholder": "Адрес, метро, район или ЖК",
+                "value": ""
+              }
+            }
+          ],
+          "more": [{
+              "type": "range",
+              "name": "square",
+              "range": {
+                "inputs": {
+                  "title": "Площадь, м²",
+                  "min": {
+                    "name": "squareMin",
+                    "placeholder": "От",
+                    "value": ""
+                  },
+                  "max": {
+                    "name": "squareMax",
+                    "placeholder": "До",
+                    "value": ""
+                  }
+                }
+              }
+            },
+            {
+              "type": "select",
+              "name": "rooms",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "1 спальня",
+                  "value": "1"
+                },
+                {
+                  "text": "2 спальни",
+                  "value": "2"
+                },
+                {
+                  "text": "3 спальни",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "state",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Строится",
+                  "value": "in_progress"
+                },
+                {
+                  "text": "Построен",
+                  "value": "done"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "facing",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Без отделки",
+                  "value": "without_facing"
+                },
+                {
+                  "text": "С отделкой",
+                  "value": "with_facing"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "parking",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "С парковкой",
+                  "value": "with_parking"
+                },
+                {
+                  "text": "Без парковки",
+                  "value": "without_parking"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "commercial",
+          "active": false,
+          "fields": [{
+              "type": "hidden",
+              "name": "test",
+              "value": "test2"
+            },
+            {
+              "type": "radio",
+              "name": "deal_type",
+              "values": [{
+                  "id": "buy",
+                  "value": "buy",
+                  "text": "Купить",
+                  "checked": true
+                },
+                {
+                  "id": "rent",
+                  "value": "rent",
+                  "text": "Снять",
+                  "checked": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "realty_type",
+              "values": [{
+                  "text": "Жилую",
+                  "value": "city"
+                },
+                {
+                  "text": "Коммерческую",
+                  "value": "commercial",
+                  "selected": true
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "object_type",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Квартиру",
+                  "value": "flat"
+                },
+                {
+                  "text": "Апартаменты",
+                  "value": "apartment"
+                },
+                {
+                  "text": "Дом",
+                  "value": "house"
+                },
+                {
+                  "text": "Таунхаусы",
+                  "value": "townhouse"
+                },
+                {
+                  "text": "Пентхаусы",
+                  "value": "penthouse"
+                }
+              ]
+            },
+            {
+              "type": "range",
+              "name": "price",
+              "range": {
+                "inputs": {
+                  "title": "Цена, тыс.",
+                  "min": {
+                    "name": "priceMin",
+                    "placeholder": "От",
+                    "value": ""
+                  },
+                  "max": {
+                    "name": "priceMax",
+                    "placeholder": "До",
+                    "value": ""
+                  }
+                },
+                "currency": {
+                  "name": "currency",
+                  "values": [{
+                      "text": "₽",
+                      "value": "rub",
+                      "selected": true
+                    },
+                    {
+                      "text": "$",
+                      "value": "dollar"
+                    }
+                  ]
+                },
+                "range": {
+                  "name": "range",
+                  "values": [{
+                      "text": "Общая",
+                      "value": "general",
+                      "selected": true
+                    },
+                    {
+                      "text": "За м²",
+                      "value": "meters"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "address",
+              "name": "address",
+              "input": {
+                "name": "address",
+                "placeholder": "Адрес, метро, район или ЖК",
+                "value": ""
+              }
+            }
+          ],
+          "more": [{
+              "type": "range",
+              "name": "square",
+              "range": {
+                "inputs": {
+                  "title": "Площадь, м²",
+                  "min": {
+                    "name": "squareMin",
+                    "placeholder": "От",
+                    "value": ""
+                  },
+                  "max": {
+                    "name": "squareMax",
+                    "placeholder": "До",
+                    "value": ""
+                  }
+                }
+              }
+            },
+            {
+              "type": "range",
+              "name": "metro",
+              "range": {
+                "inputs": {
+                  "title": "До метро, мин",
+                  "min": {
+                    "name": "squareMin",
+                    "placeholder": "От",
+                    "value": ""
+                  },
+                  "max": {
+                    "name": "squareMax",
+                    "placeholder": "До",
+                    "value": ""
+                  }
+                }
+              }
+            },
+            {
+              "type": "select",
+              "name": "premises",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Арендный бизнес",
+                  "value": "rentBusiness"
+                },
+                {
+                  "text": "Гостиница",
+                  "value": "hotel",
+                  "selected": false
+                },
+                {
+                  "text": "В жилой недвижимости",
+                  "value": "living_realty",
+                  "selected": false
+                },
+                {
+                  "text": "Инвестпроекты",
+                  "value": "investprojects",
+                  "selected": false
+                },
+                {
+                  "text": "В коммерческой недвижимости",
+                  "value": "commercial",
+                  "selected": false
+                },
+                {
+                  "text": "Отдельно стоящие здания",
+                  "value": "separateBuildings",
+                  "selected": false
+                },
+                {
+                  "text": "Офисные помещения",
+                  "value": "office",
+                  "selected": false
+                },
+                {
+                  "text": "Помещения свободного назначения",
+                  "value": "freePremises",
+                  "selected": false
+                },
+                {
+                  "text": "Помещения под общепит",
+                  "value": "cateringFacilities",
+                  "selected": false
+                },
+                {
+                  "text": "Производственные помещения",
+                  "value": "industrial",
+                  "selected": false
+                },
+                {
+                  "text": "Складские помещения",
+                  "value": "warehouses",
+                  "selected": false
+                },
+                {
+                  "text": "Торговые помещения",
+                  "value": "retail",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "building",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Административное здание",
+                  "value": "administartive",
+                  "selected": false
+                },
+                {
+                  "text": "Бизнес парк",
+                  "value": "business-park",
+                  "selected": false
+                },
+                {
+                  "text": "БЦ",
+                  "value": "business-center",
+                  "selected": false
+                },
+                {
+                  "text": "Многофункциональный комплекс",
+                  "value": "multifunctional-complex",
+                  "selected": false
+                },
+                {
+                  "text": "Особняк",
+                  "value": "mansion",
+                  "selected": false
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "district",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "ВАО",
+                  "value": "vao",
+                  "selected": false
+                },
+                {
+                  "text": "ЗАО",
+                  "value": "zao"
+                },
+                {
+                  "text": "НАО",
+                  "value": "nao"
+                },
+                {
+                  "text": "CАО",
+                  "value": "sao"
+                },
+                {
+                  "text": "СВАО",
+                  "value": "svao"
+                },
+                {
+                  "text": "СЗАО",
+                  "value": "szao"
+                },
+                {
+                  "text": "ЦАО",
+                  "value": "cao"
+                },
+                {
+                  "text": "ЮАЮ",
+                  "value": "uau"
+                },
+                {
+                  "text": "ЮВАО",
+                  "value": "uvao"
+                },
+                {
+                  "text": "ЮЗАО",
+                  "value": "uzao"
+                },
+                {
+                  "text": "Московская область",
+                  "value": "moscow_district"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "location",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Внутри Бульварного кольца",
+                  "value": "boulevard_ring",
+                  "selected": false
+                },
+                {
+                  "text": "За МКАД",
+                  "value": "out_mkad"
+                },
+                {
+                  "text": "Внутри Садового кольца",
+                  "value": "sadovoe_ring"
+                },
+                {
+                  "text": "Внутри ТТК",
+                  "value": "inside__ttk"
+                },
+                {
+                  "text": "Внутри МКАД",
+                  "value": "inside_mkad"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "state",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Строится",
+                  "value": "in_progress",
+                  "selected": false
+                },
+                {
+                  "text": "Построен",
+                  "value": "done"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "name": "facing",
+              "values": [{
+                  "text": "Все варианты",
+                  "value": "",
+                  "selected": true
+                },
+                {
+                  "text": "Без отделки",
+                  "value": "without_facing",
+                  "selected": false
+                },
+                {
+                  "text": "С отделкой",
+                  "value": "with_facing"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "popupButtons": [{
+          "text": "Метро",
+          "popup": "popupAreaMetro"
+        },
+        {
+          "text": "Районы и округа",
+          "popup": "popupAreaDistrict"
+        }
+      ]
+    },
+    "cards": [{
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²",
+          "request": true
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Таунхаус",
+        "name": "Покровский Берег",
+        "address": "Хамовники, Ефремова улица, д. 9А",
+        "specs": ["square", "rooms", "floor", "metro", "facing", "parking"],
+        "info": {
+          "square": "850м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          },
+          "facing": "С отделкой",
+          "parking": "С парковкой"
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card3.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Дом",
+        "labels": ["Эксклюзив"],
+        "name": "Knightsbride Private park",
+        "address": "Истринский район, Новорижское шоссе, 19 км",
+        "specs": ["square", "area", "facing", "floor", "forest", "water"],
+        "info": {
+          "square": "850м²",
+          "area": "22 сотки",
+          "facing": "С отделкой",
+          "floor": "2 этажа",
+          "forest": "Лес рядом",
+          "water": "У водоема"
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Участок",
+        "name": "Парк Авеню",
+        "address": "Рублево-Успенское шоссе, 9 км",
+        "specs": ["area", "distance", "gas", "cleaner", "pump"],
+        "info": {
+          "area": "55 соток",
+          "distance": "11 км от МКАД",
+          "gas": "Газ (магистральный)",
+          "cleaner": "Септик",
+          "pump": "Скважина"
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      }
+    ],
+    "bannerSend": {
+      "title": "устали искать? подберем для вас то, что нужно в 2 счета"
+    },
+    "pagination": {
+      "current": 1,
+      "count": 4,
+      "url": "",
+      "param": ""
+    },
+    "error": "Нет предложений по вашему запросу",
+    "requiesData": {
+      "page": 1
+    }
+  },
+  "request": {
+    "picture": {
+      "sources": {
+        "mobile": [
+          "/assets/images/how-back.jpg",
+          "/assets/images/album.webp"
+        ],
+        "tablet": [
+          "/assets/images/album.jpg",
+          "/assets/images/album.webp"
+        ],
+        "desktop": [
+          "/assets/images/album.jpg",
+          "/assets/images/album.webp"
+        ]
+      },
+      "alt": "album",
+      "title": "album"
+    },
+    "title": "Узнать о лучших предложениях <br>недвижимости в Хамовниках",
+    "form": {
+      "url": "/ajax/json/success.json",
+      "hidden": {
+        "user_id": "123"
+      },
+      "inputs": [{
+          "placeholder": "Имя*",
+          "value": "",
+          "name": "name",
+          "type": "text",
+          "className": "",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 1,
+              "max": 50
+            }
+          }
+        },
+        {
+          "type": "input",
+          "name": "phone",
+          "placeholder": "+7 (___) ___-__-__*",
+          "value": "",
+          "maskInfo": {
+            "options": {
+              "mask": "+{7}(000) 000-00-00"
+            },
+            "complete": false
+          },
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 17,
+              "max": 17
+            }
+          }
+        },
+        {
+          "placeholder": "E-mail*",
+          "value": "",
+          "name": "email",
+          "type": "text",
+          "className": "input--email",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "email": true,
+            "lengthString": {
+              "min": 5,
+              "max": 250
+            }
+          }
+        }
+      ],
+      "btn": "Отправить заявку",
+      "checkbox": {
+        "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+        "name": "checkbox",
+        "value": "y",
+        "checked": false
+      }
+    }
+  },
+  "desc": {
+    "title": "элитная <br>недвижимость <br>в Хамовниках",
+    "describe": "Хамовники один из наиболее престижных районов Москвы – сочетают в себе все, что необходимо для комфортного проживания в уединении. Перспективный район со множеством респектабельных зданий, превосходная инфраструктура, максимальная доступность необходимых объектов делают жилье одним из наиболее востребованных на столичном рынке. Квартиры в Хамовниках отличаются также великолепным разнообразием – клиентам агентства предлагаются просторные многокомнатные апартаменты и небольшие уютные студии – на любой вкус. Мы готовы предложить своим клиентам жилье, полностью соответствующее их пожеланиям – в подходящем объекте и необходимой конфигурации. Возможность купить квартиру в Хамовниках представляет собой как успешную долгосрочную инвестицию, так и выбор превосходного района для комфортного проживания."
+  }
+}

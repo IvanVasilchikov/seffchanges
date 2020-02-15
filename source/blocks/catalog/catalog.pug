@@ -1,0 +1,123 @@
+include ../core/breadcrumbs/breadcrumbs.pug
+include ../filter/catalog/filter-catalog.pug
+include ../core/label/label.pug
+include ../core/select/select.pug
+include ../fonts/title/fourth/title-fourth.pug
+include ./list/catalog-list.pug
+include ../card/card.pug
+include ../card/table/card-table.pug
+include ../banner/request/banner-request.pug
+include ../banner/send/banner-send.pug
+include ../presentation/presentation.pug
+include ../card/small/card-small.pug
+include ../core/pagination/pagination.pug
+include ../fonts/text/text.pug
+include ../seo/links/seo-links.pug
+include ../filter/noResult/filter-noResult.pug
+
+mixin catalog(info)
+  - var catalogView = 'list';
+  .catalog
+    a.catalog__visual-search(href='./')
+      svg
+        use(xlink:href=loadAssets('./svg/visual-search.svg'))
+      span Визуальный поиск
+    .catalog__top
+      .main
+        +breadcrumbs(info.breadcrumbs)
+        +filter-catalog(info.filter, 'catalog__filter')(@filterSubmit='loadNewData')
+
+    if (info.cards && info.cards.length !== 0)
+      .catalog__map
+        img(src='/assets/images/gmaps.jpg', alt='')
+        if (info.mapUrl)
+          a.catalog__map-btn(href=info.mapUrl)
+            svg
+              use(xlink:href=loadAssets('./svg/pin.svg'))
+            span показать на карте
+        else
+          a.catalog__map-btn(href='/map/')
+            svg
+              use(xlink:href=loadAssets('./svg/pin.svg'))
+            span показать на карте
+    else
+      | <!---->
+
+    .main
+      .catalog__main
+        +title-fourth(info.title, 'title-fourth--up catalog__title', true)
+        .catalog__main-wrp(id='catalog')
+          .catalog__offers!= info.pagination.objects_count
+          button.catalog__order(type= 'button', @click= 'popupOpen(\'form\', \'brokerSelection\', info.typeEstate)')!= info.order
+          .catalog__sort-wrp
+            if info.sort
+              +select(info.sort, 'select--sort catalog__sort', 0.4, 'Сортировать:')(@input='setSort')
+            else
+              | <!---->
+
+            .catalog__switch
+              input(type='radio', value='list', name='catalogView', v-model='catalogView', id='list')
+              label(for='list', @click='changeDisplayType("list")')
+                svg
+                  use(xlink:href=loadAssets('./svg/list-ico.svg'))
+              input(type='radio', value='tiles', name='catalogView', v-model='catalogView', id='tiles')
+              label(for='tiles', @click='changeDisplayType("tiles")')
+                svg
+                  use(xlink:href=loadAssets('./svg/tiles.svg'))
+      if (info.cards && info.cards.length !== 0)
+        div
+          if (catalogView === 'list')
+            +catalog-list('catalog__list')
+              each card in info.cards.slice(0, 4)
+                .catalog-list__card
+                  if (card.type === 'table')
+                    +card-table(card)(:key='card.id')
+                  else
+                    +card(card)(:key='card.id')
+              if (info.request && info.cards.length > 5)
+                +banner-request(info.request, 'catalog__banner-request', 'banner-request__background--right')
+              else
+                | <!---->
+              each card in info.cards.slice(4)
+                .catalog-list__card
+                  if (card.type === 'table')
+                    +card-table(card)(:key='card.id')
+                  else
+                    +card(card)(:key='card.id')
+              if (info.pagination.count >= 2)
+                +pagination(info.pagination, 'catalog__pagination')(@setPage='setPage')
+              else
+                | <!---->
+          else if (catalogView === 'tiles')
+            +catalog-list('catalog-list--tiles catalog__list')
+              each card in info.cards.slice(0, 8)
+                +card-small(card, 'catalog-list__card-small')(:key='card.id')
+              if (info.bannerSend)
+                +banner-send(info.bannerSend, 'catalog-list__card-small')
+              else
+                | <!---->
+              each card in info.cards.slice(8)
+                +card-small(card, 'catalog-list__card-small')(:key='card.id')
+
+              if (info.pagination.count >= 2)
+                +pagination(info.pagination, 'catalog__pagination')(@setPage='setPage')
+              else
+                | <!---->
+          else
+            | <!---->
+
+          if (info.presentation)
+            +presentation(info.presentation, 'catalog__presentation presentation--catalog')
+          else
+            | <!---->
+          .catalog__text
+            .catalog__text-title!= info.desc.title
+            +text(info.desc.describe, 'catalog__text-desc')
+
+      else
+        +filter-noResult(info.error, 'catalog__error', true)
+
+    if (info.cards && info.cards.length !== 0)
+      +seo-links(info.seo, 'catalog__seo')
+    else
+      | <!---->

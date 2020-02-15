@@ -1,0 +1,177 @@
+$parent: 'about-awards';
+
+@include block($parent) {
+  position: relative;
+  padding-top: rem(40);
+
+  @media (min-width: $tMin) {
+    padding-top: rem(60);
+  }
+
+  @media (min-width: $d1280) {
+    padding-top: rem(100);
+  }
+
+  @include element($parent, 'wrap') {
+    position: relative;
+  }
+
+  @include element($parent, 'tabs') {
+    position: absolute;
+    left: rem(16);
+    top: rem(35);
+    z-index: 3;
+
+    .tabs__btn {
+      &:hover {
+        color: $purple;
+      }
+
+      &::after {
+        background-color: $purple;
+      }
+
+      &--active {
+        color: $purple;
+      }
+    }
+
+    @media (min-width: $tMin) {
+      top: rem(100);
+      left: rem(38);
+    }
+
+    @media (min-width: $d1280) {
+      top: rem(120);
+      left: rem(85);
+    }
+  }
+
+  @include element($parent, 'slider') {
+    margin-top: rem(35);
+
+    @media (min-width: $tMin) {
+      margin-top: 0;
+      padding-top: rem(50);
+    }
+  }
+
+  @include element($parent, 'slide') {
+    background-color: #484848;
+    padding: rem(96) rem(15) rem(117);
+    height: auto;
+
+    @media (min-width: $tMin) {
+      height: rem(478);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: rem(80) rem(36) rem(60);
+    }
+
+    @media (min-width: $d1280) {
+      height: rem(450);
+      padding: 0 rem(142) rem(90) rem(80);
+    }
+  }
+
+  @include element($parent, 'slide-title') {
+    width: 100%;
+    color: $w;
+
+    @media (max-width: $mMax) {
+      font-size: rem(28);
+    }
+
+    @media (min-width: $tMin) {
+      max-width: 70%;
+    }
+
+    @media (min-width: $d1280) {
+      max-width: 58%;
+      order: 1;
+    }
+  }
+
+  @include element($parent, 'image') {
+    position: relative;
+    flex-shrink: 0;
+
+    img {
+      max-height: rem(243);
+      max-width: rem(203);
+      object-fit: contain;
+      font-family: 'object-fit: contain;';
+      margin: 0 auto;
+
+      @media (min-width: $tMin) {
+        max-width: rem(338);
+        max-height: rem(406);
+        margin: 0;
+      }
+
+      @media (min-width: $d1280) {
+        max-height: rem(460);
+        max-width: rem(405);
+      }
+    }
+
+    @media (min-width: $tMin) {
+      position: absolute;
+      right: rem(18);
+      top: rem(-60);
+    }
+
+    @media (min-width: $d1280) {
+      bottom: rem(-53);
+      position: relative;
+      right: auto;
+      order: 2;
+      top: auto;
+    }
+  }
+
+  @include element($parent, 'nav') {
+    height: rem(72);
+    width: rem(174);
+    background-color: $red2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  @include element($parent, 'btn') {
+    height: rem(15);
+    width: rem(9);
+    cursor: pointer;
+
+    svg {
+      fill: $w;
+    }
+
+    @include modifier($parent, 'prev') {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element($parent, 'count') {
+    font-family: $BaronNeue;
+    font-size: rem(22);
+    line-height: rem(30);
+    color: $w;
+    margin: 0 rem(23);
+
+    span {
+      font-family: $Lato;
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $gray-c2;
+    }
+  }
+}

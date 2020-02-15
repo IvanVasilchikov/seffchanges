@@ -1,0 +1,12 @@
+include ../../core/picture/picture.pug
+include ../../core/btn/btn.pug
+
+mixin office-item(info, className)
+    .office-item(class= className)
+        .office-item__photo
+            +picture(info, 'office-item__avatar', 'lazyload')
+        .office-item__person
+            .office-item__person-name!=info.name
+            .office-item__person-post!=info.post
+            a.office-item__person-mail(href='mailto:' + info.mailUrl)!=info.mail
+            +btn('button', 'Написать специалисту', 'office-item__btn')(@click= 'popupOpen(\'form\', \'writeUs\', { manager: info.mailUrl })')

@@ -1,0 +1,453 @@
+2019-06-13 16:04:28 -  - exec CUpdateClient::GetUpdatesList
+2019-06-13 16:04:28 -  - exec CUpdateClient::CollectRequestData
+2019-06-13 16:04:28 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.100&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=127.0.0.1&CSAB=192.168.16.3&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=5.6.30&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_search=18.5.200&bitm_blog=18.1.0&bitm_bitrixcloud=18.5.0&bitm_vote=17.5.1&bitm_fileman=18.5.400&bitm_rest=18.5.7&bitm_messageservice=18.0.3&bitm_b24connector=18.5.0&bitm_form=18.0.0&bitm_highloadblock=18.5.100&bitm_mobileapp=18.5.100&bitm_socialservices=18.5.100&bitm_landing=18.6.75&bitm_compression=16.0.0&bitm_security=18.5.1&bitm_forum=18.0.5&bitm_ui=18.5.150&bitm_seo=18.6.100&bitm_photogallery=18.0.0&bitm_clouds=18.0.0&bitm_scale=17.5.0&bitm_iblock=18.6.400&bitm_subscribe=18.5.0&bitm_perfmon=18.5.0&bitm_translate=18.0.0&bitl_ru=&bitl_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-N
+2019-06-13 16:04:28 -  - exec CUpdateClient::GetHTTPPage
+2019-06-13 16:04:30 -  - TIME GetUpdatesList(request) 2.117 sec
+2019-06-13 16:04:30 -  - exec CUpdateClient::ParseServerData
+2019-06-13 16:06:05 -  - exec CUpdateClient::GetUpdatesList
+2019-06-13 16:06:05 -  - exec CUpdateClient::CollectRequestData
+2019-06-13 16:06:05 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.100&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=127.0.0.1&CSAB=192.168.16.3&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=5.6.30&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_search=18.5.200&bitm_blog=18.1.0&bitm_bitrixcloud=18.5.0&bitm_vote=17.5.1&bitm_fileman=18.5.400&bitm_rest=18.5.7&bitm_messageservice=18.0.3&bitm_b24connector=18.5.0&bitm_form=18.0.0&bitm_highloadblock=18.5.100&bitm_mobileapp=18.5.100&bitm_idem=0.0.1&bitm_socialservices=18.5.100&bitm_landing=18.6.75&bitm_compression=16.0.0&bitm_security=18.5.1&bitm_forum=18.0.5&bitm_ui=18.5.150&bitm_seo=18.6.100&bitm_photogallery=18.0.0&bitm_clouds=18.0.0&bitm_scale=17.5.0&bitm_iblock=18.6.400&bitm_subscribe=18.5.0&bitm_perfmon=18.5.0&bitm_translate=18.0.0&bitl_ru=&bitl_en=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-N
+2019-06-13 16:06:05 -  - exec CUpdateClient::GetHTTPPage
+2019-06-13 16:06:05 -  - TIME GetUpdatesList(request) 0.243 sec
+2019-06-13 16:06:05 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:53:54 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:53:54 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:53:54 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.100&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:53:54 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:53:54 -  - TIME GetUpdatesList(request) 0.313 sec
+2019-07-16 16:53:54 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:53:56 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:53:56 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:53:56 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.100&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:53:56 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:53:56 -  - TIME GetUpdatesList(request) 0.252 sec
+2019-07-16 16:53:56 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:54:05 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:54:05 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:54:05 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.100&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:54:05 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:54:05 -  - TIME GetUpdatesList(request) 0.268 sec
+2019-07-16 16:54:05 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:54:11 -  - exec CUpdateClient::UpdateUpdate
+2019-07-16 16:54:11 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:54:11 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.100&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y&query_type=updateupdate
+2019-07-16 16:54:11 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:54:13 -  - TIME UpdateUpdate(request) 2.18 sec
+2019-07-16 16:54:13 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 16:54:13 -  - TIME UnGzipArchive 0.011 sec
+2019-07-16 16:54:13 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:54:13 - CURV - Update updated successfully!
+2019-07-16 16:54:13 - UPD_SUCCESS - Update system updated
+2019-07-16 16:54:14 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:54:14 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:54:14 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:54:14 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:54:14 -  - TIME GetUpdatesList(request) 0.457 sec
+2019-07-16 16:54:14 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:09 -  - exec CUpdateClient::ActivateLicenseKey
+2019-07-16 16:56:09 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:09 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y&query_type=activate
+2019-07-16 16:56:09 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:10 -  - TIME ActivateLicenseKey(request) 0.494 sec
+2019-07-16 16:56:10 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:10 - CUALK - License key activated successfully!
+2019-07-16 16:56:10 - UPD_SUCCESS - Licence activated
+2019-07-16 16:56:10 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:56:10 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:10 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:56:10 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:10 -  - TIME GetUpdatesList(request) 0.306 sec
+2019-07-16 16:56:10 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:16 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:56:16 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:16 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:56:16 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:16 -  - TIME GetUpdatesList(request) 0.274 sec
+2019-07-16 16:56:16 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:18 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:56:18 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:18 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:56:18 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:18 -  - TIME GetUpdatesList(request) 0.277 sec
+2019-07-16 16:56:18 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:39 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:56:39 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:39 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:56:39 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:40 -  - TIME GetUpdatesList(request) 0.28 sec
+2019-07-16 16:56:40 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:45 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:56:45 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:45 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:56:45 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:45 -  - TIME GetUpdatesList(request) 0.282 sec
+2019-07-16 16:56:45 -  - exec CUpdateClient::ParseServerData
+2019-07-16 16:56:48 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 16:56:48 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 16:56:48 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 16:56:48 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 16:56:49 -  - TIME GetUpdatesList(request) 0.273 sec
+2019-07-16 16:56:49 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:43 -  - exec CUpdateClient::GetUpdatesList
+2019-07-16 17:50:43 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:43 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:43 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:43 -  - TIME GetUpdatesList(request) 0.268 sec
+2019-07-16 17:50:43 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:45 -  - exec CUpdateClient::RegisterVersion
+2019-07-16 17:50:45 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:45 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=D&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y&query_type=register
+2019-07-16 17:50:45 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:45 -  - TIME RegisterVersion(request) 0.236 sec
+2019-07-16 17:50:45 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:45 -  - TIME UnGzipArchive 0.001 sec
+2019-07-16 17:50:45 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:45 - CURV - Product registered successfully!
+2019-07-16 17:50:45 - UPD_SUCCESS - Registered
+2019-07-16 17:50:46 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:46 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:46 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.400&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:46 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:46 -  - TIME LoadModulesUpdates(request) 0.253 sec
+2019-07-16 17:50:46 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:46 - S - STEP
+2019-07-16 17:50:46 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:47 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:47 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:47 -  - loadFile
+2019-07-16 17:50:47 - U - RETURN
+2019-07-16 17:50:47 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:47 -  - TIME UnGzipArchive 0.006 sec
+2019-07-16 17:50:47 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288647/fileman/updater18.5.450.php'
+2019-07-16 17:50:47 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288647/fileman/updater18.5.450.php': CopyFiles(install/js, js)
+2019-07-16 17:50:47 -  - TIME UpdateStepModules 0.004 sec
+2019-07-16 17:50:47 - UPD_SUCCESS - Updated: fileman (18.5.450)<br><li>Исправлена ошибка медиабиблиотеки при получении прямой ссылки на загруженный файл. 
+2019-07-16 17:50:47 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:47 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:47 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.400&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:47 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:47 -  - TIME LoadModulesUpdates(request) 0.26 sec
+2019-07-16 17:50:47 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:47 - S - STEP
+2019-07-16 17:50:47 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:48 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:48 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:48 -  - loadFile
+2019-07-16 17:50:48 - U - RETURN
+2019-07-16 17:50:48 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:48 -  - TIME UnGzipArchive 0.007 sec
+2019-07-16 17:50:48 -  - TIME UpdateStepModules 0.003 sec
+2019-07-16 17:50:48 - UPD_SUCCESS - Updated: iblock (18.6.500)<br><li>В компонентах catalog.* для товаров без предложений отсутствовала информация о количестве.
+2019-07-16 17:50:48 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:48 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:48 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.500&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:48 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:48 -  - TIME LoadModulesUpdates(request) 0.247 sec
+2019-07-16 17:50:48 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:48 - S - STEP
+2019-07-16 17:50:48 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:49 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:49 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:49 -  - loadFile
+2019-07-16 17:50:49 - U - RETURN
+2019-07-16 17:50:49 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:49 -  - TIME UnGzipArchive 0.005 sec
+2019-07-16 17:50:49 -  - TIME UpdateStepModules 0.001 sec
+2019-07-16 17:50:49 - UPD_SUCCESS - Updated: iblock (18.6.550)<br><li>Исправлена ошибка, возникавшая при использовании полнотекстовой фильтрации в методе CIBlockElement::GetList.
+2019-07-16 17:50:49 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:49 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:49 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.550&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:49 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:49 -  - TIME LoadModulesUpdates(request) 0.256 sec
+2019-07-16 17:50:49 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:49 - S - STEP
+2019-07-16 17:50:49 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:49 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:49 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:49 -  - loadFile
+2019-07-16 17:50:50 - U - RETURN
+2019-07-16 17:50:50 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:50 -  - TIME UnGzipArchive 0.007 sec
+2019-07-16 17:50:50 -  - TIME UpdateStepModules 0.003 sec
+2019-07-16 17:50:50 - UPD_SUCCESS - Updated: iblock (18.6.575)<br><li>Исправлена ошибка редактирования цен в административных списках товаров.
+2019-07-16 17:50:50 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:50 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:50 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.575&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:50 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:50 -  - TIME LoadModulesUpdates(request) 0.245 sec
+2019-07-16 17:50:50 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:50 - S - STEP
+2019-07-16 17:50:50 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:51 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:51 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:51 -  - loadFile
+2019-07-16 17:50:51 - U - RETURN
+2019-07-16 17:50:51 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:51 -  - TIME UnGzipArchive 0.028 sec
+2019-07-16 17:50:51 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288651/iblock/updater18.6.600/index.php'
+2019-07-16 17:50:51 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288651/iblock/updater18.6.600/index.php': CopyFiles(install/components, components)
+2019-07-16 17:50:51 -  - TIME UpdateStepModules 0.02 sec
+2019-07-16 17:50:51 - UPD_SUCCESS - Updated: iblock (18.6.600)<br><li>При обмене с 1С в поле Количество теперь суммируются данные только по активным складам. <li>В фильтр административного списка элементов (раздельный режим просмотра) возвращен параметр \"Включая подразделы\". <li>Из формы редактирования элемента удалена проверка существования класса \\Bitrix\\Main\\UI\\FileInput. <li>Разработчикам: в методе \\CIBlockElement::GetPropertyValuesArray добавлена возможность отключать приведение результатов к безопасному виду. <li>Исправлена ошибка удаления закупочной цены и добавления цен в режиме быстрого редактирования элементов. <li>Исправлена ошибка компонента catalog.brandblock при работе с невалидными highload-блоками. <li>Элементы набора добавлялись в корзину без необходимых свойств. <li>При выборе пользователя в бизнес-процессе на порталах с большим числом клиентов работа скрипта могла прекратиться падением по лимиту памяти. <li>В компонентах-наследника \\Bitrix\\Iblock\\Component\\Base корректно обрабатываются ключи сортировки, переданные в произвольном регистре. <li>В базовых шаблонах (.default и bootstrap_v4) компонента catalog.element удалено обращение к устаревшим полям товара, исправлены ошибки верстки. <li>В административном списке разделов можно выводить изображения раздела. <li>Переименован параметр HIDE_NOT_AVAILABLE компонента catalog.smart.filter для унификации наименований. <li>В форме редактирования элемента не удалялось исходное изображение после использования инструмента \"Обрезать\". <li>Улучшена совместимость с mysql 8.
+2019-07-16 17:50:51 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:51 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:51 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.600&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:51 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:52 -  - TIME LoadModulesUpdates(request) 0.258 sec
+2019-07-16 17:50:52 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:52 - S - STEP
+2019-07-16 17:50:52 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:52 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:52 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:52 -  - loadFile
+2019-07-16 17:50:52 - U - RETURN
+2019-07-16 17:50:52 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:52 -  - TIME UnGzipArchive 0.002 sec
+2019-07-16 17:50:52 -  - TIME UpdateStepModules 0.003 sec
+2019-07-16 17:50:52 - UPD_SUCCESS - Updated: iblock (18.6.650)<br><li>Исправлена ошибка фильтрации для списочных свойств при выборе значения \"Не задано\" на административных страницах списка элементов.
+2019-07-16 17:50:52 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:52 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:52 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.0&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:52 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:52 -  - TIME LoadModulesUpdates(request) 0.246 sec
+2019-07-16 17:50:52 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:52 - S - STEP
+2019-07-16 17:50:52 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:53 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:53 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:53 -  - loadFile
+2019-07-16 17:50:53 - U - RETURN
+2019-07-16 17:50:53 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:53 -  - TIME UnGzipArchive 0.005 sec
+2019-07-16 17:50:53 -  - TIME UpdateStepModules 0.003 sec
+2019-07-16 17:50:53 - UPD_SUCCESS - Updated: translate (18.0.100)<br><li>Исправления ошибок.
+2019-07-16 17:50:53 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:53 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:53 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=18.6.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:53 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:53 -  - TIME LoadModulesUpdates(request) 0.282 sec
+2019-07-16 17:50:53 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:53 - S - STEP
+2019-07-16 17:50:53 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:54 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:54 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:54 -  - loadFile
+2019-07-16 17:50:54 - U - RETURN
+2019-07-16 17:50:54 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:54 -  - TIME UnGzipArchive 0.007 sec
+2019-07-16 17:50:54 -  - TIME UpdateStepModules 0.012 sec
+2019-07-16 17:50:54 - UPD_SUCCESS - Updated: seo (19.0.0)<br><li>Фильтрация списка страниц по уровню доступа для Facebook Lead Ads.
+2019-07-16 17:50:54 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:54 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:54 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.0&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:54 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:54 -  - TIME LoadModulesUpdates(request) 0.268 sec
+2019-07-16 17:50:54 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:54 - S - STEP
+2019-07-16 17:50:54 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:54 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:54 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:54 -  - loadFile
+2019-07-16 17:50:55 - U - RETURN
+2019-07-16 17:50:55 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:55 -  - TIME UnGzipArchive 0.006 sec
+2019-07-16 17:50:55 -  - TIME UpdateStepModules 0.01 sec
+2019-07-16 17:50:55 - UPD_SUCCESS - Updated: seo (19.0.100)<br><li>Добавлены методы для работы с Яндекс.Кассой.
+2019-07-16 17:50:55 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:55 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:55 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.0.0&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:55 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:55 -  - TIME LoadModulesUpdates(request) 0.255 sec
+2019-07-16 17:50:55 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:55 - S - STEP
+2019-07-16 17:50:55 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:55 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:55 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:55 -  - loadFile
+2019-07-16 17:50:56 - U - RETURN
+2019-07-16 17:50:56 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:56 -  - TIME UnGzipArchive 0.019 sec
+2019-07-16 17:50:56 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288656/clouds/updater18.5.0.php'
+2019-07-16 17:50:56 -  - TIME UpdateStepModules 0.267 sec
+2019-07-16 17:50:56 - UPD_SUCCESS - Updated: clouds (18.5.0)<br><li>Исправлена загрузка очень больших файлов. 
+2019-07-16 17:50:56 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:56 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:56 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.0&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:56 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:56 -  - TIME LoadModulesUpdates(request) 0.281 sec
+2019-07-16 17:50:56 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:56 - S - STEP
+2019-07-16 17:50:56 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:57 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:57 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:57 -  - loadFile
+2019-07-16 17:50:57 - U - RETURN
+2019-07-16 17:50:57 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:57 -  - TIME UnGzipArchive 0.007 sec
+2019-07-16 17:50:57 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288657/clouds/updater18.5.100.php'
+2019-07-16 17:50:57 -  - TIME UpdateStepModules 0.039 sec
+2019-07-16 17:50:57 - UPD_SUCCESS - Updated: clouds (18.5.100)<br><li>Добавлена поддержка хранилищ Яндекс.Облака. <li>Исправлена ошибка выгрузки файлов с русскими именами в списке файлов в административном разделе. 
+2019-07-16 17:50:57 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:57 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:57 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.100&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:57 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:57 -  - TIME LoadModulesUpdates(request) 0.247 sec
+2019-07-16 17:50:57 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:57 - S - STEP
+2019-07-16 17:50:57 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:58 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:58 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:58 -  - loadFile
+2019-07-16 17:50:58 - U - RETURN
+2019-07-16 17:50:58 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:58 -  - TIME UnGzipArchive 0.004 sec
+2019-07-16 17:50:58 -  - TIME UpdateStepModules 0.001 sec
+2019-07-16 17:50:58 - UPD_SUCCESS - Updated: clouds (18.5.200)<br><li>Исправлено резервное копирование в облако Amazon. <li>Исправлена загрузка больших файлов в облако Amazon. 
+2019-07-16 17:50:58 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:58 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:58 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.100&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:58 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:58 -  - TIME LoadModulesUpdates(request) 0.254 sec
+2019-07-16 17:50:58 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:58 - S - STEP
+2019-07-16 17:50:58 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:58 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:58 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:58 -  - loadFile
+2019-07-16 17:50:59 - U - RETURN
+2019-07-16 17:50:59 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:59 -  - TIME UnGzipArchive 0.002 sec
+2019-07-16 17:50:59 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288659/mobileapp/updater18.5.200.php'
+2019-07-16 17:50:59 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288659/mobileapp/updater18.5.200.php': CopyFiles(install/components, components)
+2019-07-16 17:50:59 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288659/mobileapp/updater18.5.200.php': CopyFiles(install/js, js)
+2019-07-16 17:50:59 -  - TIME UpdateStepModules 0.003 sec
+2019-07-16 17:50:59 - UPD_SUCCESS - Updated: mobileapp (18.5.200)<br><li>Незначительные исправления и улучшения.
+2019-07-16 17:50:59 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:59 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:50:59 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.7&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:50:59 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:50:59 -  - TIME LoadModulesUpdates(request) 0.257 sec
+2019-07-16 17:50:59 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:59 - S - STEP
+2019-07-16 17:50:59 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:50:59 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:50:59 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:50:59 -  - loadFile
+2019-07-16 17:50:59 - U - RETURN
+2019-07-16 17:50:59 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:50:59 -  - TIME UnGzipArchive 0.003 sec
+2019-07-16 17:50:59 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288659/rest/updater18.5.100.php'
+2019-07-16 17:50:59 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288659/rest/updater18.5.100.php': CopyFiles(install/components, components)
+2019-07-16 17:50:59 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288659/rest/updater18.5.100.php': CopyFiles(install/js, js)
+2019-07-16 17:50:59 -  - TIME UpdateStepModules 0.033 sec
+2019-07-16 17:50:59 - UPD_SUCCESS - Updated: rest (18.5.100)<br><li>В метод placement.bind добавлен параметр GROUP_NAME - название группы, который позволяет группировать обработчики в месте встраивания.
+2019-07-16 17:51:00 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:00 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:00 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.150&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:00 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:00 -  - TIME LoadModulesUpdates(request) 0.237 sec
+2019-07-16 17:51:00 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:00 - S - STEP
+2019-07-16 17:51:00 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:51:00 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:00 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:00 -  - loadFile
+2019-07-16 17:51:00 - U - RETURN
+2019-07-16 17:51:00 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:51:00 -  - TIME UnGzipArchive 0.005 sec
+2019-07-16 17:51:00 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288660/ui/updater18.5.175.php'
+2019-07-16 17:51:00 - CRUPDCF1 - Run updater '/bitrix/updates/update_m1563288660/ui/updater18.5.175.php': CopyFiles(install/js, js)
+2019-07-16 17:51:00 -  - TIME UpdateStepModules 0.004 sec
+2019-07-16 17:51:00 - UPD_SUCCESS - Updated: ui (18.5.175)<br><li>Доработка и исправление ошибок в расширении dropdown.
+2019-07-16 17:51:00 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:00 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:00 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.175&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.6.75&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:00 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:01 -  - TIME LoadModulesUpdates(request) 0.282 sec
+2019-07-16 17:51:01 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:01 - S - STEP
+2019-07-16 17:51:01 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:51:01 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:01 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:01 -  - loadFile
+2019-07-16 17:51:03 - U - RETURN
+2019-07-16 17:51:03 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:51:03 -  - TIME UnGzipArchive 0.209 sec
+2019-07-16 17:51:03 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288663/landing/updater18.7.0.php'
+2019-07-16 17:51:03 -  - TIME UpdateStepModules 0.184 sec
+2019-07-16 17:51:03 - UPD_SUCCESS - Updated: landing (18.7.0)<br><li>Добавлена система прав. <li>Разработчикам: добавлены события onBeforeSiteRecycle и onBeforeLandingRecycle, возникающие при добавлении сайта/страницы в корзину (а также возврата из нее). <li>Разработчикам: добавлено событие onAfterDemoCreate, вызываемое после полного создания сайта по шаблону. <li>В магазинах в блок плавающей корзины добавлена ссылка на авторизацию. <li>Оптимизация тем и улучшение верстки блоков. <li>Оптимизация панели иконок в редакторе. <li>Оптимизация окна изменения домена в Битрикс24. <li>Улучшение функционала смены домена в настройках сайта. <li>Исправления и улучшения загрузки изображений. <li>Исправления и улучшения верстки блоков. <li>Исправлена ошибка с некорректной загрузкой изображений при указании по ссылке. <li>Исправлена ошибка с bxstyle в landing.repo.register. <li>Исправлена ошибка с установкой SEO-тегов в списке. <li>Опмтимизация иконочных шрифтов. <li>Оптимизация CSS-тем. <li>Оптимизация работы блоков со слайдерами. <li>Оптимизация работы блоков с CRM-формами. <li>Многочисленные исправления в блоках. <li>Новые блоки. <li>Добавлено представление страницы \"для мобильных устройств\". 
+2019-07-16 17:51:03 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:03 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:03 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.175&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.7.0&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:03 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:04 -  - TIME LoadModulesUpdates(request) 0.248 sec
+2019-07-16 17:51:04 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:04 - S - STEP
+2019-07-16 17:51:04 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:51:04 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:04 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:04 -  - loadFile
+2019-07-16 17:51:05 - U - RETURN
+2019-07-16 17:51:05 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:51:05 -  - TIME UnGzipArchive 0.139 sec
+2019-07-16 17:51:05 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288665/landing/updater18.7.100.php'
+2019-07-16 17:51:06 -  - TIME UpdateStepModules 0.153 sec
+2019-07-16 17:51:06 - UPD_SUCCESS - Updated: landing (18.7.100)<br><li>Шаблоны для магазина \"Продажи в чате\": тёмная и светлая темы. <li>В облачном Битрикс24 добавлена возможность переноса сайта в магазины. <li>В коробочной версии добавлена настройка адреса портала для публикации. <li>Добавлены новые блоки. <li>Разработчикам: новое событие onHookExec. <li>В форме редактирования роли теперь выводится предупреждение о несохранении при попытке добавить новый сайт. <li>Пункт \"Перейти\" в списке сайтов и страниц теперь недоступен, если сайт/страница неактивны. <li>Исправления в верстке блоков. <li>Исправления в интерфейсе редактора. <li>Исправлена ошибка изменения языка кнопок в магазинах. <li>Исправлена ошибка, при которой скопированная страница отображалась как опубликованная. <li>Исправлена ошибка показа CRM-форм в коробочной версии. <li>Исправлена ошибка при кодировании некоторых логинов в ссылке на сброс пароля. <li>Оптимизация показа сайта в публичной части.
+2019-07-16 17:51:06 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:06 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:06 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.175&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.7.100&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:06 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:06 -  - TIME LoadModulesUpdates(request) 0.277 sec
+2019-07-16 17:51:06 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:06 - S - STEP
+2019-07-16 17:51:06 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:51:06 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:06 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:06 -  - loadFile
+2019-07-16 17:51:06 - U - RETURN
+2019-07-16 17:51:06 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:51:06 -  - TIME UnGzipArchive 0.001 sec
+2019-07-16 17:51:06 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288666/landing/updater18.7.200.php'
+2019-07-16 17:51:06 -  - TIME UpdateStepModules 0.001 sec
+2019-07-16 17:51:06 - UPD_SUCCESS - Updated: landing (18.7.200)<br><li>Исправление ошибки на версии PHP 5.6. <li>Исправлена ошибка, из-за которой могли не загружаться шрифты.
+2019-07-16 17:51:06 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:06 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:06 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.175&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.7.200&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:06 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:07 -  - TIME LoadModulesUpdates(request) 0.25 sec
+2019-07-16 17:51:07 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:07 - S - STEP
+2019-07-16 17:51:07 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:51:07 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:07 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:07 -  - loadFile
+2019-07-16 17:51:07 - U - RETURN
+2019-07-16 17:51:07 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:51:07 -  - TIME UnGzipArchive 0.004 sec
+2019-07-16 17:51:07 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288667/landing/updater18.7.300.php'
+2019-07-16 17:51:07 -  - TIME UpdateStepModules 0.005 sec
+2019-07-16 17:51:07 - UPD_SUCCESS - Updated: landing (18.7.300)<br><li>Исправление ошибки обновления изображений.
+2019-07-16 17:51:07 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:07 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:07 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.175&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.7.300&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:07 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:08 -  - TIME LoadModulesUpdates(request) 0.278 sec
+2019-07-16 17:51:08 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:08 - S - STEP
+2019-07-16 17:51:08 - LMU01 - LoadModulesUpdates-Step
+2019-07-16 17:51:08 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:08 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:08 -  - loadFile
+2019-07-16 17:51:08 - U - RETURN
+2019-07-16 17:51:08 -  - exec CUpdateClient::UnGzipArchive
+2019-07-16 17:51:08 -  - TIME UnGzipArchive 0.013 sec
+2019-07-16 17:51:08 - CSURUS1 - Run updater '/bitrix/updates/update_m1563288668/landing/updater18.7.400.php'
+2019-07-16 17:51:08 -  - TIME UpdateStepModules 0.015 sec
+2019-07-16 17:51:08 - UPD_SUCCESS - Updated: landing (18.7.400)<br><li>Исправлен механизм получения шаблона \"Продажи в чатах\", если не установлен модуль \"Центр продаж\".
+2019-07-16 17:51:08 -  - exec CUpdateClient::LoadModulesUpdates
+2019-07-16 17:51:08 -  - exec CUpdateClient::CollectRequestData
+2019-07-16 17:51:08 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=18.5.400&VERSION=18.5.180&TYPENC=E&SUPD_STS=2&SUPD_URS=0&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=localhost&CHHB=safari-site.idemcloud.ru&CSAB=172.28.0.6&SUID=0a34ea280f9c5ddb92dbfaef84eebdd8&CANGZIP=Y&CLIENT_PHPVER=7.2.20&stable=Y&NGINX=Y&SMD=N&rerere=Y&bitm_main=18.5.180&bitm_forum=18.0.5&bitm_photogallery=18.0.0&bitm_security=18.5.1&bitm_translate=18.0.100&bitm_socialservices=18.5.100&bitm_ui=18.5.175&bitm_fileman=18.5.450&bitm_highloadblock=18.5.100&bitm_form=18.0.0&bitm_mobileapp=18.5.200&bitm_messageservice=18.0.3&bitm_perfmon=18.5.0&bitm_seo=19.0.100&bitm_search=18.5.200&bitm_compression=16.0.0&bitm_subscribe=18.5.0&bitm_bitrixcloud=18.5.0&bitm_clouds=18.5.200&bitm_iblock=18.6.650&bitm_vote=17.5.1&bitm_blog=18.1.0&bitm_landing=18.7.400&bitm_b24connector=18.5.0&bitm_rest=18.5.100&bitm_idem=0.0.1&bitm_scale=17.5.0&bitl_en=&bitl_ru=&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y&LICENSE_SIGNED=%7Enew_license18_0_sign-Y
+2019-07-16 17:51:08 -  - exec CUpdateClient::GetHTTPPage
+2019-07-16 17:51:09 -  - TIME LoadModulesUpdates(request) 0.245 sec
+2019-07-16 17:51:09 -  - exec CUpdateClient::ParseServerData
+2019-07-16 17:51:09 - STEP - Finish - NOUPDATES
+2019-07-16 17:51:09 - STEP - Finish - NOUPDATES

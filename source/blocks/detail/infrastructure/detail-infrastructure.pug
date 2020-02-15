@@ -1,0 +1,27 @@
+include ../../core/animation/fade/animation-fade.pug
+include ../../fonts/title/title.pug
+include ../../core/picture/picture.pug
+
+mixin detail-infrastructure(info)
+  if info
+    .detail-infrastructure(id='infrastructure', data-screen='infrastructure')
+      .main
+        +title(info.title, 'detail-infrastructure__title')
+        .detail-infrastructure__buttons
+          .detail-infrastructure__buttons-wrp
+            each tab in info.tabs
+              label.detail-infrastructure__button(for=('infrastructure_' + tab.button.value))
+                input(type='radio', value=tab.button.value, name='infrastructure_tab', v-model='activeTab', id=('infrastructure_' + tab.button.value))
+                span.detail-infrastructure__button-text!= tab.button.text
+      .detail-infrastructure__tabs.main
+        each tab in info.tabs
+          +animation-fade(0.4)
+            if (activeTab === tab.button.value)
+              .detail-infrastructure__tab
+                +picture(tab.image, 'detail-infrastructure__tab-image', 'lazyload')
+                .main.detail-infrastructure__tab-main
+                  .detail-infrastructure__tab-text!= tab.text
+            else
+              | <!---->
+  else
+    | <!---->

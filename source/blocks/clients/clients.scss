@@ -1,0 +1,110 @@
+$parent: clients;
+
+@include block($parent) {
+  @include element ($parent, 'title') {
+    margin-bottom: rem(20);
+
+    @media screen and (min-width: $tMin) and (max-width: $d1279) {
+      margin-bottom: rem(31);
+    }
+
+    @media screen and (min-width: $d1280) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  @include element ($parent, 'items') {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (min-width: $tMin) {
+      justify-content: flex-start;
+      margin-right: rem(-20);
+    }
+
+    @media screen and (min-width: $dMin) {
+      margin-right: rem(-12);
+    }
+  }
+
+  @include element ($parent, 'item') {
+    width: calc(50% - 0.4375rem);
+    height: rem(152);
+    margin-bottom: rem(14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $w;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transition: box-shadow 0.4s ease;
+
+    @include modifier ($parent, 'main') {
+      &:nth-of-type(1n+5) {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(20);
+    }
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      width: calc(33.333% - 1.25rem);
+      margin-right: rem(20);
+      height: rem(200);
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: calc(20% - 0.75rem);
+      margin-right: rem(12);
+      margin-bottom: rem(12);
+      height: rem(176);
+
+      @include modifier ($parent, 'main') {
+        &:nth-of-type(1n+5) {
+          display: inherit;
+        }
+      }
+    }
+
+    @media screen and (min-width: $d1280) {
+      height: rem(230);
+    }
+
+    &:nth-of-type(3n) {
+      @media screen and (min-width: $tMin) and (max-width: $tMax) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(5n) {
+      @media screen and (min-width: $dMin) {
+        margin-right: 0;
+      }
+    }
+
+    /*
+    &:hover {
+      box-shadow: 0 rem(10) rem(40) rgba(0, 0, 0, 0.15);
+    }
+    */
+  }
+
+  @include element ($parent, 'item-img') {
+    display: block;
+    max-width: 70%;
+    max-height: 94%;
+
+    @media (min-width: $tMin) {
+      max-width: 80%;
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    display: block;
+    width: rem(230);
+    margin: rem(30) auto 0;
+  }
+}

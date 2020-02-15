@@ -1,0 +1,86 @@
+include ../radio/filter-radio.pug
+include ../../core/select/select.pug
+include ../../core/btn/btn.pug
+include ../../core/label/label.pug
+include ../range/filter-range.pug
+include ../address/filter-address.pug
+include ../../core/animation/height/animation-height.pug
+include ../../core/hint/hint.pug
+
+mixin filter-catalog(info, className, mainFilter)
+  - var showMore = false;
+  - var special = info.tags ? info.tags.special : false;
+  - var fieldsConds = info.fields;
+  - var fieldsCondsMore = info.more;
+  - var visibleTags = null;
+
+  .filter-catalog(class=[className, ('filter-catalog--' + info.type)])
+    .filter-catalog__main
+      each field in fieldsConds
+        .filter-catalog__group(class=['filter-catalog__group--' + field.type, 'filter-catalog__group--' + field.name, 'filter-catalog__group--' + field.name + (field.values && field.values.length === 3 ? '-tripple' : ''), field.style ? 'filter-catalog__group--' + field.style : ''])
+          if (field.type === 'hidden')
+            input(type='hidden', name=field.name, value=field.value)
+          else if (field.type === 'radio')
+            +filter-radio(field.values, field.name, 'filter-catalog__radio', info.name)(@change='setFieldData')
+          else if (field.type === 'select')
+            .filter-catalog__group-wrp
+              +select(field, 'filter-catalog__select filter-catalog__select--' + field.name, 0.3)(@input='setFieldData')
+          else if (field.type === 'range')
+            +filter-range(field.range, ('filter-catalog__range filter-catalog__range--' + field.name), field.name, info.name)(@change='setRange')
+          else if (field.type === 'input' && field.name === 'search')
+            +hint(field, 'filter-address filter-catalog__address')(@passHint='setFieldData')
+          else
+            | <!---->
+    if (info.more)
+      +animation-height(0.4)
+        if (showMore)
+          .filter-catalog__hidden
+            .filter-catalog__main.filter-catalog__main--hidden(class='filter-catalog__main--' + info.name)
+              each field in fieldsCondsMore
+                .filter-catalog__group(class=['filter-catalog__group--' + field.type, 'filter-catalog__group--' + field.name, (field.disabled ? 'filter-catalog__group--hide' : '')])
+                  if (field.type === 'select')
+                    +select(field, 'filter-catalog__select filter-catalog__select--' + field.name, 0.3)(@input='setFieldData')
+                  else if (field.type === 'range')
+                    +filter-range(field.range, 'filter-catalog__range filter-catalog__range--' + field.name, field.name, info.name)(@change='setRange')
+                  else
+                    | <!---->
+    else
+      | <!---->
+
+    .filter-catalog__buttons
+      if (visibleButtons && visibleButtons.length !== 0 || (info.tags && info.tags.special))
+        .filter-catalog__popup-btns
+          if (visibleButtons && visibleButtons.length !== 0)
+            .filter-catalog__popup-btns-wrp
+              each btn in visibleButtons
+                .filter-catalog__popup-btn(@click='openPopup(btn)')
+                  span!= btn.text
+                  if (btn.count)
+                    .filter-catalog__popup-btn-count!= btn.count
+                  else
+                    | <!---->
+          else
+            | <!---->
+          if (info.tags && info.tags.special)
+            .filter-catalog__tags.filter-catalog__tags--filter
+              .filter-catalog__tags-wrp
+                each tag in special
+                  +label(tag, 'label--black filter-catalog__tag filter-catalog__tag--rect')(:key='tag.value', @change='setTag(tag)')
+          else
+            | <!---->
+      else
+        | <!---->
+      .filter-catalog__form-buttons
+        .filter-catalog__form-reset(@click='resetFilter') Сбросить
+        if (fieldsCondsMore && fieldsCondsMore.length !== 0)
+          .filter-catalog__more(@click='showMore = !showMore', class=(showMore ? 'filter-catalog__more--open' : ''))!= (showMore ? 'Скрыть фильтры' : 'Еще фильтры')
+        else
+          | <!---->
+      +btn('button', 'Показать', 'filter-catalog__submit')(@click='submitEventDebounce')
+    if (visibleTags && visibleTags.length !== 0)
+      .filter-catalog__tags
+        .filter-catalog__tags-wrp
+          each tag in visibleTags
+            +label(tag, 'filter-catalog__tag')(:key='tag.value', @change='setTag(tag)')
+    else
+      | <!---->

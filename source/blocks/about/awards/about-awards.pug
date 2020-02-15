@@ -1,0 +1,34 @@
+include ../../fonts/title/title.pug
+include ../../fonts/title/fourth/title-fourth.pug
+include ../../fonts/title/second/title-second.pug
+include ../../core/picture/picture.pug
+include ../../tabs/tabs.pug
+
+mixin about-awards(info)
+  - currentSlide = 1;
+
+  if info
+    .about-awards
+      .main
+        +title(info.title, 'about-awards__title')
+        +title-fourth(info.subtitle, 'about-awards__subtitle')
+        .about-awards__wrap
+          +tabs(info.years, 'about-awards__tabs')(@changeTab='changeTab')
+          each slider in info.sliders
+            .about-awards__slider.swiper-container(v-if='activeTab === slider.year')
+              .swiper-wrapper
+                each award in slider.list
+                  .swiper-slide.about-awards__slide
+                    +picture(award.image, 'about-awards__image', 'lazyload')
+                    +title-second(award.title, 'about-awards__slide-title')
+
+              if slider.list.length > 1
+                .about-awards__nav
+                  .about-awards__btn.about-awards__btn--prev(@click='swiper.slidePrev()')
+                    svg
+                      use(xlink:href=loadAssets('./svg/arrow-right.svg'))
+                  .about-awards__count {{ currentSlide + ' '}}
+                    span / #{slider.list.length}
+                  .about-awards__btn(@click='swiper.slideNext()')
+                    svg
+                      use(xlink:href=loadAssets('./svg/arrow-right.svg'))

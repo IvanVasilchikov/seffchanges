@@ -1,0 +1,38 @@
+include ../../../core/checkbox/checkbox.pug
+include ../../../core/btn/btn.pug
+
+mixin popup-area-district(info)
+	-
+		offersCount = 0;
+	-
+		hiddenList = false;
+	- var hideSticky = false;
+	- var buttonWidth = '100%';
+
+	.popup-area-district
+		+btn('button', '', 'popup-area-district__button popup-area-district__button--mobile', (offersCount === 0))(@click='save()', ref='stickyBtn', :class='{"popup-area-district__button--hide" : hideSticky}', :style='{width: buttonWidth + "px"}')
+			span(v-html='getOffersCount')
+		.popup-area-district__search
+			input.popup-area-district__search-input(type= 'input', placeholder= 'Поиск района', v-model='search')
+		.popup-area-district__checkboxes-wrapper
+			.popup-area-district__checkboxes-shadow(class=(shadowView ? 'popup-area-district__checkboxes-shadow--show' : ''))
+			.popup-area-district__checkboxes-content(ref= 'scroll')
+				.popup-area-district__select-btns
+					each select in info
+						.popup-area-district__select
+							if (select.name && hiddenList(select))
+								+btn('button', select.name, 'btn--rounded')(@click= 'selectClick(select)', :class= 'listAllChecked(select) ? \'\' : \'btn--border\'')
+							else
+								| <!---->
+				.popup-area-district__checkboxes
+					each checkboxes in info
+						.popup-area-district__checkbox-list
+							.popup-area-district__checkbox-list-heading(v-if='hiddenList(checkboxes)')!= checkboxes.name
+							.popup-area-district__checkbox-list-description(v-if='checkboxes.description && hiddenList(checkboxes)')!= checkboxes.description
+							each checkbox in checkboxes.inner
+								+checkbox(checkbox, ('checkbox--bigger popup-area-district__checkbox'))(@change= 'checkboxClick(checkbox.value, $event, checkboxes.listName)', v-if='hiddenCheckbox(checkbox)')
+		.popup-area-district__buttons
+			+btn('button', '', 'popup-area-district__button', (offersCount === 0))(@click='save()', ref='submitBtn', :class='{"popup-area-district__button--hide" : !hideSticky}')
+				span(v-html='getOffersCount')
+			+btn('button', 'Выбрать все', 'btn--border popup-area-district__button')(@click='selectAll()')
+			+btn('button', 'Сбросить', 'btn--border popup-area-district__button')(@click='reset()')

@@ -1,0 +1,42 @@
+$parent: 'detail-map';
+
+@include block($parent) {
+  position: relative;
+  padding-bottom: rem(30);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(60);
+  }
+
+  @media (min-width: $d1280) {
+    padding-bottom: rem(90);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(25);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(35);
+    }
+  }
+
+  @include element($parent, 'wrp') {
+    @media (max-width: $mMax) {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @include element($parent, 'map') {
+    height: rem(445);
+
+    @media (min-width: $tMin) {
+      height: rem(450);
+    }
+  }
+}

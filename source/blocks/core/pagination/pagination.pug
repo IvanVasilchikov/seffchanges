@@ -1,0 +1,10 @@
+mixin pagination(info, className)
+  .pagination(class=className)
+    .pagination__btn.pagination__btn--prev(@click='changePage("prev")')
+      svg
+        use(xlink:href=loadAssets('./svg/arrow-right.svg'))
+    each i in util.pagination(info.current, info.count)
+      a.pagination__link(@click.prevent.stop='changePage(i)', class=[(i === '...' ? 'pagination__link--empty' : ''), (i === info.current ? 'pagination__link--active' : '')], href=(i !== '...') ? info.url+'?'+info.param+'='+i: '')!= i
+    .pagination__btn.pagination__btn--next(@click='changePage("next")')
+      svg
+        use(xlink:href=loadAssets('./svg/arrow-right.svg'))

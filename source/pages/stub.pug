@@ -1,0 +1,24 @@
+extends ../layouts/main.pug
+
+include ../blocks/stub/stub.pug
+
+block vars
+  - homepage = false;
+  - var stubPage = require('../data/stubPage.json');
+  - noFooter = true;
+  - stub = true;
+  - var popupsForm = require('../data/popups/form.json');
+  - var popupsResponse = require('../data/popups/response.json');
+
+block script
+  script.
+    window.INIT = {
+      stubPage: !{JSON.stringify(stubPage)},
+      popups: {
+        form: !{JSON.stringify(popupsForm)},
+        response: !{JSON.stringify(popupsResponse)},
+      }
+    };
+
+block content
+  +stub(stubPage)

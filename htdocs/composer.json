@@ -1,0 +1,23 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Dev\\": "./local/classes/"
+        }
+    },
+    "scripts": {
+        "bxcore": "wget http://backup.idemitest.ru/safari-site/bitrix.zip && unzip bitrix.zip && rm bitrix.zip",
+        "bxupload": "wget http://backup.idemitest.ru/safari-site/upload.zip && unzip upload.zip && rm upload.zip"
+    },
+    "require": {
+        "pug-php/pug": "^3.2",
+        "js-phpize/js-phpize-phug": "^1.1",
+        "elasticsearch/elasticsearch": "^6.1",
+        "bramus/router": "^1.4",
+        "digitalwand/digitalwand.admin_helper": "^2.1",
+        "robmorgan/phinx": "^0.10.8",
+        "peppeocchi/php-cron-scheduler": "^2.4",
+        "mikehaertl/phpwkhtmltopdf": "^2.4",
+        "wapmorgan/morphos": "^3.2",
+        "phpmailer/phpmailer": "^6.0"
+    }
+}

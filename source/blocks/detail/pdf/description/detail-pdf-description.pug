@@ -1,0 +1,22 @@
+include ../../../fonts/title/title.pug
+include ../../../fonts/text/text.pug
+
+mixin detail-pdf-description(info)
+  .detail-pdf-description
+    +title(info.heading, 'detail-pdf-description__heading')
+    if (info.items || info.description)
+      .detail-pdf-description__content
+        if (info.items)
+          .detail-pdf-description__items
+            each item in info.items
+              .detail-pdf-description__item
+                span!= item.heading
+                span!= item.phrase
+        else
+          | <!---->
+        if (info.description)
+          +text(info.description, 'detail-pdf-description__description')
+        else
+          | <!---->
+    else
+      | <!---->

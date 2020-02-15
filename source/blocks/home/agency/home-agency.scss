@@ -1,0 +1,290 @@
+$parent: home-agency;
+
+@include block($parent) {
+  position: relative;
+  margin-bottom: rem(44);
+
+  @media screen and (min-width: $tMin) and (max-width: $tMax) {
+    margin-bottom: rem(67);
+  }
+
+  @media screen and (min-width: $dMin) {
+    margin-bottom: rem(86);
+  }
+
+  @include element ($parent, 'head') {
+    @media screen and (min-width: $dMin) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @media screen and (min-width: $dMin) {
+      margin-bottom: rem(50);
+    }
+  }
+
+  @include element ($parent, 'head-left') {
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      max-width: 86%;
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: 50%;
+    }
+  }
+
+  @include element ($parent, 'head-title') {
+    margin-bottom: rem(13);
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      margin-bottom: rem(17);
+    }
+
+    @media screen and (min-width: $dMin) {
+      margin-bottom: 0;
+    }
+
+    span {
+      line-height: 1;
+      font-size: rem(50);
+
+      @media screen and (min-width: $tMin) {
+        font-size: rem(60);
+      }
+    }
+  }
+
+  @include element ($parent, 'head-text') {
+    margin-bottom: rem(32);
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(40);
+    }
+
+    @media screen and (min-width: $dMin) {
+      // margin-top: rem(-1);
+      margin-top: rem(4);
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $dMin) and (max-width: $d1279) {
+      width: 44%;
+    }
+
+    @media screen and (min-width: $d1280) {
+      width: 39%;
+    }
+  }
+
+  @include element ($parent, 'slider-wrap') {
+    position: relative;
+    width: calc(100% + 1.75rem);
+    margin-left: rem(-14);
+
+    @media screen and (min-width: $tMin) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    width: 100%;
+    height: rem(574);
+
+    @media screen and (min-width: $tMin) {
+      height: rem(400);
+      margin-left: 0;
+    }
+  }
+
+  @include element ($parent, 'slide') {
+    position: relative;
+    height: 100%;
+    padding: 0 rem(14);
+    display: flex;
+    align-items: flex-end;
+
+    @media screen and (min-width: $tMin) {
+      padding: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  @include element ($parent, 'slide-img') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4.625rem);
+    background-color: $gray2;
+    display: block;
+
+    @media screen and (min-width: $tMin) {
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element ($parent, 'slide-link') {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  @include element ($parent, 'slider-description') {
+    position: absolute;
+    bottom: 0;
+    right: rem(14);
+    width: calc(100% - 1.75rem);
+    height: rem(170);
+    background-color: $gray5;
+    z-index: 1;
+
+    @media screen and (min-width: $tMin) {
+      right: 0;
+    }
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      width: rem(348);
+      height: rem(174);
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(340);
+      height: rem(206);
+    }
+  }
+
+  @include element ($parent, 'slide-description') {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: rem(30) rem(20) rem(20) rem(45);
+
+    @media screen and (min-width: $dMin) {
+      padding: rem(46) rem(20) rem(20) rem(50);
+    }
+
+    &.swiper-slide-active {
+
+      .home-agency__slide-title,
+      .home-agency__slide-price {
+        display: block;
+      }
+    }
+  }
+
+  .home-agency__slide-title,
+  .home-agency__slide-price {
+    display: none;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+  }
+
+  @include element ($parent, 'slide-title') {
+    max-height: rem(60);
+    margin-bottom: rem(20);
+    line-height: 1.5;
+    overflow: hidden;
+
+    @media screen and (min-width: $dMin) {
+      margin-bottom: rem(26);
+      max-height: rem(90);
+    }
+  }
+
+  @include element ($parent, 'slide-price') {
+    font-weight: 600;
+    font-size: rem(25);
+    line-height: 1;
+
+    @media screen and (min-width: $dMin) {
+      font-size: rem(30);
+    }
+  }
+
+  @include element ($parent, 'nav') {
+    position: absolute;
+    bottom: rem(170);
+    right: rem(13);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(174);
+    height: rem(72);
+    background-color: $red2;
+    z-index: 6;
+
+    @media screen and (min-width: $tMin) {
+      bottom: rem(174);
+      right: 0;
+    }
+
+    @media screen and (min-width: $dMin) {
+      bottom: rem(206);
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    display: block;
+    width: rem(22);
+    height: rem(22);
+    padding: rem(2);
+    select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+
+    svg {
+      fill: $w;
+      stroke: $w;
+    }
+
+    &:hover {
+      svg {
+        fill: $purple;
+        stroke: $purple;
+      }
+    }
+  }
+
+  @include element ($parent, 'pag') {
+    width: rem(64);
+    padding: 0 rem(6);
+  }
+
+  @include element ($parent, 'back-icon') {
+    position: absolute;
+    top: rem(82);
+    left: rem(-699);
+    width: rem(955);
+    height: rem(527);
+    fill: $gray5;
+    z-index: -1;
+
+    @media screen and (min-width: $tMin) and (max-width: $tMax) {
+      top: rem(-33);
+      left: rem(-316);
+    }
+
+    @media screen and (min-width: $dMin) {
+      top: rem(-140);
+      left: rem(-196);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+include ./main/about-main.pug
+include ./features/about-features.pug
+include ./location/about-location.pug
+include ./services/about-services.pug
+include ./leadership/about-leadership.pug
+include ./awards/about-awards.pug
+include ./../clients/clients.pug
+
+mixin about(info)
+  if info
+    .about
+      +about-main(info.top)
+      +about-features(info.features)
+      +about-location(info.location)
+      +about-services(info.services)
+      +about-leadership(info.leadership)
+      +about-awards(info.awards)
+      +clients(info.clients, 'about__clients', 'about__clients-item')

@@ -1,0 +1,331 @@
+$parent: 'map-tooltip';
+
+@include block($parent) {
+  max-width: rem(389);
+  background-color: $w;
+  position: absolute;
+  top: rem(20);
+  left: 0;
+  transform: translate(-44%, -45%);
+  display: none;
+  box-shadow: 0 rem(10) rem(40) rgba(#000, 0.15);
+  min-width: 320px;
+
+  @media (max-width: $m374) {
+    width: calc(100vw - 28px);
+    transform: translate(-43%, -45%);
+  }
+
+  @media (min-width: $tMin) {
+    transform: translate(-110%, -45%);
+    top: 0;
+  }
+
+  @include element($parent, 'close') {
+    height: rem(26);
+    width: rem(26);
+    position: absolute;
+    right: rem(10);
+    top: rem(10);
+    z-index: 3;
+    cursor: pointer;
+
+    svg {
+      height: 100%;
+      width: 100%;
+      fill: white;
+    }
+
+    &:hover {
+      svg {
+        fill: $gray-bd;
+      }
+    }
+  }
+
+  @include element($parent, 'gallery-wrp') {
+    height: rem(220);
+    width: 100%;
+    position: relative;
+  }
+
+  @include element($parent, 'gallery') {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include element($parent, 'id') {
+    font-size: rem(14);
+    line-height: rem(26);
+    font-weight: 600;
+    color: $w;
+    text-shadow: 0 0 rem(50) rgba(#000, 0.8);
+    position: absolute;
+    right: rem(20);
+    bottom: rem(20);
+    z-index: 3;
+  }
+
+  @include element($parent, 'label-deal') {
+    position: absolute;
+    left: rem(20);
+    bottom: rem(20);
+    z-index: 3;
+  }
+
+  @include element($parent, 'content') {
+    display: block;
+    border: 1px solid $gray3;
+    padding: rem(25) rem(15) rem(30);
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(15);
+  }
+
+  @include element($parent, 'labels') {
+    display: inline-flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    margin-bottom: rem(-5);
+  }
+
+  @include element($parent, 'label') {
+    height: rem(20);
+    line-height: rem(20);
+    text-align: center;
+    padding: 0 rem(5);
+    background-color: $red2;
+    font-size: rem(10);
+    color: $w;
+    text-transform: uppercase;
+    margin-bottom: rem(5);
+
+    &:not(:last-of-type) {
+      margin-right: rem(5);
+
+      @media (min-width: $d1280) {
+        margin-right: rem(10);
+      }
+    }
+  }
+
+  @include element($parent, 'name') {
+    font-size: rem(14);
+    line-height: rem(26);
+    margin-top: rem(8);
+    color: $gray4;
+  }
+
+  @include element($parent, 'address') {
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-top: rem(6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @include element($parent, 'table') {
+    border: 1px solid $gray3;
+    margin-top: rem(20);
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  @include element($parent, 'row') {
+    display: table-row;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $gray3;
+    }
+  }
+
+  @include element($parent, 'cell') {
+    height: rem(29);
+    font-size: rem(15);
+    line-height: rem(29);
+    padding: 0 rem(20);
+    display: none;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid $gray3;
+    }
+
+    @include modifier($parent, 'square') {
+      display: table-cell;
+    }
+
+    @include modifier($parent, 'price') {
+      display: table-cell;
+    }
+  }
+
+  @include element($parent, 'specs') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: rem(20);
+  }
+
+  @include element($parent, 'specs-item') {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(10);
+
+    svg {
+      height: rem(18);
+      width: rem(18);
+      margin-right: rem(10);
+      flex-shrink: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(25);
+    }
+  }
+
+  @include element($parent, 'specs-item-text') {
+    font-size: rem(14);
+    line-height: rem(26);
+    color: $black3;
+    flex-shrink: 0;
+
+    span {
+      &:nth-of-type(2) {
+        color: $gray4;
+      }
+    }
+  }
+
+  @include element($parent, 'price') {}
+
+  @include element($parent, 'price-total') {
+    margin-top: 10px;
+    font-size: rem(16);
+    line-height: rem(16);
+    font-weight: 600;
+  }
+
+  @include element($parent, 'price-meters') {
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $gray4;
+    margin-top: rem(7);
+  }
+
+  @include element($parent, 'buttons') {
+    margin-top: rem(20);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include element($parent, 'buttons-wrp') {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include element($parent, 'phone') {
+    font-size: rem(16);
+    line-height: rem(24);
+    display: inline-block;
+  }
+
+  @include element($parent, 'favorite') {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    top: 7px;
+
+    svg {
+      height: rem(18);
+      width: rem(16);
+      fill: transparent;
+      stroke: $red2;
+      margin-right: rem(9);
+    }
+
+    span {
+      font-size: rem(14);
+      line-height: rem(26);
+      color: $red2;
+      transition: color $ease;
+    }
+
+    &:hover {
+      svg {
+        fill: $red2;
+      }
+    }
+
+    @include modifier($parent, 'added') {
+      svg {
+        fill: $red2;
+        stroke: $red2;
+        height: rem(18);
+        width: rem(18);
+        margin-right: rem(5);
+      }
+
+      &:hover {
+        span {
+          color: $purple;
+        }
+
+        svg {
+          fill: $purple;
+          stroke: $purple;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'button') {
+    height: rem(60);
+    width: 100%;
+    padding: 0;
+    min-width: 0;
+    max-width: rem(146);
+  }
+
+  &:hover {
+    @include element($parent, 'pagination') {
+      @media (min-width: $d1280) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  @include modifier($parent, 'open') {
+    display: block;
+    // animation-play-state: running;
+  }
+
+  &.ps--active-y {
+    overflow: hidden;
+
+    .ps {
+      &__rail-x {
+        display: none;
+      }
+
+      &__rail-y {
+        z-index: 3;
+      }
+
+      &__thumb-y {
+        width: 4px;
+      }
+    }
+  }
+}

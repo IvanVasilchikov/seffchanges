@@ -1,0 +1,27 @@
+include ../../../fonts/title/title.pug
+include ../../../fonts/text/text.pug
+
+mixin detail-pdf-characteristics(info, className)
+  .detail-pdf-characteristics(class= className, id='characteristics', data-screen='characteristics')
+    .main.detail-pdf-characteristics__main
+      +title(info.title, 'detail-pdf-characteristics__title')
+      if (info.info || info.description)
+        div.detail-pdf-characteristics__container
+          if info.info
+            .detail-pdf-characteristics__info
+              each col in info.info
+                .detail-pdf-characteristics__info-col
+                  each item in col
+                    .detail-pdf-characteristics__info-row
+                      .detail-pdf-characteristics__info-title
+                        img.detail-pdf-characteristics__info-icon(src=item.icon, alt='')
+                        span!= item.title
+                      .detail-pdf-characteristics__info-text!= item.text
+          else
+            | <!---->
+          if info.description
+            +text(info.description, 'detail-pdf-characteristics__text')
+          else
+            | <!---->
+      else
+        | <!---->

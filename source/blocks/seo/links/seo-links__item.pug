@@ -1,0 +1,36 @@
+include ../../core/animation/height/animation-height.pug
+
+mixin seo-links-item(item, className)
+  - var activeBtn = false;
+
+  .seo-links__item
+    .seo-links__head(class=(item.titleBtn ? '' : 'seo-links__head--none-btn'))
+      if item.titleBtn
+        a.seo-links__head-btn(class={'seo-links__head-btn--open' : isOpen}, @click='toggleItOpen()')
+          span= item.titleBtn
+      if item.title
+        .seo-links__head-title= item.title
+    +animation-height(0.5)
+      .seo-links__item-content-wrap(v-if='isOpen')
+        .seo-links__item-content
+          .seo-links__content-wrap(class=(item.items_4_6 ? 'seo-links__content-wrap--parts' : ''))
+            .seo-links__content
+              if item.items
+                ul.seo-links__list
+                  each el in item.items
+                    li.seo-links__list-item
+                      a.seo-links__list-link(href=el.url)= el.text
+              if item.items_4_6
+                ul.seo-links__list.seo-links__list--4-6
+                  each el in item.items_4_6
+                    li.seo-links__list-item
+                      a.seo-links__list-link(href=el.url)= el.text
+              if item.items_2_6
+                ul.seo-links__list.seo-links__list--2-6
+                  each el in item.items_2_6
+                    li.seo-links__list-item
+                      a.seo-links__list-link(href=el.url)= el.text
+          if (item.btnOpen && activeBtn)
+            a.seo-links__btn-open(@click='changeAccordion()') {{ textBtn }}
+          else
+            | <!---->

@@ -1,0 +1,13 @@
+mixin btn(tag, text, className, disabled)
+  if (tag === 'div')
+    .btn(class=className, @click='$emit(\'click\')')&attributes(attributes)
+      span.btn__text= text
+      block
+  else if (tag === 'button')
+    button.btn(class=className, @click='$emit(\'click\')', :disabled= 'disabled')&attributes(attributes)
+      span.btn__text= text
+      block
+  else
+    a.btn(href=tag, class=className)&attributes(attributes)
+      span.btn__text= text
+      block

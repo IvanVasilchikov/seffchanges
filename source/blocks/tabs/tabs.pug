@@ -1,0 +1,9 @@
+mixin tabs(btns, className)
+  .tabs(class=className)
+    each btn in btns
+      .tabs__btn(@click='switchBtn(btn.value)', class=(activeBtn === btn.value ? 'tabs__btn--active' : ''))
+        | #{btn.text}
+        if btn.count
+          span!= ' ' + btn.count
+        else
+          | <!---->

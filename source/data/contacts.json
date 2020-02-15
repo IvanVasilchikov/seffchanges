@@ -1,0 +1,195 @@
+{
+  "breadcrumbs": [
+    {
+      "href": "./",
+      "title": "Главная"
+    },
+    {
+      "href": "./",
+      "title": "Еще"
+    }
+  ],
+  "map": {
+    "center": "55.746451, 37.536522",
+    "markers": [
+      {
+        "coords": "55.746451, 37.536522",
+        "type": "main",
+        "icon": "/assets/svg/map/main-pin.svg"
+      }
+    ]
+  },
+  "socials": {
+    "title": "Saffari Estate в соцсетях",
+    "links": [
+      {
+        "name": "facebook",
+        "url": "https://facebook.com"
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com"
+      },
+      {
+        "name": "instagram",
+        "url": "https://instagram.com"
+      }
+    ]
+  },
+  "contacts": [
+    {
+      "title": "Адрес",
+      "url": "#",
+      "text": "119034, Москва, Пресненская Набережная, 12"
+    },
+    {
+      "title": "Телефон",
+      "url": "+79450000000",
+      "text": "+7 (945) 000-00-00"
+    },
+    {
+      "title": "E-mail",
+      "url": "info@saffari.com",
+      "text": "info@saffari.com"
+    }
+  ],
+  "requisites": [
+    {
+      "title": "Наименование организации",
+      "desc": "Saffari Estate"
+    },
+    {
+      "title": "Юридический адрес",
+      "desc": "119034, Москва, Пресненская Набережная, 12"
+    },
+    {
+      "title": "Адрес",
+      "desc": "119034, Москва, Пресненская Набережная, 12"
+    },
+    {
+      "title": "Генеральный директор",
+      "desc": "А.Н. Смирнов"
+    },
+    {
+      "title": "ИНН",
+      "desc": "8770636901"
+    },
+    {
+      "title": "ОГРН",
+      "desc": "7870836922567"
+    },
+    {
+      "title": "БИК",
+      "desc": "90223690"
+    }
+  ],
+  "avatar": {
+    "items": [
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/office/avatar/avatar-375.png",
+            "/assets/images/office/avatar/avatar-375.webp"
+          ],
+          "tablet": [
+            "/assets/images/office/avatar/avatar-768.png",
+            "/assets/images/office/avatar/avatar-768.webp"
+          ],
+          "desktop": [
+            "/assets/images/office/avatar/avatar-1440.png",
+            "/assets/images/office/avatar/avatar-1440.webp"
+          ]
+        },
+        "alt": "avatar",
+        "title": "avatar",
+        "name": "Анна сергеева",
+        "post": "Директор по маркетингу и PR",
+        "mailUrl": "annasergeeva@saffariestate.com",
+        "mail": "annasergeeva@saffariestate.com"
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/office/avatar/avatar-375.png",
+            "/assets/images/office/avatar/avatar-375.webp"
+          ],
+          "tablet": [
+            "/assets/images/office/avatar/avatar-768.png",
+            "/assets/images/office/avatar/avatar-768.webp"
+          ],
+          "desktop": [
+            "/assets/images/office/avatar/avatar-1440.png",
+            "/assets/images/office/avatar/avatar-1440.webp"
+          ]
+        },
+        "alt": "avatar",
+        "title": "avatar",
+        "name": "Анна сергеева",
+        "post": "Директор по маркетингу и PR",
+        "mailUrl": "annasergeeva@saffariestate.com",
+        "mail": "annasergeeva@saffariestate.com"
+      }
+    ]
+  },
+  "question": {
+    "title": "задать вопрос",
+    "desc": "Задайте вопрос пресс-службе, и специалист <br>ответит Вам в ближайшее время",
+    "numTitle": "Телефон отдела",
+    "num": "+7 (945) 000-00-00",
+    "form": {
+      "action": "/ajax/json/success.json",
+      "hidden": {
+        "user_id": "123"
+      },
+      "inputs": [
+        {
+          "title": "Имя",
+          "placeholder": "Имя*",
+          "value": "",
+          "name": "name",
+          "type": "text",
+          "className": "",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 1,
+              "max": 50
+            }
+          }
+        },
+        {
+          "title": "Телефон",
+          "placeholder": "+7 (___) ___-__-__*",
+          "value": "",
+          "name": "phone",
+          "type": "text",
+          "className": "input--phone",
+          "maskInfo": {
+            "complete": false
+          },
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 17,
+              "max": 17
+            }
+          }
+        }
+      ],
+      "textarea": {
+        "placeholder": "Ваш вопрос",
+        "name": "question",
+        "value": ""
+      },
+      "btn": "Отправить заявку",
+      "checkbox": {
+        "name": "agreement",
+        "value": "agree",
+        "checked": false,
+        "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>"
+      }
+    }
+  }
+}

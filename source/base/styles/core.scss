@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  -webkit-tap-highlight-color: transparent;
+
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 16px;
+
+  @media screen and (max-width: 359px) {
+    font-size: 14.5px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Lato", Helvetica, sans-serif, -apple-system;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $black;
+
+  @media print {
+    width: 297mm;
+    height: 209mm;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+  color: $black;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+input {
+  &[type=number] {
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  background-color: transparent;
+  font-family: "Lato", sans-serif, -apple-system;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  transition: border 0.4s ease, color 0.4s ease;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: fill $ease, stroke $ease;
+  pointer-events: none;
+}
+
+.main {
+  width: calc(100% - 1.75rem);
+  max-width: rem(440);
+  margin: 0 auto;
+
+  @media screen and (min-width: $tMin) and (max-width: $tMax) {
+    max-width: rem(820);
+    width: calc(100% - 5rem);
+  }
+
+  @media screen and (min-width: $dMin) and (max-width: $d1279) {
+    max-width: rem(960);
+    width: calc(100% - 7.5rem);
+  }
+
+  @media screen and (min-width: $d1280) {
+    max-width: rem(1200);
+    width: calc(100% - 5rem);
+  }
+
+  @media print {
+    max-width: 100%;
+    width: calc(100% - 3cm);
+  }
+}
+
+.page {
+  padding-top: rem(50);
+  flex: 1 0 auto;
+  overflow: hidden;
+
+  @media screen and (min-width: $tMin) and (max-width: $tMax) {
+    padding-top: rem(80);
+  }
+
+  @media screen and (min-width: $dMin) {
+    padding-top: rem(90);
+  }
+
+  &--noFooter {
+    display: flex;
+  }
+
+  &--full {
+    padding: 0 !important;
+  }
+
+  @media print {
+    padding-top: 0;
+    overflow: visible;
+  }
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

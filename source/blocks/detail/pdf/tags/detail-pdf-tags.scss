@@ -1,0 +1,28 @@
+$parent: detail-pdf-tags;
+
+@include block($parent) {
+  width: 100%;
+
+  @include element ($parent, 'heading') {
+    margin-bottom: 34px;
+  }
+
+  @include element ($parent, 'content') {
+    display: flex;
+    display: -webkit-box;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 765px;
+    margin: -5px;
+  }
+
+  @include element ($parent, 'tag') {
+    padding: 6px 19px 6px 24px;
+    border: 1px solid $purple;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 5px;
+    text-transform: uppercase;
+    color: $black;
+  }
+}

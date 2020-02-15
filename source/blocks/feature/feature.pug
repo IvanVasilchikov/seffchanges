@@ -1,0 +1,9 @@
+include ../fonts/text/text.pug
+include ../fonts/title/fifth/title-fifth.pug
+
+mixin feature(info, className)
+  .feature(class=className)
+    .feature__number!= info.number
+    +title-fifth(info.title, 'feature__title')
+    +text(info.text, 'feature__text')
+    button.feature__button(data-popup=info.button.popup)!= info.button.text

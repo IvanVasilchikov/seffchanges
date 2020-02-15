@@ -1,0 +1,23 @@
+include ../../../fonts/title/title.pug
+include ../../../fonts/text/text.pug
+
+mixin detail-district-about(info)
+  .detail-district-about(id='about', data-screen='about')
+    .main
+      +title(info.title, 'detail-district-about__title')
+      .detail-district-about__wrp
+        .detail-district-about__main
+          if (info.text)
+            .detail-district-about__content
+              each text in info.text
+                +text(text, 'detail-district-about__text')
+          else
+            | <!---->
+        if (info.info)
+          .detail-district-about__info
+            each item in info.info
+              .detail-district-about__item
+                span.detail-district-about__item-num!= item.title
+                span.detail-district-about__item-text!= item.text
+        else
+          | <!---->

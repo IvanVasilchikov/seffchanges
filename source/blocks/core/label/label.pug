@@ -1,0 +1,11 @@
+mixin label(info, className)
+  - var checked = false;
+  // TODO: fix active state // не добавляется класс, если изначально в данных нет поля checked
+  .label(class=[className, (checked ? 'label--checked' : '')], @click='toggleChecked')
+    span
+      | #{info.text}
+      if info.count
+        span.label__count!= info.count
+      else
+        | <!---->
+    block

@@ -1,0 +1,463 @@
+[
+  {
+    "coords": "-33.718234, 150.313181",
+    "icon": "/assets/svg/map/default-pin.svg",
+    "type": "default",
+    "tooltip": {
+      "type": "table",
+      "deal_type": "Продажа",
+      "id": "as12713",
+      "labels": ["Эксклюзив"],
+      "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "Легион II (Фаза I)",
+      "name": "Многофункциональный комплекс",
+      "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+      "table": [
+        [
+          {
+            "name": "square",
+            "text": "1000 м²"
+          },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "902 м²"
+          },
+          {
+            "name": "floor",
+            "text": "9 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "984 м²"
+          },
+          {
+            "name": "floor",
+            "text": "4 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      ],
+      "specs": ["ring", "square", "date", "facing", "metro"],
+      "info": {
+        "ring": "ТТК",
+        "square": "90м²",
+        "date": "Строится",
+        "facing": "С отделкой",
+        "metro": {
+          "station": "Киевская",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail-object.html",
+      "isFav": false
+    },
+    "id": "marker_1"
+  },
+  {
+    "coords": "-33.737111, 150.351124",
+    "icon": "/assets/svg/map/default-pin.svg",
+    "type": "default",
+    "tooltip": {
+      "type": "table",
+      "deal_type": "Продажа",
+      "id": "as12712",
+      "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "Легион III (Фаза II)",
+      "name": "Многофункциональный комплекс",
+      "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+      "table": [
+        [
+          {
+            "name": "square",
+            "text": "1000 м²"
+          },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "902 м²"
+          },
+          {
+            "name": "floor",
+            "text": "9 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "984 м²"
+          },
+          {
+            "name": "floor",
+            "text": "4 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      ],
+      "specs": ["ring", "square", "date", "facing", "metro"],
+      "info": {
+        "ring": "ТТК",
+        "square": "90м²",
+        "date": "Строится",
+        "facing": "С отделкой",
+        "metro": {
+          "station": "Киевская",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail-object.html",
+      "isFav": false
+    },
+    "id": "marker_2"
+  },
+  {
+    "coords": "-33.898588, 151.219834",
+    "icon": "/assets/svg/map/default-pin.svg",
+    "type": "default",
+    "tooltip": {
+      "type": "table",
+      "deal_type": "Продажа",
+      "id": "as12711",
+      "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "Легион III (Фаза II)",
+      "name": "Многофункциональный комплекс",
+      "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+      "table": [
+        [
+          {
+            "name": "square",
+            "text": "1000 м²"
+          },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "902 м²"
+          },
+          {
+            "name": "floor",
+            "text": "9 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "984 м²"
+          },
+          {
+            "name": "floor",
+            "text": "4 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      ],
+      "specs": ["ring", "square", "date", "facing", "metro"],
+      "info": {
+        "ring": "ТТК",
+        "square": "90м²",
+        "date": "Строится",
+        "facing": "С отделкой",
+        "metro": {
+          "station": "Киевская",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail-object.html",
+      "isFav": false
+    },
+    "id": "marker_3"
+  },
+  {
+    "coords": "-33.831702, 151.209968",
+    "icon": "/assets/svg/map/default-pin.svg",
+    "type": "default",
+    "tooltip": {
+      "type": "table",
+      "deal_type": "Продажа",
+      "id": "as12710",
+      "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "Легион III (Фаза II)",
+      "name": "Многофункциональный комплекс",
+      "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+      "table": [
+        [
+          {
+            "name": "square",
+            "text": "1000 м²"
+          },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "902 м²"
+          },
+          {
+            "name": "floor",
+            "text": "9 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "984 м²"
+          },
+          {
+            "name": "floor",
+            "text": "4 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      ],
+      "specs": ["ring", "square", "date", "facing", "metro"],
+      "info": {
+        "ring": "ТТК",
+        "square": "90м²",
+        "date": "Строится",
+        "facing": "С отделкой",
+        "metro": {
+          "station": "Киевская",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail-object.html",
+      "isFav": false
+    },
+    "id": "marker_4"
+  },
+  {
+    "coords": "-34.671264, 150.863657",
+    "icon": "/assets/svg/map/default-pin.svg",
+    "type": "default",
+    "tooltip": {
+      "type": "table",
+      "deal_type": "Продажа",
+      "id": "as12714",
+      "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+      "title": "Легион III (Фаза II)",
+      "name": "Многофункциональный комплекс",
+      "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+      "table": [
+        [
+          {
+            "name": "square",
+            "text": "1000 м²"
+          },
+          {
+            "name": "floor",
+            "text": "3 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "Без отделки"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "902 м²"
+          },
+          {
+            "name": "floor",
+            "text": "9 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ],
+        [
+          {
+            "name": "square",
+            "text": "984 м²"
+          },
+          {
+            "name": "floor",
+            "text": "4 этаж"
+          },
+          {
+            "name": "facing",
+            "text": "С отделкой"
+          },
+          {
+            "name": "price",
+            "text": "25 000 ₽ м² в год"
+          }
+        ]
+      ],
+      "specs": ["ring", "square", "date", "facing", "metro"],
+      "info": {
+        "ring": "ТТК",
+        "square": "90м²",
+        "date": "Строится",
+        "facing": "С отделкой",
+        "metro": {
+          "station": "Киевская",
+          "walk": "7 минут пешком"
+        }
+      },
+      "price": {
+        "total": "172 250 000 р.",
+        "meters": "135 000 р./м²"
+      },
+      "phone": {
+        "href": "+74950000000",
+        "text": "+7 (495) 000-00-00"
+      },
+      "link": "./detail-object.html",
+      "isFav": false
+    },
+    "id": "marker_5"
+  }
+]

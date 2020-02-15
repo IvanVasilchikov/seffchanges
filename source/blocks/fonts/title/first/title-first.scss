@@ -1,0 +1,20 @@
+$parent: title-first;
+
+@include block($parent) {
+  font-family: $BaronNeue;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: rem(32);
+  line-height: 1.4;
+  color: $black;
+
+  @media screen and (min-width: $tMin) {
+    font-size: rem(36);
+    line-height: 1.2;
+  }
+
+  em {
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}

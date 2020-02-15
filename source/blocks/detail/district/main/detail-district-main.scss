@@ -1,0 +1,173 @@
+$parent: 'detail-district-main';
+
+@include block($parent) {
+  position: relative;
+  padding: rem(25) 0 rem(80);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(60);
+  }
+
+  @media (min-width: $d1280) {
+    padding-bottom: rem(126);
+  }
+
+  @include element($parent, 'bg') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba($black2, 0.4), rgba($black2, 0.4));
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'breadcrumbs') {
+    margin-bottom: rem(70);
+    position: relative;
+    z-index: 3;
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(80);
+    }
+  }
+
+  @include element($parent, 'wrp') {
+    position: relative;
+    z-index: 3;
+
+    @media (min-width: $d1280) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  @include element($parent, 'content') {
+    margin-bottom: rem(40);
+
+    @media (min-width: $d1280) {
+      margin-bottom: 0;
+      flex-basis: 50%;
+      max-width: 50%;
+      padding-right: rem(140);
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-family: $BaronNeue;
+    font-size: rem(45);
+    line-height: 1;
+    margin-bottom: rem(25);
+    color: $w;
+
+    @media (min-width: $tMin) {
+      font-size: rem(60);
+    }
+
+    @media (min-width: $d1280) {
+      margin-top: rem(-18);
+    }
+  }
+
+  @include element($parent, 'subtitle') {
+    font-family: $BaronNeue;
+    color: $w;
+    font-size: rem(18);
+    line-height: rem(22);
+    margin-bottom: rem(40);
+  }
+
+  @include element($parent, 'button') {
+    height: rem(60);
+  }
+
+  @include element($parent, 'info') {
+    @media (min-width: $tMin) {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: $d1280) {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @include element($parent, 'info-item') {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(30);
+
+    @media (min-width: $tMin) {
+      max-width: 37%;
+      flex-basis: 37%;
+      margin-right: rem(45);
+    }
+
+    @media (min-width: $d1280) {
+      margin-right: rem(30);
+      max-width: calc(50% - 15px);
+      flex-basis: calc(50% - 15px);
+    }
+
+    &:nth-of-type(2n) {
+      @media (min-width: $tMin) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include element($parent, 'info-icon') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: rem(60);
+    width: rem(60);
+    background-color: rgba($w, 0.3);
+    border-radius: 50%;
+    margin-right: rem(15);
+    flex-shrink: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      right: 7px;
+      bottom: 7px;
+      background-color: $w;
+      border-radius: 50%;
+    }
+
+    img {
+      position: relative;
+      z-index: 3;
+      max-height: rem(30);
+      max-width: rem(30);
+    }
+  }
+
+  @include element($parent, 'info-text') {
+    color: $w;
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+}

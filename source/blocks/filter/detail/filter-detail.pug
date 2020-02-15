@@ -1,0 +1,22 @@
+include ../../filter/radio/filter-radio.pug
+include ../../filter/range/filter-range.pug
+include ../../core/select/select.pug
+
+mixin filter-detail(info)
+  .filter-detail
+    each field in info.fields
+      .filter-detail__field(class=['filter-detail__field--' + field.name, 'filter-detail__field--' + field.type])
+        if (field.type === 'hidden')
+          input(type='hidden', name=field.name, value=field.value)
+        else if (field.type === 'radio')
+          +filter-radio(field.values, field.name, 'filter-detail__radio filter-radio--red')(@change='setFieldData')
+        else if (field.type === 'select')
+          .filter-detail__group-wrp
+            if (field.style === 'object_type' && info.name === 'commercial')
+              +select(field, 'filter-detail__select select--red', 0.3)(@input='showHiddenField')
+            else
+              +select(field, 'filter-detail__select select--red', 0.3)(@input='setFieldData')
+        else if (field.type === 'range')
+          +filter-range(field.range, 'filter-detail__range filter-detail__range--' + field.name)(@change='setRange')
+        else
+          | <!---->

@@ -1,0 +1,177 @@
+[
+  {
+    "listName": "transport_ring",
+    "inner": [
+      {
+        "text": "Внутри Бульварного кольца",
+        "name": "insideBulvar",
+        "value": "insideBulvar"
+      },
+      {
+        "text": "Внутри Садового кольца",
+        "name": "insideSadovoe",
+        "value": "insideSadovoe"
+      },
+      {
+        "text": "Внутри ТТК",
+        "name": "insideTTK",
+        "value": "insideTTK"
+      },
+      {
+        "text": "Внутри Четвертого кольца",
+        "name": "insideFourthRing",
+        "value": "insideFourthRing"
+      },
+      {
+        "text": "Внутри МКАД",
+        "name": "insideMKAD",
+        "value": "insideMKAD"
+      }
+    ]
+  },
+  {
+    "listName": "district",
+    "inner": [
+      {
+        "text": "ЗАО",
+        "value": "ЗАО",
+        "name": "districtZAO"
+      },
+      {
+        "text": "ВАО",
+        "value": "ВАО",
+        "name": "districtVAO"
+      },
+      {
+        "text": "ЮАО",
+        "value": "ЮАО",
+        "name": "districtUAO"
+      },
+      {
+        "text": "ЮЗАО",
+        "value": "ЮЗАО",
+        "name": "districtUZAO"
+      },
+      {
+        "text": "ЮВАО",
+        "value": "ЮВАО",
+        "name": "districtUVAO"
+      },
+      {
+        "text": "ЦАО",
+        "value": "ЦАО",
+        "name": "districtCAO"
+      }
+    ]
+  },
+  {
+    "listName": "locality",
+    "inner": [
+      {
+        "text": "Остоженка",
+        "name": "districtCAO1",
+        "value": "Остоженка"
+      },
+      {
+        "text": "Пречистенка",
+        "name": "districtCAO2",
+        "value": "districtCAO2"
+      },
+      {
+        "text": "Хамовники",
+        "name": "districtCAO3",
+        "value": "districtCAO3"
+      },
+      {
+        "text": "Плющиха",
+        "name": "districtCAO4",
+        "value": "districtCA04"
+      },
+      {
+        "text": "Арбат",
+        "name": "districtCAO5",
+        "value": "districtCAO5"
+      },
+      {
+        "text": "Патриаршие пруды",
+        "name": "districtCAO6",
+        "value": "districtCAO6"
+      },
+      {
+        "text": "Замоскворечье",
+        "name": "districtCAO7",
+        "value": "districtCAO7"
+      },
+      {
+        "text": "Якиманка",
+        "name": "districtCAO8",
+        "value": "districtCAO8"
+      },
+      {
+        "text": "Тверской",
+        "name": "districtCAO9",
+        "value": "districtCAO9"
+      },
+      {
+        "text": "Чистые пруды",
+        "name": "districtCAO10",
+        "value": "districtCAO10"
+      },
+      {
+        "text": "Китай-город",
+        "name": "districtCAO11",
+        "value": "districtCAO11"
+      },
+      {
+        "text": "Цветной бульвар",
+        "name": "districtCAO12",
+        "value": "districtCAO12"
+      },
+      {
+        "text": "Сретинка",
+        "name": "districtCAO13",
+        "value": "districtCAO13"
+      },
+      {
+        "text": "Пресненский",
+        "name": "districtCAO14",
+        "value": "districtCAO14"
+      },
+      {
+        "text": "Москва-сити",
+        "name": "districtCAO15",
+        "value": "districtCAO15"
+      },
+      {
+        "text": "Таганский",
+        "name": "districtCAO16",
+        "value": "districtCAO16"
+      },
+      {
+        "text": "Новослободский",
+        "name": "districtCAO17",
+        "value": "districtCAO17"
+      },
+      {
+        "text": "Мещанский",
+        "name": "districtCAO18",
+        "value": "districtCAO18"
+      },
+      {
+        "text": "Кутузовский",
+        "name": "districtCAO19",
+        "value": "districtCAO19"
+      },
+      {
+        "text": "Басманный",
+        "name": "districtCAO20",
+        "value": "districtCAO20"
+      },
+      {
+        "text": "Красносельский",
+        "name": "districtCAO21",
+        "value": "districtCAO21"
+      }
+    ]
+  }
+]

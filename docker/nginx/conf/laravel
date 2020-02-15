@@ -1,0 +1,17 @@
+listen       80;
+client_max_body_size 30m;
+root           $root_path;
+index index.php index.html index.htm;
+location / {
+  try_files $uri $uri/ /index.php?$query_string;
+}
+
+location ~ \.php$ {
+  auth_basic "private site";
+  auth_basic_user_file /usr/share/nginx/htpasswd;
+  fastcgi_pass   php7.2:9000;
+  fastcgi_index  index.php;
+  fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
+  include        fastcgi_params;
+  try_files $uri $uri/ =404;
+}

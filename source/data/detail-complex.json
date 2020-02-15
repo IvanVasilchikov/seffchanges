@@ -1,0 +1,2091 @@
+{
+  "nav": {
+    "title": "Knightsbridge Private park",
+    "price": "172 250 000 р.",
+    "links": [{
+        "text": "Характеристики",
+        "anchor": "#characteristics"
+      },
+      {
+        "text": "О жилом комплексе",
+        "anchor": "#about"
+      },
+      {
+        "text": "Инфраструктура",
+        "anchor": "#infrastructure"
+      },
+      {
+        "text": "О районе",
+        "anchor": "#district"
+      }
+    ]
+  },
+  "main": {
+    "breadcrumbs": [{
+        "href": "/",
+        "title": "Главная"
+      },
+      {
+        "href": "/office.html",
+        "title": "Офисная недвижимость"
+      },
+      {
+        "href": "#",
+        "title": "Офис"
+      }
+    ],
+    "type": "complex",
+    "id": "complex_id_1",
+    "isFav": false,
+    "similar": "Похожие ЖК",
+    "images": [{
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-1.jpg",
+            "/assets/images/detail/detail-img-1.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-2.jpg",
+            "/assets/images/detail/detail-img-2.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-3.jpg",
+            "/assets/images/detail/detail-img-3.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      },
+      {
+        "sources": {
+          "mobile": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "tablet": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ],
+          "desktop": [
+            "/assets/images/detail/detail-img-4.jpg",
+            "/assets/images/detail/detail-img-4.webp"
+          ]
+        },
+        "alt": ""
+      }
+    ],
+    "title": "ЖК «Knightsbridge Private park»",
+    "address": "Москва, ЦАО, Хамовники, улица Ефремова, 19к1",
+    "info": [{
+        "icon": "/assets/svg/icons/house.svg",
+        "text": "75 предложений"
+      },
+      {
+        "icon": "/assets/svg/icons/zagorod.svg",
+        "text": "61 дом"
+      },
+      {
+        "icon": "/assets/svg/icons/fences.svg",
+        "text": "14 участков"
+      }
+    ],
+    "price": {
+      "total": {
+        "rub": "172 250 000 р.",
+        "dollar": "172 250 $",
+        "euro": "172 250 €"
+      },
+      "selected": {
+        "total": "172 250 000 р."
+      },
+      "offer": false
+    },
+    "phone": {
+      "text": "+7 (495) 000-00-00",
+      "url": "+74950000000"
+    }
+  },
+  "characteristics": {
+    "title": "Характеристики",
+    "info": [{
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Класс ЖК",
+        "text": "Премиум-класс"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Тип дома",
+        "text": "Монолитно-кирпичный"
+      },
+      {
+        "icon": "/assets/svg/icons/ruller.svg",
+        "title": "Общая площадь",
+        "text": "49 900 м²"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Этажей в доме",
+        "text": "6"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Количество квартир",
+        "text": "24"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Готовность дома",
+        "text": "Заселен"
+      },
+      {
+        "icon": "/assets/svg/icons/facing.svg",
+        "title": "Отделка",
+        "text": "С ремонтом"
+      },
+      {
+        "icon": "/assets/svg/icons/apartment.svg",
+        "title": "Высота потолков",
+        "text": "от 3,3 до 3,5 м²"
+      }
+    ],
+    "description": "Квартиры в элитном жилом комплексе &quot;Knightsbridge Private Park&quot;. Возможно спланировать: прихожую, просторную кухню-столовую-гостиную, три спальни со своими ванными и гардеробными комнатами, кабинет, гостевой санузел. <br>Неоспоримыми преимуществами являются высокие потолки 3,6 м, панорамное остекление, наличие двух террас, а также возможность установки камина. За квартирой закреплено два машино-места в подземном паркинге. <br>Knightsbridge Private park  - новый элитный жилой комплекс, расположившийся на 3 га жилой квартал в английском стиле, состоящий из 4 зданий.",
+    "share": [{
+        "icon": "/assets/svg/socials/email.svg",
+        "name": "email"
+      },
+      {
+        "icon": "/assets/svg/socials/facebook.svg",
+        "name": "facebook"
+      },
+      {
+        "icon": "/assets/svg/socials/twitter.svg",
+        "name": "twitter"
+      },
+      {
+        "icon": "/assets/svg/socials/vk.svg",
+        "name": "vk"
+      },
+      {
+        "icon": "/assets/svg/socials/viber.svg",
+        "name": "viber"
+      },
+      {
+        "icon": "/assets/svg/socials/whatsapp.svg",
+        "name": "whatsApp"
+      },
+      {
+        "icon": "/assets/svg/socials/telegram.svg",
+        "name": "telegram"
+      }
+    ]
+  },
+  "banner": {
+    "picture": {
+      "sources": {
+        "tablet": [
+          "/assets/images/detail/banner/background-tablet.jpg",
+          "/assets/images/detail/banner/background-tablet.webp"
+        ],
+        "desktop": [
+          "/assets/images/detail/banner/background-xl.jpg",
+          "/assets/images/detail/banner/background-xl.webp"
+        ]
+      },
+      "alt": "",
+      "title": ""
+    },
+    "title": "забронируйте время для просмотра объекта",
+    "form": {
+      "url": "/ajax/json/success.json",
+      "hidden": {
+        "user_id": "123"
+      },
+      "inputs": [{
+          "title": "Имя",
+          "placeholder": "Имя*",
+          "value": "",
+          "name": "name",
+          "type": "text",
+          "className": "",
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 1,
+              "max": 50
+            }
+          }
+        },
+        {
+          "title": "Телефон",
+          "placeholder": "+7 (___) ___-__-__*",
+          "value": "",
+          "name": "phone",
+          "type": "text",
+          "className": "input--phone",
+          "maskInfo": {
+            "complete": false
+          },
+          "checked": {
+            "value": "waiting",
+            "required": true,
+            "lengthString": {
+              "min": 17,
+              "max": 17
+            }
+          }
+        }
+      ],
+      "timeInputs": [{
+          "title": "Время",
+          "placeholder": "От",
+          "name": "time_from",
+          "type": "text",
+          "timeMask": {
+            "complete": false
+          }
+        },
+        {
+          "placeholder": "До",
+          "name": "time_to",
+          "type": "text",
+          "timeMask": {
+            "complete": false
+          }
+        }
+      ],
+      "btn": "Забронировать",
+      "checkbox": {
+        "text": "Согласен на обработку <a href=\"./personalData.pdf\" target=\"_blank\">персональных данных</a>",
+        "name": "checkbox",
+        "value": "y",
+        "checked": false
+      }
+    }
+  },
+  "about": {
+    "title": "knightsbridge private park – элитный район Лондона в центре москвы",
+    "info": [{
+        "title": "156 - 636 <span>м²</span>",
+        "text": "Площадь объектов"
+      },
+      {
+        "title": "475",
+        "text": "Парковочных мест"
+      },
+      {
+        "title": "10 <span>мин</span>",
+        "text": "До метро Фрунзенская"
+      },
+      {
+        "title": "2 <span>га</span>",
+        "text": "Площадь собственного парка"
+      }
+    ],
+    "description": "Жилой комплекс из четырех клубных домов класса де-люкс в английском стиле, расположенный в собственном парке площадью 3 га в районе Хамовники. Авторы интерьеров жилого копмлекса,и дизайна частного парка – дизайнеры мировой величины. Так, общественные зоны оформляет Дэвид Линли, племянник королевы Великобритании и глава компании LINLEY, а настоящий английский парк для жителей",
+    "slider": [{
+        "sources": {
+          "desktop": [
+            "/assets/images/detail/slide-1.jpg",
+            "/assets/images/detail/slide-1.webp"
+          ]
+        },
+        "alt": "",
+        "title": "slide 1"
+      },
+      {
+        "sources": {
+          "desktop": [
+            "/assets/images/detail/slide-1.jpg",
+            "/assets/images/detail/slide-1.webp"
+          ]
+        },
+        "alt": "",
+        "title": "slide 2"
+      },
+      {
+        "sources": {
+          "desktop": [
+            "/assets/images/detail/slide-1.jpg",
+            "/assets/images/detail/slide-1.webp"
+          ]
+        },
+        "alt": "",
+        "title": "slide 3"
+      }
+    ],
+    "buttons": [{
+        "type": "presentation",
+        "image": "/assets/images/detail/catalog-mini.png",
+        "url": "./personalData.pdf",
+        "text": "Презентация <br>ЖК Knightsbridge <br>Private Рark"
+      },
+      {
+        "type": "plan",
+        "image": "/assets/images/detail/catalog-mini.png",
+        "url": "./personalData.pdf",
+        "text": "Типы планировок"
+      }
+    ]
+  },
+  "apartments": {
+    "title": "Выбрать квартиру",
+    "filterTable": {
+      "action": "./ajax/json/objectsTable.json",
+      "fields": [{
+          "theme": "red",
+          "type": "radio",
+          "name": "deal_type",
+          "values": [{
+              "value": "buy",
+              "text": "Купить",
+              "checked": true
+            },
+            {
+              "value": "rent",
+              "text": "Снять",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "theme": "red",
+          "type": "select",
+          "name": "object_type",
+          "values": [{
+              "text": "Квартиру",
+              "value": "apartment",
+              "selected": true
+            },
+            {
+              "text": "Комнату",
+              "value": "room"
+            },
+            {
+              "text": "Дом",
+              "value": "house"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "name": "price",
+          "range": {
+            "inputs": {
+              "title": "Цена, тыс.руб",
+              "min": {
+                "name": "price_min",
+                "placeholder": "От",
+                "value": ""
+              },
+              "max": {
+                "name": "price_max",
+                "placeholder": "До",
+                "value": ""
+              }
+            },
+            "currency": {
+              "type": "select",
+              "name": "currency",
+              "values": [{
+                  "text": "₽",
+                  "value": "rub",
+                  "selected": true
+                },
+                {
+                  "text": "$",
+                  "value": "dollar"
+                }
+              ],
+              "classes": "filter-detail__currency"
+            }
+          }
+        },
+        {
+          "type": "range",
+          "name": "square",
+          "range": {
+            "inputs": {
+              "title": "Площадь, м²",
+              "min": {
+                "name": "square_min",
+                "placeholder": "От",
+                "value": ""
+              },
+              "max": {
+                "name": "square_max",
+                "placeholder": "До",
+                "value": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    "table": [{
+        "title": "ID",
+        "field": "id",
+        "sortField": "id",
+        "sorter": false
+      },
+      {
+        "title": "Площадь",
+        "sortField": "area",
+        "field": "info.square",
+        "sorter": true
+      },
+      {
+        "title": "Этаж",
+        "sortField": "floor",
+        "field": "info.floor",
+        "sorter": true
+      },
+      {
+        "title": "Корпус",
+        "sortField": "corpse",
+        "field": "info.corpse",
+        "sorter": false
+      },
+      {
+        "title": "Планировки/Фото",
+        "sortField": "plan",
+        "field": "plan",
+        "sorter": false,
+        "view": "plan"
+      },
+      {
+        "title": "Цена",
+        "sortField": "price_rub",
+        "field": "price.total",
+        "dopClass": "detail-table__cell--price-width",
+        "dopClassList": "detail-table__cell--price",
+        "sorter": true
+      }
+    ],
+    "filterCards": {
+      "action": "./ajax/json/objectsTable.json",
+      "tabs": [{
+        "name": "complex",
+        "active": true,
+        "fields": [{
+            "theme": "red",
+            "type": "radio",
+            "name": "deal_type",
+            "values": [{
+                "value": "buy",
+                "text": "Купить",
+                "checked": true
+              },
+              {
+                "value": "rent",
+                "text": "Снять",
+                "checked": false
+              }
+            ]
+          },
+          {
+            "theme": "red",
+            "type": "select",
+            "name": "object_type",
+            "title": "Тип",
+            "values": [{
+                "text": "Не выбрано",
+                "value": "",
+                "selected": true
+              },
+              {
+                "text": "Квартиру",
+                "value": "apartment",
+                "selected": false
+              },
+              {
+                "text": "Комнату",
+                "value": "room"
+              },
+              {
+                "text": "Дом",
+                "value": "house"
+              }
+            ]
+          },
+          {
+            "type": "range",
+            "name": "price",
+            "range": {
+              "inputs": {
+                "title": "Цена",
+                "min": {
+                  "name": "price_min",
+                  "placeholder": "От",
+                  "value": ""
+                },
+                "max": {
+                  "name": "price_max",
+                  "placeholder": "До",
+                  "value": ""
+                }
+              },
+              "currency": {
+                "type": "select",
+                "name": "currency",
+                "values": [{
+                    "text": "₽",
+                    "value": "rub",
+                    "selected": true
+                  },
+                  {
+                    "text": "$",
+                    "value": "dollar"
+                  }
+                ],
+                "classes": "filter-detail__currency"
+              }
+            }
+          },
+          {
+            "type": "range",
+            "name": "square",
+            "range": {
+              "inputs": {
+                "title": "Площадь дома",
+                "min": {
+                  "name": "square_min",
+                  "placeholder": "От",
+                  "value": ""
+                },
+                "max": {
+                  "name": "square_max",
+                  "placeholder": "До",
+                  "value": ""
+                }
+              }
+            }
+          },
+          {
+            "type": "range",
+            "name": "square",
+            "range": {
+              "inputs": {
+                "title": "Площадь участка",
+                "min": {
+                  "name": "area_min",
+                  "placeholder": "От",
+                  "value": ""
+                },
+                "max": {
+                  "name": "area_max",
+                  "placeholder": "До",
+                  "value": ""
+                }
+              }
+            }
+          }
+        ],
+        "more": [{
+          "type": "select",
+          "name": "facing",
+          "values": [{
+              "text": "Без отделки",
+              "value": "without_facing",
+              "selected": true
+            },
+            {
+              "text": "С отделкой",
+              "value": "with_facing"
+            }
+          ]
+        }]
+      }]
+    },
+    "cards": [{
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²",
+          "request": true
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Таунхаус",
+        "name": "Покровский Берег",
+        "address": "Хамовники, Ефремова улица, д. 9А",
+        "specs": ["square", "rooms", "floor", "metro", "facing", "parking"],
+        "info": {
+          "square": "850м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          },
+          "facing": "С отделкой",
+          "parking": "С парковкой"
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card3.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Дом",
+        "labels": ["Эксклюзив"],
+        "name": "Knightsbride Private park",
+        "address": "Истринский район, Новорижское шоссе, 19 км",
+        "specs": ["square", "area", "facing", "floor", "forest", "water"],
+        "info": {
+          "square": "850м²",
+          "area": "22 сотки",
+          "facing": "С отделкой",
+          "floor": "2 этажа",
+          "forest": "Лес рядом",
+          "water": "У водоема"
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "table",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card4.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Легион III (Фаза II)",
+        "name": "Многофункциональный комплекс",
+        "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+        "table": [{
+            "link": "/detail-object.html",
+            "info": [{
+                "name": "square",
+                "text": "1000 м²"
+              },
+              {
+                "name": "floor",
+                "text": "3 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "Без отделки"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ]
+          },
+          {
+            "link": "/detail-object.html",
+            "info": [{
+                "name": "square",
+                "text": "902 м²"
+              },
+              {
+                "name": "floor",
+                "text": "9 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "С отделкой"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ]
+          },
+          {
+            "link": "/detail-object.html",
+            "info": [{
+                "name": "square",
+                "text": "984 м²"
+              },
+              {
+                "name": "floor",
+                "text": "4 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "С отделкой"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ]
+          }
+        ],
+        "specs": ["ring", "square", "date", "facing", "metro"],
+        "info": {
+          "ring": "ТТК",
+          "square": "90м²",
+          "date": "Строится",
+          "facing": "С отделкой",
+          "metro": {
+            "station": "Киевская",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "objects": "17 предложений",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "Участок",
+        "name": "Парк Авеню",
+        "address": "Рублево-Успенское шоссе, 9 км",
+        "specs": ["area", "distance", "gas", "cleaner", "pump"],
+        "info": {
+          "area": "55 соток",
+          "distance": "11 км от МКАД",
+          "gas": "Газ (магистральный)",
+          "cleaner": "Септик",
+          "pump": "Скважина"
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "default",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      }
+    ],
+    "view": "table",
+    "sort": {
+      "name": "sort",
+      "values": [{
+          "text": "умолчанию",
+          "value": "default",
+          "selected": true
+        },
+        {
+          "text": "увеличению цены",
+          "value": "price_asc",
+          "field": "price",
+          "direction": "asc"
+        },
+        {
+          "text": "уменьшению цены",
+          "value": "price_desc",
+          "field": "price",
+          "direction": "desc"
+        },
+        {
+          "text": "увеличению площади",
+          "value": "area_asc",
+          "field": "area",
+          "direction": "asc"
+        },
+        {
+          "text": "уменьшению площади",
+          "value": "area_desc",
+          "field": "area",
+          "direction": "desc"
+        }
+      ]
+    },
+    "pagination": {
+      "current": 1,
+      "count": 4,
+      "url": "",
+      "param": ""
+    }
+  },
+  "infrastructure": {
+    "title": "Инфраструктура",
+    "tabs": [{
+        "button": {
+          "text": "Парковая зона",
+          "value": "parks"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Парковая зона"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Безопасность",
+          "value": "safety"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/slide-1.jpg",
+              "/assets/images/detail/slide-1.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Безопасность"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Парковка",
+          "value": "parking"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Парковка"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Консьерж-сервис",
+          "value": "concierge"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Консьерж-сервис"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      },
+      {
+        "button": {
+          "text": "Расположение",
+          "value": "location"
+        },
+        "image": {
+          "sources": {
+            "mobile": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "tablet": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ],
+            "desktop": [
+              "/assets/images/detail/parks.jpg",
+              "/assets/images/detail/parks.webp"
+            ]
+          },
+          "alt": "",
+          "title": "Расположение"
+        },
+        "text": "В районе находится живописный Сквер Девичьего поля с прудом и тихими зонами отдыха"
+      }
+    ]
+  },
+  "map": {
+    "title": "на карте",
+    "map": {
+      "center": "-28.024, 140.887",
+      "markers": [{
+        "coords": "-33.718234, 150.313181",
+        "icon": "/assets/svg/map/default-pin.svg",
+        "type": "default",
+        "tooltip": {
+          "type": "table",
+          "deal_type": "Продажа",
+          "id": "as12713",
+          "labels": ["Эксклюзив"],
+          "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+          "title": "Легион II (Фаза I)",
+          "name": "Многофункциональный комплекс",
+          "address": "Москва, ЗАО, Дорогомилово, Киевская, Киевская улица, д. 7",
+          "table": [
+            [{
+                "name": "square",
+                "text": "1000 м²"
+              },
+              {
+                "name": "floor",
+                "text": "3 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "Без отделки"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ],
+            [{
+                "name": "square",
+                "text": "902 м²"
+              },
+              {
+                "name": "floor",
+                "text": "9 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "С отделкой"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ],
+            [{
+                "name": "square",
+                "text": "984 м²"
+              },
+              {
+                "name": "floor",
+                "text": "4 этаж"
+              },
+              {
+                "name": "facing",
+                "text": "С отделкой"
+              },
+              {
+                "name": "price",
+                "text": "25 000 ₽ м² в год"
+              }
+            ]
+          ],
+          "specs": ["ring", "square", "date", "facing", "metro"],
+          "info": {
+            "ring": "ТТК",
+            "square": "90м²",
+            "date": "Строится",
+            "facing": "С отделкой",
+            "metro": {
+              "station": "Киевская",
+              "walk": "7 минут пешком"
+            }
+          },
+          "price": {
+            "total": "172 250 000 р.",
+            "meters": "135 000 р./м²"
+          },
+          "phone": {
+            "href": "+74950000000",
+            "text": "+7 (495) 000-00-00"
+          },
+          "link": "./detail-object.html",
+          "isFav": false
+        },
+        "id": "marker_1"
+      }]
+    }
+  },
+  "district": {
+    "preTitle": "Knightsbridge Private Park <br>находится в зеленом районе",
+    "title": "Хамовники",
+    "text": "В самом центре… но вдалеке от городского шума. <br>Зеленый район Хамовники находится всего в сорока минутах ходьбы от <br>Красной площади, но кажется, что расположенный здесь комплекс <br>Knightsbridge Private Park на тысячи километров удален от суеты мегаполиса.",
+    "link": "./district.html",
+    "image": {
+      "sources": {
+        "mobile": [
+          "/assets/images/detail/district.jpg",
+          "/assets/images/detail/district.webp"
+        ],
+        "tablet": [
+          "/assets/images/detail/district.jpg",
+          "/assets/images/detail/district.webp"
+        ],
+        "desktop": [
+          "/assets/images/detail/district.jpg",
+          "/assets/images/detail/district.webp"
+        ]
+      },
+      "alt": "Хамовники",
+      "title": "Хамовники"
+    }
+  },
+  "similar": {
+    "title": "Мы подобрали для вас похожие жилые комплексы",
+    "ajaxLink": "./ajax/json/cards.json",
+    "tabs": [{
+        "text": "В этом районе",
+        "value": "district"
+      },
+      {
+        "text": "В этом бюджете",
+        "value": "budget"
+      }
+    ],
+    "cards": [{
+        "type": "small",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/home/offers/offer_0.jpg", "/assets/images/home/offers/offer_3.jpg"],
+        "title": "2 комн. кв, 90м²",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "small",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      },
+      {
+        "type": "small",
+        "deal_type": "Продажа",
+        "id": "as12713",
+        "images": ["/assets/images/cards/card1.jpg", "/assets/images/cards/card2.jpg"],
+        "title": "2 комн. кв",
+        "labels": ["Эксклюзив", "Новостройка"],
+        "name": "Knightsbride Private park",
+        "address": "Москва, ЦАО р-н Пресненский, наб. Пресненская, 10с2",
+        "specs": ["square", "rooms", "floor", "metro"],
+        "info": {
+          "square": "90м²",
+          "rooms": "2",
+          "floor": "14/20",
+          "metro": {
+            "station": "Спортивная",
+            "walk": "7 минут пешком"
+          }
+        },
+        "price": {
+          "total": "172 250 000 р.",
+          "meters": "135 000 р./м²"
+        },
+        "phone": {
+          "href": "+74950000000",
+          "text": "+7 (495) 000-00-00"
+        },
+        "link": "/detail-object.html",
+        "isFav": false
+      }
+    ],
+    "tags": [{
+        "value": "moscowCenter",
+        "text": "В центре Москвы",
+        "id": "moscowCenter",
+        "checked": false
+      },
+      {
+        "value": "hamovniki",
+        "text": "В Хамовниках",
+        "id": "hamovniki",
+        "checked": false
+      },
+      {
+        "value": "presnenskiy",
+        "text": "Пресненский район",
+        "id": "presnenskiy",
+        "checked": false
+      },
+      {
+        "value": "moscowCenter2",
+        "text": "В центре Москвы",
+        "id": "moscowCenter2",
+        "checked": false
+      },
+      {
+        "value": "hamovniki2",
+        "text": "В Хамовниках",
+        "id": "hamovniki2",
+        "checked": false
+      },
+      {
+        "value": "presnenskiy2",
+        "text": "Пресненский район",
+        "id": "presnenskiy2",
+        "checked": false
+      },
+      {
+        "value": "moscowCenter3",
+        "text": "В центре Москвы",
+        "id": "moscowCenter3",
+        "checked": false
+      }
+    ]
+  }
+}

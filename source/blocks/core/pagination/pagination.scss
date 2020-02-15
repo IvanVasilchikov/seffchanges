@@ -1,0 +1,78 @@
+$parent: 'pagination';
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include element($parent, 'btn') {
+    height: rem(32);
+    width: rem(32);
+    border: 1px solid $gray-c7;
+    transition: border-color $ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      height: rem(8);
+      width: rem(5);
+      fill: $gray-c7;
+    }
+
+    @include modifier($parent, 'prev') {
+      margin-right: rem(10);
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    @include modifier($parent, 'next') {
+      margin-left: rem(10);
+    }
+
+    &:hover {
+      border-color: $red2;
+
+      svg {
+        fill: $red2;
+      }
+    }
+  }
+
+  @include element($parent, 'link') {
+    height: rem(32);
+    width: rem(32);
+    line-height: rem(30);
+    text-align: center;
+    border: 1px solid $gray-c7;
+    transition: border-color $ease, color $ease, background-color $ease;
+    font-size: rem(15);
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: rem(10);
+    }
+
+    @include modifier($parent, 'active') {
+      border-color: $red2;
+      color: $w;
+      background-color: $red2;
+      font-weight: 600;
+    }
+
+    @include modifier($parent, 'empty') {
+      pointer-events: none;
+    }
+
+    &:hover {
+      &:not(.#{$parent}__link--active) {
+        border-color: $red2;
+        color: $red2;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+include ./../../fonts/title/second/title-second.pug
+include ./../../fonts/text/text.pug
+include ./../../core/input/input.pug
+include ./../../core/btn/btn.pug
+include ./../../core/checkbox/checkbox.pug
+include ./../../core/picture/picture.pug
+
+mixin banner-detail(info, className)
+  .banner-detail.main(class= className)
+    if info.picture
+      +picture(info.picture, 'banner-detail__background', 'lazyload')
+    else
+      | <!---->
+
+    .banner-detail__content
+      if info.title
+        +title-second(info.title, 'banner-detail__title')
+      else
+        | <!---->
+      if info.form
+        form.banner-detail__form(@submit.prevent='onSubmit', action=info.form.url, ref= 'form')
+          each item in info.form.inputs
+            .banner-detail__input-wrp
+              .banner-detail__input-title!= item.title
+              +input(item, 'banner-detail__input')(v-model= 'formModel[item.name]')
+          .banner-detail__input-wrp
+            .banner-detail__input-title!= info.form.timeInputs[0].title
+            .banner-detail__time
+              each input in info.form.timeInputs
+                input.banner-detail__input(ref='timeInput' + input.name, type=input.type, placeholder=input.placeholder, name=input.name, maxlength='5', v-model= 'formModel[input.name]')
+          if info.form.btn
+            +btn('button', info.form.btn, 'banner-detail__btn', (!info.form.checkbox.checked))
+          else
+            | <!---->
+          if info.form.checkbox
+            +checkbox(info.form.checkbox, 'banner-detail__checkbox')
+          else
+            | <!---->
+      else
+        | <!---->

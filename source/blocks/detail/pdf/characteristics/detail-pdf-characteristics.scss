@@ -1,0 +1,99 @@
+$parent: 'detail-pdf-characteristics';
+
+@include block($parent) {
+	padding: 25px 0 0;
+
+	@include element($parent, 'container') {
+		width: 100%;
+	}
+
+	@include element($parent, 'main') {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	@include element($parent, 'title') {
+		margin-bottom: rem(30);
+
+		@media (min-width: $tMin) {
+			margin-bottom: rem(35);
+		}
+
+		@media (min-width: $d1280) {
+			margin-bottom: 40px;
+		}
+	}
+
+	@include element($parent, 'info') {
+		margin-bottom: rem(35);
+		width: 100%;
+		max-width: 100%;
+		flex-basis: 100%;
+		display: -webkit-box;
+		display: flex;
+		flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between
+	}
+
+	@include element($parent, 'info-col') {
+		max-width: 50%;
+		flex-basis: auto;
+		width: 600px;
+	}
+
+	@include element($parent, 'info-row') {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		line-height: 16px;
+		position: relative;
+		display: -webkit-box;
+		-webkit-box-align: center;
+
+		&:not(:last-of-type) {
+			margin-bottom: 19px;
+		}
+	}
+
+	@include element($parent, 'info-icon') {
+		height: 17px;
+		width: 17px;
+		margin-right: 10px;
+		display: inline-block;
+	}
+
+	@include element($parent, 'info-title') {
+		color: $gray4;
+		min-width: rem(163);
+		margin-right: rem(40);
+		width: 228px;
+		display: flex;
+		align-items: center;
+		display: -webkit-box;
+		-webkit-box-align: center;
+
+		@media (min-width: $tMin) {
+			margin-right: rem(60);
+		}
+
+		@media (min-width: $d1280) {
+			margin-right: rem(45);
+		}
+	}
+
+	@include element($parent, 'text') {
+		padding: 0;
+		line-height: 28px;
+		margin-top: 27px;
+		max-width: 100%;
+		flex-basis: 100%;
+		width: 100%;
+
+		@media (min-width: $d1280) {
+			order: 4;
+		}
+	}
+}

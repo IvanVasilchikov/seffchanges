@@ -1,0 +1,145 @@
+$parent: 'favorite';
+
+@include block($parent) {
+  padding: rem(25) 0 rem(40);
+
+  @media (min-width: $tMin) {
+    padding-bottom: rem(85);
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(25);
+
+    @media (min-width: $tMin) {
+      margin-bottom: rem(35);
+    }
+  }
+
+  @include element($parent, 'nav') {
+    margin-bottom: rem(25);
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(35);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'filter') {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 15%;
+      background: linear-gradient(to left, rgba($w, 0.8) 0%, rgba($w, 0.8) 70%, rgba($w, 0.2) 100%);
+
+      @media (min-width: $tMin) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $d1280) {
+      order: 1;
+    }
+  }
+
+  @include element($parent, 'tabs') {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    &::after {
+      content: '';
+      width: rem(55);
+      height: 5px;
+      flex-shrink: 0;
+
+      @media (min-width: $dMin) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $dMin) {
+      overflow: visible;
+    }
+
+    @media (min-width: $d1280) {
+      order: 1;
+    }
+  }
+
+  @include element($parent, 'buttons') {
+    margin-bottom: rem(15);
+
+    @media (min-width: $d1280) {
+      order: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  @include element($parent, 'button') {
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $red2;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color $ease;
+
+    svg {
+      height: rem(16);
+      width: rem(16);
+      flex-shrink: 0;
+      margin-right: rem(9);
+      fill: $red2;
+      stroke: $red2;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(20);
+    }
+
+    &:hover {
+      color: $purple;
+
+      svg {
+        fill: $purple;
+        stroke: $purple;
+      }
+    }
+  }
+
+  @include element($parent, 'card') {
+    &:not(:last-of-type) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  @include element($parent, 'error-text') {
+    font-size: rem(16);
+    line-height: rem(24);
+    margin-bottom: rem(18);
+  }
+
+  @include element($parent, 'error-link') {
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 600;
+    color: $red2;
+    display: inline-block;
+    transition: color $ease;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}

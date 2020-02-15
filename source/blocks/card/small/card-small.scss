@@ -1,0 +1,255 @@
+$parent: 'card-small';
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 rem(10) rem(40) transparent;
+  transition: box-shadow $ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $d1280) {
+    max-width: rem(389);
+    flex-basis: rem(389);
+  }
+
+  &:hover {
+    box-shadow: 0 rem(10) rem(40) rgba(#000, 0.15);
+
+    @include element($parent, 'pagination') {
+      @media (min-width: $d1280) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    @include element($parent, 'favorite') {
+      @media (min-width: $d1280) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  @include element($parent, 'link') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    font-size: 0;
+    color: transparent;
+  }
+
+  @include element($parent, 'gallery-wrp') {
+    height: rem(220);
+    flex-basis: rem(220);
+    position: relative;
+    z-index: 3;
+  }
+
+  @include element($parent, 'gallery') {
+    height: 100%;
+  }
+
+  @include element($parent, 'id') {
+    font-size: rem(14);
+    line-height: rem(26);
+    font-weight: 600;
+    color: $w;
+    text-shadow: 0 0 rem(50) rgba(#000, 0.8);
+    position: absolute;
+    right: rem(20);
+    bottom: rem(20);
+    z-index: 3;
+  }
+
+  @include element($parent, 'label') {
+    position: absolute;
+    left: rem(20);
+    bottom: rem(20);
+    z-index: 3;
+    height: rem(20);
+    line-height: rem(20);
+    text-align: center;
+    padding: 0 rem(5);
+    background-color: $red2;
+    font-size: rem(10);
+    color: $w;
+    text-transform: uppercase;
+
+    @media (min-width: $d1280) {
+      font-size: rem(11);
+      padding: 0 rem(9);
+    }
+  }
+
+  @include element($parent, 'main') {
+    background-color: $w;
+    padding: rem(25) rem(28) rem(30);
+    position: relative;
+    border: 1px solid $gray;
+    border-top: none;
+    flex-basis: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $d1280) {
+      padding: rem(25) rem(32) rem(30);
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(24);
+    max-width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @include element($parent, 'text') {
+    font-size: rem(14);
+    line-height: rem(26);
+    margin-top: rem(9);
+
+    @include modifier($parent, 'gray') {
+      color: $gray4;
+    }
+  }
+
+  @include element($parent, 'specs') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: rem(15);
+
+    @media print {
+      margin-top: rem(20);
+    }
+
+    @include modifier($parent, 'lot') {
+      @include element($parent, 'specs-item') {
+        &:nth-child(-n+3) {
+          display: flex;
+        }
+
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include modifier($parent, 'plot') {
+      @include element($parent, 'specs-item') {
+        &:nth-child(-n+2) {
+          display: flex;
+        }
+      }
+    }
+
+    @include modifier($parent, 'zk') {
+      @include element($parent, 'specs-item') {
+        &:nth-child(-n+2) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'specs-item') {
+    display: none;
+    align-items: center;
+    margin-bottom: rem(10);
+
+    svg {
+      height: rem(18);
+      width: rem(18);
+      margin-right: rem(10);
+      flex-shrink: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(20);
+    }
+  }
+
+  @include element($parent, 'specs-item-text') {
+    font-size: rem(14);
+    line-height: rem(26);
+    color: $black3;
+    flex-shrink: 0;
+
+    span {
+      &:nth-of-type(2) {
+        color: $gray4;
+      }
+    }
+  }
+
+  @include element($parent, 'price') {
+    margin-top: rem(15);
+    font-size: rem(24);
+    line-height: rem(24);
+    font-weight: 600;
+  }
+
+  @include element($parent, 'all-objects') {
+    font-size: rem(16);
+    font-weight: 600;
+    line-height: rem(24);
+    margin-top: rem(10);
+    display: inline-block;
+    color: $red2;
+  }
+
+  @include element($parent, 'favorite') {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    right: rem(32);
+    top: rem(25);
+    transition: opacity $ease;
+    z-index: 3;
+    height: rem(18);
+    width: rem(18);
+
+    svg {
+      height: rem(13);
+      width: rem(16);
+      fill: transparent;
+      stroke: $red2;
+    }
+
+    @media (min-width: $d1280) {
+      &:hover {
+        svg {
+          fill: $red2;
+        }
+      }
+    }
+
+    @include modifier($parent, 'added') {
+      svg {
+        fill: $red2;
+      }
+
+      @media (min-width: $d1280) {
+        &:hover {
+          span {
+            color: $purple;
+          }
+
+          svg {
+            fill: $purple;
+            stroke: $purple;
+          }
+        }
+      }
+    }
+  }
+}

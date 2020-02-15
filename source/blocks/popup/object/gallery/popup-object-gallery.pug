@@ -1,0 +1,15 @@
+mixin popup-object-gallery(slides)
+  if slides
+    .popup-object-gallery.swiper-container
+      .popup-object-gallery__arrows
+        a.popup-object-gallery__arrow.popup-object-gallery__arrow--prev
+          svg(height='11', width='17')
+            use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+        a.popup-object-gallery__arrow.popup-object-gallery__arrow--next
+          svg(height='11', width='17')
+            use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+      .popup-object-gallery__pag
+      .swiper-wrapper
+        each slide in slides
+          .swiper-slide.popup-object-gallery__slide
+            img.popup-object-gallery__image(src=slide, alt='', class=(slides.length > 1 ? 'swiper-lazy' : 'lazyload'))

@@ -1,0 +1,26 @@
+include ../fonts/title/title.pug
+include ../core/btn/btn.pug
+
+mixin clients(obj, className, itemClass)
+  - visibleClients = 5;
+  - loadedClients = [];
+
+  .clients(class=className)
+    .clients__content.main
+      if obj.title
+        +title(obj.title, 'clients__title')
+      else
+        | <!---->
+      .clients__items
+        each item in obj.items
+          .clients__item(class=itemClass)
+            img.clients__item-img.lazyload(data-src=item.img.src, alt=item.img.alt)
+        if (loadedClients.length !== 0)
+          .clients__item(v-for='client in loadedClients', class=itemClass)
+            img.clients__item-img(:src='client.img.src', :alt='client.img.alt', v-if='client.img')
+        else
+          | <!---->
+      if (obj.moreClients && loadedClients.length === 0)
+        +btn('button', 'Показать ещё', 'btn--border clients__btn')(@click='loadClients')
+      else
+        | <!---->

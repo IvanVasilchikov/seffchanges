@@ -1,0 +1,38 @@
+include ./../../fonts/title/fifth/title-fifth.pug
+include ./../../fonts/text/text.pug
+include ./../../core/picture/picture.pug
+
+mixin home-agency(obj)
+  .home-agency.main
+    .home-agency__head
+      .home-agency__head-left
+        if obj.title
+          +title-fifth(obj.title, 'title-fifth--up home-agency__head-title')
+      if obj.text
+        +text(obj.text, 'home-agency__head-text')
+    .home-agency__slider-wrap
+      .home-agency__slider.swiper-container
+        .swiper-wrapper
+          each item in obj.slider
+            a.home-agency__slide.swiper-slide(href=item.url)
+              if item.picture
+                +picture(item.picture, 'home-agency__slide-img', 'lazyload')
+      .home-agency__slider-description.swiper-container
+        .swiper-wrapper
+          each item, i in obj.slider
+            .home-agency__slide-description.swiper-slide(class=(i === 0 ? 'swiper-slide-active' : ''))
+              a.home-agency__slide-link(href=item.url)
+              if item.name
+                +title-fifth(item.name, 'title-fifth--up home-agency__slide-title')
+              if item.price
+                .home-agency__slide-price!= item.price
+      .home-agency__nav
+        a.home-agency__arrow.home-agency__arrow--prev
+          svg
+            use(xlink:href=loadAssets('./svg/arrow-left.svg'))
+        .home-agency__pag
+        a.home-agency__arrow.home-agency__arrow--next
+          svg
+            use(xlink:href=loadAssets('./svg/arrow-right2.svg'))
+    svg.home-agency__back-icon
+      use(xlink:href=loadAssets('./svg/continent.svg'))

@@ -1,0 +1,41 @@
+$parent: header-static;
+
+@include block($parent) {
+  width: 100%;
+  border-bottom: 1px solid $gray;
+
+  @include element ($parent, 'content') {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    max-width: rem(1195);
+    margin: 0 auto;
+  }
+
+  .header__logo-icon {
+    padding: 20px 0;
+  }
+
+  @include element ($parent, 'item') {
+    svg {
+      width: rem(86);
+      height: rem(64);
+      margin: rem(12) 0 rem(14);
+    }
+
+    span {
+      color: $red2;
+      font-size: rem(20);
+      line-height: rem(24);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+  }
+}

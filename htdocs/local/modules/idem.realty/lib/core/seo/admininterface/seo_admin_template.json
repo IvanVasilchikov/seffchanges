@@ -1,0 +1,34 @@
+{
+  "MAIN": {
+    "seo_title": {
+      "name": "Заголовок браузера",
+      "datatype": "text",
+      "helper": ""
+    },
+    "seo_keywords": {
+      "name": "Keywords",
+      "datatype": "text",
+      "helper": ""
+    },
+    "seo_description": {
+      "name": "Описание",
+      "datatype": "textarea",
+      "helper": ""
+    },
+    "seo_page": {
+      "name": "Заголовок на странице",
+      "datatype": "text",
+      "helper": ""
+    },
+    "seo_title_text": {
+      "name": "Заголовок сео текста на странице",
+      "datatype": "text",
+      "helper": ""
+    },
+    "seo_text": {
+      "name": "Сео текста на странице",
+      "datatype": "textarea",
+      "helper": ""
+    }
+  }
+}

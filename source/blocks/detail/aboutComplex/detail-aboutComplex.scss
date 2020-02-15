@@ -1,0 +1,78 @@
+$parent: 'detail-aboutComplex';
+
+@include block($parent) {
+  position: relative;
+  padding: rem(120) 0 rem(128);
+  margin-bottom: rem(35);
+
+  @media (min-width: $tMin) {
+    padding: rem(90) 0 rem(105);
+    margin-bottom: rem(55);
+  }
+
+  @media (min-width: $d1280) {
+    padding: rem(140) 0 rem(215);
+    margin-bottom: rem(70);
+  }
+
+  @include element($parent, 'image') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(89.75deg, rgba($black, 0.9) -1.03%, rgba($black, 0) 106.63%);
+      opacity: 0.7;
+    }
+  }
+
+  @include element($parent, 'main') {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include element($parent, 'content') {
+    text-align: center;
+
+    @media (min-width: $tMin) {
+      text-align: left;
+      max-width: rem(475);
+    }
+  }
+
+  @include element($parent, 'title') {
+    margin-bottom: rem(25);
+    color: $w;
+    display: inline-block;
+    border-bottom: 2px solid $w;
+  }
+
+  @include element($parent, 'text') {
+    margin-bottom: rem(25);
+    color: $w;
+  }
+
+  @include element($parent, 'button') {
+    width: 100%;
+    padding: 0;
+
+    @media (min-width: $tMin) {
+      width: rem(294);
+    }
+  }
+}

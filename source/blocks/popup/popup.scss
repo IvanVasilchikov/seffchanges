@@ -1,0 +1,95 @@
+$parent: popup;
+
+@include block($parent) {
+  @include element ($parent, 'wrapper') {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
+    z-index: 1001;
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+    transform: translateZ(0);
+
+    @media screen and (min-width: $dMin) {
+      align-items: center;
+      padding: rem(50) 0;
+    }
+
+    @include modifier($parent, 'area') {
+      @media (max-width: $mMax) {
+        overflow-y: visible;
+
+        @include element($parent, 'content') {
+          height: 100%;
+        }
+
+        @include element($parent, 'close') {
+          @media (max-width: $mMax) {
+            top: rem(40);
+          }
+        }
+
+        .popup-area {
+          height: 100%;
+          overflow-y: auto;
+
+          @media (max-width: $mMax) {
+            padding-top: rem(60);
+          }
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'content') {
+    position: relative;
+    margin: auto;
+    width: auto;
+    height: auto;
+    box-shadow: 0 rem(10) rem(40) rgba(0, 0, 0, 0.15);
+
+    @include modifier($parent, 'object') {
+      box-shadow: none;
+
+      .popup__close {
+        top: rem(18);
+        right: rem(-6);
+
+        @media screen and (min-width: $tMin) {
+          top: rem(-8);
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'close') {
+    position: absolute;
+    top: rem(16);
+    right: rem(15);
+    width: rem(26);
+    height: rem(26);
+    fill: $gray-bd;
+    z-index: 5;
+
+    &:hover {
+      fill: $red2;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (min-width: $tMin) {
+      top: rem(18);
+      right: rem(17);
+    }
+  }
+}

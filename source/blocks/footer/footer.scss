@@ -1,0 +1,278 @@
+$parent: footer;
+
+@include block($parent) {
+  position: relative;
+  padding: rem(29) 0 rem(37);
+  background-color: $black;
+
+  @media print {
+    display: none;
+  }
+
+  @media screen and (min-width: $tMin) and (max-width: $tMax) {
+    padding: rem(40) 0 rem(37);
+  }
+
+  @media screen and (min-width: $dMin) {
+    padding: rem(34) 0 rem(26);
+  }
+
+  @include element ($parent, 'top') {
+    @media screen and (min-width: $tMin) {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: rem(36);
+    }
+
+    @media screen and (min-width: $dMin) {
+      margin-bottom: rem(28);
+    }
+  }
+
+  @include element ($parent, 'list') {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(29);
+
+    @media screen and (min-width: $tMin) {
+      width: rem(332);
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(440);
+      margin-right: rem(26);
+    }
+  }
+
+  @include element ($parent, 'list-item') {
+    width: 48%;
+    padding-right: rem(8);
+    margin-bottom: rem(11);
+
+    @media screen and (min-width: $tMin) {
+      width: 53%;
+      margin-bottom: rem(14);
+    }
+
+    &:nth-of-type(2n) {
+      @media screen and (min-width: $tMin) {
+        width: 47%;
+      }
+    }
+  }
+
+  @include element ($parent, 'list-link') {
+    font-size: rem(14);
+    line-height: 1.85;
+    font-weight: 400;
+    color: $w;
+
+    @media screen and (min-width: $tMin) {
+      font-size: rem(16);
+      line-height: 1.5;
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'contacts') {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: rem(41);
+
+    @media screen and (min-width: $tMin) {
+      width: rem(356);
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(406);
+    }
+  }
+
+  @include element ($parent, 'phone') {
+    display: inline-block;
+    margin-bottom: rem(11);
+    font-size: rem(20);
+    font-weight: 600;
+    line-height: 1.2;
+    color: $w;
+
+    @media screen and (min-width: $tMin) {
+      letter-spacing: rem(1);
+      margin-bottom: rem(14);
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  .footer__email,
+  .footer__address,
+  .footer__write {
+    font-size: rem(14);
+    line-height: 1.85;
+    font-weight: 400;
+
+    @media screen and (min-width: $tMin) {
+      font-size: rem(16);
+      line-height: 1.5;
+    }
+  }
+
+  @include element ($parent, 'address') {
+    margin-bottom: rem(11);
+    color: $brown;
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  @include element ($parent, 'email') {
+    margin-bottom: rem(10);
+    color: $brown;
+
+    @media screen and (min-width: $tMin) {
+      margin-bottom: rem(14);
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'write') {
+    color: $w;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: rem(19);
+      height: rem(14);
+      margin-right: rem(11);
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: $purple;
+    }
+  }
+
+  @include element ($parent, 'copy-wrap') {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media screen and (min-width: $tMin) {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  @include element ($parent, 'copy') {
+    max-width: rem(224);
+    margin-right: rem(18);
+    color: $brown;
+
+    @media screen and (min-width: $tMin) {
+      max-width: inherit;
+      width: rem(330);
+      padding-right: rem(18);
+      margin-right: 0;
+    }
+
+    @media screen and (min-width: $dMin) {
+      width: rem(464);
+    }
+
+    a {
+      display: inline-block;
+      color: $w;
+
+      @media screen and (min-width: $tMin) {
+        display: inline;
+      }
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+
+  @include element ($parent, 'socials') {
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: $tMin) {
+      padding-top: rem(3);
+      margin-left: rem(-5);
+    }
+  }
+
+  @include element ($parent, 'social-item') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(20);
+    height: rem(20);
+    padding: rem(2);
+    margin-right: rem(22);
+
+    @media screen and (min-width: $tMin) {
+      width: rem(22);
+      height: rem(22);
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    svg {
+      fill: $w;
+    }
+
+    &:hover {
+      svg {
+        fill: $purple;
+      }
+    }
+  }
+
+  @include element ($parent, 'map') {
+    display: none;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: rem(44);
+      width: rem(82.5);
+    }
+
+    @media screen and (min-width: $d1280) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: calc(50% - 37.5rem + 18rem);
+      z-index: 5;
+    }
+  }
+}

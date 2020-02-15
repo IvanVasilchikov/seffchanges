@@ -1,0 +1,44 @@
+$parent: catalog-list;
+
+@include block($parent) {
+  @include modifier($parent, 'tiles') {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include element($parent, 'card') {
+    margin-bottom: rem(14);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      margin-bottom: rem(20);
+    }
+
+    @media (min-width: $d1280) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  @include element($parent, 'card-small') {
+    margin-bottom: rem(14);
+
+    @media (min-width: $tMin) and (max-width: $d1279) {
+      flex-basis: calc(50% - 0.625rem);
+      max-width: calc(50% - 0.625rem);
+      margin-bottom: rem(20);
+
+      &:nth-of-type(odd) {
+        margin-right: rem(20);
+      }
+    }
+
+    @media (min-width: $d1280) {
+      flex-basis: calc(33.333% - 10.7px);
+      max-width: calc(33.333% - 10.7px);
+      margin-bottom: rem(16);
+
+      &:not(:nth-child(3n)) {
+        margin-right: rem(16);
+      }
+    }
+  }
+}
